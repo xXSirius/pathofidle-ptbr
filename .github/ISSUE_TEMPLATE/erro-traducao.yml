@@ -1,0 +1,33 @@
+name: Erro de tradução
+description: Reportar uma tradução incorreta, incoerente ou que não bate com o contexto
+labels: ["erro-traducao"]
+body:
+  - type: textarea
+    id: atual
+    attributes:
+      label: Tradução atual (em português)
+      description: Copie o texto em português exatamente como está no jogo
+    validations:
+      required: true
+
+  - type: textarea
+    id: original
+    attributes:
+      label: Texto original (inglês ou chinês), se souber
+    validations:
+      required: false
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual é o problema
+      description: Ex. sentido errado, termo inconsistente com o resto do jogo, erro de digitação, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: Sugestão de correção
+    validations:
+      required: false

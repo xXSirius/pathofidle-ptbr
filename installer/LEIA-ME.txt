@@ -1,0 +1,28 @@
+TRADUÇÃO PT-BR (NÃO OFICIAL) — PATH OF IDLE: OLD GODS RISING
+================================================================
+
+Como instalar
+--------------
+1. Se ainda não tiver o MelonLoader instalado no jogo, baixe em
+   https://melonwiki.xyz/, aponte para o PathOfIdle.exe, instale,
+   abra o jogo uma vez e feche em seguida.
+
+2. Rode "Instalar.bat" (duplo-clique). Ele detecta o jogo
+   automaticamente e copia os arquivos de tradução.
+
+3. Abra o jogo, vá em Configurações e deixe o idioma em "English".
+
+Desativar ou remover
+---------------------
+- Só desativar: renomeie Mods\PtBrTranslation.dll (na pasta do jogo)
+  para PtBrTranslation.dll.disabled
+- Remover: apague PtBrTranslation.dll, ptbr_translation.json e
+  en_fallback.json da pasta do jogo
+
+Reportar problemas, ver o código-fonte, ou saber mais
+-----------------------------------------------------------
+https://github.com/xXSirius/pathofidle-ptbr
+
+Aviso: tradução de fã, não oficial, sem vínculo com a SmallMill
+(desenvolvedora do jogo). Feita com auxílio de IA e revisada para
+fidelidade ao texto original.

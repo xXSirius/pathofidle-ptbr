@@ -1,0 +1,40 @@
+name: Tradução faltando
+description: Reportar um texto que apareceu em inglês (ou chinês) em vez de português
+labels: ["traducao-faltando"]
+body:
+  - type: textarea
+    id: texto
+    attributes:
+      label: Texto que apareceu sem tradução
+      description: Copie o texto exatamente como apareceu no jogo (em inglês ou chinês)
+      placeholder: "Ex: Reduces Elemental damage taken by {0}%."
+    validations:
+      required: true
+
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: Sugestão de tradução (opcional)
+      description: Se você já tiver uma sugestão de como traduzir, coloque aqui
+      placeholder: "Ex: Reduz o dano Elemental sofrido em {0}%."
+    validations:
+      required: false
+
+  - type: textarea
+    id: onde
+    attributes:
+      label: Onde no jogo apareceu
+      description: Ex. nome da tela, tooltip de um item específico, descrição de habilidade, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: arquivo
+    attributes:
+      label: Arquivo missing_strings.json (opcional, mas ajuda bastante)
+      description: |
+        Se tiver, cole aqui o conteúdo do arquivo `UserData/missing_strings.json` da pasta do jogo.
+        Esse arquivo é gerado automaticamente pelo mod ao fechar o jogo, com todo texto sem tradução visto na sessão.
+      render: json
+    validations:
+      required: false
