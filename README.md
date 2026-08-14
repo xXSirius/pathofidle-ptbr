@@ -8,7 +8,7 @@ Cobre praticamente todo o texto de gameplay: itens, habilidades, talentos, afixo
 
 ## Como funciona
 
-O jogo tem 3 idiomas nativos: `English`, `简体中文` e `繁體中文`. Este mod intercepta o texto do idioma **English** e substitui pela tradução em português. Qualquer texto ainda sem tradução aparece em inglês normalmente — nunca em chinês.
+O jogo tem 3 idiomas nativos: `English`, `简体中文` e `繁體中文`. Este mod intercepta o texto do idioma **English** e substitui pela tradução em português. Qualquer texto ainda sem tradução aparece em inglês normalmente.
 
 ## Instalação
 
@@ -34,11 +34,11 @@ Pronto — a tradução aparece automaticamente.
 
 Se preferir não usar o instalador, copie os arquivos manualmente:
 
-| Arquivo | Destino (dentro da pasta do jogo) |
-|---|---|
-| `Mods/PtBrTranslation.dll` | `Mods/` |
-| `UserData/ptbr_translation.json` | `UserData/` |
-| `UserData/en_fallback.json` | `UserData/` |
+| Arquivo                          | Destino (dentro da pasta do jogo) |
+| -------------------------------- | --------------------------------- |
+| `Mods/PtBrTranslation.dll`       | `Mods/`                           |
+| `UserData/ptbr_translation.json` | `UserData/`                       |
+| `UserData/en_fallback.json`      | `UserData/`                       |
 
 ## Desinstalar / desativar
 
@@ -65,7 +65,7 @@ installer/      pacote pronto para instalar (mod compilado + dicionários + inst
 
 ## Como funciona por baixo dos panos
 
-O mod usa [Harmony](https://github.com/pardeike/Harmony) para interceptar a função interna de localização do jogo (`GameMgr.GetL10n`). Quando o idioma selecionado é English, o mod substitui o texto retornado pela tradução em português correspondente, buscando por uma chave interna do jogo. Se não houver tradução para aquele texto, ele usa um fallback em inglês — o jogador nunca vê chinês na tela.
+O mod usa [Harmony](https://github.com/pardeike/Harmony) para interceptar a função interna de localização do jogo (`GameMgr.GetL10n`). Quando o idioma selecionado é English, o mod substitui o texto retornado pela tradução em português correspondente, buscando por uma chave interna do jogo. Se não houver tradução para aquele texto, ele usa um fallback em inglês.
 
 ## Aviso legal
 
@@ -77,6 +77,7 @@ A tradução é gratuita e sempre vai continuar sendo. Se quiser apoiar o trabal
 
 ```
 c720ee26-eac5-47a8-9005-2c96578e9411
+
 ```
 
 ## Licença

@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const REPO_URL = 'https://github.com/xXSirius/pathofidle-ptbr';
+---
+
+<section id="contribuir" class="section-py bg-background">
+  <div class="container-wide">
+    <div class="text-center mb-16">
+      <span class="label-tag block mb-3">Ajude a melhorar</span>
+      <h2 class="section-plaque" data-animate>Achou Algo Sem Traduzir?</h2>
+      <p class="text-body-lg text-text-soft max-w-2xl mx-auto mt-6" data-animate>
+        A tradução é mantida por fãs, no tempo livre. Todo report ajuda a cobrir mais um
+        canto do jogo.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto" data-animate-group>
+      <div class="cut-corners bg-surface border border-border p-8" data-animate-item>
+        <Icon name="lucide:file-text" class="w-7 h-7 text-secondary mb-4" />
+        <h3 class="font-serif text-display-sm text-text-main uppercase mb-3">Reporte em um clique</h3>
+        <p class="text-body-md text-text-soft mb-5">
+          O próprio mod registra sozinho, num arquivo <code class="text-secondary">missing_strings.json</code>,
+          qualquer texto que aparecer sem tradução durante uma sessão de jogo. Anexe esse
+          arquivo numa Issue e pronto.
+        </p>
+        <a href={`${REPO_URL}/issues/new/choose`} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          Abrir uma Issue
+        </a>
+      </div>
+
+      <div class="cut-corners bg-surface border border-border p-8" data-animate-item>
+        <Icon name="lucide:languages" class="w-7 h-7 text-secondary mb-4" />
+        <h3 class="font-serif text-display-sm text-text-main uppercase mb-3">Contribua com traduções</h3>
+        <p class="text-body-md text-text-soft mb-5">
+          Quer sugerir um termo, revisar uma tradução ou mexer no código do mod? O guia de
+          contribuição tem tudo, incluindo as convenções de terminologia.
+        </p>
+        <a href={`${REPO_URL}/blob/master/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          Ver Guia de Contribuição
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import galleryManual from '../../assets/screenshots/gallery-manual.webp';
+import galleryMapa from '../../assets/screenshots/gallery-mapa.webp';
+import galleryCodex from '../../assets/screenshots/gallery-codex.webp';
+import galleryTalentos from '../../assets/screenshots/gallery-talentos.webp';
+import galleryFicha from '../../assets/screenshots/gallery-ficha.webp';
+import galleryItem from '../../assets/screenshots/gallery-item.webp';
+
+const shots = [
+  { src: galleryManual, alt: 'Manual do jogo com glossário completo de tags de habilidade traduzido', caption: 'Glossário de tags e termos de habilidade' },
+  { src: galleryMapa, alt: 'Tela de exploração com mapa e tooltip de inimigo traduzidos', caption: 'Exploração, mapas e informações de inimigos' },
+  { src: galleryCodex, alt: 'Codex de equipamentos raros e lendários traduzido', caption: 'Codex de equipamentos raros e lendários' },
+  { src: galleryTalentos, alt: 'Árvore de talentos e tooltip de habilidade traduzidos', caption: 'Árvore de talentos e descrição de habilidades' },
+  { src: galleryFicha, alt: 'Ficha de personagem e inventário traduzidos', caption: 'Ficha do devoto e inventário' },
+  { src: galleryItem, alt: 'Tooltip detalhado de item lendário equipado, traduzido', caption: 'Detalhes completos de cada item equipado' },
+];
+---
+
+<section id="screenshots" class="section-py bg-surface">
+  <div class="container-wide">
+    <div class="text-center mb-16">
+      <span class="label-tag block mb-3">Prints reais</span>
+      <h2 class="section-plaque" data-animate>Veja Como Fica</h2>
+      <p class="text-body-lg text-text-soft max-w-2xl mx-auto mt-6" data-animate>
+        Direto do jogo com a tradução instalada. Clique numa imagem pra ampliar.
+      </p>
+    </div>
+
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-5" data-animate-group>
+      {shots.map((shot) => (
+        <figure
+          class="gallery-item cut-corners bg-dark border border-border mb-5 break-inside-avoid cursor-zoom-in img-hover"
+          data-animate-item
+          data-full={shot.src.src}
+          data-alt={shot.alt}
+          tabindex="0"
+          role="button"
+          aria-label={`Ampliar: ${shot.caption}`}
+        >
+          <Image src={shot.src} alt={shot.alt} width={640} loading="lazy" />
+          <figcaption class="px-4 py-3 text-body-sm text-text-soft border-t border-border">
+            {shot.caption}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<div
+  id="lightbox"
+  class="fixed inset-0 bg-black/90 z-[200] flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-300"
+>
+  <button
+    id="lightbox-close"
+    type="button"
+    aria-label="Fechar"
+    class="absolute top-6 right-6 text-white/60 hover:text-white border border-white/20 hover:border-white/40 rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+  >
+    ✕
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full border border-border" />
+</div>
+
+<script is:inline>
+  (function () {
+    var lightbox = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    var closeBtn = document.getElementById('lightbox-close');
+    if (!lightbox || !img) return;
+
+    function open(fig) {
+      img.src = fig.getAttribute('data-full');
+      img.alt = fig.getAttribute('data-alt') || '';
+      lightbox.classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function close() {
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      img.src = '';
+    }
+
+    document.querySelectorAll('.gallery-item').forEach(function (fig) {
+      fig.addEventListener('click', function () { open(fig); });
+      fig.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fig); }
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  })();
+</script>

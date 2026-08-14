@@ -16,6 +16,10 @@ via MelonLoader + Harmony. Repositório público: `xXSirius/pathofidle-ptbr`.
   usada para achar o texto em inglês de qualquer chave chinesa nova.
 - O mod registra sozinho, em `UserData/missing_strings.json` (na pasta do jogo, não no
   repo), qualquer texto que passou sem tradução PT-BR durante uma sessão de jogo.
+- O mod também checa a release mais recente do GitHub ao iniciar (fire-and-forget,
+  nunca bloqueia) e avisa no log do MelonLoader se houver versão nova — só avisa,
+  não baixa nem substitui nada sozinho (decisão deliberada: ver `CurrentVersion` e
+  `CheckForUpdateAsync` em `mod-source/Main.cs`).
 
 ## Estrutura do repositório
 
@@ -23,6 +27,9 @@ via MelonLoader + Harmony. Repositório público: `xXSirius/pathofidle-ptbr`.
 mod-source/     código C# do mod (compilar com dotnet, precisa de $(GameDir))
 installer/      pacote pronto para distribuir (dll compilado + dicionários + Instalar.bat)
 scripts/        utilitários Python de manutenção da tradução + tabela de referência
+site/           landing page (Astro, base Adsgator) — ver site/CLAUDE.md
+docs/           saída do build de site/ (não edite direto — é gerado, GitHub Pages serve daqui)
+landing-page/   screenshots brutos + script de recorte/otimização usados pela LP
 ```
 
 Jogo instalado localmente em: `C:\Program Files (x86)\Steam\steamapps\common\PathOfIdle`

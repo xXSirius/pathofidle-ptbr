@@ -1,0 +1,171 @@
+---
+// BaseLayout.astro — wrapper de todas as páginas do projeto.
+//
+// Header e Footer NÃO estão aqui. Vêm da biblioteca Astroteca e são
+// compostos na página (index.astro): <BaseLayout> → <Header /> + main + <Footer />.
+//
+// Inclui: GTM, Consent Mode v2, SEO/OG, fontes, SkipLink, DownloadFloat,
+// CookieBanner, ScrollAnimations. Tema único (escuro) — sem alternância
+// clara/escura, então sem script anti-flash de tema.
+
+import GTM from '../components/global/GTM.astro';
+import SkipLink from '../components/global/SkipLink.astro';
+import DownloadFloat from '../components/global/DownloadFloat.astro';
+import CookieBanner from '../components/islands/CookieBanner.tsx';
+import ScrollAnimations from '../components/islands/ScrollAnimations.tsx';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  canonical?: string;
+  noindex?: boolean;
+  schema?: object;
+}
+
+const {
+  title = 'Path of Idle PT-BR | Tradução para Path of Idle: Old Gods Rising',
+  description = 'Tradução de fã, gratuita e não oficial, para português do Brasil de Path of Idle: Old Gods Rising. Instala em minutos, atualiza sozinha.',
+  keywords = 'path of idle tradução, path of idle pt-br, path of idle old gods rising português, mod tradução path of idle',
+  ogTitle = 'Path of Idle PT-BR',
+  ogDescription = 'Jogue Path of Idle: Old Gods Rising 100% em português. Tradução de fã, grátis, instala em minutos.',
+  canonical = 'https://xxsirius.github.io/pathofidle-ptbr/',
+  noindex = false,
+  schema,
+} = Astro.props;
+
+// Sem campanha/anúncio para este projeto — GTM só entra se alguém preencher
+// PUBLIC_GTM_ID no .env; por padrão não injeta nenhum script de rastreamento.
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
+
+const defaultSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Path of Idle PT-BR',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Windows',
+  description: 'Tradução de fã, gratuita e não oficial, para português do Brasil de Path of Idle: Old Gods Rising.',
+  url: 'https://xxsirius.github.io/pathofidle-ptbr/',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' },
+};
+
+const finalSchema = schema || defaultSchema;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+
+  {GTM_ID && <GTM id={GTM_ID} />}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="#0a0807" />
+
+  <!-- SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={ogDescription} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={`${Astro.site}${import.meta.env.BASE_URL.replace(/^\//, '')}og-image.png`} />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ogTitle} />
+  <meta name="twitter:description" content={ogDescription} />
+  <meta name="twitter:image" content={`${Astro.site}${import.meta.env.BASE_URL.replace(/^\//, '')}og-image.png`} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
+  <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
+
+  <!-- Cinzel (display/títulos) + EB Garamond (corpo), combinação gótica clássica. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </noscript>
+
+  <!-- Schema.org JSON-LD -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
+
+  <!-- Google Consent Mode v2 — antes do GTM.
+       O default lê a escolha salva pelo CookieBanner: quem já aceitou volta com
+       consentimento concedido desde o primeiro hit (o update tardio do banner,
+       pós-hidratação, deixaria o page_view inicial sempre sem cookies). -->
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var consentimentoSalvo = null;
+    try { consentimentoSalvo = localStorage.getItem('cookie-consent'); } catch (e) {}
+    var statusConsentimento = consentimentoSalvo === 'accepted' ? 'granted' : 'denied';
+    gtag('consent', 'default', {
+      'ad_storage': statusConsentimento,
+      'analytics_storage': statusConsentimento,
+      'ad_user_data': statusConsentimento,
+      'ad_personalization': statusConsentimento,
+      'wait_for_update': 500
+    });
+  </script>
+</head>
+<body>
+  {GTM_ID && (
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+  )}
+
+  <SkipLink />
+
+  <slot />
+
+  <DownloadFloat />
+
+  {GTM_ID && <CookieBanner client:idle />}
+
+  <ScrollAnimations client:load />
+
+  <!-- Rede de segurança: se o import dinâmico do GSAP falhar (rede, bloqueio
+       de script etc.), o conteúdo marcado [data-animate*] nunca sairia de
+       opacity:0. Depois de alguns segundos, força tudo visível via estilo
+       inline (maior especificidade que o atributo, sem precisar de !important). -->
+  <script is:inline>
+    setTimeout(function () {
+      document
+        .querySelectorAll('[data-animate], [data-animate-left], [data-animate-right], [data-animate-scale], [data-animate-item]')
+        .forEach(function (el) {
+          if (getComputedStyle(el).opacity === '0') {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          }
+        });
+    }, 3500);
+  </script>
+</body>
+</html>

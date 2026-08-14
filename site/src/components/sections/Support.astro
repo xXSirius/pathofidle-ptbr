@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import qrPix from '../../assets/pix/qrcode-pix.png';
+
+const PIX_KEY = 'c720ee26-eac5-47a8-9005-2c96578e9411';
+---
+
+<section id="apoiar" class="section-py bg-surface">
+  <div class="container-wide">
+    <div class="max-w-xl mx-auto text-center">
+      <span class="label-tag block mb-3">Opcional</span>
+      <h2 class="section-plaque" data-animate>Apoie o Projeto</h2>
+      <p class="text-body-lg text-text-soft mt-6 mb-8" data-animate>
+        A tradução é gratuita e sempre vai continuar sendo. Se ela te poupou de traduzir item
+        por item no Google Tradutor, uma doação via Pix é bem-vinda, totalmente opcional.
+      </p>
+
+      <div class="cut-corners bg-white p-5 inline-block mx-auto mb-6" data-animate>
+        <Image src={qrPix} alt="QR Code Pix para doação" width={240} height={240} format="png" />
+      </div>
+
+      <p class="text-body-sm text-text-muted mb-4" data-animate>
+        Escaneie com o app do seu banco, ou copie a chave abaixo:
+      </p>
+
+      <div class="cut-corners bg-background border border-dashed border-border flex flex-wrap items-center justify-center gap-4 px-6 py-5" data-animate>
+        <code id="pix-key" class="text-secondary text-body-sm break-all">{PIX_KEY}</code>
+        <button
+          id="pix-copy"
+          type="button"
+          class="font-serif text-label uppercase tracking-[0.1em] border border-border hover:border-secondary text-text-soft hover:text-text-main px-4 py-2 transition-colors"
+        >
+          Copiar chave
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('pix-copy');
+    var key = document.getElementById('pix-key');
+    if (!btn || !key) return;
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(key.textContent.trim()).then(function () {
+        var original = btn.textContent;
+        btn.textContent = 'Copiado!';
+        setTimeout(function () { btn.textContent = original; }, 1800);
+      });
+    });
+  })();
+</script>

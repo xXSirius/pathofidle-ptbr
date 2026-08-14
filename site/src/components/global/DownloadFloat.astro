@@ -1,0 +1,59 @@
+---
+// Botão flutuante de download — mesma mecânica do WhatsAppFloat original
+// do base-project (some sobre o Hero e o Footer pra não competir com os
+// CTAs dessas seções), adaptada pra um projeto sem contato via WhatsApp:
+// aqui o CTA persistente é sempre "baixar a tradução".
+import { Icon } from 'astro-icon/components';
+
+const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/latest';
+---
+
+<a
+  id="btn-download-float"
+  href={RELEASES_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Baixar a tradução PT-BR"
+  data-tracking="click-download-flutuante"
+  data-section="floating"
+  class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-primary text-white font-sans font-medium pl-4 pr-5 py-3.5 rounded-full shadow-float hover:-translate-y-0.5 hover:bg-primary-dark transition-all duration-200 opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+>
+  <Icon name="lucide:download" class="w-5 h-5" />
+  <span class="text-sm">Baixar</span>
+</a>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('btn-download-float');
+    if (!btn) return;
+
+    var hero = document.getElementById('hero-section');
+    var footer = document.getElementById('footer');
+
+    var heroVisible = false;
+    var footerVisible = false;
+
+    function update() {
+      var hide = heroVisible || footerVisible;
+      btn.classList.toggle('opacity-0', hide);
+      btn.classList.toggle('pointer-events-none', hide);
+      btn.classList.toggle('opacity-100', !hide);
+    }
+
+    if (hero) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.1 }).observe(hero);
+    }
+
+    if (footer) {
+      new IntersectionObserver(function (entries) {
+        footerVisible = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.1 }).observe(footer);
+    }
+
+    update();
+  })();
+</script>

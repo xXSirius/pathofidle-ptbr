@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import wordmark from '../../assets/logo/wordmark.png';
+
+const REPO_URL = 'https://github.com/xXSirius/pathofidle-ptbr';
+---
+
+<footer id="footer" class="bg-dark border-t border-border/40 pt-16 pb-8">
+  <div class="container-wide">
+    <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+      <div class="max-w-md">
+        <a href="#top" class="inline-flex items-center gap-3 mb-4">
+          <Image src={wordmark} alt="Path of Idle" class="h-9 w-auto" widths={[400, 700, 1100]} sizes="280px" format="png" />
+          <small class="font-sans italic text-sm text-white/40 border-l border-white/15 pl-3">tradução pt&#8209;br</small>
+        </a>
+        <p class="text-body-sm text-white/50 leading-relaxed">
+          Projeto de fã, sem fins lucrativos e sem vínculo oficial com a desenvolvedora do
+          jogo. Não distribui nenhum arquivo original, apenas um dicionário de tradução e um
+          mod que aplica esse texto em tempo real sobre uma cópia legitimamente adquirida do
+          jogo. Path of Idle: Old Gods Rising é propriedade de sua desenvolvedora, SmallMill.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span class="label-tag text-white/40">Links</span>
+        <a href={REPO_URL} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Repositório</a>
+        <a href={`${REPO_URL}/releases`} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Releases</a>
+        <a href={`${REPO_URL}/issues`} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Reportar algo</a>
+        <a href={`${REPO_URL}/blob/master/LICENSE`} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Licença MIT</a>
+      </div>
+    </div>
+
+    <div class="text-center pt-6 border-t border-white/10">
+      <p class="text-label text-white/30">Tradução comunitária. Código sob licença MIT.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import heroBg from '../../assets/screenshots/hero-bg.webp';
+import logoFull from '../../assets/logo/full.png';
+
+const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/latest';
+---
+
+<section id="hero-section" class="relative min-h-screen flex items-center justify-center text-center pt-32 pb-24 overflow-hidden">
+  <div class="hero-bg absolute inset-0">
+    <Image
+      src={heroBg}
+      alt=""
+      role="presentation"
+      class="w-full h-full object-cover"
+      style="object-position: center 30%"
+      widths={[800, 1400, 2200]}
+      sizes="100vw"
+      loading="eager"
+    />
+  </div>
+  <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(5,4,3,.72) 0%, rgba(5,4,3,.6) 35%, rgba(5,4,3,.78) 70%, var(--t-background) 100%)"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_38%,rgba(5,4,3,.55),transparent_58%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_20%,rgba(176,40,31,0.2),transparent_60%)]"></div>
+
+  <div class="container-wide relative">
+    <div class="max-w-2xl mx-auto flex flex-col items-center">
+      <span class="label-tag block mb-5" data-animate>Tradução não oficial · grátis</span>
+      <h1 class="mb-5" data-animate>
+        <Image src={logoFull} alt="Path of Idle: Tradução PT-BR" class="w-full max-w-xl h-auto" widths={[600, 1100, 1800]} sizes="(min-width: 768px) 36rem, 90vw" format="png" loading="eager" />
+      </h1>
+      <p class="font-serif text-body-lg text-text-main mb-4 max-w-lg" data-animate>
+        Jogue Path of Idle: Old Gods Rising sem depender de tradutor automático pra entender o que uma habilidade faz.
+      </p>
+      <p class="text-body-md text-text-soft mb-10 max-w-lg" data-animate>
+        Mais de 4.700 textos traduzidos: itens, habilidades, talentos, inimigos e interface. Instala
+        em poucos minutos e depois disso funciona sozinho, sempre que você abrir o jogo.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4" data-animate>
+        <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Baixar a Tradução
+        </a>
+        <a href="#screenshots" class="btn-ghost">
+          Ver Como Fica
+        </a>
+      </div>
+      <p class="text-body-sm text-text-muted italic mt-8" data-animate>
+        Projeto de fã, sem vínculo oficial com a SmallMill. Grátis, hoje e sempre.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Movimento ambiente no fundo: zoom e deriva bem lentos, num loop longo
+     pra não chamar atenção demais — só dar a sensação de que a torre-olho
+     está viva. Neutralizado automaticamente por prefers-reduced-motion via
+     a regra global em global.css. */
+  .hero-bg {
+    overflow: hidden;
+  }
+  .hero-bg img {
+    animation: hero-drift 26s ease-in-out infinite alternate;
+    transform-origin: 50% 35%;
+  }
+  @keyframes hero-drift {
+    0% {
+      transform: scale(1) translate(0, 0);
+    }
+    100% {
+      transform: scale(1.1) translate(-1.5%, -1%);
+    }
+  }
+</style>

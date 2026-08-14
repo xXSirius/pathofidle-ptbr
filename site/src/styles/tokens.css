@@ -1,0 +1,35 @@
+/* ─────────────────────────────────────────────────────────────
+   tokens.css — identidade visual do Path of Idle PT-BR
+   ─────────────────────────────────────────────────────────────
+   Paleta lovecraftiana inspirada na própria arte do jogo (torre-
+   olho vermelho-sangue, painéis dourados) — não em nenhuma obra
+   de referência externa. Tema único, escuro ("ritual") — sem
+   alternância clara/escura (removida a pedido do usuário).
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Marca ──────────────────────────────────────────── */
+  --t-primary:       #b0281f; /* botões, links, destaques */
+  --t-primary-dark:  #7a1414; /* hover de botões, variantes escuras */
+  --t-secondary:     #b8934c; /* acentos, badges, CTA dourado */
+  --t-complement:    #e0793f; /* detalhes decorativos */
+
+  /* ── Superfícies ────────────────────────────────────── */
+  --t-background:    #0a0807;
+  --t-surface:       #1c140f;
+  --t-surface-alt:   #241a13;
+  --t-dark:          #050403; /* footer, blocos escuros */
+  --t-border:        #4a3a24;
+
+  /* ── Texto ──────────────────────────────────────────── */
+  --t-text-main:     #e8dcc4; /* corpo */
+  --t-text-soft:     #a6957a; /* subtítulos, labels */
+  --t-text-muted:    #6e6151; /* metadados, placeholders */
+
+  /* ── Utilitárias ────────────────────────────────────── */
+  --t-wa:            #25d366; /* não usado neste projeto (sem CTA de WhatsApp) */
+
+  /* ── Tipografia ─────────────────────────────────────── */
+  --t-font-serif:    "Cinzel", Georgia, ui-serif, serif;
+  --t-font-sans:     "EB Garamond", ui-serif, Georgia, serif;
+}

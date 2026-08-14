@@ -1,0 +1,116 @@
+---
+// Página 404 — standalone, sem BaseLayout (sem GTM, sem Header/Footer completos).
+// Autossuficiente de propósito: se algo quebrar no resto do site, essa página
+// ainda funciona.
+const base = import.meta.env.BASE_URL;
+const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/latest';
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
+
+  <title>Página não encontrada | Path of Idle PT-BR</title>
+  <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    @import '../styles/tokens.css';
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--t-font-sans);
+      background: var(--t-background);
+      color: var(--t-text-main);
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+    .bg-number {
+      position: absolute;
+      font-family: var(--t-font-serif);
+      font-size: clamp(200px, 40vw, 360px);
+      font-weight: 600;
+      color: color-mix(in srgb, var(--t-primary) 10%, transparent);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .content { position: relative; z-index: 1; max-width: 420px; }
+    .label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--t-secondary);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: var(--t-font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 600;
+      line-height: 1.2; margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    p { font-size: 0.95rem; color: var(--t-text-soft); line-height: 1.7; margin-bottom: 32px; }
+    .btn-group { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--t-font-sans); font-size: 0.9rem; font-weight: 500;
+      padding: 14px 28px; border-radius: 6px; text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--t-primary); color: #fff; }
+    .btn-primary:hover { background: var(--t-primary-dark); }
+    .btn-ghost { border: 1px solid var(--t-border); color: var(--t-text-soft); background: var(--t-surface); }
+    .btn-ghost:hover { border-color: var(--t-secondary); color: var(--t-text-main); }
+    @media (prefers-reduced-motion: reduce) { .bg-number { animation: none; } }
+  </style>
+</head>
+<body>
+
+  <p class="bg-number" id="bg-404" aria-hidden="true">404</p>
+
+  <div class="content">
+    <p class="label">Perdido nos arquivos proibidos</p>
+    <h1>Essa página não existe</h1>
+    <p>O que você buscava não está aqui, ou nunca esteve. Volte pro início ou vá direto pro download.</p>
+    <div class="btn-group">
+      <a href={base} class="btn btn-primary">
+        Voltar ao início
+      </a>
+      <a href={RELEASES_URL} target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+        Baixar a Tradução
+      </a>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) return;
+      var el = document.getElementById('bg-404');
+      if (!el) return;
+      var start = null;
+      function animate(ts) {
+        if (!start) start = ts;
+        var elapsed = (ts - start) / 1000;
+        var y = Math.sin(elapsed * (Math.PI / 4)) * 10;
+        el.style.transform = 'translateY(' + y + 'px)';
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    })();
+  </script>
+</body>
+</html>

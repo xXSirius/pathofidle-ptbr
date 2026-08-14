@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const features = [
+  {
+    icon: 'lucide:layers',
+    title: 'Cobertura completa',
+    text: 'Itens, habilidades, talentos, afixos, inimigos, conjuntos e toda a interface. Praticamente não sobra nada em inglês.',
+  },
+  {
+    icon: 'lucide:shield-check',
+    title: 'Nunca trava',
+    text: 'Achou algo ainda sem tradução? Aparece em inglês normalmente, nunca em chinês e nunca quebrado.',
+  },
+  {
+    icon: 'lucide:power',
+    title: 'Instala e esquece',
+    text: 'Depois de instalado, funciona sozinho toda vez que você abre o jogo. Não precisa reconfigurar nada.',
+  },
+];
+---
+
+<section id="sobre" class="section-py bg-background">
+  <div class="container-wide">
+    <div class="text-center mb-16">
+      <span class="label-tag block mb-3">Por que usar</span>
+      <h2 class="section-plaque" data-animate>Jogue Sem Travar Na Língua</h2>
+      <p class="text-body-lg text-text-soft max-w-2xl mx-auto mt-6" data-animate>
+        Sem essa de alternar pra tradutor pra entender o que uma habilidade faz. Os itens, as
+        habilidades, os inimigos e os menus, tudo em português direto no jogo.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-16" data-animate-group>
+      {features.map((f) => (
+        <div class="cut-corners bg-surface border border-border p-8 text-center card-hover" data-animate-item>
+          <Icon name={f.icon} class="w-8 h-8 text-secondary mx-auto mb-4" />
+          <h3 class="font-serif text-display-sm text-text-main mb-3 uppercase tracking-wide">{f.title}</h3>
+          <p class="text-body-md text-text-soft">{f.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-2xl mx-auto text-center" data-animate>
+      <p class="blockquote-premium text-left mx-auto max-w-xl">
+        É um mod pequeno e de código aberto, dá pra ler o código-fonte inteiro no GitHub, e roda
+        sobre o <strong class="text-text-main">MelonLoader</strong>, a mesma ferramenta usada por
+        milhares de mods de jogos em Unity. Não altera nenhum arquivo original do jogo.
+      </p>
+    </div>
+  </div>
+</section>

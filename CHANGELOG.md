@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 — 2026-08-14
+
+Nova landing page do projeto e aviso de atualização dentro do jogo.
+
+- Landing page em `docs/` (hospedável via GitHub Pages) apresentando o projeto, com
+  galeria de screenshots, changelog ao vivo e passo a passo de instalação
+- O mod agora consulta a release mais recente do GitHub ao iniciar e avisa no log do
+  MelonLoader quando há uma versão nova disponível (não baixa nem substitui nada
+  sozinho — atualizar continua sendo baixar o pacote e rodar o instalador de novo)
+- Corrigida a versão do mod no `[assembly: MelonInfo(...)]`, que estava presa em
+  "1.0.0" mesmo depois do lançamento da 1.1.0
+
 ## 1.1.0 — 2026-08-14
 
 Atualização de conteúdo: o jogo recebeu o patch 1.0.2 (renomeação de dano "Frio"

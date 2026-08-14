@@ -1,0 +1,26 @@
+---
+// Números rápidos logo abaixo do hero. O valor da versão é preenchido
+// pelo Changelog.astro via JS (mesmo fetch do CHANGELOG.md, sem duplicar
+// a informação em dois lugares).
+---
+
+<div class="bg-surface border-y border-border">
+  <div class="container-wide grid grid-cols-2 md:grid-cols-4">
+    <div class="text-center py-8 px-3">
+      <p class="stat-number"><span data-counter="4700">0</span>+</p>
+      <p class="stat-label">Textos traduzidos</p>
+    </div>
+    <div class="text-center py-8 px-3 border-l border-border">
+      <p class="stat-number">~5min</p>
+      <p class="stat-label">Pra instalar</p>
+    </div>
+    <div class="text-center py-8 px-3 border-t md:border-t-0 md:border-l border-border">
+      <p class="stat-number">100%</p>
+      <p class="stat-label">Grátis, sempre</p>
+    </div>
+    <div class="text-center py-8 px-3 border-t md:border-t-0 border-l border-border">
+      <p class="stat-number" id="statVersion">—</p>
+      <p class="stat-label">Versão atual</p>
+    </div>
+  </div>
+</div>
