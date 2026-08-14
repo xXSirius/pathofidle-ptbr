@@ -7,3 +7,7 @@ Thumbs.db
 
 # Prints brutos usados como referencia/fonte para a landing page (nao publicados)
 landing-page/screenshots/
+
+# Cache interno do Astro que vaza pra docs/ por causa do outDir externo ao root
+docs/data-store.json
+docs/settings.json
