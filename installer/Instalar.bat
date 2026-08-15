@@ -1,5 +1,6 @@
 @echo off
-setlocal enabledelayedexpansion
+rem sem "enabledelayedexpansion": ele faz o cmd comer o "!" das mensagens
+setlocal
 title Instalador - Traducao PT-BR - Path of Idle: Old Gods Rising
 
 echo ============================================================

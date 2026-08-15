@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.3.0 — 2026-08-15
+
+Aviso de atualização agora aparece na tela, e tradução sincronizada com o patch
+1.0.3 do jogo.
+
+- O aviso de versão nova deixou de ficar só no log do MelonLoader: agora abre uma
+  janela quando o jogo inicia, mostrando o link e com um botão que abre a página
+  de download no navegador. O aviso aparece no máximo uma vez por dia enquanto não
+  atualizar — quem preferir adiar não é incomodado a cada partida
+- 19 strings novas traduzidas do patch 1.0.3 do jogo, incluindo o changelog interno
+  (tela "Notícias"), que agora aparece em português
+- Novo `Desinstalar.bat` no pacote: remove a tradução sem tocar no MelonLoader,
+  nos seus outros mods ou no seu save
+- README e LEIA-ME agora explicam o aviso de atualização (o mod nunca baixa nada
+  sozinho) e por que alguns antivírus reclamam de mods `.dll`
+- Corrigido o `!` que sumia das mensagens do instalador ("Instalacao concluida",
+  "Bom jogo") — efeito colateral do `enabledelayedexpansion` no `.bat`
+- Endurecimento: limite de tamanho na resposta da API do GitHub e proteção contra
+  concorrência no registro de textos sem tradução
+- Novo utilitário `scripts/extrair_language_reference.py`, que reconstrói a tabela
+  de referência CN/EN/TC direto do assembly do jogo a cada patch novo
+- Regra de versionamento documentada no `CONTRIBUTING.md`: sincronizar a tradução
+  com um patch do jogo é PATCH; MINOR fica para capacidade nova do mod
+
 ## 1.2.0 — 2026-08-14
 
 Nova landing page do projeto e aviso de atualização dentro do jogo.

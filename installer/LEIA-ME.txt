@@ -12,12 +12,32 @@ Como instalar
 
 3. Abra o jogo, vá em Configurações e deixe o idioma em "English".
 
+Aviso de atualização
+---------------------
+Ao abrir o jogo, o mod checa se saiu uma versão nova da tradução. Se
+tiver, aparece uma janelinha do Windows com o link e a opção de abrir
+a página de download. Ela aparece no máximo uma vez por dia, e o mod
+NÃO baixa nem instala nada sozinho — quem decide é você.
+
+Se não quiser essa checagem, é só bloquear o acesso do jogo à internet
+ou ignorar o aviso; nada mais muda no funcionamento da tradução.
+
 Desativar ou remover
 ---------------------
-- Só desativar: renomeie Mods\PtBrTranslation.dll (na pasta do jogo)
-  para PtBrTranslation.dll.disabled
-- Remover: apague PtBrTranslation.dll, ptbr_translation.json e
-  en_fallback.json da pasta do jogo
+- Remover de vez: rode "Desinstalar.bat" (aqui nesta pasta). Ele apaga
+  só os arquivos da tradução — MelonLoader, outros mods e seu save
+  não são tocados.
+- Só desativar por um tempo: renomeie Mods\PtBrTranslation.dll (na
+  pasta do jogo) para PtBrTranslation.dll.disabled
+
+Meu antivírus reclamou, é vírus?
+---------------------------------
+Não. Mod de jogo Unity é um .dll que se injeta no processo do jogo, e
+alguns antivírus marcam isso como suspeito por padrão, sem analisar o
+conteúdo. É falso positivo comum em qualquer mod de MelonLoader.
+
+Não precisa acreditar em mim: o código-fonte inteiro do mod está no
+GitHub (são ~170 linhas), dá pra ler e compilar você mesmo.
 
 Reportar problemas, ver o código-fonte, ou saber mais
 -----------------------------------------------------------

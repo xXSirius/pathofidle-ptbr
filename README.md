@@ -42,9 +42,22 @@ Se preferir não usar o instalador, copie os arquivos manualmente:
 
 ## Desinstalar / desativar
 
-- **Só desativar a tradução**: renomeie `Mods/PtBrTranslation.dll` para `PtBrTranslation.dll.disabled`
-- **Remover de vez**: apague os 3 arquivos listados acima da pasta do jogo
+- **Remover de vez**: rode `Desinstalar.bat` (vem no mesmo pacote do instalador). Ele apaga só os arquivos da tradução, sem tocar no MelonLoader, nos seus outros mods ou no seu save
+- **Só desativar temporariamente**: renomeie `Mods/PtBrTranslation.dll` para `PtBrTranslation.dll.disabled`
+- **Manualmente**: apague os 3 arquivos listados na tabela acima da pasta do jogo
 - O MelonLoader pode continuar instalado sem problema, mesmo sem nenhum mod ativo
+
+## Aviso de atualização
+
+Ao abrir o jogo, o mod consulta a página de releases deste repositório para ver se saiu uma versão nova da tradução. Se tiver, aparece uma janela do Windows com o link e a opção de abrir a página de download — no máximo uma vez por dia, até você atualizar.
+
+O mod **não baixa nem instala nada sozinho**: atualizar é sempre baixar o pacote e rodar o `Instalar.bat`, como na primeira vez. É a única conexão de rede que o mod faz, e se ela falhar (sem internet, GitHub fora do ar) o jogo continua normalmente.
+
+## Meu antivírus reclamou, é vírus?
+
+Não. Mods de jogos Unity são arquivos `.dll` que se injetam no processo do jogo — comportamento que alguns antivírus marcam como suspeito por padrão, sem análise real do conteúdo. É um falso positivo comum em qualquer mod de MelonLoader, não específico deste projeto.
+
+Se preferir não confiar na palavra de um desconhecido na internet (e você não deveria mesmo!): todo o código do mod está neste repositório, em [`mod-source/Main.cs`](mod-source/Main.cs) — são ~170 linhas, dá pra ler inteiro em poucos minutos. Você pode compilar você mesmo seguindo o [CONTRIBUTING.md](CONTRIBUTING.md) e usar o seu próprio `.dll` em vez do que eu distribuo.
 
 ## Encontrou algo sem traduzir ou um erro?
 

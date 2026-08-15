@@ -51,6 +51,38 @@ Para manter consistência, alguns termos já têm tradução padronizada em todo
 
 Ao sugerir traduções novas, tente manter esses termos consistentes com o resto do dicionário.
 
+## Versionamento
+
+O mod usa `MAJOR.MINOR.PATCH`, mas o número é do **mod**, não do jogo — não
+precisa (nem deve) tentar bater com a versão do jogo, que segue seu próprio
+ritmo. Sincronizar tradução com um patch novo do jogo vai ser o tipo de
+release mais recorrente, então **não** pode ser o que sobe o dígito do meio —
+senão o problema só muda de dígito. A regra de quando subir cada parte:
+
+- **PATCH** (x.y.**Z**): qualquer manutenção recorrente — tradução
+  sincronizada com um patch novo do jogo (strings novas/corrigidas de
+  gameplay, incluindo o changelog interno do jogo — ver nota técnica abaixo),
+  correção de tradução, landing page, instalador, scripts, metadado etc.
+- **MINOR** (x.**Y**.0): o **mod em si** ganhou uma capacidade nova (não a
+  tradução) — ex.: um mecanismo novo no `mod-source`, uma nova forma de
+  instalar/atualizar. Deve ser raro.
+- **MAJOR**: só em mudança estrutural incompatível (formato do dicionário,
+  forma de instalar, etc.).
+
+Sempre cite no `CHANGELOG.md` qual patch do jogo aquela release cobre, já que
+o número do mod não reflete isso diretamente.
+
+### Traduzindo o changelog interno do jogo
+
+A tela de "atualização da versão X" que o jogo mostra também é só mais uma
+entrada no dicionário de localização, com chave em chinês igual a qualquer
+habilidade ou item — não é um mecanismo separado. Ela aparece no fluxo normal
+de sincronização de conteúdo (`missing_strings.json` / atualização de
+`scripts/language_reference.json` após um patch do jogo) como mais uma string
+faltante, só que mais longa (várias linhas com 【】 e `\n`). Ao traduzir,
+mantenha a formatação e os nomes de habilidade/item consistentes com o resto
+do glossário.
+
 ## Compilando o mod
 
 Requisitos: [.NET 8 SDK](https://dotnet.microsoft.com/download), MelonLoader já instalado no jogo (para ter os assemblies de interop gerados).

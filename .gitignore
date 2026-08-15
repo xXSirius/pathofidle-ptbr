@@ -11,3 +11,13 @@ landing-page/screenshots/
 # Cache interno do Astro que vaza pra docs/ por causa do outDir externo ao root
 docs/data-store.json
 docs/settings.json
+
+# Saidas temporarias dos scripts de manutencao da traducao (geradas a cada
+# rodada, nao fazem parte do projeto) — language_reference.json NAO entra aqui,
+# esse e versionado de proposito
+scripts/pendente_traducao.json
+scripts/chaves_sem_referencia.json
+scripts/chaves_novas.json
+scripts/chaves_en_alterado.json
+scripts/novas_traducoes.json
+scripts/_*
