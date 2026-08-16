@@ -4818,5 +4818,10 @@
  "精通类技能的魔力消耗减少{0}%。（技能描述里带有精通标签的技能）": "Mastery Skill Mana Cost reduced by {0}%. (Skills with the Mastery tag in their description)",
  "请查看道具信息": "Please check the item info",
  "辅助类技能的魔力消耗减少{0}%。（技能描述里带有辅助标签的技能）": "Utility Skill Mana Cost reduced by {0}%. (Skills with the Utility tag in their description)",
- "随机所有技能，点击天赋可以锁定或者解锁": "Rerolls all skills; click a Talent to lock or unlock it"
+ "随机所有技能，点击天赋可以锁定或者解锁": "Rerolls all skills; click a Talent to lock or unlock it",
+ "汲取目标的灵魂之力，造成冰冷伤害，并回复魔力。": "Drains the target's soul, dealing Cold damage and restoring Mana.",
+ "骨刃从地面连续穿出，造成穿刺和冰冷伤害。": "Bone blades repeatedly pierce from the ground, dealing Pierce and Cold damage.",
+ "召唤灵魂风暴撕裂目标，造成劈砍伤害和冰冷伤害，杀死目标可以延长持续时间。": "Summons a soul storm to rend targets, dealing Slash and Cold damage. Killing targets extends the duration.",
+ "死亡之手冲击目标，造成冰冷伤害，并降低目标暴击值和战技速度。": "Death's Hand strikes the target, dealing Cold damage and reducing Crit Rating and Martial Skill Speed.",
+ "使用秘制灵药，治疗目标生命，并提升生命坚韧。": "Uses a secret elixir, healing the target's Health and increasing Health Tenacity."
 }

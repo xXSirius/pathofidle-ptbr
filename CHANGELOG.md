@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.1 — 2026-08-15
+
+Correções encontradas ao revisar as tabelas de habilidade do Sacerdote.
+
+- 5 descrições de habilidade do Sacerdote que apareciam em inglês agora estão
+  traduzidas: Dreno de Alma, Frio nos Ossos, Ceifar Alma, Mão da Morte e
+  Elixir de Fortitude
+- Nome do item 凝视之瞳 padronizado como **Olho Vigilante** em todos os textos
+  (aparecia como "Olho Fitante" e "Olho Fulgurante" em duas descrições longas,
+  divergindo do nome usado na tabela de itens)
+
 ## 1.3.0 — 2026-08-15
 
 Aviso de atualização agora aparece na tela, e tradução sincronizada com o patch

@@ -827,7 +827,7 @@
  "勾选后，如果挑战过程中被击败了，会停止自动挑战，避免一直失败。（建议勾选）": "Quando ativado, se derrotado durante um desafio, o desafio automático para para evitar falhas repetidas. (Recomendado)",
  "勾选后，如果探索过程中被击败了，会停止自动探索，避免一直失败。（建议勾选）": "Quando ativado, se derrotado durante a Exploração, a Exploração automática para para evitar falhas repetidas. (Recomendado)",
  "勾选后，完成关卡会自动前往下一关。": "Quando ativado, ao completar um estágio, avança automaticamente para o próximo estágio.",
- "勾选后，当前没有可以探索的岛屿时，会自动刷新探索岛屿。\n如果没有完成所有岛屿，会自动消耗【凝视之瞳】。": "Quando ativado, se não houver ilhas disponíveis para Exploração, atualiza automaticamente as ilhas de Exploração.\nSe nem todas as ilhas estiverem completas, consumirá automaticamente o Olho Fulgurante.",
+ "勾选后，当前没有可以探索的岛屿时，会自动刷新探索岛屿。\n如果没有完成所有岛屿，会自动消耗【凝视之瞳】。": "Quando ativado, se não houver ilhas disponíveis para Exploração, atualiza automaticamente as ilhas de Exploração.\nSe nem todas as ilhas estiverem completas, consumirá automaticamente o Olho Vigilante.",
  "勾选后，挑战结束时，会自动回到当前最大章节进行征程冒险。（建议勾选）": "Quando ativado, ao terminar o desafio da Torre Divina, retorna automaticamente ao capítulo máximo atual para continuar a aventura da Campanha. (Recomendado)",
  "勾选后，探索结束时，会自动回到当前最大章节进行征程冒险。（建议勾选）": "Quando ativado, ao terminar a Exploração, retorna automaticamente ao capítulo máximo atual para continuar a aventura da Campanha. (Recomendado)",
  "勾选这里开启<color=#db4848>【自动】</color>挑战宝藏": "Marque aqui para ativar o Desafio de Tesouro <color=#db4848>[Automático]</color>",
@@ -4762,7 +4762,7 @@
  "流派玩法：叠加【迅捷】层数，可以增加【迅雷斩】的斩击次数。\n偏好属性：力量、敏捷、智力、所有攻击、暴击值、战技速度、战技伤害、战技精准、所有伤害、物理伤害、穿刺伤害、闪电伤害、削弱效果、削弱时间、基础技能速度": "Estilo de jogo: Acumule camadas de 【Rapidez】 para aumentar o número de cortes de 【Corte do Trovão Veloz】.\nAtributos preferidos: Força, Destreza, Inteligência, Todo Ataque, Valor Crítico, Velocidade Marcial, Dano Marcial, Precisão Marcial, Todo Dano, Dano Físico, Dano de Perfuração, Dano de Raio, Efeito de Debuff, Duração de Debuff, Velocidade de Habilidade Básica",
  "流派玩法：通过获取【法术速度】属性，缩短【闪电风暴】攻击间隔，更高频率造成伤害。\n偏好属性：敏捷、智力、元素攻击、暴击值、元素伤害、闪电伤害、法术速度、所有技能速度、法术精准、法术伤害、元素伤害、闪电伤害、精通技能伤害、增益效果、增益时间": "Estilo de jogo: Obtenha o atributo 【Velocidade de Magia】 para reduzir o intervalo de ataque de 【Tempestade Elétrica】, causando dano com maior frequência.\nAtributos preferidos: Destreza, Inteligência, Ataque Elemental, Valor Crítico, Dano Elemental, Dano de Raio, Velocidade de Magia, Toda Velocidade de Habilidade, Precisão de Magia, Dano de Magia, Dano Elemental, Dano de Raio, Dano de Habilidade de Maestria, Efeito de Buff, Duração de Buff",
  "流派玩法：通过释放【猛禽一击】重置【遁入阴影】冷却时间，获得治疗和闪避率提升。\n偏好属性：敏捷、闪避值、战技速度、法术速度、所有技能速度、战技精准、暴击抵抗、生命强韧、支援技能速度、支援技能消耗、生命治疗、增益时间、增益效果": "Estilo de jogo: Conjure 【Golpe da Ave de Rapina】 para reiniciar o Tempo de Recarga de 【Desaparecer nas Sombras】, ganhando cura e aumento na Chance de Esquiva.\nAtributos preferidos: Destreza, Valor de Esquiva, Velocidade Marcial, Velocidade de Magia, Toda Velocidade de Habilidade, Precisão Marcial, Resistência a Crítico, Tenacidade de Vida, Velocidade de Habilidade de Suporte, Custo de Habilidade de Suporte, Poder de Cura, Duração de Buff, Efeito de Buff",
- "订单需要玩家提供指定品质和部位的装备给市场来换取资源和珍贵的道具。\n订单可以自动检索背包和仓库的装备。\n订单有刷新次数，请谨慎使用。\n次数用尽之后可以消耗【凝视之瞳】进行刷新。": "Pedidos exigem que o jogador forneça Equipamento de qualidade e parte especificadas ao Mercado em troca de recursos e itens valiosos.\nPedidos podem buscar Equipamento automaticamente na mochila e no Armazém.\nPedidos têm um número limitado de atualizações; use com cautela.\nApós esgotar as atualizações, é possível usar 【Olho Fitante】 para atualizar.",
+ "订单需要玩家提供指定品质和部位的装备给市场来换取资源和珍贵的道具。\n订单可以自动检索背包和仓库的装备。\n订单有刷新次数，请谨慎使用。\n次数用尽之后可以消耗【凝视之瞳】进行刷新。": "Pedidos exigem que o jogador forneça Equipamento de qualidade e parte especificadas ao Mercado em troca de recursos e itens valiosos.\nPedidos podem buscar Equipamento automaticamente na mochila e no Armazém.\nPedidos têm um número limitado de atualizações; use com cautela.\nApós esgotar as atualizações, é possível usar 【Olho Vigilante】 para atualizar.",
  "征程是推进游戏进度的核心玩法，同时也能产出大量资源和装备。\n通过所有关卡时可以挑战首领，首领必定掉落套装装备。\n宝藏关卡必定掉落传说装备，只能挑战一次。": "A Campanha é o modo de progressão principal e também gera recursos e equipamentos abundantes.\nLimpar todos os locais desbloqueia o desafio de chefe; chefes sempre dropam itens de Conjunto.\nLocais de tesouro sempre dropam itens Lendários e só podem ser desafiados uma vez.",
  "骨刃从地面连续穿出，造成穿刺和冰霜伤害。": "Lâminas de osso perfuram repetidamente do chão, causando dano de Perfuração e Gelo.",
  "切换{0}次基础技能【右键】": "Troque Habilidades Básicas {0} vezes 【Clique Direito】",
@@ -4810,5 +4810,10 @@
  "精通类技能的魔力消耗减少{0}%。（技能描述里带有精通标签的技能）": "Custo de Mana de Habilidades de Maestria reduzido em {0}%. (Habilidades com a tag Maestria na descrição)",
  "请查看道具信息": "Consulte as informações do item",
  "辅助类技能的魔力消耗减少{0}%。（技能描述里带有辅助标签的技能）": "Custo de Mana de Habilidades de Utilidade reduzido em {0}%. (Habilidades com a tag Utilidade na descrição)",
- "随机所有技能，点击天赋可以锁定或者解锁": "Sorteia novamente todas as habilidades; clique em um Talento para bloqueá-lo ou desbloqueá-lo"
+ "随机所有技能，点击天赋可以锁定或者解锁": "Sorteia novamente todas as habilidades; clique em um Talento para bloqueá-lo ou desbloqueá-lo",
+ "汲取目标的灵魂之力，造成冰冷伤害，并回复魔力。": "Drena a força da alma do alvo, causando dano de Gelo e restaurando Mana.",
+ "骨刃从地面连续穿出，造成穿刺和冰冷伤害。": "Lâminas ósseas perfuram o chão continuamente, causando dano de Perfuração e Gelo.",
+ "召唤灵魂风暴撕裂目标，造成劈砍伤害和冰冷伤害，杀死目标可以延长持续时间。": "Invoca uma tempestade de almas que dilacera os alvos, causando dano de Corte e Gelo. Abater alvos estende a duração.",
+ "死亡之手冲击目标，造成冰冷伤害，并降低目标暴击值和战技速度。": "A Mão da Morte golpeia o alvo, causando dano de Gelo e reduzindo o Valor Crítico e a Velocidade Marcial do alvo.",
+ "使用秘制灵药，治疗目标生命，并提升生命坚韧。": "Usa um elixir secreto, curando a Vida do alvo e aumentando a Tenacidade de Vida."
 }
