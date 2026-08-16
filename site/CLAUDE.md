@@ -21,6 +21,16 @@ cliente e por quê:
   sem `.dark` class, sem script anti-flash, sem `@custom-variant dark`). Se um
   modo claro voltar a ser pedido, não existe mais infra nenhuma pronta pra isso —
   seria refeito do zero.
+- **Página `/guia`** (`src/pages/guia.astro`): o "Códice do Devoto", guia de
+  gameplay do jogo. É uma página própria, não uma seção da index, linkada no
+  Header e no Footer. O conteúdo vem de dados extraídos das tabelas internas do
+  jogo; o CSS é escopado na própria página e remapeado para os tokens de
+  `tokens.css` — não usa Tailwind, porque veio de um documento standalone. Se
+  precisar regerar, o gerador está fora do repo (era um script de sessão): edite
+  o `.astro` direto.
+- **`Header.astro` aceita `standalone`**: em páginas que não são a index, os
+  links de âncora viram absolutos (`/pathofidle-ptbr/#sobre`), senão não levariam
+  a lugar nenhum. O scroll-spy ignora links que não começam com `#`.
 - **Build sai em `../docs`** (`outDir` no `astro.config.mjs`), pra virar o
   conteúdo servido pelo GitHub Pages (Settings → Pages → branch `main` → `/docs`).
   `base: '/pathofidle-ptbr/'` está fixado pra esse path — se um domínio próprio

@@ -2,16 +2,30 @@
 // Header do projeto: esconde ao rolar pra baixo, reaparece ao rolar pra
 // cima, destaca o link da seção visível, e usa o MobileMenu (island) no
 // mobile. Nenhum link aponta para "#" — todos vão pra uma seção real.
+//
+// `standalone`: usar em páginas que NÃO são a index (ex: /guia). Os links
+// de âncora viram links absolutos pra index, senão não levariam a lugar
+// nenhum fora dela.
 import { Image } from 'astro:assets';
 import MobileMenu from '../islands/MobileMenu.tsx';
 import wordmark from '../../assets/logo/wordmark.png';
 
+interface Props {
+  standalone?: boolean;
+}
+
+const { standalone = false } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const hash = (h: string) => (standalone ? `${base}${h}` : h);
+
 const links = [
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Screenshots', href: '#screenshots' },
-  { label: 'Changelog', href: '#changelog' },
-  { label: 'Instalação', href: '#instalacao' },
-  { label: 'Contribuir', href: '#contribuir' },
+  { label: 'Sobre', href: hash('#sobre') },
+  { label: 'Screenshots', href: hash('#screenshots') },
+  { label: 'Changelog', href: hash('#changelog') },
+  { label: 'Instalação', href: hash('#instalacao') },
+  { label: 'Contribuir', href: hash('#contribuir') },
+  { label: 'Guia', href: `${base}guia/` },
 ];
 
 const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/latest';
@@ -19,7 +33,7 @@ const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/lates
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-transform duration-300 border-b border-transparent">
   <div class="container-wide flex items-center justify-between h-20">
-    <a href="#top" class="flex items-center gap-3">
+    <a href={standalone ? base : '#top'} class="flex items-center gap-3">
       <Image src={wordmark} alt="Path of Idle" class="h-8 w-auto" widths={[400, 700, 1100]} sizes="260px" format="png" />
       <small class="font-sans italic text-sm text-text-soft border-l border-border pl-3">tradução pt&#8209;br</small>
     </a>
@@ -75,27 +89,32 @@ const RELEASES_URL = 'https://github.com/xXSirius/pathofidle-ptbr/releases/lates
     }, { passive: true });
     onScroll();
 
-    // destaca o link da seção visível
+    // destaca o link da seção visível.
+    // Só links de âncora entram aqui: os que apontam pra outra página (ex:
+    // /guia/) não são seletores CSS válidos e quebrariam o querySelector.
     var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav-link]'));
-    var sections = navLinks
-      .map(function (a) { return document.querySelector(a.getAttribute('href')); })
-      .filter(Boolean);
+    var pairs = [];
+    navLinks.forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      if (href.charAt(0) !== '#') return;
+      var section = document.querySelector(href);
+      if (section) pairs.push({ link: a, section: section });
+    });
 
-    if ('IntersectionObserver' in window && sections.length) {
+    if ('IntersectionObserver' in window && pairs.length) {
       var observer = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
-            var link = navLinks[sections.indexOf(entry.target)];
-            if (!link) return;
-            if (entry.isIntersecting) {
-              navLinks.forEach(function (l) { l.classList.remove('text-secondary'); });
-              link.classList.add('text-secondary');
-            }
+            if (!entry.isIntersecting) return;
+            var match = pairs.filter(function (p) { return p.section === entry.target; })[0];
+            if (!match) return;
+            navLinks.forEach(function (l) { l.classList.remove('text-secondary'); });
+            match.link.classList.add('text-secondary');
           });
         },
         { rootMargin: '-40% 0px -50% 0px' }
       );
-      sections.forEach(function (s) { observer.observe(s); });
+      pairs.forEach(function (p) { observer.observe(p.section); });
     }
   })();
 </script>

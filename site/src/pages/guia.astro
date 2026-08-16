@@ -1,0 +1,1140 @@
+---
+// Guia de gameplay do jogo — pagina propria, linkada no Header e no Footer.
+// O conteudo vem de dados extraidos das tabelas internas do jogo; o estilo
+// usa os tokens do site (tokens.css) para nao destoar da landing.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Códice do Devoto | Guia de Path of Idle: Old Gods Rising em português"
+  description="Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão e as 39 builds oficiais — tudo extraído das tabelas internas do jogo."
+  keywords="path of idle guia, path of idle build, path of idle português, path of idle old gods rising dicas, path of idle classes"
+  ogTitle="Códice do Devoto — Guia de Path of Idle em português"
+  ogDescription="Classes, mecânicas, maestrias, conjuntos e as 39 builds oficiais, extraídos dos dados do jogo."
+  canonical={`https://xxsirius.github.io${base}guia/`}
+>
+  <Header standalone />
+
+  <main id="main-content" tabindex="-1">
+<div class="guia" id="top"><div class="shell">
+<nav class="toc">
+  <div class="brand serif">Códice do Devoto</div>
+  <div class="links">
+    <div class="grp">Entendendo o jogo</div>
+    <a href="#basico">Como o jogo funciona</a>
+    <a href="#times">Adorador, Devotos e times</a>
+    <a href="#rotina">Rotina do dia a dia</a>
+    <div class="grp">As regras que decidem tudo</div>
+    <a href="#prioridade">Prioridade de conjuração</a>
+    <a href="#mecanicas">Impulsos e Aflições</a>
+    <a href="#estados">Estados e Reserva</a>
+    <div class="grp">Personagem</div>
+    <a href="#prisao">Conseguir bons Devotos</a>
+    <a href="#classes">As seis classes</a>
+    <a href="#maestrias">Maestrias</a>
+    <div class="grp">Equipamento</div>
+    <a href="#slots">Os 8 espaços</a>
+    <a href="#equip">Raridades e melhorias</a>
+    <a href="#conjuntos">Conjuntos</a>
+    <div class="grp">Estratégia</div>
+    <a href="#builds-como">Usar build pronta?</a>
+    <a href="#builds">As 39 builds</a>
+    <a href="#mundo">Capítulos e mundo</a>
+    <a href="#cidade">A cidade</a>
+    <a href="#craque">Como ficar craque</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Path of Idle: Old Gods Rising</div>
+  <h1 class="serif">Códice do Devoto</h1>
+  <p class="lede">Guia completo em português, extraído direto das tabelas internas do jogo. Escrito para quem está começando agora e para consultar quando você já for veterano.</p>
+  <div class="facts">
+    <div class="fact"><div class="n">6</div><div class="l">Classes</div></div>
+    <div class="fact"><div class="n">100</div><div class="l">Nível máximo</div></div>
+    <div class="fact"><div class="n">20</div><div class="l">Capítulos</div></div>
+    <div class="fact"><div class="n">39</div><div class="l">Builds oficiais</div></div>
+    <div class="fact"><div class="n">72</div><div class="l">Maestrias</div></div>
+    <div class="fact"><div class="n">18</div><div class="l">Conjuntos</div></div>
+  </div>
+</header>
+
+<section id="basico">
+  <h2 class="serif"><span class="num">01</span>Como o jogo funciona</h2>
+  <p class="sub">Se você vem de RPG de ação normal, a primeira coisa a desaprender: aqui você não controla o combate.</p>
+
+  <p>Path of Idle é um <b>ARPG idle</b>. Você não clica em habilidade, não desvia, não mira. Seus personagens lutam sozinhos, seguindo uma lógica automática. O que você faz é <b>montar a máquina</b>: escolher personagens, habilidades, equipamento e melhorias. Depois é só assistir — ou fechar o jogo e voltar depois, porque ele acumula recompensas offline.</p>
+
+  <p>Isso muda o peso das decisões. Num ARPG comum, um jogador habilidoso compensa uma build ruim. Aqui não existe essa compensação: <b>a build é o jogo inteiro</b>. Por isso este guia gasta tanto tempo em regras que parecem detalhe — são elas que separam um personagem que trava no capítulo 8 de um que atravessa o 20.</p>
+
+  <h3>O ciclo central</h3>
+  <p>Você avança pela <span class="term">Campanha</span>, dividida em 20 capítulos. Cada capítulo tem vários locais; quando você limpa todos, libera o <span class="term">Chefe</span>. Enquanto isso, os recursos que caem vão sendo investidos na <span class="term">cidade</span>, que é onde mora o poder permanente.</p>
+
+  <div class="tip">
+    <b>Regra de ouro logo de cara:</b> o Chefe de cada capítulo <b>sempre</b> derruba uma peça de Conjunto, e os locais de tesouro <b>sempre</b> derrubam um Lendário — mas o tesouro só pode ser desafiado <b>uma vez</b>. Faça o chefe assim que liberar; é a sua fonte confiável das peças que realmente importam.
+  </div>
+
+  <h3>As quatro atividades</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Campanha</h4><p style="margin:0;font-size:.92rem">A progressão principal. Libera capítulos, sobe o teto de nível e gera a maior parte dos recursos e equipamentos.</p></div>
+    <div class="card"><h4>Torre Divina</h4><p style="margin:0;font-size:.92rem">Aumenta <b>permanentemente</b> as recompensas de recurso da Campanha. Cada andar dá Fragmentos de Alma. A Câmara de Audiências dá um efeito de Divindade válido só naquele andar.</p></div>
+    <div class="card"><h4>Exploração</h4><p style="margin:0;font-size:.92rem">A torneira que você aponta: escolhe o tipo de ilha e vai atrás do recurso específico que está faltando.</p></div>
+    <div class="card"><h4>Perdição (Doom)</h4><p style="margin:0;font-size:.92rem">Conteúdo de fim de jogo, com modificadores próprios e estágios dedicados.</p></div>
+  </div>
+
+  <div class="tip">
+    <b>Priorize a Torre cedo.</b> O bônus dela é permanente e composto — cada hora sem subi-la é uma hora em que todo o resto rende menos. Dá para ir direto no chefe do andar, mas sem o efeito de Divindade a luta é bem mais dura.
+  </div>
+</section>
+
+<section id="times">
+  <h2 class="serif"><span class="num">02</span>Adorador, Devotos e times</h2>
+  <p class="sub">Aqui mora a confusão nº 1 de quem começa: o jogo tem duas coisas diferentes que parecem a mesma.</p>
+
+  <div class="card">
+    <div class="kw"><dt>Adorador</dt><dd><b>É você.</b> O nível no canto superior direito da tela — sua conta, o culto que você lidera. O teto dele é <b>5 × o número do capítulo</b> (no capítulo 7, teto 35).</dd></div>
+    <div class="kw"><dt>Devoto</dt><dd><b>São os personagens.</b> Cada um que você tira da Prisão é um Devoto, com classe, raridade, nível, habilidades e equipamento próprios. É quem efetivamente luta.</dd></div>
+  </div>
+
+  <div class="tip new">
+    <b>Nota sobre a tradução:</b> no inglês original esses termos são <i>Worshiper</i> e <i>Godsworn</i>. Até a v1.3.2 da tradução PT-BR os dois apareciam como "Devoto", o que tornava frases como <i>"subir o nível do Devoto aumenta o número máximo de Devotos"</i> incompreensíveis. A partir da <b>v1.3.3</b> estão separados: <b>Adorador</b> (você) e <b>Devoto</b> (personagens). Se no seu jogo ainda aparece "Devoto" nos dois lugares, atualize a tradução.
+  </div>
+
+  <p>Subir o nível de <b>Adorador</b> faz duas coisas: aumenta <b>quantos Devotos você pode ter</b> ao mesmo tempo e melhora as recompensas offline. O limite começa em 5 Devotos e chega a 25 no nível 100 (ganha +1 a cada 5 níveis).</p>
+
+  <h3>Os três times</h3>
+  <p>Você não joga com um personagem — joga com <b>times de 3 Devotos</b>, e pode ter <b>três times</b> rodando aventuras diferentes ao mesmo tempo:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Time</th><th>Quando libera</th><th class="num">Devotos</th></tr></thead>
+      <tbody>
+        <tr><td><b>Time I</b></td><td>Desde o início</td><td class="num">3</td></tr>
+        <tr><td><b>Time II</b></td><td>Capítulo <b>4</b></td><td class="num">3</td></tr>
+        <tr><td><b>Time III</b></td><td>Capítulo <b>10</b></td><td class="num">3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px">Ou seja: no fim você tem <b>9 Devotos em campo</b>, em três frentes independentes — um time na Campanha, outro na Torre, outro na Exploração.</p>
+
+  <h3>Como montar um time de 3</h3>
+  <p>Dentro do time existe <b>posição</b>: há um Devoto "da frente" e os de trás. Isso é mecânico, não cosmético — várias habilidades e afixos falam explicitamente em "aliado da frente":</p>
+  <div class="card">
+    <div class="kw"><dt>Dano transferido</dt><dd>Vários afixos transferem parte do dano sofrido <b>para o aliado da frente</b> (de 12% a 43%, dependendo do afixo).</dd></div>
+    <div class="kw"><dt>Escudos</dt><dd>Habilidades como Barreira de Gelo aplicam escudo <b>no aliado da frente</b> especificamente.</dd></div>
+    <div class="kw"><dt>Buffs de área</dt><dd>Efeitos como Guarda de Honra atingem "os três aliados mais à frente".</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>Regra prática de composição:</b> ponha o mais resistente na frente — normalmente o <b>Guerreiro</b> (placa e o maior crescimento de Vida do jogo) ou o <b>Clérigo</b> (também placa). Atrás vão os frágeis de dano (Mago, Sacerdote). O time clássico que funciona: <b>1 que aguenta pancada + 1 que dá dano + 1 de suporte/auras</b>.
+  </div>
+
+  <p>E vale muito ter times <b>especializados</b>, sim. Como as <b>Auras</b> e os buffs de "todos os aliados" só valem dentro do time, juntar personagens que se reforçam rende mais do que espalhar. Especializações que fazem sentido:</p>
+  <div class="card">
+    <div class="kw"><dt>Time de avanço</dt><dd>O mais forte, com o melhor equipamento, empurrando a Campanha para abrir capítulo — que é o que sobe o teto de nível de todo mundo.</dd></div>
+    <div class="kw"><dt>Time de recurso</dt><dd>Não precisa ser forte, só precisa aguentar. Fica na Exploração farmando o recurso que está te travando.</dd></div>
+    <div class="kw"><dt>Time de Torre</dt><dd>A Torre tem inimigos com padrões próprios. Um time montado com as resistências certas sobe andar que o time de avanço não sobe.</dd></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Cuidado com o erro comum:</b> não distribua seus melhores itens entre os três times "para deixar todos médios". Concentre no time de avanço — é ele que abre capítulo, e abrir capítulo sobe o teto de nível dos <b>nove</b> Devotos. Times médios travam todos juntos.
+  </div>
+</section>
+
+<section id="rotina">
+  <h2 class="serif"><span class="num">03</span>Rotina do dia a dia</h2>
+  <p class="sub">A sensação de "tem coisa demais" some quando você percebe que quase tudo pode ser automatizado, e que só existem cinco decisões que pedem sua cabeça.</p>
+
+  <h3>Passo 1 — Configure uma vez e esqueça</h3>
+  <div class="card">
+    <div class="kw"><dt>Filtro recomendado</dt><dd>Nas configurações de venda automática, ative as <b>recomendações de filtro</b>. O jogo passa a ajustar sozinho o que vender <b>conforme o capítulo</b>. É a única coisa que resolve a bagunça de inventário de vez.</dd></div>
+    <div class="kw"><dt>Batalha Automática</dt><dd>Destrava depois do primeiro capítulo. Canto superior direito do espaço de aventura.</dd></div>
+    <div class="kw"><dt>Parar ao morrer</dt><dd>Ative nos <b>dois</b> lugares (desafio e Exploração). O jogo marca como recomendado — sem isso você fica num laço de derrotas sem perceber.</dd></div>
+    <div class="kw"><dt>Voltar ao capítulo</dt><dd>"Retornar ao capítulo máximo ao terminar" a Torre e a Exploração. Evita o time ficar parado.</dd></div>
+    <div class="kw"><dt>Avanço automático</dt><dd>Auto-avançar estágio, auto-chefe e auto-próximo capítulo.</dd></div>
+  </div>
+  <div class="tip"><b>Se fizer só uma coisa daqui:</b> ative o filtro recomendado de venda.</div>
+
+  <h3>Passo 2 — O ciclo de cada sessão</h3>
+  <div class="card">
+    <ol class="ladder">
+      <li><b>Recolha o offline</b>Tem teto de horas — passou disso, para de acumular. Primeira coisa ao abrir.</li>
+      <li><b>Esvazie a mochila</b>Abra os baús (segure o clique direito para abrir rápido). Com o filtro ligado, o lixo já sai vendido sozinho.</li>
+      <li><b>Mercado</b>Veja os <b>Pedidos</b>: pedem peça de qualidade e parte específica, pagam em recursos raros, e buscam sozinhos na mochila e no Armazém.</li>
+      <li><b>Prisão</b>Atualize procurando raridade alta — mas leia a seção 07 antes, tem regra importante aqui.</li>
+      <li><b>Templo</b>Gaste Sangue em Bênçãos. Cada uma tem 4% de chance de dar um ponto de Talento.</li>
+      <li><b>Oficina</b>Forje e refine <b>só o que for definitivo</b>. Recurso gasto em peça de transição é recurso perdido.</li>
+      <li><b>Estela</b>Cheque as tarefas de estágio — completá-las libera melhorias maiores nos outros prédios.</li>
+      <li><b>Deixe rodando</b>Distribua os times: avanço na Campanha, os outros na Torre e na Exploração.</li>
+    </ol>
+  </div>
+
+  <h3>Passo 3 — O que guardar e o que vender</h3>
+  <p>Esta é a regra que o próprio filtro do jogo usa. Sendo <b>T</b> o teto de nível do seu capítulo (5 × capítulo):</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Raridade</th><th>Vender abaixo de</th><th>Exceção — sempre guardar</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Comum</b></td><td>nível <b>T − 7</b></td><td>Com <b>3 encaixes</b></td></tr>
+        <tr><td style="color:#2B6FFF"><b>Refinado</b></td><td>nível <b>T − 12</b></td><td>Com <b>2 encaixes</b> ou <b>2 afixos Excelentes</b></td></tr>
+        <tr><td style="color:#E5B426"><b>Raro</b></td><td>nível <b>T − 17</b></td><td>Com <b>2 afixos Excelentes</b> ou <b>3+ Raros</b></td></tr>
+        <tr><td style="color:#D96016"><b>Lendário</b></td><td colspan="2">Nunca vender automaticamente</td></tr>
+        <tr><td style="color:#8DC025"><b>Conjunto</b></td><td colspan="2">Nunca vender automaticamente</td></tr>
+        <tr><td style="color:#1DC693"><b>Único</b></td><td colspan="2">Nunca vender automaticamente</td></tr>
+        <tr><td style="color:#be212b"><b>Mítico</b></td><td colspan="2">Nunca vender automaticamente</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip warn">
+    <b>A exceção mais importante:</b> equipamento <b>Comum com 3 encaixes</b> é a <b>única</b> matéria-prima das <b>Palavras Rúnicas</b> — e Palavra Rúnica é o que dá habilidade <b>de outra classe</b> ao seu Devoto. O filtro oficial marca só "0, 1 e 2 encaixes" de propósito, poupando os de 3. Se você configurar na mão e marcar "3", vende sem perceber a coisa mais valiosa que um item branco pode ser.
+  </div>
+
+  <h3>Passo 4 — Por onde os recursos entram e saem</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Ouro</h4><p style="margin:0;font-size:.92rem">Campanha e Exploração → enfeitiçar prisioneiros, comprar no Mercado, forjar na Oficina.</p></div>
+    <div class="card"><h4>Sangue dos Deuses Antigos</h4><p style="margin:0;font-size:.92rem">Campanha e Exploração → abençoar Devotos no Templo, atormentar prisioneiros.</p></div>
+    <div class="card"><h4>Osso</h4><p style="margin:0;font-size:.92rem">Tarefas da Estela e Exploração → Reforma de prédios, Refino na Oficina, remodelar Golem.</p></div>
+    <div class="card"><h4>Fragmentos de Alma</h4><p style="margin:0;font-size:.92rem">Andares da Torre Divina → Infundir classes.</p></div>
+  </div>
+
+  <div class="tip"><b>Percepção:</b> só sobe com item <b>Raro para cima</b> (Raro dá 10, Lendário/Conjunto/Único 50, Mítico 200). Comum e Refinado dão <b>zero</b> — pode deixar o filtro vender à vontade.</div>
+
+  <h3>As cinco coisas que pedem sua cabeça</h3>
+  <div class="card">
+    <div class="kw"><dt>Build</dt><dd>Qual conjunto perseguir e quais habilidades entram.</dd></div>
+    <div class="kw"><dt>Ordem de melhoria</dt><dd>Qual prédio subir primeiro com recurso limitado.</dd></div>
+    <div class="kw"><dt>Refinar ou não</dt><dd>Lendário → Mítico <b>destrói o item</b> se falhar.</dd></div>
+    <div class="kw"><dt>Prisioneiro</dt><dd>Quando vale gastar para subir a raridade (seção 07).</dd></div>
+    <div class="kw"><dt>Quando parar</dt><dd>Se a Supressão de Nível começar a doer, volte e suba o teto.</dd></div>
+  </div>
+</section>
+
+<section id="prioridade">
+  <h2 class="serif"><span class="num">04</span>Prioridade de conjuração</h2>
+  <p class="sub">A mecânica mais importante do jogo, e a que menos gente entende. Como a IA decide qual habilidade usar.</p>
+
+  <p>Como você não controla o combate, existe uma ordem fixa: o Devoto sempre tenta usar primeiro a habilidade de <b>maior prioridade</b> que estiver pronta. A ordem é sempre esta:</p>
+
+  <div class="card">
+    <ol class="ladder">
+      <li><b>Suporte</b>Cura, escudos, invocação de aliados e lacaios. <span style="color:var(--t-text-soft)">Prioridade máxima — sai primeiro, sempre.</span></li>
+      <li><b>Utilidade</b>Buffs em aliados e debuffs em inimigos.</li>
+      <li><b>Maestria</b>As habilidades de dano pesado. <span style="color:var(--t-text-soft)">É aqui que mora o seu dano.</span></li>
+      <li><b>Básica</b>O "ataque comum". <span style="color:var(--t-text-soft)">Prioridade mínima — só sai quando nada acima está disponível.</span></li>
+    </ol>
+  </div>
+
+  <div class="tip warn">
+    <b>A consequência que quebra builds:</b> cada habilidade de prioridade alta que você adiciona <b>rouba tempo</b> da sua Maestria. Se encher a barra de Suporte e Utilidade, a habilidade que deveria matar as coisas quase nunca sai. Essa é a causa nº 1 de "minha build não dá dano".
+  </div>
+
+  <p>Monte assim: <b>uma</b> Maestria como fonte principal de dano, <b>uma</b> Básica escolhida pelo <b>efeito</b> que gera (Ânimo, Rapidez ou Ruptura — não pelo dano dela), e só as Utilidades/Suportes cujo efeito realmente multiplica a build. Se você não sabe explicar em uma frase por que uma habilidade está ali, ela provavelmente está atrapalhando.</p>
+
+  <div class="tip"><b>Só uma Básica.</b> As três habilidades no rodapé da tela de Talento são fixas como Básicas, e você só pode ter <b>uma</b> ativa.</div>
+
+  <h3>Marcial × Magia</h3>
+  <p>Existe um segundo eixo, paralelo ao de prioridade: toda habilidade é <b>Marcial</b> (técnica de combate) ou <b>Magia</b> (conjuração). Isso importa porque os atributos são separados por eixo — <b>Velocidade Marcial</b> e <b>Velocidade de Magia</b> são estatísticas diferentes.</p>
+  <div class="tip warn"><b>Desperdício mais comum do jogo:</b> usar item de "Dano de Magia" numa build Marcial. Não faz absolutamente nada.</div>
+</section>
+
+<section id="mecanicas">
+  <h2 class="serif"><span class="num">05</span>Impulsos e Aflições</h2>
+  <p class="sub">Dois sistemas de acúmulo em que quase toda build boa se apoia. Ambos: máximo de 5 acúmulos, 4 segundos cada, com duração contada separadamente por acúmulo.</p>
+
+  <p>"Acúmulo" (ou <i>stack</i>) é uma camada de um efeito. Se uma habilidade dá 1 acúmulo de Ânimo e você a usa cinco vezes seguidas, você tem 5 — o máximo. Como cada um dura 4 segundos <b>por conta própria</b>, manter o teto exige aplicar de forma constante, e não tudo de uma vez.</p>
+
+  <h3>Impulsos <span class="pill">bônus em você</span></h3>
+  <div class="card">
+    <div class="kw"><dt>Ânimo</dt><dd>+5% Todo Dano e +5% Defesa Física por acúmulo. <span style="color:var(--t-text-soft)">No teto: +25% de dano.</span></dd></div>
+    <div class="kw"><dt>Rapidez</dt><dd>+5% Velocidade Marcial e +5% Valor de Esquiva por acúmulo.</dd></div>
+    <div class="kw"><dt>Fortitude</dt><dd>+3% Atributos Primários (Força, Destreza, Inteligência) e +6% Resistência Crítica por acúmulo.</dd></div>
+  </div>
+
+  <h3>Aflições <span class="pill">penalidades no inimigo</span></h3>
+  <div class="card">
+    <div class="kw"><dt>Ruptura</dt><dd>−10% Toda Defesa do alvo e +5% Dano Crítico sofrido, por acúmulo. <span style="color:var(--t-text-soft)">No teto: −50% de defesa.</span></dd></div>
+    <div class="kw"><dt>Lentidão</dt><dd>−6% Velocidade de Movimento e −5% Velocidade de Habilidade do alvo.</dd></div>
+    <div class="kw"><dt>Ferimento</dt><dd>−10% Cura recebida e −10% Regeneração de Vida do alvo.</dd></div>
+    <div class="kw"><dt>Estilhaçar</dt><dd>Reduz a eficácia do Escudo do alvo e acelera o decaimento dele.</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>Ruptura é quase obrigatória.</b> Cinco acúmulos tiram <b>metade</b> da defesa do alvo — nenhum item do jogo dá um multiplicador desse tamanho tão barato. Qualquer build de dano melhora encaixando uma fonte de Ruptura. Guerreiro tem Gancho Cruel, Mago tem Onda de Choque, e o Sacerdote tem na própria Básica (Assalto Gélido).
+  </div>
+
+  <h3>Dissipar e Expurgo</h3>
+  <div class="card">
+    <div class="kw"><dt>Dissipar</dt><dd>Remove todos os Buffs do alvo — <b>exceto Impulsos</b>.</dd></div>
+    <div class="kw"><dt>Expurgo</dt><dd>Remove todos os Debuffs — <b>exceto Aflições</b>.</dd></div>
+  </div>
+  <p style="margin-top:12px">Ou seja: Impulsos e Aflições <b>não podem ser limpos</b>. É por isso que builds de acúmulo são tão confiáveis contra chefes, que costumam ter remoção de efeito.</p>
+</section>
+
+<section id="estados">
+  <h2 class="serif"><span class="num">06</span>Estados e Reserva</h2>
+  <p class="sub">Quatro estados condicionam dezenas de afixos — e existe um truque de Reserva que transforma um deles em permanente.</p>
+
+  <p>Antes de tudo: <b>Reserva</b> é quando algo (tipicamente uma Aura) ocupa uma fatia fixa da sua Vida ou Mana enquanto está ativo. Essa fatia fica indisponível — como se a sua barra tivesse encolhido.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Estado</th><th>Condição padrão</th><th>O que a Reserva faz</th></tr></thead>
+      <tbody>
+        <tr><td><b>Saudável</b></td><td>Vida acima de 70%</td><td>Reservando mais de 30% da Vida, você <b>nunca</b> conta como Saudável.</td></tr>
+        <tr><td><b>Ensanguentado</b></td><td>Vida abaixo de 30%</td><td>Reservando mais de 70%, você conta como Ensanguentado <b>o tempo todo</b>.</td></tr>
+        <tr><td><b>Cheio</b></td><td>Mana acima de 70%</td><td>Reservando mais de 30% da Mana, nunca conta como Cheio.</td></tr>
+        <tr><td><b>Esgotado</b></td><td>Mana abaixo de 30%</td><td>Reservando mais de 70%, conta como Esgotado permanentemente.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>O truque das builds Ensanguentadas.</b> Existem muitos afixos do tipo "enquanto Ensanguentado, +X" e "crítico contra alvos Ensanguentados". Normalmente aproveitá-los exigiria andar com a vida baixa — perigoso. Mas reservando mais de 70% da Vida você fica <b>permanentemente</b> Ensanguentado <b>com a barra cheia</b>, ligando todos esses afixos sem risco. É exatamente assim que as builds <i>Lâmina Ensanguentada</i> e <i>Golpe Ensanguentado</i> funcionam.
+  </div>
+
+  <h3>Auras, Aliados e Lacaios</h3>
+  <div class="card">
+    <div class="kw"><dt>Aura</dt><dd>Ativa sozinha em combate e dá bônus contínuo ao time. Consome Vida ou Mana como <b>reserva</b> e <b>não acumula</b> com outra igual.</dd></div>
+    <div class="kw"><dt>Aliado</dt><dd>Unidade forte que já começa em campo, sem limite de duração — mas <b>não revive</b> se morrer.</dd></div>
+    <div class="kw"><dt>Lacaio</dt><dd>Invocado por habilidade. Fraco individualmente, com duração e limite de quantidade.</dd></div>
+  </div>
+  <p style="margin-top:12px">Aliados e Lacaios <b>herdam</b> parte dos seus atributos. Por isso uma build de Aliado escala com o <b>seu</b> Ataque Físico, não com o dele — equipar você é equipar o bicho.</p>
+</section>
+
+<section id="prisao">
+  <h2 class="serif"><span class="num">07</span>Conseguir bons Devotos</h2>
+  <p class="sub">A raridade do Devoto é a decisão que mais compõe no jogo inteiro — e ela não depende de sorte do jeito que parece.</p>
+
+  <p>Todo Devoto vem da <b>Prisão</b>: você atualiza a lista de prisioneiros e usa <b>Enfeitiçar</b> (custa Ouro) para converter um em Devoto. O que quase ninguém percebe é o quanto a raridade muda:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Raridade</th><th class="num">Pontos de Talento</th><th class="num">Crescimento por nível</th><th class="num">Atributo inicial</th><th class="num">Traços lendários</th><th class="num">Custo</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Comum</b></td><td class="num">1</td><td class="num">200</td><td class="num">1000</td><td class="num">0</td><td class="num">1×</td></tr>
+        <tr><td style="color:#2B6FFF"><b>Refinado</b></td><td class="num">2</td><td class="num">250</td><td class="num">1250</td><td class="num">0</td><td class="num">2×</td></tr>
+        <tr><td style="color:#E5B426"><b>Raro</b></td><td class="num">3</td><td class="num">300</td><td class="num">1500</td><td class="num">1</td><td class="num">5×</td></tr>
+        <tr><td style="color:#D96016"><b>Lendário</b></td><td class="num">4</td><td class="num">350</td><td class="num">1750</td><td class="num">2</td><td class="num">12×</td></tr>
+        <tr><td style="color:#be212b"><b>Mítico</b></td><td class="num">5</td><td class="num">400</td><td class="num">2000</td><td class="num">3</td><td class="num">30×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Leia a coluna do crescimento.</b> Um Mítico ganha <b>o dobro</b> de atributo por nível de um Comum, e tem <b>5× mais pontos de Talento</b>. Como o teto é nível 100, isso não é "um pouco melhor" — é um personagem que vale por dois. Custa 30× mais Ouro, e ainda compensa: Ouro volta, 99 níveis de crescimento perdido não voltam.
+  </div>
+
+  <h3>Por que você só vê Comum e Refinado</h3>
+  <div class="tip warn">
+    <b>Não é azar.</b> Por padrão a Prisão <b>só produz Comum e Refinado</b> — está travado assim no código. Prisioneiro Raro ou melhor <b>não aparece</b> até você comprar a melhoria correspondente na <b>Reforma da Prisão</b>.
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Reforma</th><th class="num">Custo</th><th>Requisito</th><th class="num">Chance depois de liberado</th></tr></thead>
+      <tbody>
+        <tr><td><b>Prisioneiro Raro</b></td><td class="num">400</td><td>—</td><td class="num">~2,3%</td></tr>
+        <tr><td><b>Prisioneiro Lendário</b></td><td class="num">1.000</td><td>Raro liberado</td><td class="num">~0,26%</td></tr>
+        <tr><td><b>Prisioneiro Mítico</b></td><td class="num">2.200</td><td>Lendário liberado</td><td class="num">~0,02%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px"><b>Isso responde "quando começam a vir Devotos acima de Raro":</b> quando você comprar a Reforma. E olhando as chances, fica claro que <b>esperar cair um Mítico não é plano</b> — 0,02% é um em cinco mil atualizações. Existem Reformas que aumentam as chances altas em +30% a +50%, mas mesmo assim Mítico continua fora do alcance por sorte pura.</p>
+
+  <h3>O caminho real: Distorção</h3>
+  <p>É aqui que a Prisão fica interessante. Além de Enfeitiçar, existem duas operações:</p>
+  <div class="card">
+    <div class="kw"><dt>Tormento</dt><dd>Gasta <b>Sangue</b> para <b>re-sortear o crescimento de atributo primário</b> do Devoto — ou seja, em qual atributo ele vai ficar bom.</dd></div>
+    <div class="kw"><dt>Distorção</dt><dd>Gasta recurso para tentar <b>subir a raridade</b> em um degrau. É o caminho de verdade para Lendário e Mítico.</dd></div>
+  </div>
+
+  <div class="scroll" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Distorção</th><th class="num">Chance de subir</th><th class="num">Custo relativo</th></tr></thead>
+      <tbody>
+        <tr><td>Comum → Refinado</td><td class="num">100%</td><td class="num">1×</td></tr>
+        <tr><td>Refinado → Raro</td><td class="num">40%</td><td class="num">2×</td></tr>
+        <tr><td>Raro → Lendário</td><td class="num">20%</td><td class="num">4×</td></tr>
+        <tr><td>Lendário → Mítico</td><td class="num">10%</td><td class="num">8×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px">Ou seja: você <b>fabrica</b> o Devoto bom em vez de esperar por ele. Pega um barato e vai distorcendo. A Distorção também respeita o teto liberado na Reforma — sem a Reforma de Mítico comprada, nenhuma distorção passa de Lendário.</p>
+
+  <div class="tip warn">
+    <b>O risco:</b> Tormento e Distorção mexem na <b>Convicção</b> do prisioneiro (barra de 0 a 100), e os extremos são definitivos:
+    <br>• <b>Convicção 0 = Colapso</b> — o prisioneiro é <b>perdido</b>, não pode mais ser manipulado nem enfeitiçado.
+    <br>• <b>Convicção 100 = Frenesi</b> — trava as operações, mas o <b>custo de Enfeitiçar cai pela metade</b>.
+    <br><br>Existem Reformas que dão 10% e 15% de chance da Convicção <b>não mudar</b> — são elas que tornam esse jogo seguro. Compre-as antes de investir pesado num prisioneiro.
+  </div>
+
+  <div class="tip">
+    <b>Truque do Frenesi:</b> como o Frenesi corta o custo de Enfeitiçar pela metade e trava as operações, a ordem certa é: <b>primeiro</b> distorça e atormente até estar satisfeito, <b>depois</b> (se a Convicção estiver perto de 100) empurre até o Frenesi e recrute pela metade do preço.
+  </div>
+
+  <h3>Decida a build antes de recrutar</h3>
+  <div class="tip new">
+    <b>Habilidades Preferidas.</b> Você pode marcar habilidades de talento como <b>preferidas</b>, e os prisioneiros passam a ter <b>chance maior de já nascer com elas</b>. Quantas você pode marcar depende do <b>nível da Estela</b>.
+  </div>
+  <p>Isso inverte a ordem certa de jogar: <b>primeiro</b> escolha a build, <b>marque as habilidades dela</b>, e <b>só então</b> comece a atualizar a Prisão. Sem isso, você recruta no escuro e torce.</p>
+</section>
+
+<section id="classes">
+  <h2 class="serif"><span class="num">08</span>As seis classes</h2>
+  <p class="sub">Cada classe tem 3 habilidades Básicas (escolhe uma) e 12 de árvore. Um detalhe que engana muita gente: as duas armas listadas não são alternativas — são <b>dois espaços simultâneos</b>.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Classe</th><th>Arma 1 + Arma 2</th><th>Armadura</th><th class="num">Vida/nível</th><th class="num">Mana/nível</th><th>Perfil</th></tr></thead>
+      <tbody>
+        <tr><td><b>Guerreiro</b></td><td>Martelo + Espada</td><td>Placa</td><td class="num">50–60</td><td class="num">40–50</td><td>Mais resistente — o da frente</td></tr>
+        <tr><td><b>Caçador</b></td><td>Arco + Adaga</td><td>Couro</td><td class="num">45–55</td><td class="num">45–55</td><td>Esquiva, feras e execução</td></tr>
+        <tr><td><b>Mago</b></td><td>Cajado + Tomo</td><td>Tecido</td><td class="num">40–50</td><td class="num">50–60</td><td>Maior teto de dano, mais frágil</td></tr>
+        <tr><td><b>Clérigo</b></td><td>Martelo + Cajado</td><td>Placa</td><td class="num">45–55</td><td class="num">45–55</td><td>Resistente, com auras e cura</td></tr>
+        <tr><td><b>Mercenário</b></td><td>Espada + Arco</td><td>Couro</td><td class="num">45–55</td><td class="num">45–55</td><td>Físico com muitas ativações</td></tr>
+        <tr><td><b>Sacerdote</b></td><td>Adaga + Tomo</td><td>Tecido</td><td class="num">45–55</td><td class="num">45–55</td><td>Totens e aflições — o mais técnico</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Para escolher a primeira classe:</b> o <b>Clérigo</b> é de longe o mais amigável — 6 das 7 builds oficiais dele têm dificuldade mínima, e ele usa placa. O <b>Sacerdote</b> é o oposto: 5 das 6 builds dele são as mais difíceis do jogo. Guerreiro e Mercenário ficam no meio.
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Guerreiro</h3><span class="cls-meta">Martelo + Espada · Placa — converte defesa em dano</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Golpe de Valor</b> <span class="tags">Marcial · Básico</span><span class="d">Dano de Impacto e Corte.</span></div>
+    <div class="skill"><b>Golpe Vigilante</b> <span class="tags">Marcial · Básico · Impulso</span><span class="d">Corte e ganha Ânimo. A base de qualquer build de acúmulo.</span></div>
+    <div class="skill"><b>Golpe Repressor</b> <span class="tags">Marcial · Básico · Debuff</span><span class="d">Impacto e reduz a Esquiva do alvo.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Golpe Carregado</b> <span class="tags">Maestria</span><span class="d">Crítico aumentado contra alvos com Ruptura.</span></div>
+    <div class="skill"><b>Golpe Final</b> <span class="tags">Maestria</span><span class="d">Consome Ânimo para causar dano extra.</span></div>
+    <div class="skill"><b>Corte de Fogo Furioso</b> <span class="tags">Maestria</span><span class="d">Consome Vida para causar Corte e Fogo.</span></div>
+    <div class="skill"><b>Gancho Cruel</b> <span class="tags">Utilidade · Aflição</span><span class="d">Puxa inimigos e aplica <b>Ruptura</b>.</span></div>
+    <div class="skill"><b>Golpe de Trovão</b> <span class="tags">Utilidade · Aflição</span><span class="d">Impacto e Raio, aplica Lentidão.</span></div>
+    <div class="skill"><b>Grito de Guerra Intimidador</b> <span class="tags">Utilidade · Debuff · Grito de Guerra</span><span class="d">Reduz Ataque Físico e Crítico do inimigo.</span></div>
+    <div class="skill"><b>Grito de Guerra Motivacional</b> <span class="tags">Utilidade · Buff · Grito de Guerra</span><span class="d">Aliados ganham Ataque Físico e Poder de Cura.</span></div>
+    <div class="skill"><b>Imunidade à Dor</b> <span class="tags">Utilidade · Buff</span><span class="d">Defesa Física e Resistência Crítica.</span></div>
+    <div class="skill"><b>Sangue Fervente</b> <span class="tags">Suporte · Contínuo</span><span class="d">Cura por segundo e imunidade a Ferimento.</span></div>
+    <div class="skill"><b>Guarda Arqueiro</b> <span class="tags">Suporte · Lacaio</span><span class="d">Invoca um arqueiro.</span></div>
+    <div class="skill"><b>Guarda de Ferro</b> <span class="tags">Suporte · Lacaio</span><span class="d">Invoca um guarda com martelo.</span></div>
+    <div class="skill"><b>Guarda de Honra</b> <span class="tags">Suporte · Buff</span><span class="d">Escudo e Resistência Física aos três aliados da frente.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Caçador</h3><span class="cls-meta">Arco + Adaga · Couro — esquiva, feras e execução</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Golpe do Raptor</b> <span class="tags">Marcial · Básico · Debuff</span><span class="d">Reduz resistência física. Reseta Desaparecer nas Sombras em algumas builds.</span></div>
+    <div class="skill"><b>Tiro Firme</b> <span class="tags">Marcial · Básico · Buff · Arquearia</span><span class="d">Perfuração e ganha velocidade de Básica.</span></div>
+    <div class="skill"><b>Arremesso de Lâmina Gélida</b> <span class="tags">Magia · Básico</span><span class="d">Perfuração e Gelo.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Tiro Perfurante</b> <span class="tags">Maestria · Arquearia</span><span class="d">Flechas perfurantes: Perfuração e Raio.</span></div>
+    <div class="skill"><b>Chuva de Flechas Gélidas</b> <span class="tags">Maestria · Arquearia</span><span class="d">Múltiplas ondas com Perfuração e Gelo.</span></div>
+    <div class="skill"><b>Bomba de Espinhos</b> <span class="tags">Maestria</span><span class="d">Quanto menor sua Vida, maior o dano.</span></div>
+    <div class="skill"><b>Lâmina Bumerangue</b> <span class="tags">Maestria</span><span class="d">Dano aumentado contra alvos Ensanguentados.</span></div>
+    <div class="skill"><b>Golpe Coordenado</b> <span class="tags">Maestria</span><span class="d">Aumenta a velocidade de habilidade do Aliado.</span></div>
+    <div class="skill"><b>Aproximação da Morte</b> <span class="tags">Utilidade · Aflição</span><span class="d">Inflige <b>Ferimento</b>.</span></div>
+    <div class="skill"><b>Fúria Selvagem</b> <span class="tags">Utilidade · Buff · Grito de Guerra</span><span class="d">Todos os ataques aumentados; Básicas roubam Vida.</span></div>
+    <div class="skill"><b>Aura de Golpe</b> <span class="tags">Utilidade · Aura</span><span class="d">Perfuração e Valor Crítico ao time.</span></div>
+    <div class="skill"><b>Desaparecer nas Sombras</b> <span class="tags">Suporte · Buff</span><span class="d">Cura, Esquiva e Expurgo em aliados próximos.</span></div>
+    <div class="skill"><b>Vento Leve</b> <span class="tags">Suporte · Buff · Contínuo</span><span class="d">Escudos contínuos e Destreza.</span></div>
+    <div class="skill"><b>Lobo Gélido Aliado</b> <span class="tags">Suporte · Aliado</span><span class="d">Invoca o lobo (Mordida e Garra Gélida).</span></div>
+    <div class="skill"><b>Aliado Urso Pardo</b> <span class="tags">Suporte · Aliado</span><span class="d">Invoca o urso (Golpe Brutal e Regeneração Furiosa).</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Mago</h3><span class="cls-meta">Cajado + Tomo · Tecido — maior teto de dano, menor de vida</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Bola de Fogo</b> <span class="tags">Magia · Básico</span><span class="d">Explode ao impacto. <b>Sempre acerta.</b></span></div>
+    <div class="skill"><b>Raio</b> <span class="tags">Magia · Básico</span><span class="d">Alvos aleatórios, com chance de Dissipar buffs.</span></div>
+    <div class="skill"><b>Espinho de Gelo</b> <span class="tags">Marcial · Básico</span><span class="d">Gelo em vários alvos e ganha Resistência a Gelo.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Impacto de Meteoro</b> <span class="tags">Maestria</span><span class="d">O bônus de Dano de Magia é <b>dobrado</b> aqui.</span></div>
+    <div class="skill"><b>Tempestade Elétrica</b> <span class="tags">Maestria</span><span class="d">Raios contínuos; o intervalo escala com Velocidade de Magia.</span></div>
+    <div class="skill"><b>Choque Elétrico</b> <span class="tags">Maestria</span><span class="d">Impacto e Raio no local alvo.</span></div>
+    <div class="skill"><b>Muralha de Fogo</b> <span class="tags">Maestria</span><span class="d">Fogo contínuo <b>ignorando a Defesa Elemental</b>.</span></div>
+    <div class="skill"><b>Espinhos Glaciais</b> <span class="tags">Maestria</span><span class="d">Dano Crítico escala com Resistência a Gelo.</span></div>
+    <div class="skill"><b>Nevasca</b> <span class="tags">Utilidade · Aflição</span><span class="d">Lanças de gelo com chance de Lentidão.</span></div>
+    <div class="skill"><b>Onda de Choque</b> <span class="tags">Utilidade · Aflição</span><span class="d">Repele e aplica <b>Ruptura</b>.</span></div>
+    <div class="skill"><b>Toque Gélido</b> <span class="tags">Utilidade · Debuff</span><span class="d">Reduz resistência a Gelo e velocidade de Magia.</span></div>
+    <div class="skill"><b>Infusão da Tempestade</b> <span class="tags">Utilidade · Buff</span><span class="d">Aumenta ataque elemental e dano de Raio.</span></div>
+    <div class="skill"><b>Aura de Brilhância</b> <span class="tags">Utilidade · Aura</span><span class="d">Regeneração de Mana e Duração de Buff ao time.</span></div>
+    <div class="skill"><b>Barreira de Gelo</b> <span class="tags">Suporte · Buff</span><span class="d">Escudo no aliado da frente e Resistência Elemental.</span></div>
+    <div class="skill"><b>Invocar Demônio de Fogo</b> <span class="tags">Suporte · Lacaio</span><span class="d"><b>Explode ao morrer.</b></span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Clérigo</h3><span class="cls-meta">Martelo + Cajado · Placa — a classe mais fácil de acertar</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Golpe Abençoado</b> <span class="tags">Marcial · Básico</span><span class="d">Impacto e cura a si mesmo.</span></div>
+    <div class="skill"><b>Julgamento Relâmpago</b> <span class="tags">Magia · Básico</span><span class="d">Arco elétrico nos inimigos à frente.</span></div>
+    <div class="skill"><b>Castigar</b> <span class="tags">Magia · Básico</span><span class="d">Fogo e Raio, reduz a Resistência Elemental.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Espada da Punição Divina</b> <span class="tags">Maestria</span><span class="d">Núcleo da build de Auras.</span></div>
+    <div class="skill"><b>Golpe de Chama Sagrada</b> <span class="tags">Maestria</span><span class="d">Fogo no alvo <b>e em você</b>, ignorando Defesa Elemental.</span></div>
+    <div class="skill"><b>Martelo do Julgamento</b> <span class="tags">Maestria</span><span class="d">Martelo giratório de Impacto.</span></div>
+    <div class="skill"><b>Escudo da Vingança</b> <span class="tags">Maestria</span><span class="d">Escudo voador: Impacto e Fogo.</span></div>
+    <div class="skill"><b>Fogo da Mente</b> <span class="tags">Maestria</span><span class="d">Fogo contínuo em vários alvos.</span></div>
+    <div class="skill"><b>Luz da Cegueira</b> <span class="tags">Utilidade · Debuff</span><span class="d">Reduz Esquiva e <b>Dissipa</b>.</span></div>
+    <div class="skill"><b>Aura de Foco</b> <span class="tags">Utilidade · Aura</span><span class="d">Defesa Elemental e Precisão Marcial.</span></div>
+    <div class="skill"><b>Aura de Chama</b> <span class="tags">Utilidade · Aura</span><span class="d">Dano e Resistência a Fogo.</span></div>
+    <div class="skill"><b>Aura de Raio</b> <span class="tags">Utilidade · Aura</span><span class="d">Dano e Resistência a Raio.</span></div>
+    <div class="skill"><b>Abrigo Divino</b> <span class="tags">Suporte · Buff</span><span class="d">Escudo e <b>3 acúmulos de Fortitude</b>.</span></div>
+    <div class="skill"><b>Raio Sagrado</b> <span class="tags">Suporte</span><span class="d">Orbe que cura aliados no caminho.</span></div>
+    <div class="skill"><b>Luz da Cura</b> <span class="tags">Suporte</span><span class="d">Cura <b>dobrada</b> em alvos Ensanguentados.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Mercenário</h3><span class="cls-meta">Espada + Arco · Couro — muitas ativações por segundo</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Onda de Choque</b> <span class="tags">Marcial · Básico · Buff</span><span class="d">Ganha Força. Aciona Vento da Morte no conjunto certo.</span></div>
+    <div class="skill"><b>Golpe das Sombras</b> <span class="tags">Marcial · Básico · Impulso</span><span class="d">Ganha 1 acúmulo de <b>Rapidez</b>.</span></div>
+    <div class="skill"><b>Flecha de Fogo</b> <span class="tags">Marcial · Básico · Arquearia</span><span class="d">Perfuração e Fogo.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Vento da Morte</b> <span class="tags">Maestria</span><span class="d">Redemoinho de Corte e Perfuração.</span></div>
+    <div class="skill"><b>Corte de Trovão Veloz</b> <span class="tags">Maestria</span><span class="d"><b>+1 corte a cada 2 acúmulos de Rapidez.</b></span></div>
+    <div class="skill"><b>Busca-Coração</b> <span class="tags">Maestria</span><span class="d">Perfuração com roubo de Vida.</span></div>
+    <div class="skill"><b>Golpe Duplo</b> <span class="tags">Maestria</span><span class="d">Dano extra se as <b>duas armas forem do mesmo tipo</b>.</span></div>
+    <div class="skill"><b>Fogo de Barragem</b> <span class="tags">Maestria · Arquearia</span><span class="d"><b>Crítico garantido</b> contra alvos sob Lentidão.</span></div>
+    <div class="skill"><b>Armadilha de Espinhos</b> <span class="tags">Utilidade · Aflição</span><span class="d">Aplica Lentidão.</span></div>
+    <div class="skill"><b>Marca da Morte</b> <span class="tags">Utilidade · Debuff</span><span class="d">Reduz Esquiva e Resistência a Perfuração.</span></div>
+    <div class="skill"><b>Grito de Batalha</b> <span class="tags">Utilidade · Buff · Grito de Guerra</span><span class="d">Cura, dano de Maestria e imunidade a Lentidão ao time.</span></div>
+    <div class="skill"><b>Aura Mortal</b> <span class="tags">Utilidade · Aura</span><span class="d">Ataque Físico e Crítico contra inimigos normais.</span></div>
+    <div class="skill"><b>Disparo Rápido</b> <span class="tags">Utilidade · Buff</span><span class="d">Velocidade de Arquearia — <b>perde Precisão</b>.</span></div>
+    <div class="skill"><b>Sentinela Balista</b> <span class="tags">Suporte · Lacaio</span><span class="d">Balista com flechas penetrantes.</span></div>
+    <div class="skill"><b>Estandarte da Luta</b> <span class="tags">Suporte · Impulso · Totem</span><span class="d">Escudo por segundo e Ânimo ao time.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Sacerdote</h3><span class="cls-meta">Adaga + Tomo · Tecido — a classe mais técnica</span></div>
+    <h4>Básicas (escolha uma)</h4>
+    <div class="skill"><b>Ferrão Zeloso</b> <span class="tags">Magia · Básico</span><span class="d">Perfuração e Fogo.</span></div>
+    <div class="skill"><b>Assalto Gélido</b> <span class="tags">Marcial · Básico · Aflição</span><span class="d">Aplica <b>Ruptura</b> já na Básica.</span></div>
+    <div class="skill"><b>Dreno de Alma</b> <span class="tags">Magia · Básico</span><span class="d">Dano de Gelo e restaura Mana.</span></div>
+    <h4>Árvore</h4>
+    <div class="skill"><b>Frio nos Ossos</b> <span class="tags">Maestria</span><span class="d">Lâminas ósseas: Perfuração e Gelo.</span></div>
+    <div class="skill"><b>Ceifar Alma</b> <span class="tags">Maestria</span><span class="d">Abater alvos estende a duração.</span></div>
+    <div class="skill"><b>Investida Gélida</b> <span class="tags">Maestria</span><span class="d">Penetração extra contra alvos com Ruptura.</span></div>
+    <div class="skill"><b>Pancada de Lava</b> <span class="tags">Maestria</span><span class="d">O bônus de Dano Marcial é <b>dobrado</b> aqui.</span></div>
+    <div class="skill"><b>Frasco de Estouro de Mana</b> <span class="tags">Maestria</span><span class="d">A quantidade cresce com a <b>Mana faltante</b>.</span></div>
+    <div class="skill"><b>Mão da Morte</b> <span class="tags">Utilidade · Debuff</span><span class="d">Reduz Crítico e Velocidade Marcial do alvo.</span></div>
+    <div class="skill"><b>Totem de Vórtice</b> <span class="tags">Utilidade · Buff · Totem</span><span class="d">Ataque Elemental e Precisão de Magia por segundo.</span></div>
+    <div class="skill"><b>Totem da Fúria do Vento</b> <span class="tags">Utilidade · Buff · Totem</span><span class="d">Ataque Físico e Precisão Marcial por segundo.</span></div>
+    <div class="skill"><b>Névoa Alucinatória</b> <span class="tags">Utilidade · Buff · Impulso</span><span class="d">Resistências e 2 acúmulos de Rapidez; reduz Força.</span></div>
+    <div class="skill"><b>Oferenda de Carne</b> <span class="tags">Utilidade · Buff</span><span class="d">Sacrifica vida por Velocidade de Magia e Crítico.</span></div>
+    <div class="skill"><b>Chuva de Lodo</b> <span class="tags">Suporte · Aflição</span><span class="d">Cura aliados atingidos e pode aplicar Lentidão.</span></div>
+    <div class="skill"><b>Elixir de Fortitude</b> <span class="tags">Suporte · Buff</span><span class="d">Cura e aumenta Tenacidade de Vida.</span></div>
+  </div>
+</section>
+
+<section id="maestrias">
+  <h2 class="serif"><span class="num">09</span>Maestrias</h2>
+  <p class="sub">Doze especializações passivas por classe. Além dos números, várias adicionam um <b>gatilho novo</b> — e é desses gatilhos que as builds nascem.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Guerreiro</h4>
+      <div class="mast"><b>Brutamontes</b> <span>Força +12%; Destreza +8%</span></div>
+      <div class="mast"><b>Brutalidade</b> <span>Corte +12%; Crítico +8%</span></div>
+      <div class="mast"><b>Robustez</b> <span>Vida +12%; Toda Defesa +8%</span></div>
+      <div class="mast"><b>Pressão Pesada</b> <span>Impacto +7%; Precisão Marcial +7%; Resist. Impacto +8%</span></div>
+      <div class="mast"><b>Rugido Trovejante</b> <span>Buff +10%; Grito de Guerra pode não entrar em recarga</span></div>
+      <div class="mast"><b>Intimidação</b> <span>Debuff +7%; Dano Marcial +6%; Maestrias podem aplicar Ruptura</span></div>
+      <div class="mast"><b>Carnificina</b> <span>Vida ao Abater +10%; Crítico vs Ensanguentado +10%</span></div>
+      <div class="mast"><b>Zod</b> <span>Regen. +10%; Tenacidade +6%; resiste à morte por 5s</span></div>
+      <div class="mast"><b>Onda de Choque</b> <span>Custo Utilidade +10%; Grito de Guerra emite onda em área</span></div>
+      <div class="mast"><b>Inflexível</b> <span>Escudo +10%; dano sofrido limitado a 20% da Vida</span></div>
+      <div class="mast"><b>Enfurecer</b> <span>Dano Físico +10%; ao ser atacado, chance de Ânimo</span></div>
+      <div class="mast"><b>Formação</b> <span>Vel. Suporte +7%; Resist. Crítica +7%; +5% Ataque por Lacaio</span></div>
+    </div>
+    <div class="card"><h4>Caçador</h4>
+      <div class="mast"><b>Ágil</b> <span>Destreza +7%; Esquiva +7%; Vel. Marcial +8%</span></div>
+      <div class="mast"><b>Gelo</b> <span>Gelo +8%; Custo +8%; Vel. Magia +6%</span></div>
+      <div class="mast"><b>Valentão</b> <span>Força +10%; Ferimento causa Corte extra por Força</span></div>
+      <div class="mast"><b>Caçada</b> <span>Ataque Físico +9%; Crítico vs Ensanguentado +11%</span></div>
+      <div class="mast"><b>Ágil (II)</b> <span>Toda Precisão +10%; Vel. Suporte +10%</span></div>
+      <div class="mast"><b>Impulsionar</b> <span>Vida +10%; Aliados herdam +20% do seu Ataque Físico</span></div>
+      <div class="mast"><b>Colheita</b> <span>Vida ao Abater +10%; Mana ao Abater +10%</span></div>
+      <div class="mast"><b>Incursão</b> <span>Perfuração +10%; dano vs Saudáveis +10%</span></div>
+      <div class="mast"><b>Selvagem</b> <span>Corte +8%; Resist. Corte +7%; abater dá chance de Rapidez</span></div>
+      <div class="mast"><b>Durável</b> <span>Escudo +10%; recupera 5% Vida/10s ao time</span></div>
+      <div class="mast"><b>Alerta</b> <span>Destreza +5%; Inteligência +8,5%; Elemental +8,5%</span></div>
+      <div class="mast"><b>Camuflagem</b> <span>Esquiva +6%; Def. Elemental +8%; Resist. Crítica +8%</span></div>
+    </div>
+    <div class="card"><h4>Mago</h4>
+      <div class="mast"><b>Erudito</b> <span>Força +7%; Destreza +7%; Inteligência +8%</span></div>
+      <div class="mast"><b>Lentidão</b> <span>Buff +8%; Debuff +7%; Decaimento de Escudo +7%</span></div>
+      <div class="mast"><b>Ruína</b> <span>Ataque Elemental +9%; Crítico +7%; dano vs Chefes +6%</span></div>
+      <div class="mast"><b>Incinerar</b> <span>Fogo +10%; Dano de Básica +10%</span></div>
+      <div class="mast"><b>Trovão</b> <span>Raio +8%; Precisão de Magia +7%; Resist. Raio +7%</span></div>
+      <div class="mast"><b>Ativar</b> <span>Escudo +10%; com Escudo ativo restaura 1% Mana/s</span></div>
+      <div class="mast"><b>Converter</b> <span>Regen. Mana +10%; 10% do custo vira Escudo de Energia</span></div>
+      <div class="mast"><b>Inspiração</b> <span>Vel. Magia +10%; 10% de chance de não gastar Mana</span></div>
+      <div class="mast"><b>Fortalecimento</b> <span>Custo +7%; Reserva +7%; Maestrias disparam Espinho de Gelo</span></div>
+      <div class="mast"><b>Gelo Eterno</b> <span>Gelo +12%; Dano de Maestria +8%</span></div>
+      <div class="mast"><b>Sabedoria</b> <span>Inteligência +6%; Mana +15%</span></div>
+      <div class="mast"><b>Robustez de Gelo</b> <span>Resist. Elemental +10%; Def. Física +10%</span></div>
+    </div>
+    <div class="card"><h4>Clérigo</h4>
+      <div class="mast"><b>Radiância</b> <span>Custo de Suporte +10%; Vida +10%</span></div>
+      <div class="mast"><b>Flamejante</b> <span>Fogo +10%; Mana +10%</span></div>
+      <div class="mast"><b>Julgamento</b> <span>Raio +10%; Dano de Maestria +10%</span></div>
+      <div class="mast"><b>Conquista</b> <span>Ataque Elemental +7%; Vel. Base +8%; Crítico +8%</span></div>
+      <div class="mast"><b>Sagrado</b> <span>Poder de Cura +10%; cura tem 20% de chance de Expurgar</span></div>
+      <div class="mast"><b>Graça Divina</b> <span>Escudo +8%; Tenacidade +7%; Escudo abaixo de 20% Vida</span></div>
+      <div class="mast"><b>Despertar</b> <span>Reserva +10%; Custo Maestria +6%; Regen. Mana por Aura</span></div>
+      <div class="mast"><b>Vingança</b> <span>Ataque Físico +10%; Defesa Física +10%</span></div>
+      <div class="mast"><b>Divindade</b> <span>Força +10%; Inteligência +10%</span></div>
+      <div class="mast"><b>Brilho</b> <span>Debuff +10%; Precisão de Magia +10%</span></div>
+      <div class="mast"><b>Banir</b> <span>Vel. Utilidade +8%; Precisão +7%; Dissipar causa dano de Raio</span></div>
+      <div class="mast"><b>Barreira</b> <span>Vida +6%; Resistências +6%; 1 Fortitude a cada 3s</span></div>
+    </div>
+    <div class="card"><h4>Mercenário</h4>
+      <div class="mast"><b>Feroz</b> <span>Força +6%; Crítico +8%; Vida +8%</span></div>
+      <div class="mast"><b>Firme</b> <span>Escudo +9%; Toda Defesa +8%; Ataque Físico +5%</span></div>
+      <div class="mast"><b>Surto de Sangue</b> <span>Poder de Cura +9%; Duração de Buff +11%</span></div>
+      <div class="mast"><b>Fúria Berserker</b> <span>Destreza +10%; Corte +10%</span></div>
+      <div class="mast"><b>Tendão de Jarrete</b> <span>Perfuração +7%; Impacto +7%; Básicas podem aplicar Lentidão</span></div>
+      <div class="mast"><b>Devastar</b> <span>Debuff +9%; Ataque Elemental +11%</span></div>
+      <div class="mast"><b>Equilíbrio</b> <span>Resist. Elemental +8%; 1 Rapidez a cada 3s; Tenacidade +8%</span></div>
+      <div class="mast"><b>Habilidoso</b> <span>Vel. Suporte +10%; Custo de Magia +10%</span></div>
+      <div class="mast"><b>Sede de Sangue</b> <span>Vida ao Abater +6%; Crítico vs Ensanguentado +9%; Vel. Base +7%</span></div>
+      <div class="mast"><b>Fervor</b> <span>Mana +10%; +3% vel. de suporte por Fortitude</span></div>
+      <div class="mast"><b>Pós-imagem</b> <span>Esquiva +7%; Precisão Marcial +7%; Raio +8%</span></div>
+      <div class="mast"><b>Resistir</b> <span>Custo de Suporte +10%; ao ganhar Escudo, +10% Def. Elemental</span></div>
+    </div>
+    <div class="card"><h4>Sacerdote</h4>
+      <div class="mast"><b>Eco</b> <span>Dano de Magia +8%; Precisão +7%; Resist. Gelo +7%</span></div>
+      <div class="mast"><b>Instinto</b> <span>Atributos Primários +6%; Resist. Perfuração +9%; Vel. Suporte +7%</span></div>
+      <div class="mast"><b>Coordenação</b> <span>Destreza +10%; Inteligência +10%</span></div>
+      <div class="mast"><b>Letal</b> <span>Perfuração +7%; Valor Crítico +8%</span></div>
+      <div class="mast"><b>Frio</b> <span>Gelo +7,5%; Vel. Magia +7,5%; Maestrias podem aplicar 2 Lentidão</span></div>
+      <div class="mast"><b>Empolgação</b> <span>Todo Dano +10%; Todo Custo +10%</span></div>
+      <div class="mast"><b>Oferenda</b> <span>Vel. Utilidade +7,5%; Regen. +7,5%; 30% do dano vai pro aliado da frente</span></div>
+      <div class="mast"><b>Vodu</b> <span>Debuff +7,5%; Resist. Física +7,5%; Mana +7%</span></div>
+      <div class="mast"><b>Ritual</b> <span>Duração de Buff +10%; remove Aflições do time a cada 5s</span></div>
+      <div class="mast"><b>Torrente</b> <span>Poder de Cura +10%; Resist. Crítica +10%</span></div>
+      <div class="mast"><b>Dissecação</b> <span>Vida +10%; cada morte recupera Vida</span></div>
+      <div class="mast"><b>Rajada</b> <span>Dano Marcial +10%; Toda Defesa +10%</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="slots">
+  <h2 class="serif"><span class="num">10</span>Os 8 espaços de equipamento</h2>
+  <p class="sub">Responde a pergunta certa: não, o item mais raro não é automaticamente o melhor — e não, você não veste tudo de um tipo só.</p>
+
+  <p>Cada Devoto tem <b>8 espaços</b>:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Espaço</th><th class="num">Qtd.</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td><b>Arma</b></td><td class="num">2</td><td>Duas armas simultâneas, uma de cada tipo da sua classe</td></tr>
+        <tr><td>Amuleto</td><td class="num">1</td><td></td></tr>
+        <tr><td>Anel</td><td class="num">1</td><td></td></tr>
+        <tr><td>Elmo</td><td class="num">1</td><td></td></tr>
+        <tr><td>Peitoral</td><td class="num">1</td><td></td></tr>
+        <tr><td>Luvas</td><td class="num">1</td><td></td></tr>
+        <tr><td>Botas</td><td class="num">1</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip"><b>Detalhe que muita gente perde:</b> são <b>duas armas ao mesmo tempo</b>, não uma escolha entre duas. É por isso que o Mercenário tem a maestria <i>Golpe Duplo</i>, que dá dano extra quando as duas armas são do mesmo tipo.</div>
+
+  <h3>O orçamento de espaços</h3>
+  <p>Aqui está a resposta para "cada item tem sua função?". Sim — porque os <b>Conjuntos</b> exigem 2 ou 4 peças para ativar seus bônus, e você tem 8 espaços para distribuir. Isso cria um orçamento:</p>
+
+  <div class="card">
+    <div class="kw"><dt>4 + 4 livres</dt><dd>Um conjunto completo (bônus de 2 e 4 ativos) e <b>4 espaços livres</b> para Lendário, Único ou Mítico avulsos. É o formato mais comum.</dd></div>
+    <div class="kw"><dt>4 + 2 + 2</dt><dd>Um conjunto completo mais o bônus de 2 peças de <b>outro</b> conjunto, e 2 livres.</dd></div>
+    <div class="kw"><dt>2 + 2 + 4 livres</dt><dd>Dois conjuntos parciais, pegando só o bônus de 2 de cada. Útil quando os bônus de 2 são fortes e os de 4 não servem à build.</dd></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Por isso "tudo Mítico" é uma build ruim.</b> Oito Míticos avulsos não ativam <b>nenhum</b> bônus de conjunto — e os bônus de conjunto são o que faz a build existir (é o que transforma "eu bato" em "eu bato e isso aciona outra coisa"). Um conjunto de 4 peças Verdes vale mais que quatro Míticos soltos, na maioria das builds.
+  </div>
+
+  <p>A regra mental: <b>o conjunto é o motor, os espaços livres são o combustível.</b> Primeiro você garante as 4 peças que ligam a build; depois enche o resto com o melhor que tiver nos atributos que a build pede.</p>
+
+  <h3>Como comparar dois itens</h3>
+  <div class="card">
+    <ol class="ladder">
+      <li><b>É peça do meu conjunto?</b>Se for, ganha quase sempre — o bônus vale mais que números soltos.</li>
+      <li><b>Os afixos estão na lista da build?</b>Cada build oficial traz a lista de "atributos preferidos". Item com dois afixos da lista bate item com número base maior e afixos fora dela.</li>
+      <li><b>É do eixo certo?</b>Marcial ou Magia. Estar no eixo errado zera o valor do afixo.</li>
+      <li><b>Só então o número base</b>É critério de desempate, não o primeiro filtro.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="equip">
+  <h2 class="serif"><span class="num">11</span>Raridades e melhorias</h2>
+  <p class="sub">Oito raridades e quatro sistemas de melhoria. A ordem em que você melhora importa mais do que parece.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Raridade</th><th class="num">Afixos Excelentes</th><th class="num">Afixos Raros</th><th>Papel</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Comum</b></td><td class="num">—</td><td class="num">—</td><td>Matéria-prima de Palavra Rúnica (com 3 encaixes)</td></tr>
+        <tr><td style="color:#2B6FFF"><b>Refinado</b></td><td class="num">2</td><td class="num">—</td><td>Transição; aceita até 2 encaixes</td></tr>
+        <tr><td style="color:#C13BE3"><b>Mágico</b></td><td class="num">—</td><td class="num">—</td><td>Base do refino para Conjunto</td></tr>
+        <tr><td style="color:#E5B426"><b>Raro</b></td><td class="num">2</td><td class="num">4</td><td>O cavalo de batalha da progressão</td></tr>
+        <tr><td style="color:#8DC025"><b>Conjunto</b></td><td class="num">2</td><td class="num">3</td><td><b>Ativa a build</b> (bônus de 2 e 4 peças)</td></tr>
+        <tr><td style="color:#1DC693"><b>Único</b></td><td class="num">2</td><td class="num">3</td><td>Efeito próprio de item</td></tr>
+        <tr><td style="color:#D96016"><b>Lendário</b></td><td class="num">—</td><td class="num">9</td><td>Preenche espaço livre com muito afixo</td></tr>
+        <tr><td style="color:#be212b"><b>Mítico</b></td><td class="num">—</td><td class="num">9</td><td>Topo — mas ainda assim, espaço livre</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Os quatro sistemas</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Forja</h4><p style="margin:0;font-size:.92rem">Melhora os atributos base. O teto sobe com a Oficina. Peça forjada também <b>vende por mais</b>.</p></div>
+    <div class="card"><h4>Encaixe (Runas)</h4><p style="margin:0;font-size:.92rem">Adiciona afixos. Só Comum (até 3) e Refinado (até 2) sorteiam encaixes, e só acima do nível 20.</p></div>
+    <div class="card"><h4>Refino</h4><p style="margin:0;font-size:.92rem">Comum → Lendário; Mágico → Conjunto; Lendário → Mítico (e neste, <b>falhar destrói o item</b>).</p></div>
+    <div class="card"><h4>Corrupção</h4><p style="margin:0;font-size:.92rem">Reroll de risco, com número limitado de usos por item.</p></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Erro clássico:</b> item com encaixe <b>não pode ser refinado</b>. Se pretende refinar, refine <b>antes</b> de encaixar runa — senão você tranca a peça na raridade atual para sempre.
+  </div>
+</section>
+
+<section id="conjuntos">
+  <h2 class="serif"><span class="num">12</span>Conjuntos</h2>
+  <p class="sub">Três por classe, com bônus de 2 e 4 peças. São eles que definem as builds de fim de jogo.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Guerreiro</h4>
+      <div class="setb"><b>Domínio de Bardo</b><div><em>2:</em> Guarda Arqueiro perfura 1 inimigo.</div><div><em>4:</em> Grito de Guerra Motivacional tem 200% mais efeito no Guarda Arqueiro.</div></div>
+      <div class="setb"><b>Destino de Kahn</b><div><em>2:</em> Golpe Vigilante ganha 1 acúmulo extra de Ânimo.</div><div><em>4:</em> A cada 2 acúmulos de Ânimo, Sangue Fervente dura +1s.</div></div>
+      <div class="setb"><b>Ira de Grim</b><div><em>2:</em> Corte de Fogo Furioso causa 100% mais dano no primeiro alvo.</div><div><em>4:</em> Imunidade à Dor também aciona Corte de Fogo Furioso.</div></div>
+    </div>
+    <div class="card"><h4>Caçador</h4>
+      <div class="setb"><b>Ocultação de Keryll</b><div><em>2:</em> Desaparecer nas Sombras dá 30% Resist. Crítica e −30% custo de Magia.</div><div><em>4:</em> Golpe do Raptor tem 30% de chance de resetar Desaparecer nas Sombras.</div></div>
+      <div class="setb"><b>Ferocidade de Wulfgar</b><div><em>2:</em> Lobo Gélido ganha Crítico igual a 50% do seu Ataque Físico.</div><div><em>4:</em> Fúria Selvagem também se aplica ao Lobo Gélido.</div></div>
+      <div class="setb"><b>Caça Sombria de Doron</b><div><em>2:</em> Crítico de Tiro Perfurante invoca raio de 240% da Destreza.</div><div><em>4:</em> Cada Tiro Firme reduz a recarga de Tiro Perfurante em 0,5s.</div></div>
+    </div>
+    <div class="card"><h4>Mago</h4>
+      <div class="setb"><b>Veredito de Kaelos</b><div><em>2:</em> Raio consome 10% da Mana atual e dobra o Valor Crítico.</div><div><em>4:</em> Com Infusão da Tempestade, Raio atinge até 3 alvos.</div></div>
+      <div class="setb"><b>Tempestade de Isar</b><div><em>2:</em> Barreira de Gelo afeta +1 alvo; afetados perdem Esquiva e ficam imunes a crítico.</div><div><em>4:</em> Cada Utilidade reduz a recarga de Barreira de Gelo em 2s.</div></div>
+      <div class="setb"><b>Chama de Azra</b><div><em>2:</em> Muralha de Fogo: +60% de área e +2s.</div><div><em>4:</em> Demônio de Fogo morrendo dentro dela: +120% dano e +50% área.</div></div>
+    </div>
+    <div class="card"><h4>Clérigo</h4>
+      <div class="setb"><b>Bênção de Mortan</b><div><em>2:</em> Abrigo Divino dá +50% Toda Defesa por 5s.</div><div><em>4:</em> Depois dele, Golpe Abençoado atinge +2 alvos e cura +2 aliados por 5s.</div></div>
+      <div class="setb"><b>Julgamento de Cyrus</b><div><em>2:</em> Espada da Punição Divina consome 8% da Vida e <b>sempre critica</b>.</div><div><em>4:</em> Cada Aura ativa acelera a recarga dela em 25%.</div></div>
+      <div class="setb"><b>Devoção de Faelen</b><div><em>2:</em> Aliados atingidos por Raio Sagrado ganham +30% Atributos Primários por 3s.</div><div><em>4:</em> Cada Castigar reduz a recarga de Raio Sagrado em 1s.</div></div>
+    </div>
+    <div class="card"><h4>Mercenário</h4>
+      <div class="setb"><b>Vendaval de Yasuo</b><div><em>2:</em> Vento da Morte sempre acerta e causa até +100% dano em alvos próximos.</div><div><em>4:</em> A cada 3 Ondas de Choque, dispara um Vento da Morte extra.</div></div>
+      <div class="setb"><b>Comando de Elaine</b><div><em>2:</em> Balista: +50% velocidade e +1 penetração.</div><div><em>4:</em> Balista causa +100% dano em alvos enfraquecidos.</div></div>
+      <div class="setb"><b>Feito Perverso de Cassius</b><div><em>2:</em> Busca-Coração atinge +3 alvos.</div><div><em>4:</em> Com Aura Mortal ativa, 40% de chance de não entrar em recarga.</div></div>
+    </div>
+    <div class="card"><h4>Sacerdote</h4>
+      <div class="setb"><b>Ritual de Mara</b><div><em>2:</em> Frio nos Ossos: −30% recarga e +50% dano.</div><div><em>4:</em> Mão da Morte tem 30% de chance de acionar Frio nos Ossos.</div></div>
+      <div class="setb"><b>Devoção de Uruk</b><div><em>2:</em> Colocar Totem dá Escudo de 200% da Destreza a todos.</div><div><em>4:</em> Por Totem ativo: +30% Efeito e +30% Duração de Buff.</div></div>
+      <div class="setb"><b>Segredo de Vero</b><div><em>2:</em> Chuva de Lodo dura +50%; deixa de aplicar Lentidão.</div><div><em>4:</em> Acertar com ela dá +20% Resist. Crítica e Ataque Elemental por 3s.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="builds-como">
+  <h2 class="serif"><span class="num">13</span>Usar build pronta ou criar a sua?</h2>
+  <p class="sub">Resposta curta: use as prontas agora, e crie as suas quando entender <i>por que</i> elas funcionam.</p>
+
+  <p>As 39 builds do jogo não são sugestões genéricas — cada uma é construída em cima de um <b>bônus de conjunto específico</b>, e a maioria diz literalmente "centrada em equipamento de Conjunto". Elas existem porque o jogo tem <b>gatilhos</b>: um bônus de 4 peças que faz a habilidade A acionar a habilidade B. Descobrir esses encaixes sozinho, cruzando 18 conjuntos com 72 maestrias, é trabalhoso.</p>
+
+  <h3>Use as prontas quando</h3>
+  <div class="card">
+    <div class="kw"><dt>Você está aprendendo</dt><dd>Elas te ensinam a gramática do jogo: qual habilidade aciona qual, quais atributos andam juntos.</dd></div>
+    <div class="kw"><dt>Falta tempo de teste</dt><dd>Testar build aqui é lento — precisa juntar as peças do conjunto primeiro. Uma build pronta te poupa de descobrir no capítulo 12 que a ideia não fecha.</dd></div>
+    <div class="kw"><dt>Você quer um alvo claro</dt><dd>A build vira seu filtro: qual conjunto caçar, quais afixos guardar, quais habilidades marcar como preferidas.</dd></div>
+  </div>
+
+  <h3>Crie a sua quando</h3>
+  <div class="card">
+    <div class="kw"><dt>Você já rodou uma</dt><dd>Depois de levar uma build oficial até o fim, você entende o padrão e consegue prever o que combina.</dd></div>
+    <div class="kw"><dt>Achou um gatilho não usado</dt><dd>São 72 maestrias e nem todas aparecem nas builds oficiais. Combinações fora da lista existem.</dd></div>
+    <div class="kw"><dt>Você pensa em time</dt><dd>As builds oficiais descrevem <b>um</b> Devoto. Como você joga com times de 3, a sinergia <b>entre</b> os três é território seu — o jogo não sugere nada aí.</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>O caminho recomendado:</b> escolha uma build oficial de dificuldade <b>Fácil</b> para o seu Devoto principal e leve até funcionar. Enquanto isso, use os outros dois espaços do time para experimentar. Você aprende com risco baixo, e o time continua avançando.
+  </div>
+
+  <div class="tip new">
+    <b>Sobre se divertir:</b> a nota de dificuldade mede <b>quanto a build exige de peça específica</b>, não o quanto ela é divertida. Uma build "difícil" de Totem do Sacerdote é perfeitamente jogável — só precisa de mais coisas alinhadas para brilhar. Se um conceito te atrai, persiga: o jogo é longo o bastante para você ter uma build sólida <b>e</b> uma experimental rodando ao mesmo tempo, em times diferentes.
+  </div>
+</section>
+
+<section id="builds">
+  <h2 class="serif"><span class="num">14</span>As 39 builds oficiais</h2>
+  <p class="sub">Todas, com a nota de dificuldade do próprio jogo. Para 23 delas, o plano de jogo e os atributos preferidos exatamente como o jogo descreve.</p>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="Buscar build, classe ou habilidade…" aria-label="Buscar builds">
+    <button class="f" data-f="all" aria-pressed="true">Todas</button>
+    <button class="f" data-f="1" aria-pressed="false">Fácil</button>
+    <button class="f" data-f="2" aria-pressed="false">Média</button>
+    <button class="f" data-f="3" aria-pressed="false">Difícil</button>
+  </div>
+
+  <div class="card" id="blist">
+    <div class="bd" data-d="1"><div class="bd-h"><b>Sangue Fervente</b><span class="cl">Guerreiro</span><span class="pill d1">Fácil</span></div>
+      <p>Centrada em Conjunto. Use <i>Golpe Vigilante</i> para acumular Ânimo e estender a duração de <i>Sangue Fervente</i>.</p>
+      <div class="attrs">Força, Destreza, Vida, Toda Defesa, Toda Velocidade, Resistências, Regen. de Vida, Resist. Crítica, Fortitude de Vida, Poder de Cura</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Guarda Arqueiro</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Grito de Guerra Motivacional</i> para dar buffs poderosos ao <i>Guarda Arqueiro</i>.</p>
+      <div class="attrs">Força, Destreza, Vida, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Dano Físico, Vel. Utilidade, Dano de Maestria</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Fogo Furioso</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Imunidade à Dor</i> para acionar <i>Corte de Fogo Furioso</i> adicionalmente.</p>
+      <div class="attrs">Força, Destreza, Vida, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Dano Físico, Vel. Utilidade, Dano de Maestria</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Onda de Choque de Grito de Guerra</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+      <p>Conjure várias habilidades de <i>Grito de Guerra</i> rapidamente para acionar o dano da especialização <i>Onda de Choque</i>.</p>
+      <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Toda Precisão, Dano Físico, Impacto, Vel. de Habilidade, Vel. Utilidade, Buff</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Final</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+      <p>Acumule <i>Ânimo</i> para aumentar muito o dano de <i>Golpe Final</i>, e use <i>Gancho Cruel</i> para agrupar monstros.</p>
+      <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Vel. Base, Dano de Maestria</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Ensanguentado</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Roubo de Vida de Esquiva</b><span class="cl">Caçador</span><span class="pill d1">Fácil</span></div>
+      <p>Conjure <i>Golpe do Raptor</i> para resetar a recarga de <i>Desaparecer nas Sombras</i>, ganhando cura e Esquiva.</p>
+      <div class="attrs">Destreza, Esquiva, Vel. Marcial/Magia, Vel. de Habilidade, Precisão Marcial, Resist. Crítica, Tenacidade, Vel./Custo de Suporte, Poder de Cura, Buff</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Chuva de Flechas Gélidas</b><span class="cl">Caçador</span><span class="pill d1">Fácil</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lobo Gélido Aliado</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. O <i>Lobo Gélido</i> é a fonte de dano; <i>Fúria Selvagem</i> reforça dano e sobrevivência.</p>
+      <div class="attrs">Força, Destreza, Todo Ataque, Crítico, Esquiva, Vel. Marcial, Todo Dano, Efeito e Duração de Buff, Vel. de Habilidade</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Tiro Perfurante</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Use <i>Tiro Firme</i> para reduzir a recarga de <i>Tiro Perfurante</i>, e aumente Crítico para elevar a chance de acionar Raio.</p>
+      <div class="attrs">Força, Destreza, Todo Ataque, Crítico, Vel./Dano Marcial, Toda Precisão, Todo Dano, Físico, Perfuração, Elemental, Raio, Vel. Base</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Intimidação de Ferimento</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+      <p>Aplique a aflição <i>Ferimento</i> para acionar o dano da especialização <i>Valentão</i>.</p>
+      <div class="attrs">Força, Destreza, Crítico, Vel. Marcial, Toda Precisão, Dano Físico, Corte, Vel. Utilidade, Vel. de Habilidade</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lâmina Ensanguentada</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Barreira de Gelo</b><span class="cl">Mago</span><span class="pill d1">Fácil</span></div>
+      <p>Centrada em Conjunto. Conjure habilidades de Utilidade para reduzir a recarga de <i>Barreira de Gelo</i>.</p>
+      <div class="attrs">Destreza, Inteligência, Def. Elemental, Vel./Custo/Precisão de Magia, Resistências, Mana, Poder e Decaimento de Escudo, Buff, Vel. de Habilidade</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Ataque Básico de Raio</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. <i>Raio</i> é o dano principal, mantendo <i>Infusão da Tempestade</i> para atingir três alvos.</p>
+      <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Raio, Vel./Precisão/Dano de Magia, Dano e Vel. Base, Duração de Buff</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Detonação de Demônio de Fogo</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Muralha de Fogo</i> para aumentar o dano de detonação de <i>Invocar Demônio de Fogo</i>.</p>
+      <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Dano e Vel. de Magia, Fogo, Elemental, Vel. de Habilidade, Vel. de Suporte</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Tempestade Elétrica</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+      <p>Acumule <i>Velocidade de Magia</i> para encurtar o intervalo de <i>Tempestade Elétrica</i> e causar dano com mais frequência.</p>
+      <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Raio, Vel. de Magia, Vel. de Habilidade, Precisão e Dano de Magia, Dano de Maestria, Buff</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Choque Elétrico</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Fortalecimento de Magia</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Impacto de Meteoro</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Crítico de Nevasca</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Buff de Luz Sagrada</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Castigar</i> para encurtar a recarga de <i>Raio Sagrado</i>, e use <i>Raio Sagrado</i> com frequência para cura e buffs.</p>
+      <div class="attrs">Destreza, Inteligência, Vida, Toda Defesa, Resistências, Vel. Base/Suporte/Habilidade, Efeito de Cura, Buff</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Abrigo Divino</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Abrigo Divino</i> para aumentar muito o número de alvos e a cura de <i>Golpe Abençoado</i>.</p>
+      <div class="attrs">Força, Inteligência, Ataque e Defesa Física, Resistências, Vel. Base/Suporte/Habilidade, Efeito de Cura, Poder de Escudo</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Roubo de Vida em Golpe</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Escudo da Vingança</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Dissipar Expurgo</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Golpe de Chama Sagrada</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Espada da Punição Divina</b><span class="cl">Clérigo</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Aumente a quantidade de Auras para reduzir a recarga de <i>Espada da Punição Divina</i> e atacar com mais frequência.</p>
+      <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Todo Dano, Vel./Precisão/Dano de Magia, Dano de Maestria, Vel. de Habilidade, Redução de Reserva de Mana</div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Roubo de Vida de Busca-Coração</b><span class="cl">Mercenário</span><span class="pill d1">Fácil</span></div>
+      <p>Centrada em Conjunto. Use <i>Busca-Coração</i> para drenar Vida, e ative <i>Aura Mortal</i> para resetar a recarga dele.</p>
+      <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Toda Defesa, Resistências, Resist. Crítica, Fortitude de Vida, Vel. Marcial, Vel. de Habilidade</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Vento da Morte</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Onda de Choque</i> rapidamente para acionar <i>Vento da Morte</i> com mais frequência.</p>
+      <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Dano Físico, Corte, Perfuração, Vel./Dano Marcial, Dano de Maestria, Vel. Base</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Sentinela Balista</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Aplique debuffs nos inimigos para aumentar o dano da <i>Sentinela Balista</i>.</p>
+      <div class="attrs">Força, Destreza, Inteligência, Ataque Físico e Elemental, Crítico, Dano Físico e Elemental, Debuff, Custo de Suporte, Vel. Utilidade</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Trovão Veloz</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+      <p>Acumule <i>Rapidez</i> para aumentar o número de cortes de <i>Corte de Trovão Veloz</i>.</p>
+      <div class="attrs">Força, Destreza, Inteligência, Todo Ataque, Crítico, Vel./Dano/Precisão Marcial, Todo Dano, Físico, Perfuração, Raio, Debuff, Vel. Base</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Ativação por Efeito</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Fogo de Barragem</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div></div>
+
+    <div class="bd" data-d="2"><div class="bd-h"><b>Frio nos Ossos</b><span class="cl">Sacerdote</span><span class="pill d2">Média</span></div>
+      <p>Centrada em Conjunto. Aumente a velocidade de <i>Mão da Morte</i> para acionar o dano de <i>Frio nos Ossos</i> mais rápido.</p>
+      <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Gelo, Vel./Precisão/Dano de Magia, Vel. Utilidade, Dano de Maestria, Buff</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Buff de Totem</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div>
+      <p>Centrada em Conjunto. Conjure habilidades de <i>Totem</i> para ganhar Escudos e conceder buffs de atributo aos aliados.</p>
+      <div class="attrs">Destreza, Inteligência, Toda Defesa, Resistências, Vida, Regen. de Mana, Vel. de Magia, Vel. Utilidade, Buff, Poder de Escudo</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Chuva de Lodo</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div>
+      <p>Centrada em Conjunto. Conjure <i>Chuva de Lodo</i> para cura contínua no grupo e buffs de atributo.</p>
+      <div class="attrs">Inteligência, Toda Defesa, Resistências, Vida, Mana, Regen. de Mana, Vel. de Magia, Vel. Habilidade/Suporte, Custo de Suporte, Buff, Poder de Cura, Tenacidade</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Investida Gélida</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Pancada de Lava</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Ativação de Aflição</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div></div>
+  </div>
+  <p class="none" id="nores" hidden>Nenhuma build encontrada.</p>
+</section>
+
+<section id="mundo">
+  <h2 class="serif"><span class="num">15</span>Capítulos e nível</h2>
+  <p class="sub">Vinte capítulos. Cada um eleva o teto de nível em 5 — o máximo na Campanha é 100.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="num">#</th><th>Capítulo</th><th class="num">Teto de nível</th><th class="num">Ecos</th><th>Marco</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Península do Pranto</td><td class="num">5</td><td class="num">3</td><td></td></tr>
+        <tr><td class="num">2</td><td>Floresta Brasa-de-Lenho</td><td class="num">10</td><td class="num">4</td><td></td></tr>
+        <tr><td class="num">3</td><td>Terras Devastadas pelo Fogo</td><td class="num">15</td><td class="num">5</td><td></td></tr>
+        <tr><td class="num">4</td><td>Cume Corvo-Negro</td><td class="num">20</td><td class="num">6</td><td><b>Time II</b></td></tr>
+        <tr><td class="num">5</td><td>Campo de Batalha Desolado</td><td class="num">25</td><td class="num">7</td><td></td></tr>
+        <tr><td class="num">6</td><td>Tundra Uivante</td><td class="num">30</td><td class="num">8</td><td></td></tr>
+        <tr><td class="num">7</td><td>Caverna Fúngica</td><td class="num">35</td><td class="num">9</td><td></td></tr>
+        <tr><td class="num">8</td><td>Alturas dos Espinheiros</td><td class="num">40</td><td class="num">10</td><td></td></tr>
+        <tr><td class="num">9</td><td>Altar da Perdição</td><td class="num">45</td><td class="num">11</td><td></td></tr>
+        <tr><td class="num">10</td><td>Vazio Estilhaçado</td><td class="num">50</td><td class="num">12</td><td><b>Time III</b></td></tr>
+        <tr><td class="num">11</td><td>Costa do Luto</td><td class="num">55</td><td class="num">13</td><td></td></tr>
+        <tr><td class="num">12</td><td>Bosque da Praga</td><td class="num">60</td><td class="num">14</td><td></td></tr>
+        <tr><td class="num">13</td><td>Terras de Cinzas e Areia</td><td class="num">65</td><td class="num">15</td><td></td></tr>
+        <tr><td class="num">14</td><td>Passagem Corvo-Sombrio</td><td class="num">70</td><td class="num">16</td><td></td></tr>
+        <tr><td class="num">15</td><td>Ruínas Desoladas</td><td class="num">75</td><td class="num">17</td><td></td></tr>
+        <tr><td class="num">16</td><td>Tundra Devorada pelo Gelo</td><td class="num">80</td><td class="num">18</td><td></td></tr>
+        <tr><td class="num">17</td><td>Profundezas do Pântano Podre</td><td class="num">85</td><td class="num">19</td><td></td></tr>
+        <tr><td class="num">18</td><td>Planalto da Espinha</td><td class="num">90</td><td class="num">20</td><td></td></tr>
+        <tr><td class="num">19</td><td>Terras Calcinadas</td><td class="num">95</td><td class="num">21</td><td></td></tr>
+        <tr><td class="num">20</td><td>Extensão da Fenda Estelar</td><td class="num">100</td><td class="num">22</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip warn">
+    <b>Supressão de Nível:</b> quando seu Devoto está abaixo do nível do monstro, você <b>sofre mais dano e causa menos</b> — e quanto maior a diferença, pior. Não force capítulo à frente do nível: volte, suba o teto, e retorne. Insistir é mais lento que voltar.
+  </div>
+
+  <p>O <b>Eco do Chefe</b> serve para desafiar o chefe de novo — e como chefe é a fonte garantida de peça de Conjunto, os Ecos são o seu recurso de "farmar a peça que falta".</p>
+</section>
+
+<section id="cidade">
+  <h2 class="serif"><span class="num">16</span>A cidade</h2>
+  <p class="sub">O poder de longo prazo não vem do loot, vem daqui.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Templo</h4><p style="margin:0;font-size:.92rem">Bênção e Batismo. Cada Bênção tem <b>4% de chance de dar 1 ponto de Talento</b>. O nível de Bênção chega a 50 com a construção no máximo.</p></div>
+    <div class="card"><h4>Oficina</h4><p style="margin:0;font-size:.92rem">Forja e encaixe. O nível dela define o teto de Forja e reduz preços.</p></div>
+    <div class="card"><h4>Estela</h4><p style="margin:0;font-size:.92rem">Missões por estágio, teto de <b>Percepção</b> e teto de <b>Habilidades Preferidas</b>. Completar estágios cedo libera melhorias maiores nos outros prédios.</p></div>
+    <div class="card"><h4>Prisão</h4><p style="margin:0;font-size:.92rem">Onde nascem os Devotos. As Reformas dela liberam as raridades altas — veja a seção 07.</p></div>
+    <div class="card"><h4>Mercado</h4><p style="margin:0;font-size:.92rem">Compra, venda e <b>Pedidos</b> (entregue peça específica, receba recursos raros). Também tem o Cofre, que lista equipamento de alta qualidade por Runas.</p></div>
+    <div class="card"><h4>Santuário</h4><p style="margin:0;font-size:.92rem">Combinações especiais, como Crânios de Fé em Crânios Cristalizados.</p></div>
+    <div class="card"><h4>Armazém</h4><p style="margin:0;font-size:.92rem">Estoque estendido e o <b>Cofre</b>: armazém separado para alta qualidade, com empilhamento. É o que impede a mochila de entupir.</p></div>
+    <div class="card"><h4>Golem</h4><p style="margin:0;font-size:.92rem">Bônus de atributo que valem para <b>todos os Devotos daquela classe</b> — progressão de conta. O teto sobe com o nível do Adorador.</p></div>
+  </div>
+
+  <div class="tip">
+    <b>Inspirar</b> dá a um Devoto uma Maestria <b>de outra classe</b>. A quantidade e o teto sobem com melhorias — é a principal fonte de builds híbridas, junto com as Palavras Rúnicas.
+  </div>
+</section>
+
+<section id="craque">
+  <h2 class="serif"><span class="num">17</span>Como ficar craque</h2>
+  <p class="sub">O resumo do que move o ponteiro, em ordem de impacto.</p>
+
+  <ol class="ladder">
+    <li><b>Respeite a prioridade de conjuração</b>Suporte &gt; Utilidade &gt; Maestria &gt; Básica. Se sua Maestria não sai, você tem habilidade demais de prioridade alta. Causa nº 1 de build sem dano.</li>
+    <li><b>Compre as Reformas de raridade da Prisão</b>Sem elas, prisioneiro Raro+ <b>não existe</b>. Depois use Distorção para fabricar o Devoto bom em vez de esperar.</li>
+    <li><b>Encaixe uma fonte de Ruptura</b>Cinco acúmulos = −50% de defesa do alvo. O multiplicador mais barato do jogo.</li>
+    <li><b>Concentre no time de avanço</b>Abrir capítulo sobe o teto de nível dos nove Devotos. Espalhar itens entre três times médios trava todo mundo.</li>
+    <li><b>Persiga o conjunto, não a raridade</b>Quatro peças Verdes que ativam um gatilho valem mais que quatro Míticos soltos.</li>
+    <li><b>Suba a Torre Divina cedo</b>Bônus permanente e composto.</li>
+    <li><b>Refine antes de encaixar</b>Item com runa não pode mais ser refinado.</li>
+    <li><b>Não jogue à frente do seu nível</b>A Supressão pune dos dois lados.</li>
+    <li><b>Escolha a Básica pelo efeito</b>Ela existe para gerar Ânimo, Rapidez ou Ruptura — não para dar dano.</li>
+    <li><b>Marque as Habilidades Preferidas antes de recrutar</b>Decidir a build primeiro é o que faz a Prisão trabalhar a seu favor.</li>
+  </ol>
+</section>
+
+<footer>
+  <p style="margin:0">Todos os números vêm das tabelas internas do jogo, extraídas do <code>Assembly-CSharp</code> e traduzidas com o mesmo dicionário da tradução PT-BR da comunidade. Conteúdo não oficial, sem vínculo com a SmallMill.</p>
+</footer>
+</main>
+</div></div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+
+  
+  
+  
+  * { box-sizing: border-box; }
+  .guia {
+    color: var(--t-text-main);
+    font-family: var(--t-font-sans);
+    font-size: 1.05rem; line-height: 1.7;
+  }
+  /* jade e violet nao existem nos tokens do site: definidos aqui, em
+     harmonia com a paleta (verde-musgo e roxo-ritual dessaturados). */
+  .guia { --jade: #7d9455; --violet: #a07ab5; }
+  .serif { font-family: var(--t-font-serif); letter-spacing: .01em; }
+
+  .shell { display: grid; grid-template-columns: 252px minmax(0,1fr); max-width: 1250px; margin: 0 auto; }
+  nav.toc { position: sticky; top: 5.5rem; align-self: start; height: calc(100vh - 6rem); overflow-y: auto; padding: 28px 20px 40px; border-right: 1px solid var(--t-border); }
+  nav.toc .brand { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--t-primary); margin-bottom: 16px; font-weight: 600; }
+  nav.toc a { display: block; color: var(--t-text-soft); text-decoration: none; font-size: .86rem; padding: 5px 0 5px 11px; border-left: 2px solid transparent; line-height: 1.35; }
+  nav.toc a:hover { color: var(--t-text-main); }
+  nav.toc a.on { color: var(--t-text-main); border-left-color: var(--t-primary); }
+  nav.toc .grp { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--t-text-soft); opacity: .6; margin: 16px 0 5px; }
+  main { padding: 0 42px 120px; min-width: 0; }
+
+  header.hero { padding: 40px 0 42px; border-bottom: 1px solid var(--t-border); margin-bottom: 44px; }
+  .eyebrow { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--t-primary); font-weight: 600; }
+  h1 { font-size: clamp(2.4rem, 5.5vw, 3.6rem); line-height: 1.02; margin: 14px 0 16px; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+  .lede { font-size: 1.1rem; color: var(--t-text-soft); max-width: 64ch; margin: 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 30px; }
+  .fact .n { font-family: var(--t-font-serif); font-size: 1.7rem; color: var(--t-secondary); font-variant-numeric: tabular-nums; line-height: 1; }
+  .fact .l { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--t-text-soft); margin-top: 5px; }
+
+  section { margin-bottom: 62px; scroll-margin-top: 6rem; }
+  h2 { font-size: 1.85rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+  h2 .num { color: var(--t-primary); font-size: 1rem; vertical-align: super; margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .sub { color: var(--t-text-soft); margin: 0 0 24px; max-width: 68ch; }
+  h3 { font-size: 1.14rem; margin: 30px 0 10px; font-weight: 600; }
+  h4 { font-size: .95rem; margin: 20px 0 8px; font-weight: 600; color: var(--t-secondary); }
+  p { max-width: 68ch; }
+
+  .card { background: var(--t-surface); border: 1px solid var(--t-border); border-radius: 6px; padding: 18px 20px; }
+  .grid { display: grid; gap: 14px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); }
+
+  .kw { display: grid; grid-template-columns: 140px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--t-border); align-items: start; }
+  .kw:last-child { border-bottom: 0; }
+  .kw dt { font-weight: 600; color: var(--t-secondary); }
+  .kw dd { margin: 0; }
+
+  ol.ladder { list-style: none; counter-reset: p; padding: 0; margin: 0; }
+  ol.ladder li { counter-increment: p; position: relative; padding: 13px 0 13px 46px; border-bottom: 1px solid var(--t-border); }
+  ol.ladder li:last-child { border-bottom: 0; }
+  ol.ladder li::before { content: counter(p); position: absolute; left: 0; top: 12px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--t-primary-dark); color: #fff; font-size: .8rem; font-weight: 700; }
+  ol.ladder b { display: block; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .scroll { overflow-x: auto; border: 1px solid var(--t-border); border-radius: 6px; }
+  th, td { text-align: left; padding: 9px 13px; border-bottom: 1px solid var(--t-border); vertical-align: top; }
+  th { font-size: .69rem; letter-spacing: .1em; text-transform: uppercase; color: var(--t-text-soft); font-weight: 600; background: var(--t-surface-alt); position: sticky; top: 0; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+  .pill { display: inline-block; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--t-border); color: var(--t-text-soft); white-space: nowrap; }
+  .pill.d1 { color: var(--jade); border-color: var(--jade); }
+  .pill.d2 { color: var(--t-secondary); border-color: var(--t-secondary); }
+  .pill.d3 { color: var(--t-primary); border-color: var(--t-primary); }
+
+  .tip { border-left: 3px solid var(--t-secondary); background: var(--t-surface); padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; }
+  .tip b { color: var(--t-secondary); }
+  .tip.warn { border-left-color: var(--t-primary); }
+  .tip.warn b { color: var(--t-primary); }
+  .tip.new { border-left-color: var(--violet); }
+  .tip.new b { color: var(--violet); }
+  .term { color: var(--t-secondary); font-weight: 600; }
+
+  .cls { border-top: 2px solid var(--t-primary); padding-top: 16px; margin-top: 38px; }
+  .cls-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; }
+  .cls-head h3 { margin: 0; font-size: 1.5rem; }
+  .cls-meta { color: var(--t-text-soft); font-size: .85rem; }
+  .skill { padding: 9px 0; border-bottom: 1px solid var(--t-border); }
+  .skill:last-child { border-bottom: 0; }
+  .tags { color: var(--violet); font-size: .74rem; letter-spacing: .04em; }
+  .skill span.d { color: var(--t-text-soft); display: block; font-size: .89rem; }
+  .mast { font-size: .89rem; padding: 8px 0; border-bottom: 1px solid var(--t-border); }
+  .mast:last-child { border-bottom: 0; }
+  .mast b { color: var(--t-secondary); }
+  .mast span { color: var(--t-text-soft); }
+  .setb { margin-bottom: 16px; }
+  .setb b { color: var(--jade); }
+  .setb div { font-size: .89rem; color: var(--t-text-soft); padding: 3px 0 3px 14px; border-left: 1px solid var(--t-border); margin-top: 5px; }
+  .setb div em { color: var(--t-text-main); font-style: normal; font-weight: 600; }
+
+  .tools { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  input[type=search] { flex: 1 1 220px; background: var(--t-surface); border: 1px solid var(--t-border); color: var(--t-text-main); padding: 9px 13px; border-radius: 5px; font: inherit; font-size: .9rem; }
+  input[type=search]:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--t-secondary); outline-offset: 2px; }
+  button.f { background: var(--t-surface); border: 1px solid var(--t-border); color: var(--t-text-soft); padding: 9px 14px; border-radius: 5px; font: inherit; font-size: .82rem; cursor: pointer; }
+  button.f[aria-pressed="true"] { background: var(--t-primary-dark); border-color: var(--t-primary-dark); color: #fff; }
+  .bd { padding: 14px 0; border-bottom: 1px solid var(--t-border); }
+  .bd:last-child { border-bottom: 0; }
+  .bd-h { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
+  .bd-h b { font-size: 1rem; }
+  .bd-h .cl { color: var(--t-text-soft); font-size: .82rem; }
+  .bd p { margin: 7px 0 0; font-size: .9rem; }
+  .bd .attrs { margin: 6px 0 0; font-size: .82rem; color: var(--t-text-soft); }
+  .none { color: var(--t-text-soft); font-style: italic; padding: 20px 0; }
+
+  footer { border-top: 1px solid var(--t-border); padding: 28px 0 0; color: var(--t-text-soft); font-size: .84rem; }
+
+  @media (max-width: 1023px) {
+    .shell { grid-template-columns: 1fr; }
+    nav.toc { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--t-border); }
+    nav.toc .links { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    nav.toc .grp { width: 100%; }
+    nav.toc a { border-left: 0; padding-left: 0; }
+    nav.toc a.on { border-left: 0; color: var(--t-primary); }
+    main { padding: 0 20px 80px; }
+    .kw { grid-template-columns: 1fr; gap: 3px; }
+  }
+
+</style>
+
+<script is:inline>
+
+  var links = {};
+  [].forEach.call(document.querySelectorAll('nav.toc a'), function (a) {
+    links[a.getAttribute('href').slice(1)] = a;
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = links[e.target.id];
+        if (a && e.isIntersecting) {
+          for (var k in links) links[k].classList.remove('on');
+          a.classList.add('on');
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+    [].forEach.call(document.querySelectorAll('main section'), function (s) { if (s.id) io.observe(s); });
+  }
+
+  var q = document.getElementById('q');
+  var btns = [].slice.call(document.querySelectorAll('button.f'));
+  var rows = [].slice.call(document.querySelectorAll('#blist .bd'));
+  var nores = document.getElementById('nores');
+  var mode = 'all';
+  function apply() {
+    var term = (q.value || '').toLowerCase().trim();
+    var shown = 0;
+    rows.forEach(function (r) {
+      var vis = (mode === 'all' || r.dataset.d === mode) &&
+                (!term || r.textContent.toLowerCase().indexOf(term) !== -1);
+      r.hidden = !vis;
+      if (vis) shown++;
+    });
+    nores.hidden = shown !== 0;
+  }
+  q.addEventListener('input', apply);
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      mode = b.dataset.f;
+      btns.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      apply();
+    });
+  });
+
+</script>

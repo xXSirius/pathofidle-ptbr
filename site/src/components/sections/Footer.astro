@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import wordmark from '../../assets/logo/wordmark.png';
 
 const REPO_URL = 'https://github.com/xXSirius/pathofidle-ptbr';
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer id="footer" class="bg-dark border-t border-border/40 pt-16 pb-8">
@@ -23,6 +24,7 @@ const REPO_URL = 'https://github.com/xXSirius/pathofidle-ptbr';
 
       <div class="flex flex-col gap-3">
         <span class="label-tag text-white/40">Links</span>
+        <a href={`${base}guia/`} class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Códice do Devoto (guia)</a>
         <a href={REPO_URL} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Repositório</a>
         <a href={`${REPO_URL}/releases`} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Releases</a>
         <a href={`${REPO_URL}/issues`} target="_blank" rel="noopener noreferrer" class="text-body-sm text-white/60 hover:text-secondary transition-colors link-underline w-fit">Reportar algo</a>
