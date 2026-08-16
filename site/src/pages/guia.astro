@@ -39,6 +39,7 @@ const base = import.meta.env.BASE_URL;
     <div class="grp">Equipamento</div>
     <a href="#slots">Os 8 espaços</a>
     <a href="#equip">Raridades e melhorias</a>
+    <a href="#percepcao">Percepção e Selos</a>
     <a href="#conjuntos">Conjuntos</a>
     <div class="grp">Estratégia</div>
     <a href="#builds-como">Usar build pronta?</a>
@@ -49,7 +50,7 @@ const base = import.meta.env.BASE_URL;
   </div>
 </nav>
 
-<main>
+<div class="doc">
 <header class="hero">
   <div class="eyebrow">Path of Idle: Old Gods Rising</div>
   <h1 class="serif">Códice do Devoto</h1>
@@ -124,7 +125,13 @@ const base = import.meta.env.BASE_URL;
   <p style="margin-top:14px">Ou seja: no fim você tem <b>9 Devotos em campo</b>, em três frentes independentes — um time na Campanha, outro na Torre, outro na Exploração.</p>
 
   <h3>Como montar um time de 3</h3>
-  <p>Dentro do time existe <b>posição</b>: há um Devoto "da frente" e os de trás. Isso é mecânico, não cosmético — várias habilidades e afixos falam explicitamente em "aliado da frente":</p>
+  <p>Dentro do time existe <b>posição</b>, e ela funciona em duas camadas.</p>
+
+  <p><b>A ordem dos 3 espaços define a formação inicial.</b> Quem você põe no primeiro espaço nasce à frente, o segundo no meio, o terceiro atrás — são três posições fixas no campo. Isso você controla, arrastando os Devotos entre os espaços do time.</p>
+
+  <p><b>Mas "o aliado da frente" é recalculado o tempo todo.</b> Durante a luta o jogo não olha o número do espaço: ele ordena os três pela <b>posição real de cada um no campo</b> naquele instante. Como as unidades andam sozinhas — e cada habilidade tem seu alcance de conjuração —, quem usa habilidade de curto alcance avança e assume a frente, enquanto quem tem alcance longo fica para trás. A formação inicial é o ponto de partida; o alcance das habilidades é o que mantém (ou inverte) ela.</p>
+
+  <p>E isso importa, porque várias habilidades e afixos miram explicitamente "o aliado da frente":</p>
   <div class="card">
     <div class="kw"><dt>Dano transferido</dt><dd>Vários afixos transferem parte do dano sofrido <b>para o aliado da frente</b> (de 12% a 43%, dependendo do afixo).</dd></div>
     <div class="kw"><dt>Escudos</dt><dd>Habilidades como Barreira de Gelo aplicam escudo <b>no aliado da frente</b> especificamente.</dd></div>
@@ -204,7 +211,7 @@ const base = import.meta.env.BASE_URL;
     <div class="card"><h4>Fragmentos de Alma</h4><p style="margin:0;font-size:.92rem">Andares da Torre Divina → Infundir classes.</p></div>
   </div>
 
-  <div class="tip"><b>Percepção:</b> só sobe com item <b>Raro para cima</b> (Raro dá 10, Lendário/Conjunto/Único 50, Mítico 200). Comum e Refinado dão <b>zero</b> — pode deixar o filtro vender à vontade.</div>
+  <div class="tip"><b>Percepção:</b> só sobe com item <b>Raro para cima</b> (Raro dá 10, Lendário/Conjunto/Único 50, Mítico 200). Comum e Refinado dão <b>zero</b> — pode deixar o filtro vender à vontade. O que é Percepção e para que serve: <a href="#percepcao" style="color:var(--t-secondary)">seção 12</a>.</div>
 
   <h3>As cinco coisas que pedem sua cabeça</h3>
   <div class="card">
@@ -710,8 +717,59 @@ const base = import.meta.env.BASE_URL;
   </div>
 </section>
 
+<section id="percepcao">
+  <h2 class="serif"><span class="num">12</span>Percepção e Selos de Afixo</h2>
+  <p class="sub">O único sistema do jogo que deixa você <b>mirar</b> o que vai cair. Todo o resto é sorte com filtro — o selo muda o sorteio em si.</p>
+
+  <p>Toda peça de equipamento tem uma entrada no <b>Codex</b>, e cada entrada tem a <b>própria barra de Percepção</b>. Este é o ponto que confunde: Percepção <b>não é um número global</b> da sua conta — é por item. O "Machado de Ferro" tem a Percepção dele, a "Coroa de Azra" tem a dela.</p>
+
+  <h3>Como a Percepção sobe</h3>
+  <p>Obtendo aquela peça <b>de novo</b>. Quanto melhor a raridade da cópia que caiu, mais Percepção entra:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Raridade obtida</th><th class="num">Percepção que rende</th></tr></thead>
+      <tbody>
+        <tr><td>Comum · Refinado · Mágico</td><td class="num">0</td></tr>
+        <tr><td style="color:#E5B426">Raro</td><td class="num">10</td></tr>
+        <tr><td style="color:#8DC025">Lendário · Conjunto · Único</td><td class="num">50</td></tr>
+        <tr><td style="color:#be212b">Mítico</td><td class="num">200</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">Quando a barra enche, o <b>nível de Percepção</b> daquele item sobe e a barra zera. O teto de nível é definido pelo <b>nível da Estela</b> — por isso a Estela aparece tanto neste guia.</p>
+
+  <h3>Para que serve: selar afixos</h3>
+  <p>Com Percepção suficiente numa peça, você pode <b>selar</b> afixos dela pelo Codex. Afixo selado <b>deixa de aparecer</b> naquela peça — para sempre.</p>
+
+  <div class="tip">
+    <b>Traduzindo para a prática:</b> você remove do sorteio os afixos que não servem para a sua build. As próximas cópias daquele item passam a cair com um leque mais limpo — ou seja, mais chance de vir com o que você quer, sem depender de sorte pura.
+  </div>
+
+  <p>O custo é <b>nível de Percepção + Sangue</b>, e escala rápido:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="num">Selo</th><th class="num">Percepção exigida</th><th class="num">Sangue</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1º</td><td class="num">100</td><td class="num">150</td></tr>
+        <tr><td class="num">2º</td><td class="num">170</td><td class="num">—</td></tr>
+        <tr><td class="num">3º</td><td class="num">260</td><td class="num">—</td></tr>
+        <tr><td class="num">4º</td><td class="num">370</td><td class="num">—</td></tr>
+        <tr><td class="num">5º</td><td class="num">500</td><td class="num">—</td></tr>
+        <tr><td class="num">6º</td><td class="num">650</td><td class="num">—</td></tr>
+        <tr><td class="num">7º</td><td class="num">820</td><td class="num">—</td></tr>
+        <tr><td class="num">8º</td><td class="num">1.010</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">São 50 níveis no total. E vale o aviso do próprio jogo: <b>quanto mais afixos você já selou naquela peça, mais Percepção o próximo selo exige</b>.</p>
+
+  <div class="tip">
+    <b>A consequência que muda como você joga:</b> farmar repetidamente a mesma peça de Conjunto <b>não é desperdício</b> mesmo depois de você já ter uma. Cada cópia sobe a Percepção daquele item e te aproxima de poder selar o lixo dele. É o oposto da intuição de "já tenho essa, pode vender".
+  </div>
+</section>
+
 <section id="conjuntos">
-  <h2 class="serif"><span class="num">12</span>Conjuntos</h2>
+  <h2 class="serif"><span class="num">13</span>Conjuntos</h2>
   <p class="sub">Três por classe, com bônus de 2 e 4 peças. São eles que definem as builds de fim de jogo.</p>
 
   <div class="grid g2">
@@ -749,7 +807,7 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <section id="builds-como">
-  <h2 class="serif"><span class="num">13</span>Usar build pronta ou criar a sua?</h2>
+  <h2 class="serif"><span class="num">14</span>Usar build pronta ou criar a sua?</h2>
   <p class="sub">Resposta curta: use as prontas agora, e crie as suas quando entender <i>por que</i> elas funcionam.</p>
 
   <p>As 39 builds do jogo não são sugestões genéricas — cada uma é construída em cima de um <b>bônus de conjunto específico</b>, e a maioria diz literalmente "centrada em equipamento de Conjunto". Elas existem porque o jogo tem <b>gatilhos</b>: um bônus de 4 peças que faz a habilidade A acionar a habilidade B. Descobrir esses encaixes sozinho, cruzando 18 conjuntos com 72 maestrias, é trabalhoso.</p>
@@ -778,7 +836,7 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <section id="builds">
-  <h2 class="serif"><span class="num">14</span>As 39 builds oficiais</h2>
+  <h2 class="serif"><span class="num">15</span>As 39 builds oficiais</h2>
   <p class="sub">Todas, com a nota de dificuldade do próprio jogo. Para 23 delas, o plano de jogo e os atributos preferidos exatamente como o jogo descreve.</p>
 
   <div class="tools">
@@ -885,7 +943,7 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <section id="mundo">
-  <h2 class="serif"><span class="num">15</span>Capítulos e nível</h2>
+  <h2 class="serif"><span class="num">16</span>Capítulos e nível</h2>
   <p class="sub">Vinte capítulos. Cada um eleva o teto de nível em 5 — o máximo na Campanha é 100.</p>
 
   <div class="scroll">
@@ -924,7 +982,7 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <section id="cidade">
-  <h2 class="serif"><span class="num">16</span>A cidade</h2>
+  <h2 class="serif"><span class="num">17</span>A cidade</h2>
   <p class="sub">O poder de longo prazo não vem do loot, vem daqui.</p>
 
   <div class="grid g2">
@@ -944,7 +1002,7 @@ const base = import.meta.env.BASE_URL;
 </section>
 
 <section id="craque">
-  <h2 class="serif"><span class="num">17</span>Como ficar craque</h2>
+  <h2 class="serif"><span class="num">18</span>Como ficar craque</h2>
   <p class="sub">O resumo do que move o ponteiro, em ordem de impacto.</p>
 
   <ol class="ladder">
@@ -964,7 +1022,7 @@ const base = import.meta.env.BASE_URL;
 <footer>
   <p style="margin:0">Todos os números vêm das tabelas internas do jogo, extraídas do <code>Assembly-CSharp</code> e traduzidas com o mesmo dicionário da tradução PT-BR da comunidade. Conteúdo não oficial, sem vínculo com a SmallMill.</p>
 </footer>
-</main>
+</div>
 </div></div>
   </main>
 
@@ -981,6 +1039,9 @@ const base = import.meta.env.BASE_URL;
     color: var(--t-text-main);
     font-family: var(--t-font-sans);
     font-size: 1.05rem; line-height: 1.7;
+    /* o header do site e fixo (h-20 = 5rem); sem isso o conteudo comeca
+       por baixo dele. Mesma folga que a Hero da index usa (pt-32). */
+    padding-top: 8rem;
   }
   /* jade e violet nao existem nos tokens do site: definidos aqui, em
      harmonia com a paleta (verde-musgo e roxo-ritual dessaturados). */
@@ -994,9 +1055,9 @@ const base = import.meta.env.BASE_URL;
   nav.toc a:hover { color: var(--t-text-main); }
   nav.toc a.on { color: var(--t-text-main); border-left-color: var(--t-primary); }
   nav.toc .grp { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--t-text-soft); opacity: .6; margin: 16px 0 5px; }
-  main { padding: 0 42px 120px; min-width: 0; }
+  .doc { padding: 0 42px 120px; min-width: 0; }
 
-  header.hero { padding: 40px 0 42px; border-bottom: 1px solid var(--t-border); margin-bottom: 44px; }
+  header.hero { padding: 0 0 42px; border-bottom: 1px solid var(--t-border); margin-bottom: 44px; }
   .eyebrow { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--t-primary); font-weight: 600; }
   h1 { font-size: clamp(2.4rem, 5.5vw, 3.6rem); line-height: 1.02; margin: 14px 0 16px; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
   .lede { font-size: 1.1rem; color: var(--t-text-soft); max-width: 64ch; margin: 0; }
@@ -1087,7 +1148,7 @@ const base = import.meta.env.BASE_URL;
     nav.toc .grp { width: 100%; }
     nav.toc a { border-left: 0; padding-left: 0; }
     nav.toc a.on { border-left: 0; color: var(--t-primary); }
-    main { padding: 0 20px 80px; }
+    .doc { padding: 0 20px 80px; }
     .kw { grid-template-columns: 1fr; gap: 3px; }
   }
 
