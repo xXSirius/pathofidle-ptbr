@@ -2,6 +2,20 @@
 
 ## 1.3.2 — 2026-08-16
 
+Separa dois termos que o jogo distingue em ingles mas a traducao tinha
+colapsado num so, causando confusao sobre qual barra de nivel e qual.
+
+- **`Worshiper` agora e "Adorador"** (antes: "Devoto"). E o seu nivel de conta,
+  o do canto superior direito — o teto dele e 5 x o numero do capitulo, e subir
+  aumenta quantos personagens voce pode ter e as recompensas offline
+- **`Godsworn` continua "Devoto"**, agora de forma consistente: 29 textos usavam
+  "Escolhido" para o mesmo termo. Sao os personagens que voce recruta na Prisao
+- Antes das duas correcoes, "Devoto" aparecia para as duas coisas ao mesmo tempo,
+  e frases como "aumentar o nivel do Devoto aumenta o numero maximo de Devotos"
+  ficavam sem sentido
+
+## 1.3.2 — 2026-08-16
+
 Tradução sincronizada com o patch 1.0.4 do jogo.
 
 - Changelog interno do patch 1.0.4 (tela "Notícias") agora aparece em português
