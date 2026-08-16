@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.4 — 2026-08-16
+
+Nova página no site: o "Códice do Devoto", guia de gameplay em `/guia`.
+
+- Classes, mecânicas, maestrias, conjuntos, prisão e as 39 builds oficiais,
+  extraídos das tabelas internas do jogo
+- Nova seção explicando Percepção (por item do Codex, não global) e Selos de
+  Afixo (a única forma de mirar o que cai ao selar um afixo)
+- Linkado no Header e no Footer do site
+
 ## 1.3.3 — 2026-08-16
 
 Separa dois termos que o jogo distingue em ingles mas a traducao tinha

@@ -23,7 +23,7 @@ namespace PtBrTranslation
         // Fonte única da versão: também usada no atributo MelonInfo acima
         // (precisa ser const pra valer como argumento de atributo) e na
         // checagem de atualização abaixo, pra nunca ficar dessincronizada.
-        public const string CurrentVersion = "1.3.3";
+        public const string CurrentVersion = "1.3.4";
 
         private const string LatestReleaseApiUrl = "https://api.github.com/repos/xXSirius/pathofidle-ptbr/releases/latest";
         private const string ReleasesPageUrl = "https://github.com/xXSirius/pathofidle-ptbr/releases/latest";
@@ -44,12 +44,20 @@ namespace PtBrTranslation
         private const uint MB_SETFOREGROUND = 0x00010000;
         private const int IDYES = 6;
 
-        private static void ShowUpdateNotification(string message)
+        // O jogo reabre uma vez sozinho logo na primeira inicialização depois
+        // de instalar/atualizar mods (comportamento do launcher, não deste
+        // mod) — esse primeiro processo morre em segundos, e uma thread
+        // IsBackground morre junto assim que o processo fecha, no meio do
+        // MessageBoxW. Por isso só marcamos "já avisado" DEPOIS que a caixa
+        // retorna: se o processo curto matar a thread antes disso, nada fica
+        // gravado e o aviso aparece de novo no processo real que fica de pé.
+        private void ShowUpdateNotification(string remoteVersionText, string message)
         {
             var thread = new Thread(() =>
             {
                 int result = MessageBoxW(IntPtr.Zero, message, "Tradução PT-BR - Path of Idle",
                     MB_YESNO | MB_ICONINFORMATION | MB_TOPMOST | MB_SETFOREGROUND);
+                RememberNotification(remoteVersionText);
                 if (result == IDYES)
                 {
                     try { Process.Start(new ProcessStartInfo(ReleasesPageUrl) { UseShellExecute = true }); }
@@ -135,9 +143,8 @@ namespace PtBrTranslation
                             $"Baixe em: {ReleasesPageUrl}");
 
                         if (AlreadyNotifiedToday(remoteVersionText)) return;
-                        RememberNotification(remoteVersionText);
 
-                        ShowUpdateNotification(
+                        ShowUpdateNotification(remoteVersionText,
                             $"Nova versão da tradução PT-BR disponível: v{remoteVersion} (você está na v{CurrentVersion}).\n\n" +
                             $"{ReleasesPageUrl}\n\n" +
                             "Abrir a página de download agora?");
