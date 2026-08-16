@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2 — 2026-08-16
+
+Tradução sincronizada com o patch 1.0.4 do jogo.
+
+- Changelog interno do patch 1.0.4 (tela "Notícias") agora aparece em português
+
 ## 1.3.1 — 2026-08-15
 
 Correções encontradas ao revisar as tabelas de habilidade do Sacerdote.
