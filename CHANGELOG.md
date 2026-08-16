@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.2 — 2026-08-16
+## 1.3.3 — 2026-08-16
 
 Separa dois termos que o jogo distingue em ingles mas a traducao tinha
 colapsado num so, causando confusao sobre qual barra de nivel e qual.
@@ -13,6 +13,11 @@ colapsado num so, causando confusao sobre qual barra de nivel e qual.
 - Antes das duas correcoes, "Devoto" aparecia para as duas coisas ao mesmo tempo,
   e frases como "aumentar o nivel do Devoto aumenta o numero maximo de Devotos"
   ficavam sem sentido
+- **Corrigido: o aviso de atualizacao nunca parava de aparecer.** O mod se
+  identificava como `1.3.0` porque o `.dll` nao era recompilado desde aquela
+  versao — entao quem instalava a v1.3.1 ou v1.3.2 (que eram so dicionario)
+  continuava vendo "nova versao disponivel" todo dia, mesmo ja estando em dia.
+  Agora a versao do mod acompanha a da release
 
 ## 1.3.2 — 2026-08-16
 

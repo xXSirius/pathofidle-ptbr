@@ -23,7 +23,7 @@ namespace PtBrTranslation
         // Fonte única da versão: também usada no atributo MelonInfo acima
         // (precisa ser const pra valer como argumento de atributo) e na
         // checagem de atualização abaixo, pra nunca ficar dessincronizada.
-        public const string CurrentVersion = "1.3.0";
+        public const string CurrentVersion = "1.3.3";
 
         private const string LatestReleaseApiUrl = "https://api.github.com/repos/xXSirius/pathofidle-ptbr/releases/latest";
         private const string ReleasesPageUrl = "https://github.com/xXSirius/pathofidle-ptbr/releases/latest";
