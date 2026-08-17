@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.0 — 2026-08-17
+
+O mod agora se atualiza sozinho quando a nova versão é só dicionário de
+tradução (a grande maioria dos lançamentos) — sem precisar baixar o zip e
+rodar o instalador de novo toda vez. Também corrigido o widget de changelog
+do site, que podia ficar travado em "Carregando..." pra sempre.
+
+- Auto-update: ao detectar uma release nova que muda só o PATCH (ex: 1.4.0 →
+  1.4.1), o mod baixa e aplica os dois dicionários (PT-BR e fallback EN)
+  sozinho, com validação de integridade e backup do arquivo anterior. Só
+  troca texto — nunca o `.dll` — e continua exigindo o instalador manual
+  quando a mudança é de verdade no mod (MINOR/MAJOR)
+- Corrigido o widget "O Que Mudou" da landing page: sem timeout, uma falha
+  de rede no `raw.githubusercontent.com` podia deixar a tela presa em
+  "Carregando changelog..." pra sempre em vez de mostrar o aviso de erro
+
 ## 1.3.6 — 2026-08-17
 
 Correção da sincronização com o patch 1.0.5: a varredura anterior só tinha

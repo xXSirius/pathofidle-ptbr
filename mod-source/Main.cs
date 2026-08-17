@@ -23,10 +23,11 @@ namespace PtBrTranslation
         // Fonte única da versão: também usada no atributo MelonInfo acima
         // (precisa ser const pra valer como argumento de atributo) e na
         // checagem de atualização abaixo, pra nunca ficar dessincronizada.
-        public const string CurrentVersion = "1.3.4";
+        public const string CurrentVersion = "1.4.0";
 
         private const string LatestReleaseApiUrl = "https://api.github.com/repos/xXSirius/pathofidle-ptbr/releases/latest";
         private const string ReleasesPageUrl = "https://github.com/xXSirius/pathofidle-ptbr/releases/latest";
+        private const string RawContentBaseUrl = "https://raw.githubusercontent.com/xXSirius/pathofidle-ptbr";
 
         // Caixa de diálogo nativa do Windows (user32), não a UI do jogo: já
         // tentamos usar o toast interno do jogo (Game.uiMgr.ShowTip) e ele
@@ -92,6 +93,13 @@ namespace PtBrTranslation
         // sem esperar o dia virar.
         private static string notifiedVersionPath;
 
+        // Guarda a última versão de dicionário aplicada por
+        // TryAutoUpdateDictionariesAsync. Sem isso, toda vez que o jogo
+        // abrisse a checagem compararia contra o CurrentVersion fixo do
+        // .dll (que não muda em releases só de conteúdo) e baixaria os
+        // mesmos arquivos de novo a cada sessão.
+        private static string dictVersionPath;
+
         public override void OnInitializeMelon()
         {
             string dir = MelonEnvironment.UserDataDirectory;
@@ -99,6 +107,7 @@ namespace PtBrTranslation
             EnFallback = LoadDict(Path.Combine(dir, "en_fallback.json"), "EN fallback");
             missingPath = Path.Combine(dir, "missing_strings.json");
             notifiedVersionPath = Path.Combine(dir, "last_notified_version.txt");
+            dictVersionPath = Path.Combine(dir, "dict_version.txt");
 
             // dispara em segundo plano e nunca bloqueia a inicialização do
             // mod — se a rede falhar ou o GitHub estiver fora do ar, o jogo
@@ -106,14 +115,15 @@ namespace PtBrTranslation
             _ = CheckForUpdateAsync();
         }
 
-        // Só avisa que existe uma versão nova (log + link pra release), não
-        // baixa nem substitui nenhum arquivo sozinho: o .dll de tradução
-        // está carregado em memória enquanto o jogo roda, então uma troca
-        // seria arriscada, e baixar+aplicar um update sem verificação de
-        // integridade dentro do processo do jogo abriria uma porta de
-        // ataque desnecessária caso a conta/repositório do GitHub um dia
-        // seja comprometido. Atualizar continua sendo: baixar o release e
-        // rodar o instalador de novo.
+        // A maioria esmagadora das releases é só conteúdo de tradução
+        // (dicionário novo, sem mudar o .dll — ver versionamento no
+        // CONTRIBUTING.md: PATCH = tradução, MINOR/MAJOR = mudança no
+        // mod). Um PATCH novo (X.Y.Z -> X.Y.Z+1, mesmo X.Y) é seguro pra
+        // baixar e aplicar sozinho: só troca dois arquivos de texto, nunca
+        // o .dll carregado em memória. MINOR/MAJOR mudam código, então
+        // continuam exigindo o instalador manual (aviso com link, como
+        // sempre foi) — nunca baixamos nem substituímos nenhum executável
+        // sozinhos, só os dicionários JSON.
         private async Task CheckForUpdateAsync()
         {
             try
@@ -136,8 +146,22 @@ namespace PtBrTranslation
                     if (!System.Version.TryParse(remoteVersionText, out var remoteVersion)) return;
                     if (!System.Version.TryParse(CurrentVersion, out var currentVersion)) return;
 
-                    if (remoteVersion > currentVersion)
+                    // Baseline efetiva: normalmente o CurrentVersion compilado no
+                    // .dll, mas se já sincronizamos um PATCH mais novo dentro do
+                    // mesmo X.Y numa sessão anterior, usa esse em vez de re-baixar
+                    // o mesmo conteúdo a cada abertura do jogo.
+                    var lastSyncedDict = ReadLastSyncedDictVersion();
+                    var baseline = (lastSyncedDict != null
+                        && lastSyncedDict.Major == currentVersion.Major
+                        && lastSyncedDict.Minor == currentVersion.Minor
+                        && lastSyncedDict > currentVersion)
+                        ? lastSyncedDict
+                        : currentVersion;
+
+                    if (remoteVersion.Major != currentVersion.Major || remoteVersion.Minor != currentVersion.Minor)
                     {
+                        if (remoteVersion <= baseline) return;
+
                         LoggerInstance.Msg(
                             $"Nova versão da tradução disponível: v{remoteVersion} (você está na v{CurrentVersion}). " +
                             $"Baixe em: {ReleasesPageUrl}");
@@ -148,6 +172,12 @@ namespace PtBrTranslation
                             $"Nova versão da tradução PT-BR disponível: v{remoteVersion} (você está na v{CurrentVersion}).\n\n" +
                             $"{ReleasesPageUrl}\n\n" +
                             "Abrir a página de download agora?");
+                        return;
+                    }
+
+                    if (remoteVersion > baseline)
+                    {
+                        await TryAutoUpdateDictionariesAsync(tag, remoteVersion);
                     }
                 }
             }
@@ -155,6 +185,93 @@ namespace PtBrTranslation
             {
                 // sem rede, GitHub fora do ar, rate limit etc. — ignora
                 // silenciosamente, isso nunca deve incomodar quem só quer jogar
+            }
+        }
+
+        // Baixa só os dois arquivos de texto (nunca o .dll) direto da tag da
+        // release, valida que desserializam como dicionário e que não vieram
+        // suspeitosamente menores que o atual (download truncado/corrompido)
+        // antes de aceitar. Na dúvida, mantém o que já está carregado e
+        // tenta de novo na próxima abertura do jogo — nunca deixa o mod num
+        // estado pior do que estava.
+        private async Task TryAutoUpdateDictionariesAsync(string tag, System.Version remoteVersion)
+        {
+            const double MinAcceptableRatio = 0.9;
+
+            string ptBrJson;
+            string enJson;
+            using (var client = new HttpClient())
+            {
+                client.Timeout = TimeSpan.FromSeconds(15);
+                // Os dicionários passam de 500KB e crescem a cada patch do
+                // jogo; o limite da checagem de versão (512KB) é pequeno
+                // demais pra eles, por isso este cliente é separado — o
+                // MaxResponseContentBufferSize só pode ser definido antes da
+                // primeira requisição de cada HttpClient.
+                client.MaxResponseContentBufferSize = 5 * 1024 * 1024;
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("PtBrTranslation-Mod");
+
+                ptBrJson = await client.GetStringAsync($"{RawContentBaseUrl}/{tag}/installer/UserData/ptbr_translation.json");
+                enJson = await client.GetStringAsync($"{RawContentBaseUrl}/{tag}/installer/UserData/en_fallback.json");
+            }
+
+            var newPtBr = JsonConvert.DeserializeObject<Dictionary<string, string>>(ptBrJson);
+            var newEn = JsonConvert.DeserializeObject<Dictionary<string, string>>(enJson);
+
+            if (newPtBr == null || newPtBr.Count < PtBr.Count * MinAcceptableRatio)
+            {
+                LoggerInstance.Warning(
+                    $"Dicionário PT-BR baixado (v{remoteVersion}) parece incompleto " +
+                    $"({newPtBr?.Count ?? 0} vs {PtBr.Count} entradas atuais) — ignorando.");
+                return;
+            }
+            if (newEn == null || newEn.Count < EnFallback.Count * MinAcceptableRatio)
+            {
+                LoggerInstance.Warning(
+                    $"Dicionário EN fallback baixado (v{remoteVersion}) parece incompleto " +
+                    $"({newEn?.Count ?? 0} vs {EnFallback.Count} entradas atuais) — ignorando.");
+                return;
+            }
+
+            string dir = MelonEnvironment.UserDataDirectory;
+            WriteDictFile(Path.Combine(dir, "ptbr_translation.json"), ptBrJson);
+            WriteDictFile(Path.Combine(dir, "en_fallback.json"), enJson);
+
+            // Troca a referência do dicionário em memória: leitura é sempre a
+            // instância inteira (antiga ou nova, nunca parcial), então isso é
+            // seguro mesmo com o Postfix do Harmony lendo em paralelo.
+            PtBr = newPtBr;
+            EnFallback = newEn;
+
+            File.WriteAllText(dictVersionPath, remoteVersion.ToString());
+
+            LoggerInstance.Msg($"Dicionário de tradução atualizado automaticamente para v{remoteVersion} ({newPtBr.Count} strings PT-BR).");
+        }
+
+        // Grava com backup (.bak do arquivo anterior) e passo intermediário
+        // (.tmp) pra nunca deixar um JSON pela metade no disco se o jogo
+        // fechar no meio da escrita.
+        private static void WriteDictFile(string path, string newContent)
+        {
+            if (File.Exists(path))
+            {
+                File.Copy(path, path + ".bak", overwrite: true);
+            }
+            string tempPath = path + ".tmp";
+            File.WriteAllText(tempPath, newContent);
+            File.Move(tempPath, path, overwrite: true);
+        }
+
+        private static System.Version ReadLastSyncedDictVersion()
+        {
+            try
+            {
+                if (!File.Exists(dictVersionPath)) return null;
+                return System.Version.TryParse(File.ReadAllText(dictVersionPath).Trim(), out var v) ? v : null;
+            }
+            catch
+            {
+                return null;
             }
         }
 

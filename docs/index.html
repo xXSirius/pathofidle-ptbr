@@ -216,17 +216,33 @@ Baixar Última Versão
       listEl.innerHTML = html;
     }
 
-    fetch(CHANGELOG_URL)
+    function showFallback() {
+      listEl.innerHTML =
+        '<p class="text-center text-text-muted italic">Não deu para carregar o changelog agora. ' +
+        '<a class="link-underline text-secondary" href="https://github.com/xXSirius/pathofidle-ptbr/blob/master/CHANGELOG.md" target="_blank" rel="noopener">Veja direto no GitHub</a>.</p>';
+      versionTag.textContent = 'ver no GitHub';
+    }
+
+    // raw.githubusercontent.com às vezes trava sem responder (sem erro HTTP,
+    // sem rejeitar a promise) em vez de falhar rápido — sem esse timeout a
+    // tela fica presa em "Carregando…" pra sempre em vez de cair no fallback.
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timeoutId = setTimeout(function () {
+      if (controller) controller.abort();
+    }, 8000);
+
+    fetch(CHANGELOG_URL, controller ? { signal: controller.signal } : undefined)
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return res.text();
       })
-      .then(function (md) { render(parseChangelog(md)); })
+      .then(function (md) {
+        clearTimeout(timeoutId);
+        render(parseChangelog(md));
+      })
       .catch(function () {
-        listEl.innerHTML =
-          '<p class="text-center text-text-muted italic">Não deu para carregar o changelog agora. ' +
-          '<a class="link-underline text-secondary" href="https://github.com/xXSirius/pathofidle-ptbr/blob/master/CHANGELOG.md" target="_blank" rel="noopener">Veja direto no GitHub</a>.</p>';
-        versionTag.textContent = 'ver no GitHub';
+        clearTimeout(timeoutId);
+        showFallback();
       });
   })();
 })();</script> <section id="instalacao" class="section-py bg-surface"> <div class="container-wide"> <div class="text-center mb-16"> <span class="label-tag block mb-3">Cinco minutos</span> <h2 class="section-plaque" data-animate>Como Instalar</h2> <p class="text-body-lg text-text-soft max-w-2xl mx-auto mt-6" data-animate>
