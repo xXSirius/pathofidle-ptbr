@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.5 — 2026-08-17
+
+Tradução sincronizada com o patch 1.0.5 do jogo.
+
+- Changelog interno do patch 1.0.5 (tela "Notícias") agora aparece em português
+
 ## 1.3.4 — 2026-08-16
 
 Nova página no site: o "Códice do Devoto", guia de gameplay em `/guia`.
