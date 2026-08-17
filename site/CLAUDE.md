@@ -31,6 +31,14 @@ cliente e por quê:
 - **`Header.astro` aceita `standalone`**: em páginas que não são a index, os
   links de âncora viram absolutos (`/pathofidle-ptbr/#sobre`), senão não levariam
   a lugar nenhum. O scroll-spy ignora links que não começam com `#`.
+- **Guia bilíngue**: `/guia` (PT-BR, `src/pages/guia.astro`) tem uma versão irmã em
+  inglês em `/guia/en` (`src/pages/guia/en.astro`). São páginas separadas — mais leve
+  e melhor para SEO que alternar via JS. Um link recíproco no topo de cada uma troca
+  de idioma ("Read in English →" / "Ler em português →"). `BaseLayout.astro` ganhou
+  uma prop opcional `alternates` (`{lang, href}[]`) que gera as tags `<link
+  rel="alternate" hreflang="...">` — só essas duas páginas usam. Nomes de habilidade/
+  item/mecânica na versão EN usam os termos reais do jogo (verificados contra
+  `scripts/language_reference.json`), não uma retradução do texto em português.
 - **Build sai em `../docs`** (`outDir` no `astro.config.mjs`), pra virar o
   conteúdo servido pelo GitHub Pages (Settings → Pages → branch `main` → `/docs`).
   `base: '/pathofidle-ptbr/'` está fixado pra esse path — se um domínio próprio

@@ -24,6 +24,9 @@ interface Props {
   canonical?: string;
   noindex?: boolean;
   schema?: object;
+  /** Pares { lang, href } de versões traduzidas desta página (ex: guia PT/EN).
+   *  Omitido na maioria das páginas — só o /guia usa isso por enquanto. */
+  alternates?: { lang: string; href: string }[];
 }
 
 const {
@@ -35,6 +38,7 @@ const {
   canonical = 'https://xxsirius.github.io/pathofidle-ptbr/',
   noindex = false,
   schema,
+  alternates = [],
 } = Astro.props;
 
 // Sem campanha/anúncio para este projeto — GTM só entra se alguém preencher
@@ -72,6 +76,7 @@ const finalSchema = schema || defaultSchema;
   <meta name="keywords" content={keywords} />
   {noindex && <meta name="robots" content="noindex, follow" />}
   <link rel="canonical" href={canonical} />
+  {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />

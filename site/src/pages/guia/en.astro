@@ -1,0 +1,1221 @@
+---
+// English version of the gameplay guide. Mirrors guia.astro exactly in
+// structure/styling — only the prose is translated. Skill/item/mechanic
+// names use the game's real English strings (cross-checked against
+// scripts/language_reference.json), not a re-translation of the
+// Portuguese text, so an English-speaking player sees names that match
+// what's actually in-game.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import Footer from '../../components/sections/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const guiaSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Godsworn Codex — Path of Idle: Old Gods Rising Guide',
+  description:
+    'Complete guide to Path of Idle: Old Gods Rising: classes, mechanics, masteries, sets, the Prison, and all 39 official builds.',
+  inLanguage: 'en',
+  datePublished: '2026-08-16',
+  dateModified: '2026-08-16',
+  author: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
+  publisher: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xxsirius.github.io${base}guia/en/` },
+  image: `https://xxsirius.github.io${base}og-image.png`,
+};
+---
+
+<BaseLayout
+  title="Godsworn Codex | Path of Idle: Old Gods Rising Guide"
+  description="Complete Path of Idle: Old Gods Rising guide: classes, mechanics, masteries, sets, the Prison, and all 39 official builds — extracted from the game's internal data tables."
+  keywords="path of idle guide, path of idle build, path of idle old gods rising tips, path of idle classes"
+  ogTitle="Godsworn Codex — Path of Idle Guide"
+  ogDescription="Classes, mechanics, masteries, sets, and all 39 official builds, extracted from the game's data."
+  canonical={`https://xxsirius.github.io${base}guia/en/`}
+  schema={guiaSchema}
+  alternates={[
+    { lang: 'pt-BR', href: `https://xxsirius.github.io${base}guia/` },
+    { lang: 'en', href: `https://xxsirius.github.io${base}guia/en/` },
+    { lang: 'x-default', href: `https://xxsirius.github.io${base}guia/` },
+  ]}
+>
+  <Header standalone />
+
+  <main id="main-content" tabindex="-1">
+<div class="guia" id="top"><div class="shell">
+<nav class="toc">
+  <div class="brand serif">Godsworn Codex</div>
+  <div class="links">
+    <div class="grp">Understanding the game</div>
+    <a href="#basics">How the game works</a>
+    <a href="#teams">Worshiper, Godsworn &amp; teams</a>
+    <a href="#routine">Daily routine</a>
+    <div class="grp">The rules that decide everything</div>
+    <a href="#priority">Casting priority</a>
+    <a href="#mechanics">Boosts &amp; Afflictions</a>
+    <a href="#states">States &amp; Reservation</a>
+    <div class="grp">Character</div>
+    <a href="#prison">Getting good Godsworn</a>
+    <a href="#classes">The six classes</a>
+    <a href="#masteries">Masteries</a>
+    <div class="grp">Equipment</div>
+    <a href="#slots">The 8 slots</a>
+    <a href="#equip">Rarities &amp; upgrades</a>
+    <a href="#awareness">Awareness &amp; Seals</a>
+    <a href="#sets">Sets</a>
+    <div class="grp">Strategy</div>
+    <a href="#builds-how">Use a ready-made build?</a>
+    <a href="#builds">The 39 builds</a>
+    <a href="#world">Chapters &amp; world</a>
+    <a href="#city">The city</a>
+    <a href="#pro">How to get good</a>
+  </div>
+</nav>
+
+<div class="doc">
+<header class="hero">
+  <div class="eyebrow">Path of Idle: Old Gods Rising</div>
+  <h1 class="serif">Godsworn Codex</h1>
+  <p class="lede">A complete guide, extracted straight from the game's internal data tables. Written for people just starting out, and to keep coming back to once you're a veteran.</p>
+  <p style="margin-top:10px"><a href={`${base}guia/`} style="color:var(--t-secondary)">Ler em português →</a></p>
+  <div class="facts">
+    <div class="fact"><div class="n">6</div><div class="l">Classes</div></div>
+    <div class="fact"><div class="n">100</div><div class="l">Max level</div></div>
+    <div class="fact"><div class="n">20</div><div class="l">Chapters</div></div>
+    <div class="fact"><div class="n">39</div><div class="l">Official builds</div></div>
+    <div class="fact"><div class="n">72</div><div class="l">Masteries</div></div>
+    <div class="fact"><div class="n">18</div><div class="l">Sets</div></div>
+  </div>
+</header>
+
+<section id="basics">
+  <h2 class="serif"><span class="num">01</span>How the game works</h2>
+  <p class="sub">If you're coming from a regular action RPG, here's the first thing to unlearn: you don't control combat here.</p>
+
+  <p>Path of Idle is an <b>idle ARPG</b>. You don't click a skill, dodge, or aim. Your characters fight on their own, following automatic logic. What you do is <b>build the machine</b>: choose characters, skills, gear, and upgrades. Then you just watch — or close the game and come back later, since it accumulates offline rewards.</p>
+
+  <p>That changes how much decisions weigh. In a regular ARPG, a skilled player can make up for a bad build. Here there's no such thing: <b>the build is the whole game</b>. That's why this guide spends so much time on rules that look like details — they're what separates a character that stalls at chapter 8 from one that clears chapter 20.</p>
+
+  <h3>The core loop</h3>
+  <p>You progress through the <span class="term">Campaign</span>, split into 20 chapters. Each chapter has several sites; clearing all of them unlocks the <span class="term">Boss</span>. Meanwhile, the resources you collect get invested into the <span class="term">city</span>, which is where permanent power lives.</p>
+
+  <div class="tip">
+    <b>Golden rule right away:</b> every chapter's Boss <b>always</b> drops a Set piece, and treasure sites <b>always</b> drop a Legendary — but treasure sites can only be challenged <b>once</b>. Fight the Boss as soon as it unlocks; it's your reliable source of the pieces that actually matter.
+  </div>
+
+  <h3>The four activities</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Campaign</h4><p style="margin:0;font-size:.92rem">The main progression. Unlocks chapters, raises your level cap, and generates most of your resources and gear.</p></div>
+    <div class="card"><h4>Divine Tower</h4><p style="margin:0;font-size:.92rem"><b>Permanently</b> boosts Campaign resource rewards. Each floor gives Soul Shards. The Audience Chamber grants a Divinity effect that only applies on that floor.</p></div>
+    <div class="card"><h4>Exploration</h4><p style="margin:0;font-size:.92rem">The tap you can aim: pick an island type and go after the specific resource you're missing.</p></div>
+    <div class="card"><h4>Doom</h4><p style="margin:0;font-size:.92rem">End-game content, with its own modifiers and dedicated stages.</p></div>
+  </div>
+
+  <div class="tip">
+    <b>Prioritize the Tower early.</b> Its bonus is permanent and compounding — every hour you don't raise it is an hour everything else earns less. You can go straight for the floor's Boss, but the fight is much harder without the Divinity effect.
+  </div>
+</section>
+
+<section id="teams">
+  <h2 class="serif"><span class="num">02</span>Worshiper, Godsworn &amp; teams</h2>
+  <p class="sub">This is where the #1 confusion for beginners lives: the game has two different things that look the same.</p>
+
+  <div class="card">
+    <div class="kw"><dt>Worshiper</dt><dd><b>That's you.</b> The level in the top-right corner of the screen — your account, the cult you lead. Its cap is <b>5 × the chapter number</b> (at chapter 7, cap 35).</dd></div>
+    <div class="kw"><dt>Godsworn</dt><dd><b>Those are the characters.</b> Each one you pull from the Prison is a Godsworn, with its own class, rarity, level, skills, and gear. They're who actually fights.</dd></div>
+  </div>
+
+  <p>Raising your <b>Worshiper</b> level does two things: it increases <b>how many Godsworn you can have</b> at once, and it improves offline rewards. The cap starts at 5 Godsworn and reaches 25 at level 100 (+1 every 5 levels).</p>
+
+  <h3>The three teams</h3>
+  <p>You don't play with a single character — you play with <b>teams of 3 Godsworn</b>, and you can have <b>three teams</b> running different adventures at the same time:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Team</th><th>Unlocks at</th><th class="num">Godsworn</th></tr></thead>
+      <tbody>
+        <tr><td><b>Team I</b></td><td>From the start</td><td class="num">3</td></tr>
+        <tr><td><b>Team II</b></td><td>Chapter <b>4</b></td><td class="num">3</td></tr>
+        <tr><td><b>Team III</b></td><td>Chapter <b>10</b></td><td class="num">3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px">In other words: by the end you have <b>9 Godsworn deployed</b>, on three independent fronts — one team on the Campaign, another on the Tower, another on Exploration.</p>
+
+  <h3>How to build a team of 3</h3>
+  <p>There's <b>positioning</b> inside a team, and it works on two layers.</p>
+
+  <p><b>The order of the 3 slots sets the starting formation.</b> Whoever you put in the first slot spawns in front, the second in the middle, the third in back — three fixed positions on the field. You control this by dragging Godsworn between the team's slots.</p>
+
+  <p><b>But "the frontmost ally" is recalculated constantly.</b> During the fight, the game doesn't look at the slot number: it ranks the three by <b>each one's actual position on the field</b> at that instant. Since units move on their own — and every skill has its own cast range — whoever uses a short-range skill advances and takes the front, while long-range users fall back. The starting formation is the starting point; skill range is what holds it (or flips it).</p>
+
+  <p>And that matters, because a lot of skills and affixes explicitly target "the frontmost ally":</p>
+  <div class="card">
+    <div class="kw"><dt>Transferred damage</dt><dd>Several affixes transfer part of the damage taken <b>to the frontmost ally</b> (from 12% to 43%, depending on the affix).</dd></div>
+    <div class="kw"><dt>Shields</dt><dd>Skills like Ice Barrier apply their shield <b>to the frontmost ally</b> specifically.</dd></div>
+    <div class="kw"><dt>Area buffs</dt><dd>Effects like Honor Guard hit "the three frontmost allies."</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>Practical composition rule:</b> put the tankiest one up front — usually the <b>Warrior</b> (Plate armor and the game's best Health growth) or the <b>Cleric</b> (also Plate). Squishier damage dealers (Mage, Priest) go in back. The classic team that works: <b>1 that tanks hits + 1 that deals damage + 1 support/auras</b>.
+  </div>
+
+  <p>And yes, <b>specialized</b> teams are absolutely worth it. Since <b>Auras</b> and "all allies" buffs only count within the team, grouping characters that reinforce each other pays off more than spreading out. Specializations that make sense:</p>
+  <div class="card">
+    <div class="kw"><dt>Advance team</dt><dd>Your strongest, with the best gear, pushing the Campaign to open chapters — which is what raises everyone's level cap.</dd></div>
+    <div class="kw"><dt>Resource team</dt><dd>Doesn't need to be strong, just needs to survive. Sits on Exploration farming whatever resource is bottlenecking you.</dd></div>
+    <div class="kw"><dt>Tower team</dt><dd>The Tower has enemies with their own patterns. A team built with the right resistances can clear floors the advance team can't.</dd></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Watch out for the common mistake:</b> don't spread your best items across all three teams "to keep everyone average." Concentrate on the advance team — it's the one that opens chapters, and opening a chapter raises the level cap for all <b>nine</b> Godsworn. Average teams stall everyone together.
+  </div>
+</section>
+
+<section id="routine">
+  <h2 class="serif"><span class="num">03</span>Daily routine</h2>
+  <p class="sub">That "there's too much stuff" feeling disappears once you realize almost everything can be automated, and only five decisions actually need your attention.</p>
+
+  <h3>Step 1 — Set it up once and forget it</h3>
+  <div class="card">
+    <div class="kw"><dt>Recommended filter</dt><dd>In the auto-sell settings, turn on the <b>filter recommendations</b>. The game starts adjusting what it sells <b>by itself, based on your chapter</b>. It's the single thing that fixes inventory clutter for good.</dd></div>
+    <div class="kw"><dt>Auto Battle</dt><dd>Unlocks after chapter one. Top-right corner of the adventure slot.</dd></div>
+    <div class="kw"><dt>Stop on death</dt><dd>Turn it on in <b>both</b> places (challenge and Exploration). The game itself marks it as recommended — without it you get stuck in a loss loop without noticing.</dd></div>
+    <div class="kw"><dt>Return to chapter</dt><dd>"Return to max chapter on finish" for the Tower and Exploration. Keeps the team from sitting idle.</dd></div>
+    <div class="kw"><dt>Auto-advance</dt><dd>Auto-advance stage, auto-boss, and auto-next-chapter.</dd></div>
+  </div>
+  <div class="tip"><b>If you only do one thing from this section:</b> turn on the recommended sell filter.</div>
+
+  <h3>Step 2 — The cycle of every session</h3>
+  <div class="card">
+    <ol class="ladder">
+      <li><b>Collect offline rewards</b>There's a cap on hours — go past it and it stops accumulating. First thing to do when you open the game.</li>
+      <li><b>Empty your bag</b>Open the equipment chests (hold right-click to open fast). With the filter on, junk is already sold automatically.</li>
+      <li><b>Market</b>Check the <b>Orders</b>: they ask for a piece of specific quality and slot, pay in rare resources, and auto-search your bag and Warehouse on their own.</li>
+      <li><b>Prison</b>Refresh looking for high rarity — but read section 07 first, there's an important rule here.</li>
+      <li><b>Temple</b>Spend Blood on Blessings. Each one has a 4% chance of granting a Talent point.</li>
+      <li><b>Workshop</b>Forge and Refine <b>only what's final</b>. Resources spent on a transitional piece are resources lost.</li>
+      <li><b>Stele</b>Check the stage tasks — completing them early unlocks bigger upgrades on the other buildings.</li>
+      <li><b>Let it run</b>Split your teams: advance on the Campaign, the others on the Tower and Exploration.</li>
+    </ol>
+  </div>
+
+  <h3>Step 3 — What to keep and what to sell</h3>
+  <p>This is the exact rule the game's own filter uses. With <b>T</b> as your chapter's level cap (5 × chapter):</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Rarity</th><th>Sell below</th><th>Exception — always keep</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Common</b></td><td>level <b>T − 7</b></td><td>With <b>3 sockets</b></td></tr>
+        <tr><td style="color:#2B6FFF"><b>Fine</b></td><td>level <b>T − 12</b></td><td>With <b>2 sockets</b> or <b>2 Fine affixes</b></td></tr>
+        <tr><td style="color:#E5B426"><b>Rare</b></td><td>level <b>T − 17</b></td><td>With <b>2 Fine affixes</b> or <b>3+ Rare affixes</b></td></tr>
+        <tr><td style="color:#D96016"><b>Legendary</b></td><td colspan="2">Never auto-sell</td></tr>
+        <tr><td style="color:#8DC025"><b>Set</b></td><td colspan="2">Never auto-sell</td></tr>
+        <tr><td style="color:#1DC693"><b>Unique</b></td><td colspan="2">Never auto-sell</td></tr>
+        <tr><td style="color:#be212b"><b>Mythic</b></td><td colspan="2">Never auto-sell</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip warn">
+    <b>The most important exception:</b> Common gear <b>with 3 sockets</b> is the <b>only</b> raw material for <b>Runewords</b> — and a Runeword is what gives your Godsworn a skill <b>from another class</b>. The official filter only flags "0, 1, and 2 sockets" for sale on purpose, sparing the 3-socket ones. If you configure the filter by hand and check "3", you'll sell off the most valuable thing a white item can be without even noticing.
+  </div>
+
+  <h3>Step 4 — Where resources come from and go</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Gold</h4><p style="margin:0;font-size:.92rem">Campaign and Exploration → Bewitch prisoners, buy at the Market, Forge at the Workshop.</p></div>
+    <div class="card"><h4>Blood of the Old Gods</h4><p style="margin:0;font-size:.92rem">Campaign and Exploration → Bless Godsworn at the Temple, Torment prisoners.</p></div>
+    <div class="card"><h4>Bone</h4><p style="margin:0;font-size:.92rem">Stele tasks and Exploration → building Renovation, Refining at the Workshop, reshaping the Golem.</p></div>
+    <div class="card"><h4>Soul Shards</h4><p style="margin:0;font-size:.92rem">Divine Tower floors → Infuse classes.</p></div>
+  </div>
+
+  <div class="tip"><b>Awareness:</b> only goes up with <b>Rare or better</b> items (Rare gives 10, Legendary/Set/Unique 50, Mythic 200). Common and Fine give <b>zero</b> — let the filter sell those freely. What Awareness is and what it's for: <a href="#awareness" style="color:var(--t-secondary)">section 12</a>.</div>
+
+  <h3>The five things that need your attention</h3>
+  <div class="card">
+    <div class="kw"><dt>Build</dt><dd>Which set to chase and which skills go in.</dd></div>
+    <div class="kw"><dt>Upgrade order</dt><dd>Which building to raise first with limited resources.</dd></div>
+    <div class="kw"><dt>Refine or not</dt><dd>Legendary → Mythic <b>destroys the item</b> on failure.</dd></div>
+    <div class="kw"><dt>Prisoners</dt><dd>When it's worth spending to raise rarity (section 07).</dd></div>
+    <div class="kw"><dt>When to stop</dt><dd>If Level Suppression starts to hurt, go back and raise your cap.</dd></div>
+  </div>
+</section>
+
+<section id="priority">
+  <h2 class="serif"><span class="num">04</span>Casting priority</h2>
+  <p class="sub">The single most important mechanic in the game, and the one fewest people understand. How the AI decides which skill to use.</p>
+
+  <p>Since you don't control combat, there's a fixed order: a Godsworn always tries the <b>highest-priority</b> skill that's ready first. The order is always this:</p>
+
+  <div class="card">
+    <ol class="ladder">
+      <li><b>Support</b>Healing, shields, summoning allies and minions. <span style="color:var(--t-text-soft)">Highest priority — always fires first.</span></li>
+      <li><b>Utility</b>Buffs on allies, debuffs on enemies.</li>
+      <li><b>Mastery</b>The heavy-hitting skills. <span style="color:var(--t-text-soft)">This is where your damage lives.</span></li>
+      <li><b>Basic</b>The "normal attack." <span style="color:var(--t-text-soft)">Lowest priority — only fires when nothing above is available.</span></li>
+    </ol>
+  </div>
+
+  <div class="tip warn">
+    <b>The consequence that breaks builds:</b> every high-priority skill you add <b>steals time</b> from your Mastery. If you fill the bar with Support and Utility, the skill that's supposed to kill things almost never fires. This is cause #1 of "my build doesn't deal damage."
+  </div>
+
+  <p>Build it like this: <b>one</b> Mastery as your main damage source, <b>one</b> Basic chosen for the <b>effect</b> it generates (Mettle, Haste, or Sunder — not for its damage), and only the Utility/Support skills whose effect really multiplies the build. If you can't explain in one sentence why a skill is there, it's probably in the way.</p>
+
+  <div class="tip"><b>Only one Basic.</b> The three skills at the bottom of the Talent screen are fixed as Basics, and you can only have <b>one</b> active.</div>
+
+  <h3>Martial × Spell</h3>
+  <p>There's a second axis, parallel to priority: every skill is either <b>Martial</b> (combat technique) or <b>Spell</b> (casting). That matters because attributes are split by axis — <b>Martial Speed</b> and <b>Spell Speed</b> are different stats.</p>
+  <div class="tip warn"><b>The game's most common waste:</b> using a "Spell Damage" item on a Martial build. It does absolutely nothing.</div>
+</section>
+
+<section id="mechanics">
+  <h2 class="serif"><span class="num">05</span>Boosts &amp; Afflictions</h2>
+  <p class="sub">Two stacking systems that almost every good build leans on. Both: max 5 stacks, 4 seconds each, with duration tracked separately per stack.</p>
+
+  <p>A "stack" is one layer of an effect. If a skill grants 1 stack of Mettle and you use it five times in a row, you have 5 — the cap. Since each one lasts 4 seconds <b>on its own</b>, keeping the cap requires applying it steadily, not all at once.</p>
+
+  <h3>Boosts <span class="pill">bonuses on you</span></h3>
+  <div class="card">
+    <div class="kw"><dt>Mettle</dt><dd>+5% All Damage and +5% Physical Defense per stack. <span style="color:var(--t-text-soft)">At cap: +25% damage.</span></dd></div>
+    <div class="kw"><dt>Haste</dt><dd>+5% Martial Speed and +5% Dodge Value per stack.</dd></div>
+    <div class="kw"><dt>Fortitude</dt><dd>+3% Primary Attributes (Strength, Dexterity, Intelligence) and +6% Crit Resistance per stack.</dd></div>
+  </div>
+
+  <h3>Afflictions <span class="pill">penalties on the enemy</span></h3>
+  <div class="card">
+    <div class="kw"><dt>Sunder</dt><dd>−10% target's All Defense and +5% Crit Damage taken, per stack. <span style="color:var(--t-text-soft)">At cap: −50% defense.</span></dd></div>
+    <div class="kw"><dt>Slow</dt><dd>−6% Movement Speed and −5% Skill Speed on the target.</dd></div>
+    <div class="kw"><dt>Wound</dt><dd>−10% Healing received and −10% Health Regen on the target.</dd></div>
+    <div class="kw"><dt>Shatter</dt><dd>Reduces the target's Shield effectiveness and speeds up its decay.</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>Sunder is close to mandatory.</b> Five stacks strip <b>half</b> the target's defense — no item in the game gives a multiplier this size this cheaply. Any damage build improves by fitting in a Sunder source. Warrior has Cruel Hook, Mage has Shockwave, and Priest has it built into their own Basic (Frost Assault).
+  </div>
+
+  <h3>Dispel &amp; Purge</h3>
+  <div class="card">
+    <div class="kw"><dt>Dispel</dt><dd>Removes all Buffs from the target — <b>except Boosts</b>.</dd></div>
+    <div class="kw"><dt>Purge</dt><dd>Removes all Debuffs — <b>except Afflictions</b>.</dd></div>
+  </div>
+  <p style="margin-top:12px">In other words: Boosts and Afflictions <b>can't be cleansed</b>. That's why stacking builds are so reliable against bosses, which usually have effect removal.</p>
+</section>
+
+<section id="states">
+  <h2 class="serif"><span class="num">06</span>States &amp; Reservation</h2>
+  <p class="sub">Four states condition dozens of affixes — and there's a Reservation trick that turns one of them permanent.</p>
+
+  <p>First things first: <b>Reservation</b> is when something (typically an Aura) locks up a fixed slice of your Health or Mana while it's active. That slice becomes unavailable — as if your bar had shrunk.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>State</th><th>Default condition</th><th>What Reservation does</th></tr></thead>
+      <tbody>
+        <tr><td><b>Healthy</b></td><td>Health above 70%</td><td>Reserving more than 30% Health, you <b>never</b> count as Healthy.</td></tr>
+        <tr><td><b>Bloodied</b></td><td>Health below 30%</td><td>Reserving more than 70%, you count as Bloodied <b>at all times</b>.</td></tr>
+        <tr><td><b>Full</b></td><td>Mana above 70%</td><td>Reserving more than 30% Mana, you never count as Full.</td></tr>
+        <tr><td><b>Depleted</b></td><td>Mana below 30%</td><td>Reserving more than 70%, you count as Depleted permanently.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>The Bloodied build trick.</b> There are lots of affixes like "while Bloodied, +X" and "Crit vs Bloodied targets." Normally taking advantage of them means walking around at low health — risky. But by reserving more than 70% of your Health you become <b>permanently</b> Bloodied <b>with a full bar</b>, turning on all those affixes with no risk. That's exactly how the <i>Bloodied Blade</i> and <i>Bloodied Slam</i> builds work.
+  </div>
+
+  <h3>Auras, Allies &amp; Minions</h3>
+  <div class="card">
+    <div class="kw"><dt>Aura</dt><dd>Activates on its own in combat and gives a continuous bonus to the team. Consumes Health or Mana as a <b>reservation</b> and <b>doesn't stack</b> with another identical one.</dd></div>
+    <div class="kw"><dt>Ally</dt><dd>A strong unit that already starts on the field, with no duration limit — but it <b>doesn't revive</b> if it dies.</dd></div>
+    <div class="kw"><dt>Minion</dt><dd>Summoned by a skill. Individually weak, with a duration and a summon cap.</dd></div>
+  </div>
+  <p style="margin-top:12px">Allies and Minions <b>inherit</b> part of your attributes. That's why an Ally build scales with <b>your</b> Physical Attack, not theirs — gearing yourself is gearing the creature.</p>
+</section>
+
+<section id="prison">
+  <h2 class="serif"><span class="num">07</span>Getting good Godsworn</h2>
+  <p class="sub">A Godsworn's rarity is the decision that compounds the most across the whole game — and it doesn't depend on luck the way it looks like it does.</p>
+
+  <p>Every Godsworn comes from the <b>Prison</b>: you refresh the prisoner list and use <b>Bewitch</b> (costs Gold) to convert one into a Godsworn. What almost nobody notices is how much rarity actually changes:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Rarity</th><th class="num">Talent Points</th><th class="num">Growth per level</th><th class="num">Starting attribute</th><th class="num">Legendary traits</th><th class="num">Cost</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Common</b></td><td class="num">1</td><td class="num">200</td><td class="num">1000</td><td class="num">0</td><td class="num">1×</td></tr>
+        <tr><td style="color:#2B6FFF"><b>Fine</b></td><td class="num">2</td><td class="num">250</td><td class="num">1250</td><td class="num">0</td><td class="num">2×</td></tr>
+        <tr><td style="color:#E5B426"><b>Rare</b></td><td class="num">3</td><td class="num">300</td><td class="num">1500</td><td class="num">1</td><td class="num">5×</td></tr>
+        <tr><td style="color:#D96016"><b>Legendary</b></td><td class="num">4</td><td class="num">350</td><td class="num">1750</td><td class="num">2</td><td class="num">12×</td></tr>
+        <tr><td style="color:#be212b"><b>Mythic</b></td><td class="num">5</td><td class="num">400</td><td class="num">2000</td><td class="num">3</td><td class="num">30×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Read the growth column again.</b> A Mythic gains <b>double</b> the attribute per level of a Common, and has <b>5× more Talent Points</b>. With a level cap of 100, that's not "a little better" — it's a character worth two. It costs 30× more Gold, and it's still worth it: Gold comes back, 99 levels of lost growth don't.
+  </div>
+
+  <h3>Why you only ever see Common and Fine</h3>
+  <div class="tip warn">
+    <b>It's not bad luck.</b> By default the Prison <b>only produces Common and Fine</b> — it's hard-coded that way. Rare-or-better prisoners <b>don't appear</b> until you buy the matching upgrade in the <b>Prison's Renovation</b> tree.
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Renovation</th><th class="num">Cost</th><th>Requirement</th><th class="num">Chance once unlocked</th></tr></thead>
+      <tbody>
+        <tr><td><b>Rare Prisoner</b></td><td class="num">400</td><td>—</td><td class="num">~2.3%</td></tr>
+        <tr><td><b>Legendary Prisoner</b></td><td class="num">1,000</td><td>Rare unlocked</td><td class="num">~0.26%</td></tr>
+        <tr><td><b>Mythic Prisoner</b></td><td class="num">2,200</td><td>Legendary unlocked</td><td class="num">~0.02%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px"><b>That answers "when do Godsworn above Rare start showing up":</b> when you buy the Renovation. And looking at the odds, it's clear that <b>waiting for a Mythic to drop isn't a plan</b> — 0.02% is one in five thousand refreshes. There are Renovations that boost the higher-rarity odds by +30% to +50%, but even then Mythic stays out of reach on pure luck.</p>
+
+  <h3>The real path: Warp</h3>
+  <p>This is where the Prison gets interesting. Besides Bewitch, there are two other actions:</p>
+  <div class="card">
+    <div class="kw"><dt>Torment</dt><dd>Spends <b>Blood</b> to <b>re-roll the Godsworn's primary attribute growth</b> — in other words, which attribute they'll be good at.</dd></div>
+    <div class="kw"><dt>Warp</dt><dd>Spends resources to try to <b>raise rarity</b> by one step. This is the real path to Legendary and Mythic.</dd></div>
+  </div>
+
+  <div class="scroll" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Warp</th><th class="num">Success chance</th><th class="num">Relative cost</th></tr></thead>
+      <tbody>
+        <tr><td>Common → Fine</td><td class="num">100%</td><td class="num">1×</td></tr>
+        <tr><td>Fine → Rare</td><td class="num">40%</td><td class="num">2×</td></tr>
+        <tr><td>Rare → Legendary</td><td class="num">20%</td><td class="num">4×</td></tr>
+        <tr><td>Legendary → Mythic</td><td class="num">10%</td><td class="num">8×</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:14px">In other words: you <b>manufacture</b> the good Godsworn instead of waiting for one. Grab a cheap one and Warp it up. Warp also respects the cap unlocked by the Renovation — without the Mythic Renovation purchased, no Warp goes past Legendary.</p>
+
+  <div class="tip warn">
+    <b>The risk:</b> Torment and Warp move the prisoner's <b>Conviction</b> (a 0–100 bar), and the extremes are final:
+    <br>• <b>Conviction 0 = Breakdown</b> — the prisoner is <b>lost</b>, can no longer be operated on or Bewitched.
+    <br>• <b>Conviction 100 = Frenzy</b> — locks the actions, but <b>Bewitch cost is cut in half</b>.
+    <br><br>There are Renovations that give a 10% and 15% chance for Conviction to <b>not change</b> at all — those are what make this safe to do. Buy them before investing heavily in a prisoner.
+  </div>
+
+  <div class="tip">
+    <b>The Frenzy trick:</b> since Frenzy halves the Bewitch cost while locking the actions, the right order is: <b>first</b> Warp and Torment until you're satisfied, <b>then</b> (if Conviction is close to 100) push it into Frenzy and recruit at half price.
+  </div>
+
+  <h3>Decide your build before recruiting</h3>
+  <div class="tip new">
+    <b>Preferred Skills.</b> You can mark Talent skills as <b>preferred</b>, and prisoners get a <b>higher chance of already being born with them</b>. How many you can mark depends on your <b>Stele level</b>.
+  </div>
+  <p>That flips the usual order: <b>first</b> pick the build, <b>mark its skills</b>, and <b>only then</b> start refreshing the Prison. Without that, you're recruiting blind and hoping.</p>
+</section>
+
+<section id="classes">
+  <h2 class="serif"><span class="num">08</span>The six classes</h2>
+  <p class="sub">Every class has 3 Basic skills (pick one) and 12 tree skills. A detail that trips a lot of people up: the two weapons listed aren't alternatives — they're <b>two simultaneous slots</b>.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Class</th><th>Weapon 1 + Weapon 2</th><th>Armor</th><th class="num">Health/level</th><th class="num">Mana/level</th><th>Profile</th></tr></thead>
+      <tbody>
+        <tr><td><b>Warrior</b></td><td>Hammer + Sword</td><td>Plate</td><td class="num">50–60</td><td class="num">40–50</td><td>Toughest — the frontliner</td></tr>
+        <tr><td><b>Hunter</b></td><td>Bow + Dagger</td><td>Leather</td><td class="num">45–55</td><td class="num">45–55</td><td>Dodge, beasts, and execution</td></tr>
+        <tr><td><b>Mage</b></td><td>Staff + Tome</td><td>Cloth</td><td class="num">40–50</td><td class="num">50–60</td><td>Highest damage ceiling, squishiest</td></tr>
+        <tr><td><b>Cleric</b></td><td>Hammer + Staff</td><td>Plate</td><td class="num">45–55</td><td class="num">45–55</td><td>Tanky, with auras and healing</td></tr>
+        <tr><td><b>Mercenary</b></td><td>Sword + Bow</td><td>Leather</td><td class="num">45–55</td><td class="num">45–55</td><td>Physical, lots of procs</td></tr>
+        <tr><td><b>Priest</b></td><td>Dagger + Tome</td><td>Cloth</td><td class="num">45–55</td><td class="num">45–55</td><td>Totems and afflictions — the most technical</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Picking your first class:</b> the <b>Cleric</b> is by far the friendliest — 6 of their 7 official builds are minimum difficulty, and they wear Plate. The <b>Priest</b> is the opposite: 5 of their 6 builds are the hardest in the game. Warrior and Mercenary sit in the middle.
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Warrior</h3><span class="cls-meta">Hammer + Sword · Plate — converts defense into damage</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Valor Strike</b> <span class="tags">Martial · Basic</span><span class="d">Blunt and Slash damage.</span></div>
+    <div class="skill"><b>Vigilant Strike</b> <span class="tags">Martial · Basic · Boost</span><span class="d">Slash damage and gains Mettle. The base of any stacking build.</span></div>
+    <div class="skill"><b>Suppress Strike</b> <span class="tags">Martial · Basic · Debuff</span><span class="d">Blunt damage and lowers the target's Dodge.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Charged Smash</b> <span class="tags">Mastery</span><span class="d">Increased Crit against Sundered targets.</span></div>
+    <div class="skill"><b>Finishing Blow</b> <span class="tags">Mastery</span><span class="d">Consumes Mettle to deal extra damage.</span></div>
+    <div class="skill"><b>Raging Fire Slash</b> <span class="tags">Mastery</span><span class="d">Consumes Health to deal Slash and Fire damage.</span></div>
+    <div class="skill"><b>Cruel Hook</b> <span class="tags">Utility · Affliction</span><span class="d">Pulls in enemies and applies <b>Sunder</b>.</span></div>
+    <div class="skill"><b>Thunder Strike</b> <span class="tags">Utility · Affliction</span><span class="d">Blunt and Lightning damage, applies Slow.</span></div>
+    <div class="skill"><b>Intimidating Warcry</b> <span class="tags">Utility · Debuff · Warcry</span><span class="d">Lowers the enemy's Physical Attack and Crit.</span></div>
+    <div class="skill"><b>Motivational Warcry</b> <span class="tags">Utility · Buff · Warcry</span><span class="d">Allies gain Physical Attack and Healing Power.</span></div>
+    <div class="skill"><b>Pain Immunity</b> <span class="tags">Utility · Buff</span><span class="d">Physical Defense and Crit Resistance.</span></div>
+    <div class="skill"><b>Bloodboil</b> <span class="tags">Support · Ongoing</span><span class="d">Healing per second and immunity to Wound.</span></div>
+    <div class="skill"><b>Archer Guard</b> <span class="tags">Support · Minion</span><span class="d">Summons an archer.</span></div>
+    <div class="skill"><b>Iron Guard</b> <span class="tags">Support · Minion</span><span class="d">Summons a hammer-wielding guard.</span></div>
+    <div class="skill"><b>Honor Guard</b> <span class="tags">Support · Buff</span><span class="d">Shield and Physical Resistance to the three frontmost allies.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Hunter</h3><span class="cls-meta">Bow + Dagger · Leather — dodge, beasts, and execution</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Raptor Strike</b> <span class="tags">Martial · Basic · Debuff</span><span class="d">Lowers Physical Resistance. Resets Vanish into Shadow in some builds.</span></div>
+    <div class="skill"><b>Steady Shot</b> <span class="tags">Martial · Basic · Buff · Archery</span><span class="d">Pierce damage and gains Basic skill speed.</span></div>
+    <div class="skill"><b>Frost Blade Throw</b> <span class="tags">Spell · Basic</span><span class="d">Pierce and Frost damage.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Pierce Shot</b> <span class="tags">Mastery · Archery</span><span class="d">Piercing bolts: Pierce and Lightning damage.</span></div>
+    <div class="skill"><b>Frost Arrow Rain</b> <span class="tags">Mastery · Archery</span><span class="d">Multiple waves with Pierce and Frost damage.</span></div>
+    <div class="skill"><b>Spike Bomb</b> <span class="tags">Mastery</span><span class="d">The lower your Health, the higher the damage.</span></div>
+    <div class="skill"><b>Boomerang Blade</b> <span class="tags">Mastery</span><span class="d">Increased damage against Bloodied targets.</span></div>
+    <div class="skill"><b>Coordinated Strike</b> <span class="tags">Mastery</span><span class="d">Increases the Ally's skill speed.</span></div>
+    <div class="skill"><b>Death's Approach</b> <span class="tags">Utility · Affliction</span><span class="d">Inflicts <b>Wound</b>.</span></div>
+    <div class="skill"><b>Wild Frenzy</b> <span class="tags">Utility · Buff · Warcry</span><span class="d">All attacks increased; Basics steal Health.</span></div>
+    <div class="skill"><b>Strike Aura</b> <span class="tags">Utility · Aura</span><span class="d">Pierce damage and Crit Value to the team.</span></div>
+    <div class="skill"><b>Vanish into Shadow</b> <span class="tags">Support · Buff</span><span class="d">Healing, Dodge, and Purge on nearby allies.</span></div>
+    <div class="skill"><b>Light Wind</b> <span class="tags">Support · Buff · Ongoing</span><span class="d">Continuous shields and Dexterity.</span></div>
+    <div class="skill"><b>Frost Wolf Ally</b> <span class="tags">Support · Ally</span><span class="d">Summons the wolf (Bite and Frost Claw).</span></div>
+    <div class="skill"><b>Brown Bear Ally</b> <span class="tags">Support · Ally</span><span class="d">Summons the bear (Brutal Strike and Furious Regeneration).</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Mage</h3><span class="cls-meta">Staff + Tome · Cloth — highest damage ceiling, lowest health</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Fireball</b> <span class="tags">Spell · Basic</span><span class="d">Explodes on impact. <b>Always hits.</b></span></div>
+    <div class="skill"><b>Lightning</b> <span class="tags">Spell · Basic</span><span class="d">Random targets, with a chance to Dispel buffs.</span></div>
+    <div class="skill"><b>Ice Spike</b> <span class="tags">Martial · Basic</span><span class="d">Frost damage to multiple targets and gains Frost Resistance.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Meteor Strike</b> <span class="tags">Mastery</span><span class="d">The Spell Damage bonus is <b>doubled</b> on this skill.</span></div>
+    <div class="skill"><b>Lightning Storm</b> <span class="tags">Mastery</span><span class="d">Continuous lightning; the interval scales with Spell Speed.</span></div>
+    <div class="skill"><b>Lightning Shock</b> <span class="tags">Mastery</span><span class="d">Blunt and Lightning damage at the target location.</span></div>
+    <div class="skill"><b>Wall of Fire</b> <span class="tags">Mastery</span><span class="d">Continuous Fire damage that <b>ignores Elemental Defense</b>.</span></div>
+    <div class="skill"><b>Glacial Spikes</b> <span class="tags">Mastery</span><span class="d">Crit Damage scales with Frost Resistance.</span></div>
+    <div class="skill"><b>Blizzard</b> <span class="tags">Utility · Affliction</span><span class="d">Ice lances with a chance to apply Slow.</span></div>
+    <div class="skill"><b>Shockwave</b> <span class="tags">Utility · Affliction</span><span class="d">Knocks back and applies <b>Sunder</b>.</span></div>
+    <div class="skill"><b>Cold Touch</b> <span class="tags">Utility · Debuff</span><span class="d">Lowers Frost Resistance and Spell Speed.</span></div>
+    <div class="skill"><b>Storm Infusion</b> <span class="tags">Utility · Buff</span><span class="d">Increases Elemental Attack and Lightning damage.</span></div>
+    <div class="skill"><b>Brilliance Aura</b> <span class="tags">Utility · Aura</span><span class="d">Mana Regen and Buff Duration to the team.</span></div>
+    <div class="skill"><b>Ice Barrier</b> <span class="tags">Support · Buff</span><span class="d">Shield on the frontmost ally and Elemental Resistance.</span></div>
+    <div class="skill"><b>Summon Fire Demon</b> <span class="tags">Support · Minion</span><span class="d"><b>Explodes on death.</b></span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Cleric</h3><span class="cls-meta">Hammer + Staff · Plate — the easiest class to get right</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Blessed Strike</b> <span class="tags">Martial · Basic</span><span class="d">Blunt damage and heals self.</span></div>
+    <div class="skill"><b>Lightning Judgment</b> <span class="tags">Spell · Basic</span><span class="d">Electric arc to enemies in front.</span></div>
+    <div class="skill"><b>Chastise</b> <span class="tags">Spell · Basic</span><span class="d">Fire and Lightning damage, lowers Elemental Resistance.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Sword of Divine Punishment</b> <span class="tags">Mastery</span><span class="d">The core of Aura builds.</span></div>
+    <div class="skill"><b>Holy Flame Strike</b> <span class="tags">Mastery</span><span class="d">Fire damage to the target <b>and yourself</b>, ignoring Elemental Defense.</span></div>
+    <div class="skill"><b>Hammer of Judgment</b> <span class="tags">Mastery</span><span class="d">Spinning hammer of Blunt damage.</span></div>
+    <div class="skill"><b>Shield of Vengeance</b> <span class="tags">Mastery</span><span class="d">Flying shield: Blunt and Fire damage.</span></div>
+    <div class="skill"><b>Mind Fire</b> <span class="tags">Mastery</span><span class="d">Continuous Fire damage on multiple targets.</span></div>
+    <div class="skill"><b>Light of Blindness</b> <span class="tags">Utility · Debuff</span><span class="d">Lowers Dodge and <b>Dispels</b>.</span></div>
+    <div class="skill"><b>Aura of Focus</b> <span class="tags">Utility · Aura</span><span class="d">Elemental Defense and Martial Accuracy.</span></div>
+    <div class="skill"><b>Aura of Flame</b> <span class="tags">Utility · Aura</span><span class="d">Damage and Fire Resistance.</span></div>
+    <div class="skill"><b>Aura of Lightning</b> <span class="tags">Utility · Aura</span><span class="d">Damage and Lightning Resistance.</span></div>
+    <div class="skill"><b>Divine Shelter</b> <span class="tags">Support · Buff</span><span class="d">Shield and <b>3 stacks of Fortitude</b>.</span></div>
+    <div class="skill"><b>Holy Bolt</b> <span class="tags">Support</span><span class="d">Orb that heals allies in its path.</span></div>
+    <div class="skill"><b>Light of Healing</b> <span class="tags">Support</span><span class="d"><b>Doubled</b> healing on Bloodied targets.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Mercenary</h3><span class="cls-meta">Sword + Bow · Leather — lots of activations per second</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Shockwave</b> <span class="tags">Martial · Basic · Buff</span><span class="d">Gains Strength. Triggers Death's Wind on the right set.</span></div>
+    <div class="skill"><b>Shadow Strike</b> <span class="tags">Martial · Basic · Boost</span><span class="d">Gains 1 stack of <b>Haste</b>.</span></div>
+    <div class="skill"><b>Fire Arrow</b> <span class="tags">Martial · Basic · Archery</span><span class="d">Pierce and Fire damage.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Death's Wind</b> <span class="tags">Mastery</span><span class="d">Whirlwind of Slash and Pierce damage.</span></div>
+    <div class="skill"><b>Swift Thunder Slash</b> <span class="tags">Mastery</span><span class="d"><b>+1 slash per 2 stacks of Haste.</b></span></div>
+    <div class="skill"><b>Heartseeker</b> <span class="tags">Mastery</span><span class="d">Pierce damage with life steal.</span></div>
+    <div class="skill"><b>Double Strike</b> <span class="tags">Mastery</span><span class="d">Extra damage if <b>both weapons are the same type</b>.</span></div>
+    <div class="skill"><b>Barrage Fire</b> <span class="tags">Mastery · Archery</span><span class="d"><b>Guaranteed Crit</b> against Slowed targets.</span></div>
+    <div class="skill"><b>Spike Trap</b> <span class="tags">Utility · Affliction</span><span class="d">Applies Slow.</span></div>
+    <div class="skill"><b>Death's Mark</b> <span class="tags">Utility · Debuff</span><span class="d">Lowers Dodge and Pierce Resistance.</span></div>
+    <div class="skill"><b>Battle Cry</b> <span class="tags">Utility · Buff · Warcry</span><span class="d">Healing, Mastery damage, and Slow immunity for the team.</span></div>
+    <div class="skill"><b>Killing Aura</b> <span class="tags">Utility · Aura</span><span class="d">Physical Attack and Crit against normal enemies.</span></div>
+    <div class="skill"><b>Rapid Fire</b> <span class="tags">Utility · Buff</span><span class="d">Archery speed — <b>loses Accuracy</b>.</span></div>
+    <div class="skill"><b>Ballista Sentry</b> <span class="tags">Support · Minion</span><span class="d">Ballista with piercing bolts.</span></div>
+    <div class="skill"><b>Banner of Struggle</b> <span class="tags">Support · Boost · Totem</span><span class="d">Shield per second and Mettle for the team.</span></div>
+  </div>
+
+  <div class="cls">
+    <div class="cls-head"><h3 class="serif">Priest</h3><span class="cls-meta">Dagger + Tome · Cloth — the most technical class</span></div>
+    <h4>Basics (pick one)</h4>
+    <div class="skill"><b>Zealous Stinger</b> <span class="tags">Spell · Basic</span><span class="d">Pierce and Fire damage.</span></div>
+    <div class="skill"><b>Frost Assault</b> <span class="tags">Martial · Basic · Affliction</span><span class="d">Applies <b>Sunder</b> right on the Basic.</span></div>
+    <div class="skill"><b>Soul Drain</b> <span class="tags">Spell · Basic</span><span class="d">Frost damage and restores Mana.</span></div>
+    <h4>Tree</h4>
+    <div class="skill"><b>Bone Chill</b> <span class="tags">Mastery</span><span class="d">Bone blades: Pierce and Frost damage.</span></div>
+    <div class="skill"><b>Soul Reap</b> <span class="tags">Mastery</span><span class="d">Killing targets extends the duration.</span></div>
+    <div class="skill"><b>Frost Thrust</b> <span class="tags">Mastery</span><span class="d">Extra penetration against Sundered targets.</span></div>
+    <div class="skill"><b>Lava Slam</b> <span class="tags">Mastery</span><span class="d">The Martial Damage bonus is <b>doubled</b> here.</span></div>
+    <div class="skill"><b>Mana-Burst Flask</b> <span class="tags">Mastery</span><span class="d">The count scales with <b>missing Mana</b>.</span></div>
+    <div class="skill"><b>Death's Hand</b> <span class="tags">Utility · Debuff</span><span class="d">Lowers the target's Crit and Martial Speed.</span></div>
+    <div class="skill"><b>Vortex Totem</b> <span class="tags">Utility · Buff · Totem</span><span class="d">Elemental Attack and Spell Accuracy per second.</span></div>
+    <div class="skill"><b>Windfury Totem</b> <span class="tags">Utility · Buff · Totem</span><span class="d">Physical Attack and Martial Accuracy per second.</span></div>
+    <div class="skill"><b>Hallucinatory Mist</b> <span class="tags">Utility · Buff · Boost</span><span class="d">Resistances and 2 stacks of Haste; lowers Strength.</span></div>
+    <div class="skill"><b>Flesh Offering</b> <span class="tags">Utility · Buff</span><span class="d">Sacrifices health for Spell Speed and Crit.</span></div>
+    <div class="skill"><b>Slime Rain</b> <span class="tags">Support · Affliction</span><span class="d">Heals allies it hits and can apply Slow.</span></div>
+    <div class="skill"><b>Fortitude Elixir</b> <span class="tags">Support · Buff</span><span class="d">Heals and increases Health Tenacity.</span></div>
+  </div>
+</section>
+
+<section id="masteries">
+  <h2 class="serif"><span class="num">09</span>Masteries</h2>
+  <p class="sub">Twelve passive specializations per class. Beyond the numbers, several add a <b>new trigger</b> — and that's where builds are born.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Warrior</h4>
+      <div class="mast"><b>Brutish</b> <span>Strength +12%; Dexterity +8%</span></div>
+      <div class="mast"><b>Brutality</b> <span>Slash +12%; Crit +8%</span></div>
+      <div class="mast"><b>Toughness</b> <span>Health +12%; All Defense +8%</span></div>
+      <div class="mast"><b>Heavy Pressure</b> <span>Blunt +7%; Martial Accuracy +7%; Blunt Resist. +8%</span></div>
+      <div class="mast"><b>Thunderous Roar</b> <span>Buff +10%; Warcry may skip its cooldown</span></div>
+      <div class="mast"><b>Intimidation</b> <span>Debuff +7%; Martial Damage +6%; Masteries may apply Sunder</span></div>
+      <div class="mast"><b>Slaughter</b> <span>Health on Kill +10%; Crit vs Bloodied +10%</span></div>
+      <div class="mast"><b>Zod</b> <span>Regen +10%; Tenacity +6%; resists death for 5s</span></div>
+      <div class="mast"><b>Shockwave</b> <span>Utility Cost +10%; Warcry emits an area shockwave</span></div>
+      <div class="mast"><b>Unyielding</b> <span>Shield +10%; damage taken capped at 20% of Health</span></div>
+      <div class="mast"><b>Enrage</b> <span>Physical Damage +10%; chance of Mettle on being hit</span></div>
+      <div class="mast"><b>Formation</b> <span>Support Speed +7%; Crit Resist. +7%; +5% Attack per Minion</span></div>
+    </div>
+    <div class="card"><h4>Hunter</h4>
+      <div class="mast"><b>Agile</b> <span>Dexterity +7%; Dodge +7%; Martial Speed +8%</span></div>
+      <div class="mast"><b>Frost</b> <span>Frost +8%; Cost +8%; Spell Speed +6%</span></div>
+      <div class="mast"><b>Bully</b> <span>Strength +10%; Wound causes extra Slash damage from Strength</span></div>
+      <div class="mast"><b>Hunt</b> <span>Physical Attack +9%; Crit vs Bloodied +11%</span></div>
+      <div class="mast"><b>Agile (II)</b> <span>All Accuracy +10%; Support Speed +10%</span></div>
+      <div class="mast"><b>Drive</b> <span>Health +10%; Allies inherit +20% of your Physical Attack</span></div>
+      <div class="mast"><b>Harvest</b> <span>Health on Kill +10%; Mana on Kill +10%</span></div>
+      <div class="mast"><b>Raid</b> <span>Pierce +10%; damage vs Healthy +10%</span></div>
+      <div class="mast"><b>Wild</b> <span>Slash +8%; Slash Resist. +7%; kills grant a chance of Haste</span></div>
+      <div class="mast"><b>Durable</b> <span>Shield +10%; team recovers 5% Health/10s</span></div>
+      <div class="mast"><b>Alert</b> <span>Dexterity +5%; Intelligence +8.5%; Elemental +8.5%</span></div>
+      <div class="mast"><b>Camouflage</b> <span>Dodge +6%; Elemental Def. +8%; Crit Resist. +8%</span></div>
+    </div>
+    <div class="card"><h4>Mage</h4>
+      <div class="mast"><b>Scholar</b> <span>Strength +7%; Dexterity +7%; Intelligence +8%</span></div>
+      <div class="mast"><b>Slow</b> <span>Buff +8%; Debuff +7%; Shield Decay +7%</span></div>
+      <div class="mast"><b>Ruin</b> <span>Elemental Attack +9%; Crit +7%; damage vs Bosses +6%</span></div>
+      <div class="mast"><b>Incinerate</b> <span>Fire +10%; Basic Skill Damage +10%</span></div>
+      <div class="mast"><b>Thunder</b> <span>Lightning +8%; Spell Accuracy +7%; Lightning Resist. +7%</span></div>
+      <div class="mast"><b>Enable</b> <span>Shield +10%; with Shield active, restores 1% Mana/s</span></div>
+      <div class="mast"><b>Convert</b> <span>Mana Regen +10%; converts 10% of cost into Energy Shield</span></div>
+      <div class="mast"><b>Inspiration</b> <span>Spell Speed +10%; 10% chance to not spend Mana</span></div>
+      <div class="mast"><b>Empowerment</b> <span>Cost +7%; Reservation +7%; Masteries trigger Ice Spike</span></div>
+      <div class="mast"><b>Eternal Frost</b> <span>Frost +12%; Mastery Damage +8%</span></div>
+      <div class="mast"><b>Wisdom</b> <span>Intelligence +6%; Mana +15%</span></div>
+      <div class="mast"><b>Ice Toughness</b> <span>Elemental Resist. +10%; Physical Def. +10%</span></div>
+    </div>
+    <div class="card"><h4>Cleric</h4>
+      <div class="mast"><b>Radiance</b> <span>Support Cost +10%; Health +10%</span></div>
+      <div class="mast"><b>Blazing</b> <span>Fire +10%; Mana +10%</span></div>
+      <div class="mast"><b>Judgment</b> <span>Lightning +10%; Mastery Damage +10%</span></div>
+      <div class="mast"><b>Conquest</b> <span>Elemental Attack +7%; Base Speed +8%; Crit +8%</span></div>
+      <div class="mast"><b>Holy</b> <span>Healing Power +10%; healing has a 20% chance to Purge</span></div>
+      <div class="mast"><b>Divine Grace</b> <span>Shield +8%; Tenacity +7%; Shield below 20% Health</span></div>
+      <div class="mast"><b>Awakening</b> <span>Reservation +10%; Mastery Cost +6%; Mana Regen per Aura</span></div>
+      <div class="mast"><b>Vengeance</b> <span>Physical Attack +10%; Physical Defense +10%</span></div>
+      <div class="mast"><b>Divinity</b> <span>Strength +10%; Intelligence +10%</span></div>
+      <div class="mast"><b>Glitter</b> <span>Debuff +10%; Spell Accuracy +10%</span></div>
+      <div class="mast"><b>Banish</b> <span>Utility Speed +8%; Accuracy +7%; Dispel deals Lightning damage</span></div>
+      <div class="mast"><b>Barrier</b> <span>Health +6%; Resistances +6%; 1 Fortitude every 3s</span></div>
+    </div>
+    <div class="card"><h4>Mercenary</h4>
+      <div class="mast"><b>Fierce</b> <span>Strength +6%; Crit +8%; Health +8%</span></div>
+      <div class="mast"><b>Stalwart</b> <span>Shield +9%; All Defense +8%; Physical Attack +5%</span></div>
+      <div class="mast"><b>Blood Surge</b> <span>Healing Power +9%; Buff Duration +11%</span></div>
+      <div class="mast"><b>Berserk</b> <span>Dexterity +10%; Slash +10%</span></div>
+      <div class="mast"><b>Hamstring</b> <span>Pierce +7%; Blunt +7%; Basics may apply Slow</span></div>
+      <div class="mast"><b>Ravage</b> <span>Debuff +9%; Elemental Attack +11%</span></div>
+      <div class="mast"><b>Poise</b> <span>Elemental Resist. +8%; 1 Haste every 3s; Tenacity +8%</span></div>
+      <div class="mast"><b>Skilled</b> <span>Support Speed +10%; Spell Cost +10%</span></div>
+      <div class="mast"><b>Bloodthirst</b> <span>Health on Kill +6%; Crit vs Bloodied +9%; Base Speed +7%</span></div>
+      <div class="mast"><b>Fervor</b> <span>Mana +10%; +3% support speed per Fortitude</span></div>
+      <div class="mast"><b>Afterimage</b> <span>Dodge +7%; Martial Accuracy +7%; Lightning +8%</span></div>
+      <div class="mast"><b>Resist</b> <span>Support Cost +10%; gaining a Shield grants +10% Elemental Def.</span></div>
+    </div>
+    <div class="card"><h4>Priest</h4>
+      <div class="mast"><b>Echo</b> <span>Spell Damage +8%; Accuracy +7%; Frost Resist. +7%</span></div>
+      <div class="mast"><b>Instinct</b> <span>Primary Attributes +6%; Pierce Resist. +9%; Support Speed +7%</span></div>
+      <div class="mast"><b>Coordination</b> <span>Dexterity +10%; Intelligence +10%</span></div>
+      <div class="mast"><b>Lethal</b> <span>Pierce +7%; Crit Value +8%</span></div>
+      <div class="mast"><b>Chill</b> <span>Frost +7.5%; Spell Speed +7.5%; Masteries may apply 2 Slow</span></div>
+      <div class="mast"><b>Excitement</b> <span>All Damage +10%; All Cost +10%</span></div>
+      <div class="mast"><b>Offering</b> <span>Utility Speed +7.5%; Regen +7.5%; 30% of damage goes to the frontmost ally</span></div>
+      <div class="mast"><b>Voodoo</b> <span>Debuff +7.5%; Physical Resist. +7.5%; Mana +7%</span></div>
+      <div class="mast"><b>Ritual</b> <span>Buff Duration +10%; clears Afflictions from the team every 5s</span></div>
+      <div class="mast"><b>Torrent</b> <span>Healing Power +10%; Crit Resist. +10%</span></div>
+      <div class="mast"><b>Dissection</b> <span>Health +10%; every unit death restores Health</span></div>
+      <div class="mast"><b>Flurry</b> <span>Martial Damage +10%; All Defense +10%</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="slots">
+  <h2 class="serif"><span class="num">10</span>The 8 equipment slots</h2>
+  <p class="sub">Answers the right question: no, the rarest item isn't automatically the best — and no, you don't wear all of one type.</p>
+
+  <p>Every Godsworn has <b>8 slots</b>:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Slot</th><th class="num">Qty.</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td><b>Weapon</b></td><td class="num">2</td><td>Two simultaneous weapons, one of each type for your class</td></tr>
+        <tr><td>Amulet</td><td class="num">1</td><td></td></tr>
+        <tr><td>Ring</td><td class="num">1</td><td></td></tr>
+        <tr><td>Helmet</td><td class="num">1</td><td></td></tr>
+        <tr><td>Torso</td><td class="num">1</td><td></td></tr>
+        <tr><td>Gloves</td><td class="num">1</td><td></td></tr>
+        <tr><td>Boots</td><td class="num">1</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip"><b>Detail a lot of people miss:</b> it's <b>two weapons at once</b>, not a choice between two. That's why the Mercenary has the Double Strike mastery, which deals extra damage when both weapons are the same type.</div>
+
+  <h3>The slot budget</h3>
+  <p>Here's the answer to "does every item have a purpose?" Yes — because <b>Sets</b> require 2 or 4 pieces to activate their bonuses, and you have 8 slots to spread around. That creates a budget:</p>
+
+  <div class="card">
+    <div class="kw"><dt>4 + 4 free</dt><dd>One full set (2- and 4-piece bonuses active) and <b>4 free slots</b> for standalone Legendary, Unique, or Mythic pieces. The most common layout.</dd></div>
+    <div class="kw"><dt>4 + 2 + 2</dt><dd>One full set plus the 2-piece bonus from <b>another</b> set, and 2 free.</dd></div>
+    <div class="kw"><dt>2 + 2 + 4 free</dt><dd>Two partial sets, taking just the 2-piece bonus from each. Useful when the 2-piece bonuses are strong and the 4-piece ones don't fit the build.</dd></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Why "all Mythic" is a bad build.</b> Eight standalone Mythics activate <b>zero</b> Set bonuses — and Set bonuses are what make a build exist (they're what turns "I hit things" into "I hit things and that triggers something else"). A full 4-piece Set (Green) beats four loose Mythics in most builds.
+  </div>
+
+  <p>The mental rule: <b>the set is the engine, the free slots are the fuel.</b> First lock in the 4 pieces that turn on the build; then fill the rest with the best you have in the attributes the build wants.</p>
+
+  <h3>How to compare two items</h3>
+  <div class="card">
+    <ol class="ladder">
+      <li><b>Is it part of my set?</b>If so, it almost always wins — the bonus is worth more than raw numbers.</li>
+      <li><b>Are the affixes on the build's list?</b>Every official build lists its "preferred attributes." An item with two affixes from that list beats one with a higher base number and off-list affixes.</li>
+      <li><b>Is it the right axis?</b>Martial or Spell. Being on the wrong axis zeroes out the affix's value.</li>
+      <li><b>Only then the base number</b>It's a tiebreaker, not the first filter.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="equip">
+  <h2 class="serif"><span class="num">11</span>Rarities &amp; upgrades</h2>
+  <p class="sub">Eight rarities and four upgrade systems. The order you upgrade in matters more than it looks.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Rarity</th><th class="num">Fine Affixes</th><th class="num">Rare Affixes</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#A4A3A0"><b>Common</b></td><td class="num">—</td><td class="num">—</td><td>Runeword raw material (with 3 sockets)</td></tr>
+        <tr><td style="color:#2B6FFF"><b>Fine</b></td><td class="num">2</td><td class="num">—</td><td>Transitional; up to 2 sockets</td></tr>
+        <tr><td style="color:#C13BE3"><b>Magic</b></td><td class="num">—</td><td class="num">—</td><td>Refining base for Set</td></tr>
+        <tr><td style="color:#E5B426"><b>Rare</b></td><td class="num">2</td><td class="num">4</td><td>The workhorse of progression</td></tr>
+        <tr><td style="color:#8DC025"><b>Set</b></td><td class="num">2</td><td class="num">3</td><td><b>Activates the build</b> (2- and 4-piece bonuses)</td></tr>
+        <tr><td style="color:#1DC693"><b>Unique</b></td><td class="num">2</td><td class="num">3</td><td>Item's own effect</td></tr>
+        <tr><td style="color:#D96016"><b>Legendary</b></td><td class="num">—</td><td class="num">9</td><td>Fills a free slot with heavy affixes</td></tr>
+        <tr><td style="color:#be212b"><b>Mythic</b></td><td class="num">—</td><td class="num">9</td><td>The top — but still, a free-slot item</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The four systems</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Forging</h4><p style="margin:0;font-size:.92rem">Improves base attributes. The cap rises with the Workshop. A Forged piece also <b>sells for more</b>.</p></div>
+    <div class="card"><h4>Socketing</h4><p style="margin:0;font-size:.92rem">Adds affixes. Only Common (up to 3) and Fine (up to 2) roll sockets, and only above level 20.</p></div>
+    <div class="card"><h4>Refining</h4><p style="margin:0;font-size:.92rem">Common → Legendary; Magic → Set; Legendary → Mythic (and here, <b>failure destroys the item</b>).</p></div>
+    <div class="card"><h4>Corruption</h4><p style="margin:0;font-size:.92rem">Risky reroll, with a limited number of uses per item.</p></div>
+  </div>
+
+  <div class="tip warn">
+    <b>Classic mistake:</b> a socketed item <b>can't be Refined</b>. If you plan on Refining, do it <b>before</b> socketing a rune — otherwise you lock the piece at its current rarity forever.
+  </div>
+</section>
+
+<section id="awareness">
+  <h2 class="serif"><span class="num">12</span>Awareness &amp; Affix Seals</h2>
+  <p class="sub">The only system in the game that lets you <b>aim</b> at what drops. Everything else is luck with a filter — the seal changes the roll itself.</p>
+
+  <p>Every piece of equipment has an entry in the <b>Codex</b>, and each entry has its <b>own Awareness bar</b>. Here's the part that trips people up: Awareness <b>isn't a global account number</b> — it's per item. The "Iron Axe" has its own Awareness, "Azra's Crown" has its own.</p>
+
+  <h3>How Awareness goes up</h3>
+  <p>By obtaining that same piece <b>again</b>. The better the rarity of the copy that drops, the more Awareness you get:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Rarity obtained</th><th class="num">Awareness gained</th></tr></thead>
+      <tbody>
+        <tr><td>Common · Fine · Magic</td><td class="num">0</td></tr>
+        <tr><td style="color:#E5B426">Rare</td><td class="num">10</td></tr>
+        <tr><td style="color:#8DC025">Legendary · Set · Unique</td><td class="num">50</td></tr>
+        <tr><td style="color:#be212b">Mythic</td><td class="num">200</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">Once the bar fills, that item's <b>Awareness level</b> rises and the bar resets. The level cap is set by your <b>Stele level</b> — that's why the Stele shows up throughout this guide.</p>
+
+  <h3>What it's for: sealing affixes</h3>
+  <p>With enough Awareness on a piece, you can <b>seal</b> affixes on it through the Codex. A sealed affix <b>stops appearing</b> on that item — permanently.</p>
+
+  <div class="tip">
+    <b>In practice:</b> you remove the affixes that don't fit your build from the roll pool. The next copies of that item drop with a cleaner pool — better odds of getting what you actually want, without relying on pure luck.
+  </div>
+
+  <p>The cost is <b>Awareness level + Blood</b>, and it scales fast:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="num">Seal</th><th class="num">Awareness required</th><th class="num">Blood</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1st</td><td class="num">100</td><td class="num">150</td></tr>
+        <tr><td class="num">2nd</td><td class="num">170</td><td class="num">—</td></tr>
+        <tr><td class="num">3rd</td><td class="num">260</td><td class="num">—</td></tr>
+        <tr><td class="num">4th</td><td class="num">370</td><td class="num">—</td></tr>
+        <tr><td class="num">5th</td><td class="num">500</td><td class="num">—</td></tr>
+        <tr><td class="num">6th</td><td class="num">650</td><td class="num">—</td></tr>
+        <tr><td class="num">7th</td><td class="num">820</td><td class="num">—</td></tr>
+        <tr><td class="num">8th</td><td class="num">1,010</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:14px">50 levels total. And the game's own warning holds: <b>the more affixes you've already sealed on that piece, the more Awareness the next seal requires</b>.</p>
+
+  <div class="tip">
+    <b>The consequence that changes how you play:</b> farming the same Set piece repeatedly is <b>not a waste</b>, even after you already have one. Every copy raises that item's Awareness and gets you closer to being able to seal off its junk affixes. It's the opposite of the "I already have this one, sell it" instinct.
+  </div>
+</section>
+
+<section id="sets">
+  <h2 class="serif"><span class="num">13</span>Sets</h2>
+  <p class="sub">Three per class, with 2- and 4-piece bonuses. These are what define end-game builds.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Warrior</h4>
+      <div class="setb"><b>Bardo's Dominion</b><div><em>2:</em> Archer Guard pierces 1 enemy.</div><div><em>4:</em> Motivational Warcry has 200% more effect on Archer Guard.</div></div>
+      <div class="setb"><b>Kahn's Fate</b><div><em>2:</em> Vigilant Strike gains 1 extra stack of Mettle.</div><div><em>4:</em> For every 2 stacks of Mettle, Bloodboil lasts +1s.</div></div>
+      <div class="setb"><b>Grim's Wrath</b><div><em>2:</em> Raging Fire Slash deals 100% more damage to the first target.</div><div><em>4:</em> Casting Pain Immunity also triggers Raging Fire Slash.</div></div>
+    </div>
+    <div class="card"><h4>Hunter</h4>
+      <div class="setb"><b>Keryll's Concealment</b><div><em>2:</em> Vanish into Shadow grants 30% Crit Resist. and −30% Spell Cost.</div><div><em>4:</em> Raptor Strike has a 30% chance to reset Vanish into Shadow.</div></div>
+      <div class="setb"><b>Wulfgar's Ferocity</b><div><em>2:</em> Frost Wolf gains Crit equal to 50% of your Physical Attack.</div><div><em>4:</em> Wild Frenzy also applies to your Frost Wolf.</div></div>
+      <div class="setb"><b>Doron's Shadow Hunt</b><div><em>2:</em> A Pierce Shot crit summons a bolt of lightning for 240% Dexterity.</div><div><em>4:</em> Each Steady Shot reduces Pierce Shot's cooldown by 0.5s.</div></div>
+    </div>
+    <div class="card"><h4>Mage</h4>
+      <div class="setb"><b>Kaelos's Verdict</b><div><em>2:</em> Lightning consumes 10% of current Mana and doubles Crit Value.</div><div><em>4:</em> With Storm Infusion, Lightning can hit up to 3 targets.</div></div>
+      <div class="setb"><b>Isar's Storm</b><div><em>2:</em> Ice Barrier affects +1 target; affected targets lose Dodge and become crit-immune.</div><div><em>4:</em> Each Utility skill reduces Ice Barrier's cooldown by 2s.</div></div>
+      <div class="setb"><b>Azra's Blaze</b><div><em>2:</em> Wall of Fire: +60% area and +2s duration.</div><div><em>4:</em> Fire Demon dying inside it: +120% damage and +50% blast area.</div></div>
+    </div>
+    <div class="card"><h4>Cleric</h4>
+      <div class="setb"><b>Blessing of Mortan</b><div><em>2:</em> Divine Shelter grants +50% All Defense for 5s.</div><div><em>4:</em> After it, Blessed Strike hits +2 targets and heals +2 allies for 5s.</div></div>
+      <div class="setb"><b>Judgment of Cyrus</b><div><em>2:</em> Sword of Divine Punishment consumes 8% of current Health and <b>always crits</b>.</div><div><em>4:</em> Each active Aura speeds up its own cooldown by 25%.</div></div>
+      <div class="setb"><b>Devotion of Faelen</b><div><em>2:</em> Allies hit by Holy Bolt gain +30% Primary Attributes for 3s.</div><div><em>4:</em> Each Chastise reduces Holy Bolt's cooldown by 1s.</div></div>
+    </div>
+    <div class="card"><h4>Mercenary</h4>
+      <div class="setb"><b>Yasuo's Gale</b><div><em>2:</em> Death's Wind always hits and deals up to +100% damage to nearby targets.</div><div><em>4:</em> Every 3 Shockwaves fires an extra Death's Wind.</div></div>
+      <div class="setb"><b>Elaine's Command</b><div><em>2:</em> Ballista: +50% attack speed and +1 penetration.</div><div><em>4:</em> Ballista deals +100% damage to weakened targets.</div></div>
+      <div class="setb"><b>Cassius's Wicked Deed</b><div><em>2:</em> Heartseeker hits +3 targets.</div><div><em>4:</em> With Killing Aura active, 40% chance to skip its cooldown.</div></div>
+    </div>
+    <div class="card"><h4>Priest</h4>
+      <div class="setb"><b>Mara's Ritual</b><div><em>2:</em> Bone Chill: −30% cooldown and +50% damage.</div><div><em>4:</em> Death's Hand has a 30% chance to trigger Bone Chill.</div></div>
+      <div class="setb"><b>Uruk's Devotion</b><div><em>2:</em> Placing a Totem grants everyone a Shield worth 200% Dexterity.</div><div><em>4:</em> Per active Totem: +30% Effect and +30% Buff Duration.</div></div>
+      <div class="setb"><b>Vero's Secret</b><div><em>2:</em> Slime Rain lasts +50%; stops applying Slow.</div><div><em>4:</em> Hitting with it grants +20% Crit Resist. and Elemental Attack for 3s.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="builds-how">
+  <h2 class="serif"><span class="num">14</span>Use a ready-made build, or make your own?</h2>
+  <p class="sub">Short answer: use the ready-made ones now, and make your own once you understand <i>why</i> they work.</p>
+
+  <p>The game's 39 builds aren't generic suggestions — each one is built around a <b>specific Set bonus</b>, and most literally say "centered on Set gear." They exist because the game has <b>triggers</b>: a 4-piece bonus that makes skill A fire skill B. Figuring these combos out yourself, by cross-referencing 18 sets against 72 masteries, is a lot of work.</p>
+
+  <h3>Use ready-made builds when</h3>
+  <div class="card">
+    <div class="kw"><dt>You're learning</dt><dd>They teach you the game's grammar: which skill triggers which, which attributes travel together.</dd></div>
+    <div class="kw"><dt>You're short on testing time</dt><dd>Testing a build here is slow — you need to collect the set pieces first. A ready-made build saves you from finding out at chapter 12 that the idea doesn't hold together.</dd></div>
+    <div class="kw"><dt>You want a clear target</dt><dd>The build becomes your filter: which set to hunt, which affixes to keep, which skills to mark as preferred.</dd></div>
+  </div>
+
+  <h3>Make your own when</h3>
+  <div class="card">
+    <div class="kw"><dt>You've already run one</dt><dd>After taking an official build to completion, you understand the pattern and can predict what fits together.</dd></div>
+    <div class="kw"><dt>You found an unused trigger</dt><dd>There are 72 masteries and not all of them show up in the official builds. Combos outside the list exist.</dd></div>
+    <div class="kw"><dt>You're thinking about the team</dt><dd>Official builds describe <b>one</b> Godsworn. Since you play in teams of 3, the synergy <b>between</b> the three is your territory — the game doesn't suggest anything there.</dd></div>
+  </div>
+
+  <div class="tip">
+    <b>The recommended path:</b> pick an official Easy-difficulty build for your main Godsworn and take it to completion. Meanwhile, use the other two team slots to experiment. You learn at low risk, and the team keeps advancing.
+  </div>
+
+  <div class="tip new">
+    <b>About having fun:</b> the difficulty rating measures <b>how much specific gear the build needs</b>, not how fun it is. A "Hard" Priest Totem build is perfectly playable — it just needs more pieces aligned to shine. If a concept appeals to you, chase it: the game is long enough for you to run a solid build <b>and</b> an experimental one at the same time, on different teams.
+  </div>
+</section>
+
+<section id="builds">
+  <h2 class="serif"><span class="num">15</span>The 39 official builds</h2>
+  <p class="sub">All of them, with the game's own difficulty rating. For 23, the exact playstyle and preferred attributes as the game describes them.</p>
+
+  <div class="tools">
+    <input type="search" id="q" placeholder="Search build, class, or skill…" aria-label="Search builds">
+    <button class="f" data-f="all" aria-pressed="true">All</button>
+    <button class="f" data-f="1" aria-pressed="false">Easy</button>
+    <button class="f" data-f="2" aria-pressed="false">Medium</button>
+    <button class="f" data-f="3" aria-pressed="false">Hard</button>
+  </div>
+
+  <div class="card" id="blist">
+    <div class="bd" data-d="1"><div class="bd-h"><b>Blood Boil</b><span class="cl">Warrior</span><span class="pill d1">Easy</span></div>
+      <p>Centered on Set gear. Use <i>Vigilant Strike</i> to stack Mettle and extend <i>Bloodboil</i>'s duration.</p>
+      <div class="attrs">Strength, Dexterity, Health, All Defense, All Speed, Resistances, Health Regen, Crit Resistance, Life Fortitude, Healing Power</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Archer Guard</b><span class="cl">Warrior</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Cast <i>Motivational Warcry</i> to grant powerful buffs to <i>Archer Guard</i>.</p>
+      <div class="attrs">Strength, Dexterity, Health, Physical Attack, Crit, Martial Speed/Accuracy/Damage, All Damage, Physical Damage, Utility Speed, Mastery Damage</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Raging Fire Slash</b><span class="cl">Warrior</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Cast <i>Pain Immunity</i> to additionally trigger <i>Raging Fire Slash</i>.</p>
+      <div class="attrs">Strength, Dexterity, Health, Physical Attack, Crit, Martial Speed/Accuracy/Damage, All Damage, Physical Damage, Utility Speed, Mastery Damage</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Warcry Shockwave</b><span class="cl">Warrior</span><span class="pill d2">Medium</span></div>
+      <p>Rapidly cast multiple <i>Warcry</i> skills to trigger the Shockwave specialization's damage.</p>
+      <div class="attrs">Strength, Dexterity, Physical Attack, Crit, All Accuracy, Physical Damage, Blunt, Skill Speed, Utility Speed, Buff</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Finishing Blow</b><span class="cl">Warrior</span><span class="pill d2">Medium</span></div>
+      <p>Stack <i>Mettle</i> to greatly increase <i>Finishing Blow</i> damage, and use <i>Cruel Hook</i> to gather monsters.</p>
+      <div class="attrs">Strength, Dexterity, Physical Attack, Crit, Martial Speed/Accuracy/Damage, All Damage, Base Speed, Mastery Damage</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Bloodied Slam</b><span class="cl">Warrior</span><span class="pill d2">Medium</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Dodge Lifesteal</b><span class="cl">Hunter</span><span class="pill d1">Easy</span></div>
+      <p>Cast <i>Raptor Strike</i> to reset <i>Vanish into Shadow</i>'s cooldown, gaining healing and Dodge.</p>
+      <div class="attrs">Dexterity, Dodge, Martial/Spell Speed, Skill Speed, Martial Accuracy, Crit Resistance, Tenacity, Support Speed/Cost, Healing Power, Buff</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Frost Arrow Rain</b><span class="cl">Hunter</span><span class="pill d1">Easy</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Frost Wolf Ally</b><span class="cl">Hunter</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. <i>Frost Wolf</i> is the damage source; <i>Wild Frenzy</i> further boosts damage and survivability.</p>
+      <div class="attrs">Strength, Dexterity, All Attack, Crit, Dodge, Martial Speed, All Damage, Buff Effect/Duration, Skill Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Pierce Shot</b><span class="cl">Hunter</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Use <i>Steady Shot</i> to reduce <i>Pierce Shot</i>'s cooldown, and raise Crit to increase the chance of triggering Lightning.</p>
+      <div class="attrs">Strength, Dexterity, All Attack, Crit, Martial Speed/Damage, All Accuracy, All Damage, Physical, Pierce, Elemental, Lightning, Base Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Wound Bullying</b><span class="cl">Hunter</span><span class="pill d2">Medium</span></div>
+      <p>Apply the <i>Wound</i> Affliction to trigger the Bully specialization's damage.</p>
+      <div class="attrs">Strength, Dexterity, Crit, Martial Speed, All Accuracy, Physical Damage, Slash, Utility Speed, Skill Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Bloodied Blade</b><span class="cl">Hunter</span><span class="pill d2">Medium</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Ice Barrier</b><span class="cl">Mage</span><span class="pill d1">Easy</span></div>
+      <p>Centered on Set gear. Cast Utility skills to reduce <i>Ice Barrier</i>'s cooldown.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Defense, Spell Speed/Cost/Accuracy, Resistances, Mana, Shield Power/Decay, Buff, Skill Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lightning Basic Attack</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. <i>Lightning</i> is the main damage source, maintaining <i>Storm Infusion</i> to hit three targets.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Attack, Crit, Elemental &amp; Lightning, Spell Speed/Accuracy/Damage, Base Damage/Speed, Buff Duration</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Fire Demon Detonate</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Cast <i>Wall of Fire</i> to increase <i>Summon Fire Demon</i>'s detonation damage.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Attack, Crit, Spell Damage/Speed, Fire, Elemental, Skill Speed, Support Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lightning Storm</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div>
+      <p>Stack <i>Spell Speed</i> to shorten <i>Lightning Storm</i>'s interval and deal damage more often.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Attack, Crit, Elemental &amp; Lightning, Spell Speed, Skill Speed, Spell Accuracy/Damage, Mastery Damage, Buff</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lightning Shock</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Spell Empower</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Meteor Strike</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Blizzard Crit</b><span class="cl">Mage</span><span class="pill d2">Medium</span></div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Holy Light Buff</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div>
+      <p>Centered on Set gear. Cast <i>Chastise</i> to shorten <i>Holy Bolt</i>'s cooldown, and cast <i>Holy Bolt</i> often for healing and buffs.</p>
+      <div class="attrs">Dexterity, Intelligence, Health, All Defense, Resistances, Base/Support/Skill Speed, Healing Effect, Buff</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Divine Shelter</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div>
+      <p>Centered on Set gear. Cast <i>Divine Shelter</i> to greatly increase <i>Blessed Strike</i>'s target count and healing potency.</p>
+      <div class="attrs">Strength, Intelligence, Physical Attack &amp; Defense, Resistances, Base/Support/Skill Speed, Healing Effect, Shield Power</div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Strike Lifesteal</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Shield of Vengeance</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Dispel Purge</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Holy Flame Strike</b><span class="cl">Cleric</span><span class="pill d1">Easy</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Sword of Divine Punishment</b><span class="cl">Cleric</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Increase your Aura count to shorten <i>Sword of Divine Punishment</i>'s cooldown and attack more often.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Attack, Crit, All Damage, Spell Speed/Accuracy/Damage, Mastery Damage, Skill Speed, Reduced Mana Reservation</div></div>
+
+    <div class="bd" data-d="1"><div class="bd-h"><b>Heartseeker Lifesteal</b><span class="cl">Mercenary</span><span class="pill d1">Easy</span></div>
+      <p>Centered on Set gear. Use <i>Heartseeker</i> to drain Health, and activate <i>Killing Aura</i> to reset its cooldown.</p>
+      <div class="attrs">Strength, Dexterity, Physical Attack, Crit, All Defense, Resistances, Crit Resistance, Life Fortitude, Martial Speed, Skill Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Death's Wind</b><span class="cl">Mercenary</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Rapidly cast <i>Shockwave</i> to trigger <i>Death's Wind</i> more often.</p>
+      <div class="attrs">Strength, Dexterity, Physical Attack, Crit, Physical Damage, Slash, Pierce, Martial Speed/Damage, Mastery Damage, Base Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Ballista Sentry</b><span class="cl">Mercenary</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Apply debuffs to enemies to increase <i>Ballista Sentry</i>'s damage.</p>
+      <div class="attrs">Strength, Dexterity, Intelligence, Physical &amp; Elemental Attack, Crit, Physical &amp; Elemental Damage, Debuff, Support Cost, Utility Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Swift Thunder Slash</b><span class="cl">Mercenary</span><span class="pill d2">Medium</span></div>
+      <p>Stack <i>Haste</i> to increase the number of slashes from <i>Swift Thunder Slash</i>.</p>
+      <div class="attrs">Strength, Dexterity, Intelligence, All Attack, Crit, Martial Speed/Damage/Accuracy, All Damage, Physical, Pierce, Lightning, Debuff, Base Speed</div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Proc Trigger</b><span class="cl">Mercenary</span><span class="pill d2">Medium</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Barrage Fire</b><span class="cl">Mercenary</span><span class="pill d2">Medium</span></div></div>
+
+    <div class="bd" data-d="2"><div class="bd-h"><b>Bone Chill</b><span class="cl">Priest</span><span class="pill d2">Medium</span></div>
+      <p>Centered on Set gear. Increase <i>Death's Hand</i>'s speed to trigger <i>Bone Chill</i>'s damage faster.</p>
+      <div class="attrs">Dexterity, Intelligence, Elemental Attack, Crit, Elemental &amp; Frost, Spell Speed/Accuracy/Damage, Utility Speed, Mastery Damage, Buff</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Totem Buff</b><span class="cl">Priest</span><span class="pill d3">Hard</span></div>
+      <p>Centered on Set gear. Cast <i>Totem</i> skills to gain Shields and grant attribute buffs to allies.</p>
+      <div class="attrs">Dexterity, Intelligence, All Defense, Resistances, Health, Mana Regen, Spell Speed, Utility Speed, Buff, Shield Power</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Slime Rain</b><span class="cl">Priest</span><span class="pill d3">Hard</span></div>
+      <p>Centered on Set gear. Cast <i>Slime Rain</i> for continuous party healing and attribute buffs.</p>
+      <div class="attrs">Intelligence, All Defense, Resistances, Health, Mana, Mana Regen, Spell Speed, Skill/Support Speed, Support Cost, Buff, Healing Power, Tenacity</div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Frost Thrust</b><span class="cl">Priest</span><span class="pill d3">Hard</span></div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Lava Slam</b><span class="cl">Priest</span><span class="pill d3">Hard</span></div></div>
+    <div class="bd" data-d="3"><div class="bd-h"><b>Affliction Trigger</b><span class="cl">Priest</span><span class="pill d3">Hard</span></div></div>
+  </div>
+  <p class="none" id="nores" hidden>No build found.</p>
+</section>
+
+<section id="world">
+  <h2 class="serif"><span class="num">16</span>Chapters &amp; level</h2>
+  <p class="sub">Twenty chapters. Each one raises your level cap by 5 — the Campaign max is 100.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th class="num">#</th><th>Chapter</th><th class="num">Level cap</th><th class="num">Echoes</th><th>Milestone</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Weeping Peninsula</td><td class="num">5</td><td class="num">3</td><td></td></tr>
+        <tr><td class="num">2</td><td>Emberwood Forest</td><td class="num">10</td><td class="num">4</td><td></td></tr>
+        <tr><td class="num">3</td><td>Scorched Wastes</td><td class="num">15</td><td class="num">5</td><td></td></tr>
+        <tr><td class="num">4</td><td>Blackcrow Ridge</td><td class="num">20</td><td class="num">6</td><td><b>Team II</b></td></tr>
+        <tr><td class="num">5</td><td>Desolate Battlefield</td><td class="num">25</td><td class="num">7</td><td></td></tr>
+        <tr><td class="num">6</td><td>Howling Tundra</td><td class="num">30</td><td class="num">8</td><td></td></tr>
+        <tr><td class="num">7</td><td>Fungal Cave</td><td class="num">35</td><td class="num">9</td><td></td></tr>
+        <tr><td class="num">8</td><td>Bramble Heights</td><td class="num">40</td><td class="num">10</td><td></td></tr>
+        <tr><td class="num">9</td><td>Doom Altar</td><td class="num">45</td><td class="num">11</td><td></td></tr>
+        <tr><td class="num">10</td><td>Shattered Void</td><td class="num">50</td><td class="num">12</td><td><b>Team III</b></td></tr>
+        <tr><td class="num">11</td><td>Mourning Coast</td><td class="num">55</td><td class="num">13</td><td></td></tr>
+        <tr><td class="num">12</td><td>Blightwood</td><td class="num">60</td><td class="num">14</td><td></td></tr>
+        <tr><td class="num">13</td><td>Ash-Sand Wastes</td><td class="num">65</td><td class="num">15</td><td></td></tr>
+        <tr><td class="num">14</td><td>Gloomcrow Pass</td><td class="num">70</td><td class="num">16</td><td></td></tr>
+        <tr><td class="num">15</td><td>Desolate Ruins</td><td class="num">75</td><td class="num">17</td><td></td></tr>
+        <tr><td class="num">16</td><td>Frost-Eaten Tundra</td><td class="num">80</td><td class="num">18</td><td></td></tr>
+        <tr><td class="num">17</td><td>Rotmire Depths</td><td class="num">85</td><td class="num">19</td><td></td></tr>
+        <tr><td class="num">18</td><td>Spine Plateau</td><td class="num">90</td><td class="num">20</td><td></td></tr>
+        <tr><td class="num">19</td><td>Scorched Lands</td><td class="num">95</td><td class="num">21</td><td></td></tr>
+        <tr><td class="num">20</td><td>Rift-Star Expanse</td><td class="num">100</td><td class="num">22</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip warn">
+    <b>Level Suppression:</b> when your Godsworn is below the monster's level, you <b>take more damage and deal less</b> — and the bigger the gap, the worse it gets. Don't push a chapter ahead of your level: go back, raise your cap, and return. Pushing through is slower than backing off.
+  </div>
+
+  <p>The <b>Echo of the Boss</b> lets you challenge the boss again — and since the boss is a guaranteed Set-piece source, Echoes are your resource for "farming the piece I'm missing."</p>
+</section>
+
+<section id="city">
+  <h2 class="serif"><span class="num">17</span>The city</h2>
+  <p class="sub">Long-term power doesn't come from loot — it comes from here.</p>
+
+  <div class="grid g2">
+    <div class="card"><h4>Temple</h4><p style="margin:0;font-size:.92rem">Blessing and Baptism. Each Blessing has a <b>4% chance to grant 1 Talent point</b>. Blessing level tops out at 50 with the building maxed.</p></div>
+    <div class="card"><h4>Workshop</h4><p style="margin:0;font-size:.92rem">Forging and socketing. Its level sets the Forging cap and lowers prices.</p></div>
+    <div class="card"><h4>Stele</h4><p style="margin:0;font-size:.92rem">Stage quests, the <b>Awareness</b> cap, and the <b>Preferred Skills</b> cap. Completing stages early unlocks bigger upgrades on the other buildings.</p></div>
+    <div class="card"><h4>Prison</h4><p style="margin:0;font-size:.92rem">Where Godsworn are born. Its Renovations unlock the high rarities — see section 07.</p></div>
+    <div class="card"><h4>Market</h4><p style="margin:0;font-size:.92rem">Buy, sell, and <b>Orders</b> (turn in a specific piece, get rare resources). Also has the Vault, which lists high-quality gear for Runes.</p></div>
+    <div class="card"><h4>Sanctuary</h4><p style="margin:0;font-size:.92rem">Special combinations, like Faith Skulls into Crystallized Skulls.</p></div>
+    <div class="card"><h4>Warehouse</h4><p style="margin:0;font-size:.92rem">Extended storage and the <b>Vault</b>: a separate high-quality store with stacking. Keeps your bag from clogging up.</p></div>
+    <div class="card"><h4>Golem</h4><p style="margin:0;font-size:.92rem">Attribute bonuses that apply to <b>every Godsworn of that class</b> — account-wide progression. The cap rises with your Worshiper level.</p></div>
+  </div>
+
+  <div class="tip">
+    <b>Inspire</b> grants a Godsworn a Mastery <b>from another class</b>. The amount and cap rise with upgrades — it's the main source of hybrid builds, alongside Runewords.
+  </div>
+</section>
+
+<section id="pro">
+  <h2 class="serif"><span class="num">18</span>How to get good</h2>
+  <p class="sub">A summary of what actually moves the needle, in order of impact.</p>
+
+  <ol class="ladder">
+    <li><b>Respect casting priority</b>Support &gt; Utility &gt; Mastery &gt; Basic. If your Mastery isn't firing, you have too many high-priority skills. Cause #1 of a build with no damage.</li>
+    <li><b>Buy the Prison's rarity Renovations</b>Without them, Rare-or-better prisoners <b>don't exist</b>. After that, use Warp to manufacture a good Godsworn instead of waiting for one.</li>
+    <li><b>Fit in a Sunder source</b>Five stacks = −50% target defense. The cheapest multiplier in the game.</li>
+    <li><b>Concentrate on your advance team</b>Opening a chapter raises the level cap for all nine Godsworn. Spreading gear across three average teams stalls everyone.</li>
+    <li><b>Chase the set, not the rarity</b>Four Green pieces that turn on a trigger beat four loose Mythics.</li>
+    <li><b>Raise the Divine Tower early</b>Permanent, compounding bonus.</li>
+    <li><b>Refine before socketing</b>A socketed item can no longer be Refined.</li>
+    <li><b>Don't play ahead of your level</b>Level Suppression punishes both ways.</li>
+    <li><b>Pick your Basic for its effect</b>It exists to generate Mettle, Haste, or Sunder — not to deal damage.</li>
+    <li><b>Mark Preferred Skills before recruiting</b>Deciding the build first is what makes the Prison work for you.</li>
+  </ol>
+</section>
+
+<footer>
+  <p style="margin:0">All numbers come from the game's internal data tables, extracted from <code>Assembly-CSharp</code> and cross-checked against the same dictionary used by the community's PT-BR translation. Unofficial content, not affiliated with SmallMill.</p>
+</footer>
+</div>
+</div></div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+
+  * { box-sizing: border-box; }
+  .guia {
+    color: var(--t-text-main);
+    font-family: var(--t-font-sans);
+    font-size: 1.05rem; line-height: 1.7;
+    padding-top: 8rem;
+  }
+  .guia { --jade: #7d9455; --violet: #a07ab5; }
+  .serif { font-family: var(--t-font-serif); letter-spacing: .01em; }
+
+  .shell { display: grid; grid-template-columns: 252px minmax(0,1fr); max-width: 1250px; margin: 0 auto; }
+  nav.toc {
+    position: sticky; top: 5.5rem; align-self: start; height: calc(100vh - 6rem); overflow-y: auto;
+    padding: 28px 20px 40px; border-right: 1px solid var(--t-border);
+    scrollbar-width: thin; scrollbar-color: var(--t-border) transparent;
+  }
+  nav.toc::-webkit-scrollbar { width: 8px; }
+  nav.toc::-webkit-scrollbar-track { background: transparent; }
+  nav.toc::-webkit-scrollbar-thumb { background: var(--t-border); border-radius: 99px; }
+  nav.toc::-webkit-scrollbar-thumb:hover { background: var(--t-secondary); }
+  nav.toc .brand { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--t-primary); margin-bottom: 16px; font-weight: 600; }
+  nav.toc a { display: block; color: var(--t-text-soft); text-decoration: none; font-size: .86rem; padding: 5px 0 5px 11px; border-left: 2px solid transparent; line-height: 1.35; }
+  nav.toc a:hover { color: var(--t-text-main); }
+  nav.toc a.on { color: var(--t-text-main); border-left-color: var(--t-primary); }
+  nav.toc .grp { font-size: .67rem; letter-spacing: .14em; text-transform: uppercase; color: var(--t-text-soft); opacity: .6; margin: 16px 0 5px; }
+  .doc { padding: 0 42px 120px; min-width: 0; }
+
+  header.hero { padding: 0 0 42px; border-bottom: 1px solid var(--t-border); margin-bottom: 44px; }
+  .eyebrow { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--t-primary); font-weight: 600; }
+  h1 { font-size: clamp(2.4rem, 5.5vw, 3.6rem); line-height: 1.02; margin: 14px 0 16px; font-weight: 600; text-wrap: balance; letter-spacing: -.01em; }
+  .lede { font-size: 1.1rem; color: var(--t-text-soft); max-width: 64ch; margin: 0; }
+  .facts { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 30px; }
+  .fact .n { font-family: var(--t-font-serif); font-size: 1.7rem; color: var(--t-secondary); font-variant-numeric: tabular-nums; line-height: 1; }
+  .fact .l { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--t-text-soft); margin-top: 5px; }
+
+  section { margin-bottom: 62px; scroll-margin-top: 6rem; }
+  h2 { font-size: 1.85rem; margin: 0 0 6px; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+  h2 .num { color: var(--t-primary); font-size: 1rem; vertical-align: super; margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .sub { color: var(--t-text-soft); margin: 0 0 24px; max-width: 68ch; }
+  h3 { font-size: 1.14rem; margin: 30px 0 10px; font-weight: 600; }
+  h4 { font-size: .95rem; margin: 20px 0 8px; font-weight: 600; color: var(--t-secondary); }
+  p { max-width: 68ch; }
+
+  .card { background: var(--t-surface); border: 1px solid var(--t-border); border-radius: 6px; padding: 18px 20px; }
+  .grid { display: grid; gap: 14px; }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); }
+
+  .kw { display: grid; grid-template-columns: 140px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--t-border); align-items: start; }
+  .kw:last-child { border-bottom: 0; }
+  .kw dt { font-weight: 600; color: var(--t-secondary); }
+  .kw dd { margin: 0; }
+
+  ol.ladder { list-style: none; counter-reset: p; padding: 0; margin: 0; }
+  ol.ladder li { counter-increment: p; position: relative; padding: 13px 0 13px 46px; border-bottom: 1px solid var(--t-border); }
+  ol.ladder li:last-child { border-bottom: 0; }
+  ol.ladder li::before { content: counter(p); position: absolute; left: 0; top: 12px; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: var(--t-primary-dark); color: #fff; font-size: .8rem; font-weight: 700; }
+  ol.ladder b { display: block; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .scroll { overflow-x: auto; border: 1px solid var(--t-border); border-radius: 6px; }
+  th, td { text-align: left; padding: 9px 13px; border-bottom: 1px solid var(--t-border); vertical-align: top; }
+  th { font-size: .69rem; letter-spacing: .1em; text-transform: uppercase; color: var(--t-text-soft); font-weight: 600; background: var(--t-surface-alt); position: sticky; top: 0; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num, th.num { font-variant-numeric: tabular-nums; text-align: right; }
+
+  .pill { display: inline-block; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--t-border); color: var(--t-text-soft); white-space: nowrap; }
+  .pill.d1 { color: var(--jade); border-color: var(--jade); }
+  .pill.d2 { color: var(--t-secondary); border-color: var(--t-secondary); }
+  .pill.d3 { color: var(--t-primary); border-color: var(--t-primary); }
+
+  .tip { border-left: 3px solid var(--t-secondary); background: var(--t-surface); padding: 14px 18px; border-radius: 0 6px 6px 0; margin: 18px 0; }
+  .tip b { color: var(--t-secondary); }
+  .tip.warn { border-left-color: var(--t-primary); }
+  .tip.warn b { color: var(--t-primary); }
+  .tip.new { border-left-color: var(--violet); }
+  .tip.new b { color: var(--violet); }
+  .term { color: var(--t-secondary); font-weight: 600; }
+
+  .cls { border-top: 2px solid var(--t-primary); padding-top: 16px; margin-top: 38px; }
+  .cls-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; }
+  .cls-head h3 { margin: 0; font-size: 1.5rem; }
+  .cls-meta { color: var(--t-text-soft); font-size: .85rem; }
+  .skill { padding: 9px 0; border-bottom: 1px solid var(--t-border); }
+  .skill:last-child { border-bottom: 0; }
+  .tags { color: var(--violet); font-size: .74rem; letter-spacing: .04em; }
+  .skill span.d { color: var(--t-text-soft); display: block; font-size: .89rem; }
+  .mast { font-size: .89rem; padding: 8px 0; border-bottom: 1px solid var(--t-border); }
+  .mast:last-child { border-bottom: 0; }
+  .mast b { color: var(--t-secondary); }
+  .mast span { color: var(--t-text-soft); }
+  .setb { margin-bottom: 16px; }
+  .setb b { color: var(--jade); }
+  .setb div { font-size: .89rem; color: var(--t-text-soft); padding: 3px 0 3px 14px; border-left: 1px solid var(--t-border); margin-top: 5px; }
+  .setb div em { color: var(--t-text-main); font-style: normal; font-weight: 600; }
+
+  .tools { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  input[type=search] { flex: 1 1 220px; background: var(--t-surface); border: 1px solid var(--t-border); color: var(--t-text-main); padding: 9px 13px; border-radius: 5px; font: inherit; font-size: .9rem; }
+  input[type=search]:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--t-secondary); outline-offset: 2px; }
+  button.f { background: var(--t-surface); border: 1px solid var(--t-border); color: var(--t-text-soft); padding: 9px 14px; border-radius: 5px; font: inherit; font-size: .82rem; cursor: pointer; }
+  button.f[aria-pressed="true"] { background: var(--t-primary-dark); border-color: var(--t-primary-dark); color: #fff; }
+  .bd { padding: 14px 0; border-bottom: 1px solid var(--t-border); }
+  .bd:last-child { border-bottom: 0; }
+  .bd-h { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
+  .bd-h b { font-size: 1rem; }
+  .bd-h .cl { color: var(--t-text-soft); font-size: .82rem; }
+  .bd p { margin: 7px 0 0; font-size: .9rem; }
+  .bd .attrs { margin: 6px 0 0; font-size: .82rem; color: var(--t-text-soft); }
+  .none { color: var(--t-text-soft); font-style: italic; padding: 20px 0; }
+
+  footer { border-top: 1px solid var(--t-border); padding: 28px 0 0; color: var(--t-text-soft); font-size: .84rem; }
+
+  @media (max-width: 1023px) {
+    .shell { grid-template-columns: 1fr; }
+    nav.toc { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--t-border); }
+    nav.toc .links { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    nav.toc .grp { width: 100%; }
+    nav.toc a { border-left: 0; padding-left: 0; }
+    nav.toc a.on { border-left: 0; color: var(--t-primary); }
+    .doc { padding: 0 20px 80px; }
+    .kw { grid-template-columns: 1fr; gap: 3px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<script is:inline>
+  var links = {};
+  [].forEach.call(document.querySelectorAll('nav.toc a'), function (a) {
+    links[a.getAttribute('href').slice(1)] = a;
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = links[e.target.id];
+        if (a && e.isIntersecting) {
+          for (var k in links) links[k].classList.remove('on');
+          a.classList.add('on');
+        }
+      });
+    }, { rootMargin: '-10% 0px -80% 0px' });
+    [].forEach.call(document.querySelectorAll('main section'), function (s) { if (s.id) io.observe(s); });
+  }
+
+  var q = document.getElementById('q');
+  var btns = [].slice.call(document.querySelectorAll('button.f'));
+  var rows = [].slice.call(document.querySelectorAll('#blist .bd'));
+  var nores = document.getElementById('nores');
+  var mode = 'all';
+  function apply() {
+    var term = (q.value || '').toLowerCase().trim();
+    var shown = 0;
+    rows.forEach(function (r) {
+      var vis = (mode === 'all' || r.dataset.d === mode) &&
+                (!term || r.textContent.toLowerCase().indexOf(term) !== -1);
+      r.hidden = !vis;
+      if (vis) shown++;
+    });
+    nores.hidden = shown !== 0;
+  }
+  q.addEventListener('input', apply);
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      mode = b.dataset.f;
+      btns.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      apply();
+    });
+  });
+</script>
