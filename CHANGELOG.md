@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.6 — 2026-08-17
+
+Correção da sincronização com o patch 1.0.5: a varredura anterior só tinha
+capturado 1 das várias strings novas que o update trouxe.
+
+- Extraída a tabela de idiomas real do jogo (em vez de depender só do que
+  aparece durante uma sessão de jogo) para achar tudo que o patch 1.0.5
+  mudou de uma vez
+- Traduzidas 44 strings novas: nova tela de configuração automática da loja,
+  textos de talento por nível de Bênção, habilidades mutadas, corrupção
+  sempre benéfica, entre outras
+- Traduzida a segunda variante do changelog interno do patch 1.0.5 (o jogo
+  mostra duas versões ligeiramente diferentes do mesmo texto em telas
+  diferentes — a primeira já tinha sido traduzida na v1.3.5, a segunda
+  estava aparecendo em chinês)
+
 ## 1.3.5 — 2026-08-17
 
 Tradução sincronizada com o patch 1.0.5 do jogo.

@@ -11781,8 +11781,8 @@
  },
  "新的囚犯额外显示1个技能": {
   "cn": "新的囚犯额外显示1个技能",
-  "en": "New Prisoners show 1 extra Skill.",
-  "tc": "新的囚犯額外顯示 1 個技能"
+  "en": "New Prisoners additionally show 1 Skill",
+  "tc": "新的囚犯額外顯示1個技能"
  },
  "施加【缓速】异常状态时，使目标所有攻击降低10%，持续3秒": {
   "cn": "施加【缓速】异常状态时，使目标所有攻击降低10%，持续3秒",
@@ -17071,7 +17071,7 @@
  },
  "生命强韧": {
   "cn": "生命强韧",
-  "en": "Life Fortitude",
+  "en": "Health Tenacity",
   "tc": "生命強韌"
  },
  "生命强韧 {0}{1}%": {
@@ -17081,7 +17081,7 @@
  },
  "生命强韧属性翻倍": {
   "cn": "生命强韧属性翻倍",
-  "en": "Life Fortitude attribute is doubled",
+  "en": "Health Tenacity attribute is doubled",
   "tc": "生命強韌屬性翻倍"
  },
  "生命强韧提升10%": {
@@ -23983,5 +23983,230 @@
   "cn": "（需要提升圣碑等级）",
   "en": "(Requires increasing the Stele level)",
   "tc": "（需要提升聖碑等級）"
+ },
+ "15级赐福时获得1点天赋点数,20级赐福时获得1点天赋点数": {
+  "cn": "15级赐福时获得1点天赋点数,20级赐福时获得1点天赋点数",
+  "en": "Gain 1 Talent Point at Blessing level 15, and 1 Talent Point at Blessing level 20",
+  "tc": "15級賜福時獲得1點天賦點數,20級賜福時獲得1點天賦點數"
+ },
+ "25级赐福时获得1点天赋点数,30级赐福时获得1点天赋点数": {
+  "cn": "25级赐福时获得1点天赋点数,30级赐福时获得1点天赋点数",
+  "en": "Gain 1 Talent Point at Blessing level 25, and 1 Talent Point at Blessing level 30",
+  "tc": "25級賜福時獲得1點天賦點數,30級賜福時獲得1點天賦點數"
+ },
+ "5级赐福时获得1点天赋点数,10级赐福时获得1点天赋点数": {
+  "cn": "5级赐福时获得1点天赋点数,10级赐福时获得1点天赋点数",
+  "en": "Gain 1 Talent Point at Blessing level 5, and 1 Talent Point at Blessing level 10",
+  "tc": "5級賜福時獲得1點天賦點數,10級賜福時獲得1點天賦點數"
+ },
+ "<color=#8B44AD>基础词缀最大数值</color>": {
+  "cn": "<color=#8B44AD>基础词缀最大数值</color>",
+  "en": "<color=#8B44AD>Base Affix maximum value</color>",
+  "tc": "<color=#8B44AD>基礎詞綴最大數值</color>"
+ },
+ "<color=#8B44AD>基础词缀最大等级</color>": {
+  "cn": "<color=#8B44AD>基础词缀最大等级</color>",
+  "en": "<color=#8B44AD>Base Affix maximum level</color>",
+  "tc": "<color=#8B44AD>基礎詞綴最大等級</color>"
+ },
+ "<color=#8B44AD>增加1个稀有词缀</color>": {
+  "cn": "<color=#8B44AD>增加1个稀有词缀</color>",
+  "en": "<color=#8B44AD>Add 1 Rare Affix</color>",
+  "tc": "<color=#8B44AD>增加1個稀有詞綴</color>"
+ },
+ "<color=#8B44AD>增加1个精良词缀</color>": {
+  "cn": "<color=#8B44AD>增加1个精良词缀</color>",
+  "en": "<color=#8B44AD>Add 1 Fine Affix</color>",
+  "tc": "<color=#8B44AD>增加1個精良詞綴</color>"
+ },
+ "<color=#8B44AD>增加1条基础词缀</color>": {
+  "cn": "<color=#8B44AD>增加1条基础词缀</color>",
+  "en": "<color=#8B44AD>Add 1 Basic Affix</color>",
+  "tc": "<color=#8B44AD>增加1條基礎詞綴</color>"
+ },
+ "<color=#8B44AD>装备等级提升3级</color>": {
+  "cn": "<color=#8B44AD>装备等级提升3级</color>",
+  "en": "<color=#8B44AD>Item Level increased by 3</color>",
+  "tc": "<color=#8B44AD>裝備等級提升3級</color>"
+ },
+ "<color=#8B44AD>装备等级提升5级</color>": {
+  "cn": "<color=#8B44AD>装备等级提升5级</color>",
+  "en": "<color=#8B44AD>Item Level increased by 5</color>",
+  "tc": "<color=#8B44AD>裝備等級提升5級</color>"
+ },
+ "<color=#8B44AD>随机1条稀有词缀最大数值</color>": {
+  "cn": "<color=#8B44AD>随机1条稀有词缀最大数值</color>",
+  "en": "<color=#8B44AD>1 random Rare Affix maximum value</color>",
+  "tc": "<color=#8B44AD>隨機1條稀有詞綴最大數值</color>"
+ },
+ "<color=#8B44AD>随机1条稀有词缀最大等级</color>": {
+  "cn": "<color=#8B44AD>随机1条稀有词缀最大等级</color>",
+  "en": "<color=#8B44AD>1 random Rare Affix maximum level</color>",
+  "tc": "<color=#8B44AD>隨機1條稀有詞綴最大等級</color>"
+ },
+ "<color=#8B44AD>随机1条精良词缀最大数值</color>": {
+  "cn": "<color=#8B44AD>随机1条精良词缀最大数值</color>",
+  "en": "<color=#8B44AD>1 random Fine Affix maximum value</color>",
+  "tc": "<color=#8B44AD>隨機1條精良詞綴最大數值</color>"
+ },
+ "<color=#8B44AD>随机1条精良词缀最大等级</color>": {
+  "cn": "<color=#8B44AD>随机1条精良词缀最大等级</color>",
+  "en": "<color=#8B44AD>1 random Fine Affix maximum level</color>",
+  "tc": "<color=#8B44AD>隨機1條精良詞綴最大等級</color>"
+ },
+ "召唤仆从时，有40%几率额外召唤一个": {
+  "cn": "召唤仆从时，有40%几率额外召唤一个",
+  "en": "When summoning a Minion, 40% chance to summon an additional one",
+  "tc": "召喚僕從時，有40%機率額外召喚一個"
+ },
+ "可以将信仰之颅合成晶化颅骨（可以重新随机神选者的异化技能）": {
+  "cn": "可以将信仰之颅合成晶化颅骨（可以重新随机神选者的异化技能）",
+  "en": "Faith Skulls can be combined into Crystallized Skulls (can reroll a Godsworn's Mutated Skill)",
+  "tc": "可以將信仰之顱合成晶化顱骨（可以重新隨機神選者的異化技能）"
+ },
+ "可以移除当前神选者的最后一项启迪专精。（秘所改造可以解锁合成获得）": {
+  "cn": "可以移除当前神选者的最后一项启迪专精。（秘所改造可以解锁合成获得）",
+  "en": "Can remove the last Inspire Mastery from the current Godsworn. (Can be unlocked for Combine through Sanctum Upgrades)",
+  "tc": "可以移除當前神選者的最後一項啟迪專精。（秘所改造可以解鎖合成獲得）"
+ },
+ "可以重新随机当前神选者的异化技能。（秘所改造可以解锁合成获得）": {
+  "cn": "可以重新随机当前神选者的异化技能。（秘所改造可以解锁合成获得）",
+  "en": "Can reroll the current Godsworn's Mutated Skill. (Can be unlocked for Combine through Sanctum Upgrades)",
+  "tc": "可以重新隨機當前神選者的異化技能。（秘所改造可以解鎖合成獲得）"
+ },
+ "启迪可以使神选者获得一项其他职业的天赋专精。\n天赋专精的数量和等级上限可以通过改造提升。\n启迪专精可以使用【黑暗星辰】逐个移除（秘所合成）": {
+  "cn": "启迪可以使神选者获得一项其他职业的天赋专精。\n天赋专精的数量和等级上限可以通过改造提升。\n启迪专精可以使用【黑暗星辰】逐个移除（秘所合成）",
+  "en": "Inspire grants a Godsworn one Talent Mastery from another class.\nTalent Mastery count and level caps can be raised through Upgrades.\nInspire Masteries can be removed one by one with [Dark Star] (combine in the Sanctum)",
+  "tc": "啟迪可以使神選者獲得一項其他職業的天賦專精。\n天賦專精的數量和等級上限可以透過改造提升。\n啟迪專精可以使用【黑暗星辰】逐個移除（秘所合成）"
+ },
+ "品质选择：": {
+  "cn": "品质选择：",
+  "en": "Quality Select:",
+  "tc": "品質選擇："
+ },
+ "基础技能命中时，有25%几率使自身获得2层重伤，持续3秒": {
+  "cn": "基础技能命中时，有25%几率使自身获得2层重伤，持续3秒",
+  "en": "When Base Skills hit, 25% chance to gain 2 stacks of Wound for 3s",
+  "tc": "基礎技能命中時，有25%機率使自身獲得2層重傷，持續3秒"
+ },
+ "基础技能暴击时，失去3%魔力": {
+  "cn": "基础技能暴击时，失去3%魔力",
+  "en": "On Basic Skill Crit, lose 3% Mana",
+  "tc": "基礎技能暴擊時，失去3%魔力"
+ },
+ "对宝箱造成巨额的伤害": {
+  "cn": "对宝箱造成巨额的伤害",
+  "en": "Deals massive damage to Chests",
+  "tc": "對寶箱造成巨額的傷害"
+ },
+ "属性变化": {
+  "cn": "属性变化",
+  "en": "Stat Changes",
+  "tc": "屬性變化"
+ },
+ "市场自动刷新时，遇到普通品质出现选择的插槽数量会停止自动刷新。\n如果勾选了自动购买，会购买进入背包，并且不会停止自动。": {
+  "cn": "市场自动刷新时，遇到普通品质出现选择的插槽数量会停止自动刷新。\n如果勾选了自动购买，会购买进入背包，并且不会停止自动。",
+  "en": "While Market auto-refresh is running, encountering Common Quality with the selected Socket count stops auto-refresh.\nIf Auto-Buy is enabled, the item is purchased into the backpack and auto-refresh does not stop.",
+  "tc": "市場自動刷新時，遇到普通品質出現選擇的插槽數量會停止自動刷新。\n如果勾選了自動購買，會購買進入背包，並且不會停止自動。"
+ },
+ "市场自动刷新时，遇到选择的品质会停止自动刷新。\n如果勾选了自动购买，会购买进入背包，并且不会停止自动。": {
+  "cn": "市场自动刷新时，遇到选择的品质会停止自动刷新。\n如果勾选了自动购买，会购买进入背包，并且不会停止自动。",
+  "en": "While Market auto-refresh is running, encountering a selected Quality stops auto-refresh.\nIf Auto-Buy is enabled, the item is purchased into the backpack and auto-refresh does not stop.",
+  "tc": "市場自動刷新時，遇到選擇的品質會停止自動刷新。\n如果勾選了自動購買，會購買進入背包，並且不會停止自動。"
+ },
+ "当前异化技能": {
+  "cn": "当前异化技能",
+  "en": "Current Mutated Skill",
+  "tc": "當前異化技能"
+ },
+ "当前神选者没有异化技能": {
+  "cn": "当前神选者没有异化技能",
+  "en": "Current Godsworn has no Mutated Skill",
+  "tc": "當前神選者沒有異化技能"
+ },
+ "提升精通技能的释放频率。（同时影响释放速度和冷却时间）": {
+  "cn": "提升精通技能的释放频率。（同时影响释放速度和冷却时间）",
+  "en": "Increases the cast frequency of Mastery skills. (Affects both cast speed and cooldown)",
+  "tc": "提升精通技能的釋放頻率。（同時影響釋放速度和冷卻時間）"
+ },
+ "插槽数量：": {
+  "cn": "插槽数量：",
+  "en": "Socket Count:",
+  "tc": "插槽數量："
+ },
+ "改变神选者异化技能": {
+  "cn": "改变神选者异化技能",
+  "en": "Change Godsworn Mutated Skill",
+  "tc": "改變神選者異化技能"
+ },
+ "污染可以对装备产生随机的改变。\n这种改变都是有益的，请放心尝试。": {
+  "cn": "污染可以对装备产生随机的改变。\n这种改变都是有益的，请放心尝试。",
+  "en": "Corruption applies a random change to an item.\nThese changes are always beneficial. Feel free to try.",
+  "tc": "汙染可以對裝備產生隨機的改變。\n這種改變都是有益的，請放心嘗試。"
+ },
+ "点击天赋技能可以设置为偏好技能。\n囚犯有更高的概率出现偏好技能。\n洗礼有更高几率出现偏好技能。\n异化技能有更高的几率出现偏好技能。\n偏好技能的设置上限由圣碑等级决定。": {
+  "cn": "点击天赋技能可以设置为偏好技能。\n囚犯有更高的概率出现偏好技能。\n洗礼有更高几率出现偏好技能。\n异化技能有更高的几率出现偏好技能。\n偏好技能的设置上限由圣碑等级决定。",
+  "en": "Click on a Talent skill to set it as a Preferred Skill.\nPrisoners have a higher chance of possessing Preferred Skills.\nBaptism has a higher chance of granting Preferred Skills.\nMutated Skills have a higher chance of being Preferred Skills.\nThe maximum number of Preferred Skills that can be set is determined by the Stele level.",
+  "tc": "點擊天賦技能可以設定為偏好技能。\n囚犯有更高的機率出現偏好技能。\n洗禮有更高幾率出現偏好技能。\n異化技能有更高的機率出現偏好技能。\n偏好技能的設定上限由聖碑等級決定。"
+ },
+ "祈祷神的庇护，自身获得护盾，并获得3层坚毅。": {
+  "cn": "祈祷神的庇护，自身获得护盾，并获得3层坚毅。",
+  "en": "Prays for divine protection, granting yourself a Shield and 3 stacks of Fortitude.",
+  "tc": "祈禱神的庇護，自身獲得護盾，並獲得3層堅毅。"
+ },
+ "神选者异化技能已重新随机": {
+  "cn": "神选者异化技能已重新随机",
+  "en": "Godsworn Mutated Skill rerolled",
+  "tc": "神選者異化技能已重新隨機"
+ },
+ "移除最后一项启迪专精": {
+  "cn": "移除最后一项启迪专精",
+  "en": "Remove the last Inspire Mastery",
+  "tc": "移除最後一項啟迪專精"
+ },
+ "终焉是游戏的终局玩法，通过终焉意味着游戏顺利通关。\n终焉不同的阶段会限制不同数量的神选者挑战。\n每个阶段挑战过的神选者将不能再次进行终焉战斗。\n污染装备在圣碑进行（需要完成所有阶段）": {
+  "cn": "终焉是游戏的终局玩法，通过终焉意味着游戏顺利通关。\n终焉不同的阶段会限制不同数量的神选者挑战。\n每个阶段挑战过的神选者将不能再次进行终焉战斗。\n污染装备在圣碑进行（需要完成所有阶段）",
+  "en": "Doom is the endgame mode; clearing it means you have beaten the game.\nDifferent Doom stages limit how many Godsworn may challenge.\nGodsworn who have challenged a stage cannot enter Doom combat again for that stage.\nCorrupt equipment at the Stele (requires completing all stages)",
+  "tc": "終焉是遊戲的終局玩法，透過終焉意味著遊戲順利通關。\n終焉不同的階段會限制不同數量的神選者挑戰。\n每個階段挑戰過的神選者將不能再次進行終焉戰鬥。\n汙染裝備在聖碑進行（需要完成所有階段）"
+ },
+ "缺少有效配置": {
+  "cn": "缺少有效配置",
+  "en": "Missing valid configuration",
+  "tc": "缺少有效配置"
+ },
+ "背包里缺少{0}": {
+  "cn": "背包里缺少{0}",
+  "en": "Missing {0} in backpack",
+  "tc": "背包裡缺少{0}"
+ },
+ "自动购买：": {
+  "cn": "自动购买：",
+  "en": "Auto-Buy:",
+  "tc": "自動購買："
+ },
+ "赞美你的敌人，有几率使目标失去闪避，暴击翻倍。": {
+  "cn": "赞美你的敌人，有几率使目标失去闪避，暴击翻倍。",
+  "en": "Praise your enemy, with a chance to make the target lose Dodge and double Crit.",
+  "tc": "讚美你的敵人，有機率使目標失去閃避，暴擊翻倍。"
+ },
+ "这是一项天赋技能": {
+  "cn": "这是一项天赋技能",
+  "en": "This is a Talent Skill",
+  "tc": "這是一項天賦技能"
+ },
+ "这是一项异化技能": {
+  "cn": "这是一项异化技能",
+  "en": "This is a Mutated Skill",
+  "tc": "這是一項異化技能"
+ },
+ "【正式版】1.0.5版本更新更新，更多优化还在进行中！\n\n【重要】\n赐福改为每5级固定获得一点天赋，最多6点，不再进行随机。\n更新后需要重置天赋来应用新的赐福天赋点数。\n【晶化颅骨】道具效果改为可以改变异化技能。\n【晶化颅骨】合成数量需求降低到6个。\n\n【新增】\n商店增加自动配置，可以筛选插槽数量，可以自动购买。\n增加了装备对比时词缀变化的显示。\n异化技能和启迪专精增加了独特的外框。\n\n【优化】\n【黑暗星辰】现在可以直接在启迪界面使用。\n优化了那些不明所以的装备描述。\n秘所改造里去掉了【苦痛之鳞】的合成。\n订单装备列表缺少装备时增加提示。\n优化不准确的污染功能说明。\n完善神官【神圣庇护】技能的目标描述。\n启迪说明增加【黑暗星辰】的获取途径。\n快速放入满仓库页时，多余的会放入下一页。\n界面关闭红叉变的更明显了。\n终焉说明增加污染位置的说明。\n\n【调整】\n传说装备【训犬者】移除了独特的获取途径。\n降低了高层塔层的怪物强度。\n降低了高层异界的怪物强度。\n降低终焉所有阶段的怪物前度。\n第二件神话装备改为90级可以穿戴。\n\n【修复】\n修复可以能出现章节关卡显示错误的问题。\n修复缺少的精通技能速度的属性描述。\n修复改名字会被战斗结算打断的问题。\n修复查看属性信息回呗战斗结算打断的问题。\n修复神话装备【大师】伤害统计显示异常的问题。\n修复了本地化翻译的相关问题。\n修复污染装备导致装备显示歪斜的问题。\n修复【凛冬之拥】精炼后神话装备错误的问题。\n修复在改名的时候会响应快捷键的问题。": {
+  "cn": "【正式版】1.0.5版本更新更新，更多优化还在进行中！\n\n【重要】\n赐福改为每5级固定获得一点天赋，最多6点，不再进行随机。\n更新后需要重置天赋来应用新的赐福天赋点数。\n【晶化颅骨】道具效果改为可以改变异化技能。\n【晶化颅骨】合成数量需求降低到6个。\n\n【新增】\n商店增加自动配置，可以筛选插槽数量，可以自动购买。\n增加了装备对比时词缀变化的显示。\n异化技能和启迪专精增加了独特的外框。\n\n【优化】\n【黑暗星辰】现在可以直接在启迪界面使用。\n优化了那些不明所以的装备描述。\n秘所改造里去掉了【苦痛之鳞】的合成。\n订单装备列表缺少装备时增加提示。\n优化不准确的污染功能说明。\n完善神官【神圣庇护】技能的目标描述。\n启迪说明增加【黑暗星辰】的获取途径。\n快速放入满仓库页时，多余的会放入下一页。\n界面关闭红叉变的更明显了。\n终焉说明增加污染位置的说明。\n\n【调整】\n传说装备【训犬者】移除了独特的获取途径。\n降低了高层塔层的怪物强度。\n降低了高层异界的怪物强度。\n降低终焉所有阶段的怪物前度。\n第二件神话装备改为90级可以穿戴。\n\n【修复】\n修复可以能出现章节关卡显示错误的问题。\n修复缺少的精通技能速度的属性描述。\n修复改名字会被战斗结算打断的问题。\n修复查看属性信息回呗战斗结算打断的问题。\n修复神话装备【大师】伤害统计显示异常的问题。\n修复了本地化翻译的相关问题。\n修复污染装备导致装备显示歪斜的问题。\n修复【凛冬之拥】精炼后神话装备错误的问题。\n修复在改名的时候会响应快捷键的问题。",
+  "en": "[Full Release] Version 1.0.5 Update, more improvements still underway!\n\n[Important]\nBlessing now grants 1 Talent Point every 5 levels, up to 6 points, with no random rolls.\nAfter updating, reset Talents to apply the new Blessing Talent Points.\n[Crystallized Skull] now changes Mutated Skills.\n[Crystallized Skull] combine cost reduced to 6.\n\n[New]\nMarket adds auto configuration: filter by Socket count and Auto-Buy.\nEquipment comparison now shows Affix changes.\nMutated Skills and Inspire Masteries gain unique frames.\n\n[Improvements]\n[Dark Star] can now be used directly in the Inspire UI.\nClarified confusing equipment descriptions.\nRemoved [Agony Scales] combine from Sanctum Upgrades.\nAdded a prompt when Orders equipment list is missing items.\nImproved inaccurate Corrupt feature descriptions.\nClarified Cleric [Divine Shelter] skill targeting.\nInspire tips now include how to obtain [Dark Star].\nQuick-stashing into a full Warehouse page puts overflow on the next page.\nThe UI close X is more visible.\nDoom tips now mention where to Corrupt equipment.\n\n[Balance]\nLegendary equipment [Dog Trainer] unique acquisition removed.\nReduced monster strength on high Divine Tower floors.\nReduced monster strength in high Outlands.\nReduced monster strength across all Doom stages.\nThe second Mythic equipment can now be equipped at level 90.\n\n[Fixes]\nFixed possible incorrect chapter stage display.\nFixed missing Mastery Skill Speed attribute description.\nFixed rename being interrupted by combat settlement.\nFixed viewing attribute info being interrupted by combat settlement.\nFixed Mythic equipment [Master] damage stats display issues.\nFixed localization-related issues.\nFixed Corrupt equipment causing skewed item display.\nFixed [Winter's Embrace] becoming the wrong Mythic after Refining.\nFixed hotkeys responding while renaming.",
+  "tc": "【正式版】1.0.5版本更新更新，更多優化還在進行中！\n\n【重要】\n賜福改為每5級固定獲得一點天賦，最多6點，不再進行隨機。\n更新後需要重置天賦來應用新的賜福天賦點數。\n【晶化顱骨】道具效果改為可以改變異化技能。\n【晶化顱骨】合成數量需求降低到6個。\n\n【新增】\n商店增加自動配置，可以篩選插槽數量，可以自動購買。\n增加了裝備對比時詞綴變化的顯示。\n異化技能和啟迪專精增加了獨特的外框。\n\n【優化】\n【黑暗星辰】現在可以直接在啟迪介面使用。\n優化了那些不明所以的裝備描述。\n秘所改造裡去掉了【苦痛之鱗】的合成。\n訂單裝備列表缺少裝備時增加提示。\n優化不準確的汙染功能說明。\n完善神官【神聖庇護】技能的目標描述。\n啟迪說明增加【黑暗星辰】的獲取途徑。\n快速放入滿倉庫頁時，多餘的會放入下一頁。\n介面關閉紅叉變得更明顯了。\n終焉說明增加汙染位置的說明。\n\n【調整】\n傳說裝備【訓犬者】移除了獨特的獲取途徑。\n降低了高層塔層的怪物強度。\n降低了高層異界的怪物強度。\n降低終焉所有階段的怪物前度。\n第二件神話裝備改為90級可以穿戴。\n\n【修復】\n修復可以能出現章節關卡顯示錯誤的問題。\n修復缺少的精通技能速度的屬性描述。\n修復改名字會被戰鬥結算打斷的問題。\n修復查看屬性資訊會被戰鬥結算打斷的問題。\n修復神話裝備【大師】傷害統計顯示異常的問題。\n修復了本地化翻譯的相關問題。\n修復汙染裝備導致裝備顯示歪斜的問題。\n修復【凜冬之擁】精煉後神話裝備錯誤的問題。\n修復在改名的時候會響應快捷鍵的問題。"
+ },
+ "【正式版】1.0.5版本更新更新，更多优化还在进行中！\n\n【重要改动】\n赐福改为每5级固定获得一点天赋，最多6点，不再进行随机。\n更新后需要重置天赋来应用新的赐福天赋点数。\n【晶化颅骨】道具效果改为可以改变异化技能。\n【晶化颅骨】合成数量需求降低到6个。\n\n【新增】\n商店增加自动配置，可以筛选插槽数量，可以自动购买。\n增加了装备对比时词缀变化的显示。\n异化技能和启迪专精增加了独特的外框。\n\n【优化】\n【黑暗星辰】现在可以直接在启迪界面使用。\n优化了那些不明所以的装备描述。\n秘所改造里去掉了【苦痛之鳞】的合成。\n订单装备列表缺少装备时增加提示。\n优化不准确的污染功能说明。\n完善神官【神圣庇护】技能的目标描述。\n启迪说明增加【黑暗星辰】的获取途径。\n快速放入满仓库页时，多余的会放入下一页。\n界面关闭红叉变的更明显了。\n终焉说明增加污染位置的说明。\n\n【调整】\n传说装备【训犬者】移除了独特的获取途径。\n降低了高层塔层的怪物强度。\n降低了高层异界的怪物强度。\n降低终焉所有阶段的怪物前度。\n\n【修复】\n修复了战斗中可能出现属性无限叠加的问题。\n修复可以能出现章节关卡显示错误的问题。\n修复缺少的精通技能速度的属性描述。\n修复改名字会被战斗结算打断的问题。\n修复查看属性信息回呗战斗结算打断的问题。\n修复神话装备【大师】伤害统计显示异常的问题。\n修复了本地化翻译的相关问题。\n修复污染装备导致装备显示歪斜的问题。\n修复【凛冬之拥】精炼后神话装备错误的问题。\n修复在改名的时候会响应快捷键的问题。": {
+  "cn": "【正式版】1.0.5版本更新更新，更多优化还在进行中！\n\n【重要改动】\n赐福改为每5级固定获得一点天赋，最多6点，不再进行随机。\n更新后需要重置天赋来应用新的赐福天赋点数。\n【晶化颅骨】道具效果改为可以改变异化技能。\n【晶化颅骨】合成数量需求降低到6个。\n\n【新增】\n商店增加自动配置，可以筛选插槽数量，可以自动购买。\n增加了装备对比时词缀变化的显示。\n异化技能和启迪专精增加了独特的外框。\n\n【优化】\n【黑暗星辰】现在可以直接在启迪界面使用。\n优化了那些不明所以的装备描述。\n秘所改造里去掉了【苦痛之鳞】的合成。\n订单装备列表缺少装备时增加提示。\n优化不准确的污染功能说明。\n完善神官【神圣庇护】技能的目标描述。\n启迪说明增加【黑暗星辰】的获取途径。\n快速放入满仓库页时，多余的会放入下一页。\n界面关闭红叉变的更明显了。\n终焉说明增加污染位置的说明。\n\n【调整】\n传说装备【训犬者】移除了独特的获取途径。\n降低了高层塔层的怪物强度。\n降低了高层异界的怪物强度。\n降低终焉所有阶段的怪物前度。\n\n【修复】\n修复了战斗中可能出现属性无限叠加的问题。\n修复可以能出现章节关卡显示错误的问题。\n修复缺少的精通技能速度的属性描述。\n修复改名字会被战斗结算打断的问题。\n修复查看属性信息回呗战斗结算打断的问题。\n修复神话装备【大师】伤害统计显示异常的问题。\n修复了本地化翻译的相关问题。\n修复污染装备导致装备显示歪斜的问题。\n修复【凛冬之拥】精炼后神话装备错误的问题。\n修复在改名的时候会响应快捷键的问题。",
+  "en": "[Full Release] Version 1.0.5 Update, more improvements still underway!\n\n[Important Changes]\nBlessing now grants 1 Talent Point every 5 levels, up to 6 points, with no random rolls.\nAfter updating, reset Talents to apply the new Blessing Talent Points.\n[Crystallized Skull] now changes Mutated Skills.\n[Crystallized Skull] combine cost reduced to 6.\n\n[New]\nMarket adds auto configuration: filter by Socket count and Auto-Buy.\nEquipment comparison now shows Affix changes.\nMutated Skills and Inspire Masteries gain unique frames.\n\n[Improvements]\n[Dark Star] can now be used directly in the Inspire UI.\nClarified confusing equipment descriptions.\nRemoved [Agony Scales] combine from Sanctum Upgrades.\nAdded a prompt when Orders equipment list is missing items.\nImproved inaccurate Corrupt feature descriptions.\nClarified Cleric [Divine Shelter] skill targeting.\nInspire tips now include how to obtain [Dark Star].\nQuick-stashing into a full Warehouse page puts overflow on the next page.\nThe UI close X is more visible.\nDoom tips now mention where to Corrupt equipment.\n\n[Balance]\nLegendary equipment [Dog Trainer] unique acquisition removed.\nReduced monster strength on high Divine Tower floors.\nReduced monster strength in high Outlands.\nReduced monster strength across all Doom stages.\n\n[Fixes]\nFixed a possible infinite attribute stacking issue during combat.\nFixed possible incorrect chapter stage display.\nFixed missing Mastery Skill Speed attribute description.\nFixed rename being interrupted by combat settlement.\nFixed viewing attribute info being interrupted by combat settlement.\nFixed Mythic equipment [Master] damage stats display issues.\nFixed localization-related issues.\nFixed Corrupt equipment causing skewed item display.\nFixed [Winter's Embrace] becoming the wrong Mythic after Refining.\nFixed hotkeys responding while renaming.",
+  "tc": "【正式版】1.0.5版本更新更新，更多優化還在進行中！\n\n【重要改動】\n賜福改為每5級固定獲得一點天賦，最多6點，不再進行隨機。\n更新後需要重置天賦來應用新的賜福天賦點數。\n【晶化顱骨】道具效果改為可以改變異化技能。\n【晶化顱骨】合成數量需求降低到6個。\n\n【新增】\n商店增加自動配置，可以篩選插槽數量，可以自動購買。\n增加了裝備對比時詞綴變化的顯示。\n異化技能和啟迪專精增加了獨特的外框。\n\n【優化】\n【黑暗星辰】現在可以直接在啟迪介面使用。\n優化了那些不明所以的裝備描述。\n秘所改造裡去掉了【苦痛之鱗】的合成。\n訂單裝備列表缺少裝備時增加提示。\n優化不準確的汙染功能說明。\n完善神官【神聖庇護】技能的目標描述。\n啟迪說明增加【黑暗星辰】的獲取途徑。\n快速放入滿倉庫頁時，多餘的會放入下一頁。\n介面關閉紅叉變得更明顯了。\n終焉說明增加汙染位置的說明。\n\n【調整】\n傳說裝備【訓犬者】移除了獨特的獲取途徑。\n降低了高層塔層的怪物強度。\n降低了高層異界的怪物強度。\n降低終焉所有階段的怪物前度。\n\n【修復】\n修復了戰鬥中可能出現屬性無限疊加的問題。\n修復可以能出現章節關卡顯示錯誤的問題。\n修復缺少的精通技能速度的屬性描述。\n修復改名字會被戰鬥結算打斷的問題。\n修復查看屬性資訊會被戰鬥結算打斷的問題。\n修復神話裝備【大師】傷害統計顯示異常的問題。\n修復了本地化翻譯的相關問題。\n修復汙染裝備導致裝備顯示歪斜的問題。\n修復【凜冬之擁】精煉後神話裝備錯誤的問題。\n修復在改名的時候會響應快捷鍵的問題。"
  }
 }
