@@ -16,10 +16,10 @@ const guiaSchema = {
   '@type': 'Article',
   headline: 'Códice do Devoto — Guia de Path of Idle: Old Gods Rising em português',
   description:
-    'Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão e as 39 builds oficiais.',
+    'Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão, luta de chefe e as 39 builds oficiais.',
   inLanguage: 'pt-BR',
   datePublished: '2026-08-16',
-  dateModified: '2026-08-16',
+  dateModified: '2026-08-17',
   author: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   publisher: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xxsirius.github.io${base}guia/` },
@@ -29,8 +29,8 @@ const guiaSchema = {
 
 <BaseLayout
   title="Códice do Devoto | Guia de Path of Idle: Old Gods Rising em português"
-  description="Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão e as 39 builds oficiais — tudo extraído das tabelas internas do jogo."
-  keywords="path of idle guia, path of idle build, path of idle português, path of idle old gods rising dicas, path of idle classes"
+  description="Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão, luta de chefe e as 39 builds oficiais — tudo extraído das tabelas internas do jogo."
+  keywords="path of idle guia, path of idle build, path of idle português, path of idle old gods rising dicas, path of idle classes, path of idle torre divina, path of idle chefe"
   ogTitle="Códice do Devoto — Guia de Path of Idle em português"
   ogDescription="Classes, mecânicas, maestrias, conjuntos e as 39 builds oficiais, extraídos dos dados do jogo."
   canonical={`https://xxsirius.github.io${base}guia/`}
@@ -69,6 +69,7 @@ const guiaSchema = {
     <a href="#builds-como">Usar build pronta?</a>
     <a href="#builds">As 39 builds</a>
     <a href="#mundo">Capítulos e mundo</a>
+    <a href="#chefes">Chefes e a Torre</a>
     <a href="#cidade">A cidade</a>
     <a href="#craque">Como ficar craque</a>
   </div>
@@ -1006,8 +1007,101 @@ const guiaSchema = {
   <p>O <b>Eco do Chefe</b> serve para desafiar o chefe de novo — e como chefe é a fonte garantida de peça de Conjunto, os Ecos são o seu recurso de "farmar a peça que falta".</p>
 </section>
 
+<section id="chefes">
+  <h2 class="serif"><span class="num">17</span>Chefes e a Torre</h2>
+  <p class="sub">Luta de chefe tem regras próprias, e o jogo não avisa nenhuma delas: metade do que faz sua build voar na Campanha não vale nada aqui.</p>
+
+  <p>Chefe é <b>alvo único</b>, tem <b>muita vida</b> e costuma ter <b>remoção de efeito</b>. Essas três características sozinhas decidem quais builds funcionam — e explicam por que um time que limpa estágio em segundos às vezes não passa do chefe do mesmo capítulo.</p>
+
+  <h3>As três regras que decidem a luta</h3>
+  <div class="card">
+    <div class="kw"><dt>Ruptura é o multiplicador</dt><dd>−10% de Toda Defesa por acúmulo. No teto de 5, o chefe perde <b>metade da defesa</b>. Nenhum item do jogo entrega um multiplicador desse tamanho tão barato — é a primeira coisa a encaixar em qualquer time de chefe.</dd></div>
+    <div class="kw"><dt>Acúmulo não pode ser limpo</dt><dd>Dissipar tira Buffs, Expurgo tira Debuffs — mas <b>Impulsos e Aflições são imunes aos dois</b>. Contra um chefe que remove efeito, uma build de Ânimo/Rapidez/Ruptura mantém o que construiu; uma build que depende de manter Buff perde o trabalho no meio da luta.</dd></div>
+    <div class="kw"><dt>Não existe ninguém para abater</dt><dd>Tudo que dispara "ao abater" fica desligado a luta inteira. É a categoria de desperdício mais silenciosa do jogo, porque nada na tela indica que aquela maestria parou de funcionar.</dd></div>
+  </div>
+
+  <h3>O que vira peso morto contra chefe</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Maestria / efeito</th><th>Classe</th><th>Por que desliga</th></tr></thead>
+      <tbody>
+        <tr><td><b>Aura Mortal</b></td><td>Mercenário</td><td>Só vale "contra inimigos normais" — e chefe não é normal. Aura reservando Mana de graça.</td></tr>
+        <tr><td><b>Colheita</b></td><td>Caçador</td><td>Vida e Mana <b>ao Abater</b>: nada morre até o fim.</td></tr>
+        <tr><td><b>Selvagem</b></td><td>Caçador</td><td>Abater é a única fonte de Rapidez dela.</td></tr>
+        <tr><td><b>Ceifar Alma</b></td><td>Sacerdote</td><td>A duração estendida vem de abater alvos.</td></tr>
+        <tr><td><b>Dissecação</b></td><td>Sacerdote</td><td>Recupera Vida por morte — não há mortes.</td></tr>
+        <tr><td><b>Carnificina</b></td><td>Guerreiro</td><td><b>Meio</b>: "Vida ao Abater" morre, mas "Crítico vs Ensanguentado" continua valendo quando o chefe cai de vida.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Cuidado com a leitura apressada:</b> habilidade de agrupar inimigos (como <i>Gancho Cruel</i>) parece inútil contra alvo único — mas o que morre ali é só o agrupamento. A <b>Ruptura</b> que ela aplica é justamente o efeito mais valioso da luta. Não tire da barra.
+  </div>
+
+  <h3>As maestrias feitas para chefe</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Ofensivas</h4>
+      <div class="mast"><b>Ruína</b> <span>Mago — dano vs Chefes +6%. A única maestria explicitamente anti-chefe do jogo.</span></div>
+      <div class="mast"><b>Intimidação</b> <span>Guerreiro — Maestrias podem aplicar Ruptura, sem gastar espaço de Utilidade.</span></div>
+      <div class="mast"><b>Frio</b> <span>Sacerdote — Maestrias podem aplicar 2 Lentidão de uma vez.</span></div>
+    </div>
+    <div class="card"><h4>Defensivas</h4>
+      <div class="mast"><b>Inflexível</b> <span>Guerreiro — dano sofrido limitado a 20% da Vida. O antídoto exato da pancada única que mata o time.</span></div>
+      <div class="mast"><b>Zod</b> <span>Guerreiro — resiste à morte por 5s. Sobrevive à fase em que o chefe acelera.</span></div>
+      <div class="mast"><b>Graça Divina</b> <span>Clérigo — Escudo automático abaixo de 20% da Vida.</span></div>
+      <div class="mast"><b>Ritual</b> <span>Sacerdote — remove Aflições do time a cada 5s. É a <b>única exceção</b> à regra de que Aflição não se limpa.</span></div>
+    </div>
+  </div>
+
+  <h3>A Torre Divina</h3>
+  <p>A Torre é a fonte de chefe mais rentável do jogo, e a que mais gente joga errado. Ela <b>aumenta permanentemente</b> as recompensas de recurso da Campanha, então cada hora sem subi-la é uma hora em que todo o resto rende menos.</p>
+
+  <div class="tip warn">
+    <b>Sempre limpe o Salão de Audiências antes do chefe.</b> Ele concede um efeito de <span class="term">Divindade</span> que vale <b>só naquele andar</b>. O jogo deixa você ir direto no chefe — e é aí que muita gente trava, porque sem Divindade a mesma luta fica bem mais dura. Não é atalho, é abrir mão de um buff grátis.
+  </div>
+
+  <div class="card">
+    <div class="kw"><dt>Queda garantida</dt><dd>Chefe da Torre sempre derruba <b>peça de Conjunto</b> e o material de <b>Infusão de Golem</b> — que é progressão de conta, válida para todos os Devotos daquela classe.</dd></div>
+    <div class="kw"><dt>Modo básico</dt><dd>Tem teto de andares e cada andar recompensa <b>Fragmentos de Alma</b>.</dd></div>
+    <div class="kw"><dt>Modo avançado</dt><dd>Sem limite de andar, inimigos cada vez mais fortes — e <b>deixa de dropar Fragmentos de Alma</b>. Só entre depois de ter o que queria do modo básico.</dd></div>
+  </div>
+
+  <div class="tip new">
+    <b>Nota sobre a tradução:</b> a localização em inglês do próprio jogo é inconsistente aqui — chama a Torre de <i>Divine Tower</i> na maioria dos textos, mas de <i>Sanctum</i> no rótulo do menu. Como <i>Sanctum</i> também é o nome do <b>Santuário</b> (o prédio da cidade), a tradução PT-BR mostrava "Santuário" nos dois lugares, e a Torre aparecia com o nome do prédio. Corrigido: o menu ao lado de Exploração agora diz <b>Torre Divina</b>. Se no seu jogo ainda aparece "Santuário" ali, atualize a tradução.
+  </div>
+
+  <h3>O time de 3 para chefe</h3>
+  <p>A Torre tem inimigos com padrões próprios, e vale um time dedicado: com as resistências certas ele sobe andar que o time de avanço não sobe. Uma composição que se sustenta:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Posição</th><th>Classe</th><th>Função e por quê</th></tr></thead>
+      <tbody>
+        <tr><td><b>Frente</b></td><td>Guerreiro</td><td>Placa e o maior crescimento de Vida do jogo. Traz <i>Gancho Cruel</i> — a fonte de Ruptura que liga o −50% de defesa para o time inteiro. Maestrias <b>Inflexível</b> e <b>Zod</b> contra a pancada única.</td></tr>
+        <tr><td><b>Meio</b></td><td>Clérigo</td><td>Também placa, então não é ponto fraco. <i>Aura de Chama</i> / <i>Aura de Raio</i> dão dano <b>daquele elemento</b> + resistência ao time. <i>Abrigo Divino</i> entrega Escudo e 3 Fortitude — e Fortitude é Impulso, não dissipável.</td></tr>
+        <tr><td><b>Fundo</b></td><td>Mago</td><td>Maior teto de dano, e a maestria <b>Ruína</b> (+6% vs Chefes). <i>Onda de Choque</i> como segunda fonte de Ruptura. <i>Impacto de Meteoro</i> (Dano de Magia dobrado) ou <i>Muralha de Fogo</i> (ignora Defesa Elemental) para alvo único.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Case o elemento.</b> Como Aura só vale <b>dentro do time</b>, alinhar a Aura do Clérigo com o elemento do Mago é o maior ganho de sinergia disponível de graça: <i>Aura de Raio</i> para build de Raio, <i>Aura de Chama</i> para Fogo. Espalhar elementos diferentes joga esse bônus no lixo.
+  </div>
+
+  <div class="tip">
+    <b>Sem Mago bom?</b> Troque por <b>Mercenário</b> com <i>Corte de Trovão Veloz</i>, que escala com acúmulos de Rapidez — Impulso, portanto imune a Dissipar. De bônus, o <i>Grito de Guerra Motivacional</i> do Guerreiro dá Ataque Físico ao time, que casa com dano físico e é <b>desperdiçado</b> num Mago. Só deixe a Aura Mortal fora da barra.
+  </div>
+
+  <h3>Os dois erros que quebram esse time</h3>
+  <ol class="ladder">
+    <li><b>Encher a barra de quem dá o dano</b>A ordem de conjuração é fixa: Suporte &gt; Utilidade &gt; Maestria &gt; Básica. Cada Suporte ou Utilidade que você põe no seu damage dealer <b>rouba tempo da Maestria dele</b>. Concentre a carga de suporte no Clérigo e no Guerreiro; em quem dá dano deixe 1 Maestria e 1 Básica escolhida pelo <b>efeito</b>, não pelo dano.</li>
+    <li><b>Confiar na ordem dos espaços</b>A formação inicial é só o ponto de partida: durante a luta quem tem habilidade de <b>curto alcance avança e assume a frente</b>, independente do slot. Se o seu Mago tiver habilidade de alcance curto, ele vai caminhar até a linha de frente e morrer lá. Confira o alcance das habilidades, não só a posição no time.</li>
+  </ol>
+</section>
+
 <section id="cidade">
-  <h2 class="serif"><span class="num">17</span>A cidade</h2>
+  <h2 class="serif"><span class="num">18</span>A cidade</h2>
   <p class="sub">O poder de longo prazo não vem do loot, vem daqui.</p>
 
   <div class="grid g2">
@@ -1027,7 +1121,7 @@ const guiaSchema = {
 </section>
 
 <section id="craque">
-  <h2 class="serif"><span class="num">18</span>Como ficar craque</h2>
+  <h2 class="serif"><span class="num">19</span>Como ficar craque</h2>
   <p class="sub">O resumo do que move o ponteiro, em ordem de impacto.</p>
 
   <ol class="ladder">

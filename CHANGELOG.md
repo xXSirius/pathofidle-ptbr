@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.4.1 — 2026-08-18
+
+Correção de nomes que colidiam: a Torre Divina aparecia no menu com o mesmo
+nome do Santuário (o prédio da cidade), o que fazia parecer que existiam dois
+Santuários no jogo. O guia também ganhou uma seção sobre luta de chefe.
+
+- Corrigido: a **Torre Divina** (a atividade ao lado de Exploração) aparecia
+  como "Santuário", nome que pertence ao prédio da cidade. A causa é que a
+  localização em inglês do próprio jogo é inconsistente — chama a Torre de
+  "Divine Tower" na maioria dos textos, mas de "Sanctum" no rótulo do menu,
+  que é justamente o nome do Santuário
+- Unificado o efeito de Conjunto "Santuário Divino" para **Abrigo Divino**,
+  que é como a habilidade do Clérigo já aparecia — era a mesma habilidade
+  com dois nomes diferentes dependendo da tela
+- Corrigido "Contagem de Conjunto:" para **"Definir quantidade:"** — o
+  inglês "Set Count:" é ambíguo e tinha sido lido como Conjunto de
+  equipamento, quando ali "Set" é o verbo "definir"
+- Guia: nova seção **"Chefes e a Torre"**, em português e inglês — as regras
+  que mudam numa luta de chefe, quais maestrias viram peso morto contra
+  alvo único, as que são feitas pra chefe, e uma composição de time de 3
+  para subir a Torre
+
 ## 1.4.0 — 2026-08-17
 
 O mod agora se atualiza sozinho quando a nova versão é só dicionário de

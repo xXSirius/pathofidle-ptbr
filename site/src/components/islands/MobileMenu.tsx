@@ -70,6 +70,9 @@ export default function MobileMenu({ links, ctaLabel, ctaHref, logoSrc, logoAlt 
     );
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
+    // Menu sem nada focável não precisa de trap — e sem essa guarda o
+    // TypeScript trata first/last como possivelmente undefined.
+    if (!first || !last) return;
 
     const trap = (e: KeyboardEvent) => {
       if (e.key !== 'Tab') return;

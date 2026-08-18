@@ -16,10 +16,10 @@ const guiaSchema = {
   '@type': 'Article',
   headline: 'Godsworn Codex — Path of Idle: Old Gods Rising Guide',
   description:
-    'Complete guide to Path of Idle: Old Gods Rising: classes, mechanics, masteries, sets, the Prison, and all 39 official builds.',
+    'Complete guide to Path of Idle: Old Gods Rising: classes, mechanics, masteries, sets, the Prison, boss fights, and all 39 official builds.',
   inLanguage: 'en',
   datePublished: '2026-08-16',
-  dateModified: '2026-08-16',
+  dateModified: '2026-08-17',
   author: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   publisher: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xxsirius.github.io${base}guia/en/` },
@@ -29,7 +29,7 @@ const guiaSchema = {
 
 <BaseLayout
   title="Godsworn Codex | Path of Idle: Old Gods Rising Guide"
-  description="Complete Path of Idle: Old Gods Rising guide: classes, mechanics, masteries, sets, the Prison, and all 39 official builds — extracted from the game's internal data tables."
+  description="Complete Path of Idle: Old Gods Rising guide: classes, mechanics, masteries, sets, the Prison, boss fights, and all 39 official builds — extracted from the game's internal data tables."
   keywords="path of idle guide, path of idle build, path of idle old gods rising tips, path of idle classes"
   ogTitle="Godsworn Codex — Path of Idle Guide"
   ogDescription="Classes, mechanics, masteries, sets, and all 39 official builds, extracted from the game's data."
@@ -69,6 +69,7 @@ const guiaSchema = {
     <a href="#builds-how">Use a ready-made build?</a>
     <a href="#builds">The 39 builds</a>
     <a href="#world">Chapters &amp; world</a>
+    <a href="#bosses">Bosses &amp; the Tower</a>
     <a href="#city">The city</a>
     <a href="#pro">How to get good</a>
   </div>
@@ -1002,8 +1003,97 @@ const guiaSchema = {
   <p>The <b>Echo of the Boss</b> lets you challenge the boss again — and since the boss is a guaranteed Set-piece source, Echoes are your resource for "farming the piece I'm missing."</p>
 </section>
 
+<section id="bosses">
+  <h2 class="serif"><span class="num">17</span>Bosses &amp; the Tower</h2>
+  <p class="sub">Boss fights run on their own rules, and the game tells you none of them: half of what makes your build fly in the Campaign is worth nothing here.</p>
+
+  <p>A boss is a <b>single target</b>, has <b>a lot of health</b>, and usually has <b>effect removal</b>. Those three traits alone decide which builds work — and explain why a team that clears stages in seconds sometimes can't get past the boss of that same chapter.</p>
+
+  <h3>The three rules that decide the fight</h3>
+  <div class="card">
+    <div class="kw"><dt>Sunder is the multiplier</dt><dd>−10% All Defense per stack. At the cap of 5, the boss loses <b>half its defense</b>. No item in the game hands you a multiplier that big that cheaply — it's the first thing to fit into any boss team.</dd></div>
+    <div class="kw"><dt>Stacks can't be cleared</dt><dd>Dispel removes Buffs, Purge removes Debuffs — but <b>Boosts and Afflictions are immune to both</b>. Against a boss with effect removal, a Mettle/Haste/Sunder build keeps what it built; a build that depends on maintaining Buffs loses its work mid-fight.</dd></div>
+    <div class="kw"><dt>There's nothing to kill</dt><dd>Everything that triggers "on kill" stays switched off for the whole fight. It's the quietest form of waste in the game, because nothing on screen tells you that mastery stopped working.</dd></div>
+  </div>
+
+  <h3>What becomes dead weight against a boss</h3>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Mastery / effect</th><th>Class</th><th>Why it switches off</th></tr></thead>
+      <tbody>
+        <tr><td><b>Killing Aura</b></td><td>Mercenary</td><td>Only applies "against normal enemies" — and a boss isn't normal. An aura reserving Mana for nothing.</td></tr>
+        <tr><td><b>Harvest</b></td><td>Hunter</td><td>Life and Mana <b>on Kill</b>: nothing dies until the end.</td></tr>
+        <tr><td><b>Wild</b></td><td>Hunter</td><td>Killing is its only source of Haste.</td></tr>
+        <tr><td><b>Soul Reap</b></td><td>Priest</td><td>The extended duration comes from killing targets.</td></tr>
+        <tr><td><b>Dissection</b></td><td>Priest</td><td>Recovers Life per death — there are no deaths.</td></tr>
+        <tr><td><b>Slaughter</b></td><td>Warrior</td><td><b>Half</b>: "Life on Kill" dies, but "Crit vs Bloodied" still pays off once the boss drops low.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Careful with the hasty read:</b> a skill that groups enemies (like <i>Cruel Hook</i>) looks useless against a single target — but the only thing that dies there is the grouping. The <b>Sunder</b> it applies is the single most valuable effect in the fight. Don't cut it from the bar.
+  </div>
+
+  <h3>The masteries built for bosses</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Offensive</h4>
+      <div class="mast"><b>Ruin</b> <span>Mage — damage vs Bosses +6%. The only explicitly anti-boss mastery in the game.</span></div>
+      <div class="mast"><b>Intimidation</b> <span>Warrior — Masteries can apply Sunder, without spending a Utility slot.</span></div>
+      <div class="mast"><b>Chill</b> <span>Priest — Masteries can apply 2 stacks of Slow at once.</span></div>
+    </div>
+    <div class="card"><h4>Defensive</h4>
+      <div class="mast"><b>Unyielding</b> <span>Warrior — damage taken capped at 20% of Life. The exact antidote to the single hit that wipes the team.</span></div>
+      <div class="mast"><b>Zod</b> <span>Warrior — resists death for 5s. Survives the phase where the boss speeds up.</span></div>
+      <div class="mast"><b>Divine Grace</b> <span>Cleric — automatic Shield below 20% Life.</span></div>
+      <div class="mast"><b>Ritual</b> <span>Priest — removes Afflictions from the team every 5s. It's the <b>only exception</b> to the rule that Afflictions can't be cleared.</span></div>
+    </div>
+  </div>
+
+  <h3>The Divine Tower</h3>
+  <p>The Tower is the most profitable boss source in the game, and the one most people play wrong. It <b>permanently increases</b> the Campaign's resource rewards, so every hour you don't climb it is an hour everything else pays less.</p>
+
+  <div class="tip warn">
+    <b>Always clear the Audience Chamber before the boss.</b> It grants a <span class="term">Divine Power</span> effect that only applies <b>on that floor</b>. The game lets you go straight to the boss — and that's where a lot of people stall, because without Divine Power the same fight is far harder. It isn't a shortcut, it's giving up a free buff.
+  </div>
+
+  <div class="card">
+    <div class="kw"><dt>Guaranteed drops</dt><dd>Tower bosses always drop a <b>Set piece</b> and the <b>Golem Infusion</b> material — which is account progression, valid for every Godsworn of that class.</dd></div>
+    <div class="kw"><dt>Basic mode</dt><dd>Has a floor cap, and each floor rewards <b>Soul Shards</b>.</dd></div>
+    <div class="kw"><dt>Advanced mode</dt><dd>No floor limit, enemies get progressively stronger — and it <b>stops dropping Soul Shards</b>. Only enter after you have what you wanted from basic mode.</dd></div>
+  </div>
+
+  <h3>The 3-Godsworn boss team</h3>
+  <p>The Tower has enemies with their own patterns, and a dedicated team pays off: with the right resistances it climbs floors your push team can't. A composition that holds up:</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Position</th><th>Class</th><th>Role and why</th></tr></thead>
+      <tbody>
+        <tr><td><b>Front</b></td><td>Warrior</td><td>Plate and the highest Life growth in the game. Brings <i>Cruel Hook</i> — the Sunder source that switches on that −50% defense for the whole team. Masteries <b>Unyielding</b> and <b>Zod</b> against the single big hit.</td></tr>
+        <tr><td><b>Middle</b></td><td>Cleric</td><td>Plate as well, so it's not a weak link. <i>Aura of Flame</i> / <i>Aura of Lightning</i> grant damage <b>of that element</b> plus resistance to the team. <i>Divine Shelter</i> delivers a Shield and 3 Fortitude — and Fortitude is a Boost, so it can't be dispelled.</td></tr>
+        <tr><td><b>Back</b></td><td>Mage</td><td>Highest damage ceiling, plus the <b>Ruin</b> mastery (+6% vs Bosses). <i>Shockwave</i> as a second Sunder source. <i>Meteor Strike</i> (Magic Damage bonus doubled) or <i>Wall of Fire</i> (ignores Elemental Defense) for single-target work.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <b>Match the element.</b> Since an Aura only applies <b>inside the team</b>, lining up the Cleric's Aura with the Mage's element is the biggest synergy gain available for free: <i>Aura of Lightning</i> for a Lightning build, <i>Aura of Flame</i> for Fire. Spreading different elements throws that bonus away.
+  </div>
+
+  <div class="tip">
+    <b>No good Mage?</b> Swap in a <b>Mercenary</b> with <i>Swift Thunder Slash</i>, which scales with Haste stacks — a Boost, therefore immune to Dispel. As a bonus, the Warrior's <i>Motivational Warcry</i> grants Physical Attack to the team, which pairs with physical damage and is <b>wasted</b> on a Mage. Just leave Killing Aura off the bar.
+  </div>
+
+  <h3>The two mistakes that break this team</h3>
+  <ol class="ladder">
+    <li><b>Overloading the damage dealer's bar</b>Casting order is fixed: Support &gt; Utility &gt; Mastery &gt; Basic. Every Support or Utility you add to your damage dealer <b>steals time from their Mastery</b>. Concentrate the support load on the Cleric and the Warrior; on your damage dealer keep 1 Mastery and 1 Basic chosen for its <b>effect</b>, not its damage.</li>
+    <li><b>Trusting the slot order</b>The starting formation is only a starting point: during the fight, whoever has <b>short-range skills walks forward and takes the front</b>, regardless of slot. If your Mage has short-range skills, they will walk to the front line and die there. Check skill ranges, not just team position.</li>
+  </ol>
+</section>
+
 <section id="city">
-  <h2 class="serif"><span class="num">17</span>The city</h2>
+  <h2 class="serif"><span class="num">18</span>The city</h2>
   <p class="sub">Long-term power doesn't come from loot — it comes from here.</p>
 
   <div class="grid g2">
@@ -1023,7 +1113,7 @@ const guiaSchema = {
 </section>
 
 <section id="pro">
-  <h2 class="serif"><span class="num">18</span>How to get good</h2>
+  <h2 class="serif"><span class="num">19</span>How to get good</h2>
   <p class="sub">A summary of what actually moves the needle, in order of impact.</p>
 
   <ol class="ladder">

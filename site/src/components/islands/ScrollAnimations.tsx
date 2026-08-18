@@ -57,7 +57,9 @@ export default function ScrollAnimations() {
         anchor.addEventListener('click', (e: Event) => {
           e.preventDefault();
           const href = (anchor as HTMLAnchorElement).getAttribute('href');
-          const target = href ? document.querySelector(href) : null;
+          // querySelector genérico: lenis.scrollTo exige HTMLElement, e o
+          // Element cru que ele devolveria por padrão não satisfaz o tipo.
+          const target = href ? document.querySelector<HTMLElement>(href) : null;
           if (target) {
             lenis.scrollTo(target, { offset: -80 });
           }
