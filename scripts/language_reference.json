@@ -15056,7 +15056,7 @@
  },
  "流派玩法：以套装为核心，使用【戒备打击】叠加战意，提升【血液沸腾】的持续时间。\n偏好属性：力量、敏捷、生命、所有防御、所有速度、所有抗性、所有技能速度、生命再生、暴击抵抗、生命强韧、生命治疗": {
   "cn": "流派玩法：以套装为核心，使用【戒备打击】叠加战意，提升【血液沸腾】的持续时间。\n偏好属性：力量、敏捷、生命、所有防御、所有速度、所有抗性、所有技能速度、生命再生、暴击抵抗、生命强韧、生命治疗",
-  "en": "Build playstyle: Centered on Set gear. Use [Vigilant Strike] to stack Mettle and extend [Blood Boil] duration.\nPreferred attributes: Strength, Dexterity, Health, All Defense, All Speed, All Resistances, All Skill Speed, Health Regen, Crit Resistance, Life Fortitude, Healing Power",
+  "en": "Build playstyle: Centered on Set gear. Use [Vigilant Strike] to stack Mettle and extend [Blood Boil] duration.\nPreferred attributes: Strength, Dexterity, Health, All Defense, All Speed, All Resistances, All Skill Speed, Health Regen, Crit Resistance, Health Tenacity, Healing Power",
   "tc": "流派玩法：以套裝為核心，使用【戒備打擊】疊加戰意，提升【血液沸騰】的持續時間。\n偏好屬性：力量、敏捷、生命、所有防禦、所有速度、所有抗性、所有技能速度、生命再生、暴擊抵抗、生命強韌、生命治療"
  },
  "流派玩法：以套装为核心，使用【稳固打击】技能降低【穿透射击】冷却时间，并增加暴击率提升闪电触发概率。\n偏好属性：力量、敏捷、所有攻击、暴击值、战技速度、战技伤害、所有精准、所有伤害、物理伤害、穿刺伤害、元素伤害、闪电伤害，基础技能速度，所有技能速度": {
@@ -15066,7 +15066,7 @@
  },
  "流派玩法：以套装为核心，使用【觅心一击】来偷取生命，并开启【杀戮光环】重置【觅心一击】的技能冷却。\n偏好属性：力量、敏捷、物理攻击、暴击值、所有防御、所有抗性、暴击抵抗、生命强韧、战技速度、所有技能速度": {
   "cn": "流派玩法：以套装为核心，使用【觅心一击】来偷取生命，并开启【杀戮光环】重置【觅心一击】的技能冷却。\n偏好属性：力量、敏捷、物理攻击、暴击值、所有防御、所有抗性、暴击抵抗、生命强韧、战技速度、所有技能速度",
-  "en": "Build playstyle: Centered on Set gear. Use [Heartseeker] to leech Health, and activate [Killing Aura] to reset [Heartseeker] Cooldown.\nPreferred attributes: Strength, Dexterity, Physical Attack, Crit Value, All Defense, All Resistances, Crit Resistance, Life Fortitude, Martial Speed, All Skill Speed",
+  "en": "Build playstyle: Centered on Set gear. Use [Heartseeker] to leech Health, and activate [Killing Aura] to reset [Heartseeker] Cooldown.\nPreferred attributes: Strength, Dexterity, Physical Attack, Crit Value, All Defense, All Resistances, Crit Resistance, Health Tenacity, Martial Speed, All Skill Speed",
   "tc": "流派玩法：以套裝為核心，使用【覓心一擊】來偷取生命，並開啟【殺戮光環】重置【覓心一擊】的技能冷卻。\n偏好屬性：力量、敏捷、物理攻擊、暴擊值、所有防禦、所有抗性、暴擊抵抗、生命強韌、戰技速度、所有技能速度"
  },
  "流派玩法：以套装为核心，依靠【闪电术】造成伤害，并维持【风暴灌注】效果，使【闪电术】可以攻击三个目标。\n偏好属性：敏捷、智力、元素攻击、暴击值、元素伤害、闪电伤害、法术速度、法术精准、法术伤害、基础技能伤害、基础技能速度、增益时间": {
@@ -24208,5 +24208,85 @@
   "cn": "【正式版】1.0.5版本更新更新，更多优化还在进行中！\n\n【重要改动】\n赐福改为每5级固定获得一点天赋，最多6点，不再进行随机。\n更新后需要重置天赋来应用新的赐福天赋点数。\n【晶化颅骨】道具效果改为可以改变异化技能。\n【晶化颅骨】合成数量需求降低到6个。\n\n【新增】\n商店增加自动配置，可以筛选插槽数量，可以自动购买。\n增加了装备对比时词缀变化的显示。\n异化技能和启迪专精增加了独特的外框。\n\n【优化】\n【黑暗星辰】现在可以直接在启迪界面使用。\n优化了那些不明所以的装备描述。\n秘所改造里去掉了【苦痛之鳞】的合成。\n订单装备列表缺少装备时增加提示。\n优化不准确的污染功能说明。\n完善神官【神圣庇护】技能的目标描述。\n启迪说明增加【黑暗星辰】的获取途径。\n快速放入满仓库页时，多余的会放入下一页。\n界面关闭红叉变的更明显了。\n终焉说明增加污染位置的说明。\n\n【调整】\n传说装备【训犬者】移除了独特的获取途径。\n降低了高层塔层的怪物强度。\n降低了高层异界的怪物强度。\n降低终焉所有阶段的怪物前度。\n\n【修复】\n修复了战斗中可能出现属性无限叠加的问题。\n修复可以能出现章节关卡显示错误的问题。\n修复缺少的精通技能速度的属性描述。\n修复改名字会被战斗结算打断的问题。\n修复查看属性信息回呗战斗结算打断的问题。\n修复神话装备【大师】伤害统计显示异常的问题。\n修复了本地化翻译的相关问题。\n修复污染装备导致装备显示歪斜的问题。\n修复【凛冬之拥】精炼后神话装备错误的问题。\n修复在改名的时候会响应快捷键的问题。",
   "en": "[Full Release] Version 1.0.5 Update, more improvements still underway!\n\n[Important Changes]\nBlessing now grants 1 Talent Point every 5 levels, up to 6 points, with no random rolls.\nAfter updating, reset Talents to apply the new Blessing Talent Points.\n[Crystallized Skull] now changes Mutated Skills.\n[Crystallized Skull] combine cost reduced to 6.\n\n[New]\nMarket adds auto configuration: filter by Socket count and Auto-Buy.\nEquipment comparison now shows Affix changes.\nMutated Skills and Inspire Masteries gain unique frames.\n\n[Improvements]\n[Dark Star] can now be used directly in the Inspire UI.\nClarified confusing equipment descriptions.\nRemoved [Agony Scales] combine from Sanctum Upgrades.\nAdded a prompt when Orders equipment list is missing items.\nImproved inaccurate Corrupt feature descriptions.\nClarified Cleric [Divine Shelter] skill targeting.\nInspire tips now include how to obtain [Dark Star].\nQuick-stashing into a full Warehouse page puts overflow on the next page.\nThe UI close X is more visible.\nDoom tips now mention where to Corrupt equipment.\n\n[Balance]\nLegendary equipment [Dog Trainer] unique acquisition removed.\nReduced monster strength on high Divine Tower floors.\nReduced monster strength in high Outlands.\nReduced monster strength across all Doom stages.\n\n[Fixes]\nFixed a possible infinite attribute stacking issue during combat.\nFixed possible incorrect chapter stage display.\nFixed missing Mastery Skill Speed attribute description.\nFixed rename being interrupted by combat settlement.\nFixed viewing attribute info being interrupted by combat settlement.\nFixed Mythic equipment [Master] damage stats display issues.\nFixed localization-related issues.\nFixed Corrupt equipment causing skewed item display.\nFixed [Winter's Embrace] becoming the wrong Mythic after Refining.\nFixed hotkeys responding while renaming.",
   "tc": "【正式版】1.0.5版本更新更新，更多優化還在進行中！\n\n【重要改動】\n賜福改為每5級固定獲得一點天賦，最多6點，不再進行隨機。\n更新後需要重置天賦來應用新的賜福天賦點數。\n【晶化顱骨】道具效果改為可以改變異化技能。\n【晶化顱骨】合成數量需求降低到6個。\n\n【新增】\n商店增加自動配置，可以篩選插槽數量，可以自動購買。\n增加了裝備對比時詞綴變化的顯示。\n異化技能和啟迪專精增加了獨特的外框。\n\n【優化】\n【黑暗星辰】現在可以直接在啟迪介面使用。\n優化了那些不明所以的裝備描述。\n秘所改造裡去掉了【苦痛之鱗】的合成。\n訂單裝備列表缺少裝備時增加提示。\n優化不準確的汙染功能說明。\n完善神官【神聖庇護】技能的目標描述。\n啟迪說明增加【黑暗星辰】的獲取途徑。\n快速放入滿倉庫頁時，多餘的會放入下一頁。\n介面關閉紅叉變得更明顯了。\n終焉說明增加汙染位置的說明。\n\n【調整】\n傳說裝備【訓犬者】移除了獨特的獲取途徑。\n降低了高層塔層的怪物強度。\n降低了高層異界的怪物強度。\n降低終焉所有階段的怪物前度。\n\n【修復】\n修復了戰鬥中可能出現屬性無限疊加的問題。\n修復可以能出現章節關卡顯示錯誤的問題。\n修復缺少的精通技能速度的屬性描述。\n修復改名字會被戰鬥結算打斷的問題。\n修復查看屬性資訊會被戰鬥結算打斷的問題。\n修復神話裝備【大師】傷害統計顯示異常的問題。\n修復了本地化翻譯的相關問題。\n修復汙染裝備導致裝備顯示歪斜的問題。\n修復【凜冬之擁】精煉後神話裝備錯誤的問題。\n修復在改名的時候會響應快捷鍵的問題。"
+ },
+ "(基础装备：{0})": {
+  "cn": "(基础装备：{0})",
+  "en": "(Base Equipment: {0})",
+  "tc": "(基礎裝備：{0})"
+ },
+ "90级可以装备2件神话": {
+  "cn": "90级可以装备2件神话",
+  "en": "Equip 2 Mythics at level 90",
+  "tc": "90級可以裝備2件神話"
+ },
+ "【正式版】1.0.6.1版本更新内容\n\n【重要】\n词缀封印进行了大幅减轻负担的调整！！！\n现在只需要设置稀有图鉴的封印，就可以同步到对应的多个高品质图鉴。\n高品质图鉴也可以单独设置封印。\n高品质图鉴不再有感知进度，感知等级和对应的稀有图鉴同步。\n获得高品质装备时会为对应的稀有图鉴增加更多的感知度。\n感知等级会保留合并之前最高的等级。\n\n【优化】\n增加异界星盘任务说明。\n优化可穿戴2件神话等级的提示。\n优化工坊右键放入更换装备的操作。\n优化圣碑污染右键放入更换装备的操作。\n在解锁异化技能之前招募的传说、神话神选者也能通过【晶化颅骨】获得异化技能。\n完善了传说宝箱的描述。\n\n【修复】\n修复了一些高品质装备基础词缀错误的问题。\n修复装备属性对比可能显示错误的问题。\n修复按ESC键关闭词缀封印界面顺序错误问题。\n修复法师专精【转化】获得的护盾没有被统计到的问题。\n修复部分专精描述超出框体的问题。\n修改祭司技能【寒意刺骨】说明错误的问题。\n修复切换悬浮球模式回来会卡装备动画的问题。": {
+  "cn": "【正式版】1.0.6.1版本更新内容\n\n【重要】\n词缀封印进行了大幅减轻负担的调整！！！\n现在只需要设置稀有图鉴的封印，就可以同步到对应的多个高品质图鉴。\n高品质图鉴也可以单独设置封印。\n高品质图鉴不再有感知进度，感知等级和对应的稀有图鉴同步。\n获得高品质装备时会为对应的稀有图鉴增加更多的感知度。\n感知等级会保留合并之前最高的等级。\n\n【优化】\n增加异界星盘任务说明。\n优化可穿戴2件神话等级的提示。\n优化工坊右键放入更换装备的操作。\n优化圣碑污染右键放入更换装备的操作。\n在解锁异化技能之前招募的传说、神话神选者也能通过【晶化颅骨】获得异化技能。\n完善了传说宝箱的描述。\n\n【修复】\n修复了一些高品质装备基础词缀错误的问题。\n修复装备属性对比可能显示错误的问题。\n修复按ESC键关闭词缀封印界面顺序错误问题。\n修复法师专精【转化】获得的护盾没有被统计到的问题。\n修复部分专精描述超出框体的问题。\n修改祭司技能【寒意刺骨】说明错误的问题。\n修复切换悬浮球模式回来会卡装备动画的问题。",
+  "en": "[Full Release] Version 1.0.6.1 Update\n\n[Important]\nAffix Seals have been greatly streamlined!!!\nSet seals on the Rare Codex, then sync them to the corresponding higher-quality Codexes.\nHigher-quality Codexes can still have seals set separately.\nHigher-quality Codexes no longer have Awareness progress; Awareness Level stays in sync with the matching Rare Codex.\nObtaining higher-quality equipment now grants more Awareness to the matching Rare Codex.\nAwareness Level keeps the highest level from before the merge.\n\n[Improvements]\nAdded Outlands Star Map quest tips.\nImproved the prompt for equipping 2 Mythics.\nImproved right-click replace equipment in the Workshop.\nImproved right-click replace equipment when Corrupting at the Stele.\nLegendary and Mythic Godsworn recruited before Mutated Skills unlock can now gain Mutated Skills via [Crystallized Skull].\nClarified Legendary Chest descriptions.\n\n[Fixes]\nFixed incorrect base Affixes on some higher-quality equipment.\nFixed possible incorrect equipment stat comparison display.\nFixed incorrect close order when pressing ESC on the Affix Seal UI.\nFixed Mage Mastery [Convert] Shields not being counted.\nFixed some Mastery descriptions overflowing their frames.\nFixed incorrect Priest skill [Bone Chill] description.\nFixed equipment animations getting stuck after leaving Floating Mode.",
+  "tc": "【正式版】1.0.6.1版本更新內容\n\n【重要】\n詞綴封印進行了大幅減輕負擔的調整！！！\n現在只需要設定稀有圖鑑的封印，就可以同步到對應的多個高品質圖鑑。\n高品質圖鑑也可以單獨設定封印。\n高品質圖鑑不再有感知進度，感知等級和對應的稀有圖鑑同步。\n獲得高品質裝備時會為對應的稀有圖鑑增加更多的感知度。\n感知等級會保留合併之前最高的等級。\n\n【優化】\n增加異界星盤任務說明。\n優化可穿戴2件神話等級的提示。\n優化工坊右鍵放入更換裝備的操作。\n優化聖碑汙染右鍵放入更換裝備的操作。\n在解鎖異化技能之前招募的傳說、神話神選者也能透過【晶化顱骨】獲得異化技能。\n完善了傳說寶箱的描述。\n\n【修復】\n修復了一些高品質裝備基礎詞綴錯誤的問題。\n修復裝備屬性對比可能顯示錯誤的問題。\n修復按ESC鍵關閉詞綴封印介面順序錯誤問題。\n修復法師專精【轉化】獲得的護盾沒有被統計到的問題。\n修復部分專精描述超出框體的問題。\n修改祭司技能【寒意刺骨】說明錯誤的問題。\n修復切換懸浮球模式回來會卡裝備動畫的問題。"
+ },
+ "同步": {
+  "cn": "同步",
+  "en": "Sync",
+  "tc": "同步"
+ },
+ "同步封印": {
+  "cn": "同步封印",
+  "en": "Sync Seals",
+  "tc": "同步封印"
+ },
+ "图鉴列表": {
+  "cn": "图鉴列表",
+  "en": "Codex List",
+  "tc": "圖鑑列表"
+ },
+ "将封印同步到对应的高品质图鉴": {
+  "cn": "将封印同步到对应的高品质图鉴",
+  "en": "Sync seals to the corresponding higher-quality Codex",
+  "tc": "將封印同步到對應的高品質圖鑑"
+ },
+ "感知等级决定了可以封印的词缀数量。\n感知度满了以后会提升感知等级。\n获得此装备或对应的高品质装备会提升感知度。\n稀有装备：1点。\n传说装备：3点。\n套装装备：3点。\n独特装备：3点。\n神话装备：5点。": {
+  "cn": "感知等级决定了可以封印的词缀数量。\n感知度满了以后会提升感知等级。\n获得此装备或对应的高品质装备会提升感知度。\n稀有装备：1点。\n传说装备：3点。\n套装装备：3点。\n独特装备：3点。\n神话装备：5点。",
+  "en": "Awareness Level determines how many Affixes can be sealed.\nWhen Awareness is full, Awareness Level increases.\nObtaining this equipment or a corresponding higher-quality piece increases Awareness.\nRare Equipment: 1.\nLegendary Equipment: 3.\nSet Equipment: 3.\nUnique Equipment: 3.\nMythic Equipment: 5.",
+  "tc": "感知等級決定了可以封印的詞綴數量。\n感知度滿了以後會提升感知等級。\n獲得此裝備或對應的高品質裝備會提升感知度。\n稀有裝備：1點。\n傳說裝備：3點。\n套裝裝備：3點。\n獨特裝備：3點。\n神話裝備：5點。"
+ },
+ "打开地图界面，进入异界玩法，点击左侧星盘插槽选择符石增幅。": {
+  "cn": "打开地图界面，进入异界玩法，点击左侧星盘插槽选择符石增幅。",
+  "en": "Open the map, enter the Outlands, and click a Star Map Socket on the left to select a Rune Amplification.",
+  "tc": "打開地圖介面，進入異界玩法，點擊左側星盤插槽選擇符石增幅。"
+ },
+ "每件高品质装备图鉴都有对应的基础装备图鉴（稀有图鉴）。\n当前装备图鉴的感知等级与基础装备图鉴始终同步。": {
+  "cn": "每件高品质装备图鉴都有对应的基础装备图鉴（稀有图鉴）。\n当前装备图鉴的感知等级与基础装备图鉴始终同步。",
+  "en": "Every higher-quality Equipment Codex has a corresponding base Equipment Codex (Rare Codex).\nThis Codex's Awareness Level always stays in sync with its base Equipment Codex.",
+  "tc": "每件高品質裝備圖鑑都有對應的基礎裝備圖鑑（稀有圖鑑）。\n當前裝備圖鑑的感知等級與基礎裝備圖鑑始終同步。"
+ },
+ "没有封印的词缀": {
+  "cn": "没有封印的词缀",
+  "en": "No sealed Affixes",
+  "tc": "沒有封印的詞綴"
+ },
+ "缺少已解锁的高品质图鉴": {
+  "cn": "缺少已解锁的高品质图鉴",
+  "en": "No unlocked higher-quality Codex",
+  "tc": "缺少已解鎖的高品質圖鑑"
+ },
+ "词缀封印方案已同步": {
+  "cn": "词缀封印方案已同步",
+  "en": "Affix Seal scheme synced",
+  "tc": "詞綴封印方案已同步"
+ },
+ "赛勒斯的闪电之戒": {
+  "cn": "赛勒斯的闪电之戒",
+  "en": "Cyrus's Ring of Lightning",
+  "tc": "賽勒斯的閃電之戒"
+ },
+ "随机获得一件{0}至{1}级装备，必定是传说品质。（10级以上的宝箱有几率出神话品质）": {
+  "cn": "随机获得一件{0}至{1}级装备，必定是传说品质。（10级以上的宝箱有几率出神话品质）",
+  "en": "Randomly gain 1 piece of equipment level {0} to {1}, always Legendary. (Chests above level 10 have a chance to drop Mythic quality)",
+  "tc": "隨機獲得一件{0}至{1}級裝備，必定是傳說品質。（10級以上的寶箱有機率出神話品質）"
+ },
+ "骨刃从地面连续穿出，造成穿刺伤害，并施加2层碎甲。": {
+  "cn": "骨刃从地面连续穿出，造成穿刺伤害，并施加2层碎甲。",
+  "en": "Bone blades erupt from the ground in succession, dealing Pierce damage and applying 2 stacks of Sunder.",
+  "tc": "骨刃從地面連續穿出，造成穿刺傷害，並施加2層碎甲。"
  }
 }

@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.4.2 — 2026-08-18
+
+Sincronização com o patch 1.0.6.1 do jogo, que reformulou o sistema de Selos
+de Afixo. Também corrige um termo que aparecia com dois nomes diferentes e
+deixava duas mecânicas distintas com o mesmo nome em português.
+
+- Traduzidas as **16 strings novas** do patch 1.0.6.1, incluindo o changelog
+  interno da atualização e toda a interface nova de **sincronização de Selos
+  de Afixo** (Sincronizar Selos, Lista do Codex, Nível de Percepção, e as
+  explicações de como os Codex de qualidade superior herdam do Codex Raro)
+- Corrigido: **"Fortitude de Vida" → "Tenacidade de Vida"** em 5 textos. O
+  jogo renomeou o inglês de "Life Fortitude" para "Health Tenacity", e a
+  tradução usava os dois nomes ao mesmo tempo — 38 textos já diziam
+  "Tenacidade" e 5 ainda diziam "Fortitude". Pior: isso colidia com
+  **Fortitude** (坚毅), que é outra mecânica, deixando a descrição do
+  【Elixir de Fortitude】 do Sacerdote sem sentido ("não concede mais
+  Fortitude de Vida; em vez disso ganha 3 acúmulos de Fortitude")
+- Corrigido: **"Pedidos" → "Encomendas"** no Mercado, unificando o termo com
+  o resto da interface
+- Atualizada a descrição da habilidade de lâminas de osso, que passou a
+  aplicar **Ruptura** no lugar de Quebra de Armadura no patch novo
+- `language_reference.json` sincronizado com a tabela real do jogo 1.0.6.1
+  (4858 entradas)
+
 ## 1.4.1 — 2026-08-18
 
 Correção de nomes que colidiam: a Torre Divina aparecia no menu com o mesmo
