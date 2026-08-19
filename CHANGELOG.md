@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.4.3 — 2026-08-19
+
+Correção de tradução no Templo e atualização do guia com exemplos reais de
+time.
+
+- Corrigido: a melhoria **"Talento de Batismo Fortalecido"** (aprimoramento
+  13 da árvore do Templo) dizia "Chance de Batismo de Devoto **obter** um
+  Talento fixo é reduzida em 10%", como se fosse um tipo especial de talento
+  a ganhar. O texto original (confirmado contra a localização oficial em
+  inglês, "chance to **lock** a Talent") descreve o Batismo **travando** um
+  Talento já existente — corrigido para "Chance de o Batismo de Devoto
+  **fixar** um Talento é reduzida em 10%"
+- Guia: nova seção "Exemplo real: os três times que eu uso" em **Adorador,
+  Devotos e times**, com prints reais dos 9 Devotos (Time I/II/III) e a
+  build oficial de cada um
+- Guia: corrigido o catálogo das 39 builds oficiais — o nível intermediário
+  de dificuldade estava rotulado "Média", mas o termo real do jogo é
+  **"Comum"** (23 builds atualizadas); e duas builds tinham o nível errado
+  (**Sangue Fervente**: Fácil → Comum; **Ataque Básico de Raio**: Comum →
+  Fácil)
+
 ## 1.4.2 — 2026-08-18
 
 Sincronização com o patch 1.0.6.1 do jogo, que reformulou o sistema de Selos

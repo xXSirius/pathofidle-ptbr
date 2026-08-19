@@ -2,11 +2,51 @@
 // Guia de gameplay do jogo — pagina propria, linkada no Header e no Footer.
 // O conteudo vem de dados extraidos das tabelas internas do jogo; o estilo
 // usa os tokens do site (tokens.css) para nao destoar da landing.
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/sections/Header.astro';
 import Footer from '../components/sections/Footer.astro';
+import time1Clerigo from '../assets/screenshots/time1-clerigo.webp';
+import time1Mercenario from '../assets/screenshots/time1-mercenario.webp';
+import time1Cacador from '../assets/screenshots/time1-cacador.webp';
+import time2Guerreiro from '../assets/screenshots/time2-guerreiro.webp';
+import time2Sacerdote from '../assets/screenshots/time2-sacerdote.webp';
+import time2Mago from '../assets/screenshots/time2-mago.webp';
+import time3Clerigo from '../assets/screenshots/time3-clerigo.webp';
+import time3Guerreiro from '../assets/screenshots/time3-guerreiro.webp';
+import time3Mago from '../assets/screenshots/time3-mago.webp';
 
 const base = import.meta.env.BASE_URL;
+
+const meusTimes = [
+  {
+    nome: 'Time I',
+    quando: 'desde o início',
+    devotos: [
+      { classe: 'Clérigo', build: 'Roubo de Vida em Golpe', img: time1Clerigo },
+      { classe: 'Mercenário', build: 'Corte de Trovão Veloz', img: time1Mercenario },
+      { classe: 'Caçador', build: 'Lobo Gélido Aliado', img: time1Cacador },
+    ],
+  },
+  {
+    nome: 'Time II',
+    quando: 'capítulo 4',
+    devotos: [
+      { classe: 'Guerreiro', build: 'Sangue Fervente', img: time2Guerreiro },
+      { classe: 'Sacerdote', build: 'Frio nos Ossos', img: time2Sacerdote },
+      { classe: 'Mago', build: 'Ataque Básico de Raio', img: time2Mago },
+    ],
+  },
+  {
+    nome: 'Time III',
+    quando: 'capítulo 10',
+    devotos: [
+      { classe: 'Clérigo', build: 'Buff de Luz Sagrada', img: time3Clerigo },
+      { classe: 'Guerreiro', build: 'Golpe Final', img: time3Guerreiro },
+      { classe: 'Mago', build: 'Detonação de Demônio de Fogo', img: time3Mago },
+    ],
+  },
+];
 
 // Schema.org: sem isso, a página herdaria o SoftwareApplication padrão do
 // BaseLayout (que descreve o mod, não o guia) — Article é o tipo correto
@@ -19,7 +59,7 @@ const guiaSchema = {
     'Guia completo de Path of Idle: Old Gods Rising em português: classes, mecânicas, maestrias, conjuntos, prisão, luta de chefe e as 39 builds oficiais.',
   inLanguage: 'pt-BR',
   datePublished: '2026-08-16',
-  dateModified: '2026-08-17',
+  dateModified: '2026-08-18',
   author: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   publisher: { '@type': 'Person', name: 'xXSirius', url: 'https://github.com/xXSirius' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xxsirius.github.io${base}guia/` },
@@ -178,6 +218,23 @@ const guiaSchema = {
   <div class="tip warn">
     <b>Cuidado com o erro comum:</b> não distribua seus melhores itens entre os três times "para deixar todos médios". Concentre no time de avanço — é ele que abre capítulo, e abrir capítulo sobe o teto de nível dos <b>nove</b> Devotos. Times médios travam todos juntos.
   </div>
+
+  <h3>Exemplo real: os três times que eu uso</h3>
+  <p>Pra sair da teoria: estes são os meus três times agora mesmo, cada um montado em cima de uma build oficial da seção <a href="#builds">15</a>. Print direto do jogo, já com a tradução PT-BR aplicada — talvez ajude quem está decidindo o que colocar em cada Devoto.</p>
+
+  {meusTimes.map((time) => (
+    <div class="team-block">
+      <h4>{time.nome} <span class="team-when">— {time.quando}</span></h4>
+      <div class="team-grid">
+        {time.devotos.map((d) => (
+          <figure class="team-shot">
+            <Image src={d.img} alt={`Build de ${d.build}, ${d.classe}, ${time.nome}`} width={480} loading="lazy" />
+            <figcaption><b>{d.classe}</b> — {d.build}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  ))}
 </section>
 
 <section id="rotina">
@@ -869,59 +926,59 @@ const guiaSchema = {
     <input type="search" id="q" placeholder="Buscar build, classe ou habilidade…" aria-label="Buscar builds">
     <button class="f" data-f="all" aria-pressed="true">Todas</button>
     <button class="f" data-f="1" aria-pressed="false">Fácil</button>
-    <button class="f" data-f="2" aria-pressed="false">Média</button>
+    <button class="f" data-f="2" aria-pressed="false">Comum</button>
     <button class="f" data-f="3" aria-pressed="false">Difícil</button>
   </div>
 
   <div class="card" id="blist">
-    <div class="bd" data-d="1"><div class="bd-h"><b>Sangue Fervente</b><span class="cl">Guerreiro</span><span class="pill d1">Fácil</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Sangue Fervente</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Use <i>Golpe Vigilante</i> para acumular Ânimo e estender a duração de <i>Sangue Fervente</i>.</p>
       <div class="attrs">Força, Destreza, Vida, Toda Defesa, Toda Velocidade, Resistências, Regen. de Vida, Resist. Crítica, Fortitude de Vida, Poder de Cura</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Guarda Arqueiro</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Guarda Arqueiro</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Conjure <i>Grito de Guerra Motivacional</i> para dar buffs poderosos ao <i>Guarda Arqueiro</i>.</p>
       <div class="attrs">Força, Destreza, Vida, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Dano Físico, Vel. Utilidade, Dano de Maestria</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Fogo Furioso</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Fogo Furioso</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Conjure <i>Imunidade à Dor</i> para acionar <i>Corte de Fogo Furioso</i> adicionalmente.</p>
       <div class="attrs">Força, Destreza, Vida, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Dano Físico, Vel. Utilidade, Dano de Maestria</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Onda de Choque de Grito de Guerra</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Onda de Choque de Grito de Guerra</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div>
       <p>Conjure várias habilidades de <i>Grito de Guerra</i> rapidamente para acionar o dano da especialização <i>Onda de Choque</i>.</p>
       <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Toda Precisão, Dano Físico, Impacto, Vel. de Habilidade, Vel. Utilidade, Buff</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Final</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Final</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div>
       <p>Acumule <i>Ânimo</i> para aumentar muito o dano de <i>Golpe Final</i>, e use <i>Gancho Cruel</i> para agrupar monstros.</p>
       <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Vel./Precisão/Dano Marcial, Todo Dano, Vel. Base, Dano de Maestria</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Ensanguentado</b><span class="cl">Guerreiro</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Golpe Ensanguentado</b><span class="cl">Guerreiro</span><span class="pill d2">Comum</span></div></div>
 
     <div class="bd" data-d="1"><div class="bd-h"><b>Roubo de Vida de Esquiva</b><span class="cl">Caçador</span><span class="pill d1">Fácil</span></div>
       <p>Conjure <i>Golpe do Raptor</i> para resetar a recarga de <i>Desaparecer nas Sombras</i>, ganhando cura e Esquiva.</p>
       <div class="attrs">Destreza, Esquiva, Vel. Marcial/Magia, Vel. de Habilidade, Precisão Marcial, Resist. Crítica, Tenacidade, Vel./Custo de Suporte, Poder de Cura, Buff</div></div>
     <div class="bd" data-d="1"><div class="bd-h"><b>Chuva de Flechas Gélidas</b><span class="cl">Caçador</span><span class="pill d1">Fácil</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Lobo Gélido Aliado</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lobo Gélido Aliado</b><span class="cl">Caçador</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. O <i>Lobo Gélido</i> é a fonte de dano; <i>Fúria Selvagem</i> reforça dano e sobrevivência.</p>
       <div class="attrs">Força, Destreza, Todo Ataque, Crítico, Esquiva, Vel. Marcial, Todo Dano, Efeito e Duração de Buff, Vel. de Habilidade</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Tiro Perfurante</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Tiro Perfurante</b><span class="cl">Caçador</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Use <i>Tiro Firme</i> para reduzir a recarga de <i>Tiro Perfurante</i>, e aumente Crítico para elevar a chance de acionar Raio.</p>
       <div class="attrs">Força, Destreza, Todo Ataque, Crítico, Vel./Dano Marcial, Toda Precisão, Todo Dano, Físico, Perfuração, Elemental, Raio, Vel. Base</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Intimidação de Ferimento</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Intimidação de Ferimento</b><span class="cl">Caçador</span><span class="pill d2">Comum</span></div>
       <p>Aplique a aflição <i>Ferimento</i> para acionar o dano da especialização <i>Valentão</i>.</p>
       <div class="attrs">Força, Destreza, Crítico, Vel. Marcial, Toda Precisão, Dano Físico, Corte, Vel. Utilidade, Vel. de Habilidade</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Lâmina Ensanguentada</b><span class="cl">Caçador</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Lâmina Ensanguentada</b><span class="cl">Caçador</span><span class="pill d2">Comum</span></div></div>
 
     <div class="bd" data-d="1"><div class="bd-h"><b>Barreira de Gelo</b><span class="cl">Mago</span><span class="pill d1">Fácil</span></div>
       <p>Centrada em Conjunto. Conjure habilidades de Utilidade para reduzir a recarga de <i>Barreira de Gelo</i>.</p>
       <div class="attrs">Destreza, Inteligência, Def. Elemental, Vel./Custo/Precisão de Magia, Resistências, Mana, Poder e Decaimento de Escudo, Buff, Vel. de Habilidade</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Ataque Básico de Raio</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="1"><div class="bd-h"><b>Ataque Básico de Raio</b><span class="cl">Mago</span><span class="pill d1">Fácil</span></div>
       <p>Centrada em Conjunto. <i>Raio</i> é o dano principal, mantendo <i>Infusão da Tempestade</i> para atingir três alvos.</p>
       <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Raio, Vel./Precisão/Dano de Magia, Dano e Vel. Base, Duração de Buff</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Detonação de Demônio de Fogo</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Detonação de Demônio de Fogo</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Conjure <i>Muralha de Fogo</i> para aumentar o dano de detonação de <i>Invocar Demônio de Fogo</i>.</p>
       <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Dano e Vel. de Magia, Fogo, Elemental, Vel. de Habilidade, Vel. de Suporte</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Tempestade Elétrica</b><span class="cl">Mago</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Tempestade Elétrica</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div>
       <p>Acumule <i>Velocidade de Magia</i> para encurtar o intervalo de <i>Tempestade Elétrica</i> e causar dano com mais frequência.</p>
       <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Raio, Vel. de Magia, Vel. de Habilidade, Precisão e Dano de Magia, Dano de Maestria, Buff</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Choque Elétrico</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Fortalecimento de Magia</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Impacto de Meteoro</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Crítico de Nevasca</b><span class="cl">Mago</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Choque Elétrico</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Fortalecimento de Magia</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Impacto de Meteoro</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Crítico de Nevasca</b><span class="cl">Mago</span><span class="pill d2">Comum</span></div></div>
 
     <div class="bd" data-d="1"><div class="bd-h"><b>Buff de Luz Sagrada</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div>
       <p>Centrada em Conjunto. Conjure <i>Castigar</i> para encurtar a recarga de <i>Raio Sagrado</i>, e use <i>Raio Sagrado</i> com frequência para cura e buffs.</p>
@@ -933,26 +990,26 @@ const guiaSchema = {
     <div class="bd" data-d="1"><div class="bd-h"><b>Escudo da Vingança</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
     <div class="bd" data-d="1"><div class="bd-h"><b>Dissipar Expurgo</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
     <div class="bd" data-d="1"><div class="bd-h"><b>Golpe de Chama Sagrada</b><span class="cl">Clérigo</span><span class="pill d1">Fácil</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Espada da Punição Divina</b><span class="cl">Clérigo</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Espada da Punição Divina</b><span class="cl">Clérigo</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Aumente a quantidade de Auras para reduzir a recarga de <i>Espada da Punição Divina</i> e atacar com mais frequência.</p>
       <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Todo Dano, Vel./Precisão/Dano de Magia, Dano de Maestria, Vel. de Habilidade, Redução de Reserva de Mana</div></div>
 
     <div class="bd" data-d="1"><div class="bd-h"><b>Roubo de Vida de Busca-Coração</b><span class="cl">Mercenário</span><span class="pill d1">Fácil</span></div>
       <p>Centrada em Conjunto. Use <i>Busca-Coração</i> para drenar Vida, e ative <i>Aura Mortal</i> para resetar a recarga dele.</p>
       <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Toda Defesa, Resistências, Resist. Crítica, Fortitude de Vida, Vel. Marcial, Vel. de Habilidade</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Vento da Morte</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Vento da Morte</b><span class="cl">Mercenário</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Conjure <i>Onda de Choque</i> rapidamente para acionar <i>Vento da Morte</i> com mais frequência.</p>
       <div class="attrs">Força, Destreza, Ataque Físico, Crítico, Dano Físico, Corte, Perfuração, Vel./Dano Marcial, Dano de Maestria, Vel. Base</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Sentinela Balista</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Sentinela Balista</b><span class="cl">Mercenário</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Aplique debuffs nos inimigos para aumentar o dano da <i>Sentinela Balista</i>.</p>
       <div class="attrs">Força, Destreza, Inteligência, Ataque Físico e Elemental, Crítico, Dano Físico e Elemental, Debuff, Custo de Suporte, Vel. Utilidade</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Trovão Veloz</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Corte de Trovão Veloz</b><span class="cl">Mercenário</span><span class="pill d2">Comum</span></div>
       <p>Acumule <i>Rapidez</i> para aumentar o número de cortes de <i>Corte de Trovão Veloz</i>.</p>
       <div class="attrs">Força, Destreza, Inteligência, Todo Ataque, Crítico, Vel./Dano/Precisão Marcial, Todo Dano, Físico, Perfuração, Raio, Debuff, Vel. Base</div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Ativação por Efeito</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div></div>
-    <div class="bd" data-d="2"><div class="bd-h"><b>Fogo de Barragem</b><span class="cl">Mercenário</span><span class="pill d2">Média</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Ativação por Efeito</b><span class="cl">Mercenário</span><span class="pill d2">Comum</span></div></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Fogo de Barragem</b><span class="cl">Mercenário</span><span class="pill d2">Comum</span></div></div>
 
-    <div class="bd" data-d="2"><div class="bd-h"><b>Frio nos Ossos</b><span class="cl">Sacerdote</span><span class="pill d2">Média</span></div>
+    <div class="bd" data-d="2"><div class="bd-h"><b>Frio nos Ossos</b><span class="cl">Sacerdote</span><span class="pill d2">Comum</span></div>
       <p>Centrada em Conjunto. Aumente a velocidade de <i>Mão da Morte</i> para acionar o dano de <i>Frio nos Ossos</i> mais rápido.</p>
       <div class="attrs">Destreza, Inteligência, Ataque Elemental, Crítico, Elemental e Gelo, Vel./Precisão/Dano de Magia, Vel. Utilidade, Dano de Maestria, Buff</div></div>
     <div class="bd" data-d="3"><div class="bd-h"><b>Buff de Totem</b><span class="cl">Sacerdote</span><span class="pill d3">Difícil</span></div>
@@ -1265,6 +1322,14 @@ const guiaSchema = {
   .bd p { margin: 7px 0 0; font-size: .9rem; }
   .bd .attrs { margin: 6px 0 0; font-size: .82rem; color: var(--t-text-soft); }
   .none { color: var(--t-text-soft); font-style: italic; padding: 20px 0; }
+
+  .team-block { margin-top: 24px; }
+  .team-when { color: var(--t-text-soft); font-size: .8rem; font-weight: 400; }
+  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 14px; margin-top: 10px; }
+  .team-shot { background: var(--t-surface); border: 1px solid var(--t-border); border-radius: 6px; overflow: hidden; margin: 0; }
+  .team-shot img { display: block; width: 100%; height: auto; }
+  .team-shot figcaption { padding: 8px 12px; font-size: .85rem; color: var(--t-text-soft); border-top: 1px solid var(--t-border); }
+  .team-shot figcaption b { color: var(--t-text-main); }
 
   footer { border-top: 1px solid var(--t-border); padding: 28px 0 0; color: var(--t-text-soft); font-size: .84rem; }
 
