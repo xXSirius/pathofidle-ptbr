@@ -1,0 +1,26 @@
+---
+// Seção depois de "Apoie o Projeto": convida quem já baixou a tradução a
+// conhecer o Códice do Devoto (guia de gameplay em /guia). Não é uma âncora
+// do menu — o Header já linka pra página do guia diretamente.
+import { Icon } from 'astro-icon/components';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="guia-promo" class="section-py bg-background">
+  <div class="container-wide">
+    <div class="max-w-xl mx-auto text-center">
+      <Icon name="lucide:book-open" class="w-8 h-8 text-secondary mx-auto mb-4" data-animate />
+      <span class="label-tag block mb-3">Não pare por aqui</span>
+      <h2 class="section-plaque" data-animate>Conheça o Códice do Devoto</h2>
+      <p class="text-body-lg text-text-soft mt-6 mb-8" data-animate>
+        Já instalou a tradução? O Códice do Devoto é o guia completo do jogo em português:
+        classes, mecânicas, maestrias, conjuntos, chefes e as builds testadas pela comunidade.
+        E se achar algo sem traduzir por lá também, você já sabe o caminho.
+      </p>
+      <a href={`${base}guia/`} class="btn-secondary-gold" data-animate>
+        Ver o Códice do Devoto
+      </a>
+    </div>
+  </div>
+</section>

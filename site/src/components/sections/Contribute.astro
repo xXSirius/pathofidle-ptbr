@@ -16,27 +16,27 @@ const REPO_URL = 'https://github.com/xXSirius/pathofidle-ptbr';
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto" data-animate-group>
-      <div class="cut-corners bg-surface border border-border p-8" data-animate-item>
+      <div class="cut-corners bg-surface border border-border p-8 flex flex-col" data-animate-item>
         <Icon name="lucide:file-text" class="w-7 h-7 text-secondary mb-4" />
         <h3 class="font-serif text-display-sm text-text-main uppercase mb-3">Reporte em um clique</h3>
-        <p class="text-body-md text-text-soft mb-5">
+        <p class="text-body-md text-text-soft mb-5 flex-grow">
           O próprio mod registra sozinho, num arquivo <code class="text-secondary">missing_strings.json</code>,
           qualquer texto que aparecer sem tradução durante uma sessão de jogo. Anexe esse
           arquivo numa Issue e pronto.
         </p>
-        <a href={`${REPO_URL}/issues/new/choose`} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+        <a href={`${REPO_URL}/issues/new/choose`} target="_blank" rel="noopener noreferrer" class="btn-ghost self-start">
           Abrir uma Issue
         </a>
       </div>
 
-      <div class="cut-corners bg-surface border border-border p-8" data-animate-item>
+      <div class="cut-corners bg-surface border border-border p-8 flex flex-col" data-animate-item>
         <Icon name="lucide:languages" class="w-7 h-7 text-secondary mb-4" />
         <h3 class="font-serif text-display-sm text-text-main uppercase mb-3">Contribua com traduções</h3>
-        <p class="text-body-md text-text-soft mb-5">
+        <p class="text-body-md text-text-soft mb-5 flex-grow">
           Quer sugerir um termo, revisar uma tradução ou mexer no código do mod? O guia de
           contribuição tem tudo, incluindo as convenções de terminologia.
         </p>
-        <a href={`${REPO_URL}/blob/master/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+        <a href={`${REPO_URL}/blob/master/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" class="btn-ghost self-start">
           Ver Guia de Contribuição
         </a>
       </div>
