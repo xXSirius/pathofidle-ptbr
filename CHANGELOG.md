@@ -11,6 +11,11 @@ Sincronização com o patch 1.0.7 do jogo.
   raridade/Classe com orçamento em Ouro para Enfeitiçamento Automático) e das
   Terras Distantes (troca automática de Plano), além do novo upgrade/downgrade
   automático de Nível de Exploração
+- Corrigido: as abas **"Automático"** e **"Configurações"**, reaproveitadas em
+  vários painéis (Torre, Exploração, Jornada, Mercado, Prisão, Terras
+  Distantes), estouravam o botão — dimensionado pro chinês/inglês originais
+  (2-8 caracteres), não pros 10-13 do português. Encurtadas para **"Auto"** e
+  **"Config."**
 
 ## 1.4.3 — 2026-08-19
 
