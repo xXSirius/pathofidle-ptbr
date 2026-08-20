@@ -24288,5 +24288,150 @@
   "cn": "骨刃从地面连续穿出，造成穿刺伤害，并施加2层碎甲。",
   "en": "Bone blades erupt from the ground in succession, dealing Pierce damage and applying 2 stacks of Sunder.",
   "tc": "骨刃從地面連續穿出，造成穿刺傷害，並施加2層碎甲。"
+ },
+ "【正式版】1.0.7版本更新内容\n\n【新增】\n新增仓库批量取出功能。\n市场自动配置功能扩充。\n监牢增加自动配置。\n异界增加自动自动更换位面配置。\n探索增加自动升级配置。\n探索现在可以降级。\n\n【优化】\n启迪变化的时候，天赋栏位也会同步显示变化。\n当珍藏栏位满的时候会替换出低等级的装备。\n悬浮球可以多屏幕显示，并跨屏幕移动。\n如果已经通过了异界阶段一，所有阶段达到4的任务会直接完成。\n\n【调整】\n【异空星辰】掉落几率提升30%。\n\n【修复】\n修复洗礼可能产生报错的问题。\n修复第20章地图可能出现黑线的问题。": {
+  "cn": "【正式版】1.0.7版本更新内容\n\n【新增】\n新增仓库批量取出功能。\n市场自动配置功能扩充。\n监牢增加自动配置。\n异界增加自动自动更换位面配置。\n探索增加自动升级配置。\n探索现在可以降级。\n\n【优化】\n启迪变化的时候，天赋栏位也会同步显示变化。\n当珍藏栏位满的时候会替换出低等级的装备。\n悬浮球可以多屏幕显示，并跨屏幕移动。\n如果已经通过了异界阶段一，所有阶段达到4的任务会直接完成。\n\n【调整】\n【异空星辰】掉落几率提升30%。\n\n【修复】\n修复洗礼可能产生报错的问题。\n修复第20章地图可能出现黑线的问题。",
+  "en": "[Full Release] Version 1.0.7 Update\n\n[New]\nAdded Warehouse batch take-out.\nExpanded Market auto configuration.\nAdded Prison auto configuration.\nAdded Outlands auto Plane switch configuration.\nAdded Exploration auto level-up configuration.\nExploration can now be downgraded.\n\n[Improvements]\nTalent slots update when Inspire changes.\nWhen Vault slots are full, lower-level equipment is swapped out.\nFloating Mode supports multiple monitors and cross-monitor movement.\nIf Outlands Stage 1 is already cleared, the quest to reach 4 on all stages completes immediately.\n\n[Balance]\n[Void Stars] drop chance increased by 30%.\n\n[Fixes]\nFixed possible Baptism errors.\nFixed possible black lines on Chapter 20 map.",
+  "tc": "【正式版】1.0.7版本更新內容\n\n【新增】\n新增倉庫批量取出功能。\n市場自動配置功能擴充。\n監牢增加自動配置。\n異界增加自動自動更換位面配置。\n探索增加自動升級配置。\n探索現在可以降級。\n\n【優化】\n啟迪變化的時候，天賦欄位也會同步顯示變化。\n當珍藏欄位滿的時候會替換出低等級的裝備。\n懸浮球可以多螢幕顯示，並跨螢幕移動。\n如果已經通過了異界階段一，所有階段達到4的任務會直接完成。\n\n【調整】\n【異空星辰】掉落機率提升30%。\n\n【修復】\n修復洗禮可能產生報錯的問題。\n修復第20章地圖可能出現黑線的問題。"
+ },
+ "低于等级：": {
+  "cn": "低于等级：",
+  "en": "Below Level:",
+  "tc": "低於等級："
+ },
+ "全仓库页：": {
+  "cn": "全仓库页：",
+  "en": "All Warehouse Pages:",
+  "tc": "全倉庫頁："
+ },
+ "勾选后，当前位面挑战完成后，会自动选择下一个位面。": {
+  "cn": "勾选后，当前位面挑战完成后，会自动选择下一个位面。",
+  "en": "When enabled, the next Plane is selected automatically after the current Plane challenge is cleared.",
+  "tc": "勾選後，當前位面挑戰完成後，會自動選擇下一個位面。"
+ },
+ "勾选后，探索经验满值时，会自动提升探索等级。": {
+  "cn": "勾选后，探索经验满值时，会自动提升探索等级。",
+  "en": "When enabled, Exploration Level rises automatically when Exploration XP is full.",
+  "tc": "勾選後，探索經驗滿值時，會自動提升探索等級。"
+ },
+ "取出设置": {
+  "cn": "取出设置",
+  "en": "Take Out Settings",
+  "tc": "取出設定"
+ },
+ "如果勾选了自动蛊惑，会蛊惑成为神选者，并且不会停止自动。\n设置预算后花费超过预算后会停止。\n0表示不设置预算。": {
+  "cn": "如果勾选了自动蛊惑，会蛊惑成为神选者，并且不会停止自动。\n设置预算后花费超过预算后会停止。\n0表示不设置预算。",
+  "en": "If Auto-Bewitch is enabled, the prisoner is Bewitched into a Godsworn and auto-refresh does not stop.\nWith a budget set, spending beyond the budget stops auto-refresh.\n0 means no budget.",
+  "tc": "如果勾選了自動蠱惑，會蠱惑成為神選者，並且不會停止自動。\n設定預算後花費超過預算後會停止。\n0表示不設定預算。"
+ },
+ "如果勾选了自动购买，会购买进入背包，并且不会停止自动。\n设置预算后花费超过预算后会停止。\n0表示不设置预算。": {
+  "cn": "如果勾选了自动购买，会购买进入背包，并且不会停止自动。\n设置预算后花费超过预算后会停止。\n0表示不设置预算。",
+  "en": "If Auto-Buy is enabled, the item is purchased into the backpack and auto-refresh does not stop.\nWith a budget set, spending beyond the budget stops auto-refresh.\n0 means no budget.",
+  "tc": "如果勾選了自動購買，會購買進入背包，並且不會停止自動。\n設定預算後花費超過預算後會停止。\n0表示不設定預算。"
+ },
+ "如果觉得战斗较为困难，可以选择降低探索等级": {
+  "cn": "如果觉得战斗较为困难，可以选择降低探索等级",
+  "en": "If combat feels too hard, you can lower Exploration Level",
+  "tc": "如果覺得戰鬥較為困難，可以選擇降低探索等級"
+ },
+ "市场自动刷新时，遇到普通品质出现选择的插槽数量会停止自动刷新。": {
+  "cn": "市场自动刷新时，遇到普通品质出现选择的插槽数量会停止自动刷新。",
+  "en": "While Market auto-refresh is running, encountering Common Quality with the selected Socket count stops auto-refresh.",
+  "tc": "市場自動刷新時，遇到普通品質出現選擇的插槽數量會停止自動刷新。"
+ },
+ "市场自动刷新时，遇到选择的品质会停止自动刷新。": {
+  "cn": "市场自动刷新时，遇到选择的品质会停止自动刷新。",
+  "en": "While Market auto-refresh is running, encountering a selected Quality stops auto-refresh.",
+  "tc": "市場自動刷新時，遇到選擇的品質會停止自動刷新。"
+ },
+ "市场自动刷新时，遇到选择的部位会停止自动刷新。": {
+  "cn": "市场自动刷新时，遇到选择的部位会停止自动刷新。",
+  "en": "While Market auto-refresh is running, encountering a selected Part stops auto-refresh.",
+  "tc": "市場自動刷新時，遇到選擇的部位會停止自動刷新。"
+ },
+ "市场自动配置": {
+  "cn": "市场自动配置",
+  "en": "Market Auto Config",
+  "tc": "市場自動配置"
+ },
+ "异界自动配置": {
+  "cn": "异界自动配置",
+  "en": "Outlands Auto Config",
+  "tc": "異界自動配置"
+ },
+ "珍藏栏位已满，放入基础存储": {
+  "cn": "珍藏栏位已满，放入基础存储",
+  "en": "Vault slots full; moved to basic storage",
+  "tc": "珍藏欄位已滿，放入基礎儲存"
+ },
+ "监牢自动刷新时，遇到选择的品质会停止自动刷新。": {
+  "cn": "监牢自动刷新时，遇到选择的品质会停止自动刷新。",
+  "en": "While Prison auto-refresh is running, encountering a selected Quality stops auto-refresh.",
+  "tc": "監牢自動刷新時，遇到選擇的品質會停止自動刷新。"
+ },
+ "监牢自动刷新时，遇到选择的职业会停止自动刷新。": {
+  "cn": "监牢自动刷新时，遇到选择的职业会停止自动刷新。",
+  "en": "While Prison auto-refresh is running, encountering a selected Class stops auto-refresh.",
+  "tc": "監牢自動刷新時，遇到選擇的職業會停止自動刷新。"
+ },
+ "监牢自动配置": {
+  "cn": "监牢自动配置",
+  "en": "Prison Auto Config",
+  "tc": "監牢自動配置"
+ },
+ "职业：": {
+  "cn": "职业：",
+  "en": "Class:",
+  "tc": "職業："
+ },
+ "自动切换位面：": {
+  "cn": "自动切换位面：",
+  "en": "Auto Switch Plane:",
+  "tc": "自動切換位面："
+ },
+ "自动提升探索等级：": {
+  "cn": "自动提升探索等级：",
+  "en": "Auto Raise Exploration Level:",
+  "tc": "自動提升探索等級："
+ },
+ "自动整理：": {
+  "cn": "自动整理：",
+  "en": "Auto Sort:",
+  "tc": "自動整理："
+ },
+ "自动蛊惑：": {
+  "cn": "自动蛊惑：",
+  "en": "Auto-Bewitch:",
+  "tc": "自動蠱惑："
+ },
+ "部位：": {
+  "cn": "部位：",
+  "en": "Part:",
+  "tc": "部位："
+ },
+ "降低等级": {
+  "cn": "降低等级",
+  "en": "Lower Level",
+  "tc": "降低等級"
+ },
+ "随机获得其他职业专精": {
+  "cn": "随机获得其他职业专精",
+  "en": "Gain a random Mastery from another class",
+  "tc": "隨機獲得其他職業專精"
+ },
+ "预算金币已用尽": {
+  "cn": "预算金币已用尽",
+  "en": "Gold budget exhausted",
+  "tc": "預算金幣已用盡"
+ },
+ "预算金币：": {
+  "cn": "预算金币：",
+  "en": "Gold Budget:",
+  "tc": "預算金幣："
+ },
+ "（降级后探索经验会清空）": {
+  "cn": "（降级后探索经验会清空）",
+  "en": "(Exploration XP is cleared after downgrade)",
+  "tc": "（降級後探索經驗會清空）"
  }
 }

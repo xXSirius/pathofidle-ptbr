@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.4.4 — 2026-08-20
+
+Sincronização com o patch 1.0.7 do jogo.
+
+- Traduzidas as **29 strings novas** do patch 1.0.7, incluindo o changelog
+  interno da atualização e a nova interface de **Configuração Automática**:
+  retirada em lote do Armazém, Configuração Automática do Mercado (filtros de
+  raridade/encaixes/espaço com orçamento em Ouro), da Prisão (filtros de
+  raridade/Classe com orçamento em Ouro para Enfeitiçamento Automático) e das
+  Terras Distantes (troca automática de Plano), além do novo upgrade/downgrade
+  automático de Nível de Exploração
+
 ## 1.4.3 — 2026-08-19
 
 Correção de tradução no Templo e atualização do guia com exemplos reais de
