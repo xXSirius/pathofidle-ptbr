@@ -24433,5 +24433,20 @@
   "cn": "（降级后探索经验会清空）",
   "en": "(Exploration XP is cleared after downgrade)",
   "tc": "（降級後探索經驗會清空）"
+ },
+ "【正式版】1.0.8版本更新内容\n\n【重要】\n离线奖励部分进行了重做，增加了各种资源的奖励。\n支持者包对离线收益的提升会在获得时生效。\n离线收益的奖励随着崇拜者等级会逐渐提升。\n\n【优化】\n现在可以按住标题拖动界面。\n探索满级时不再显示升级按钮。\n战斗中也增加自动的配置。\n异化技能改变时天赋界面实时同步变化。\n为洗礼增加了通用的动画效果。\n\n【修复】\n修复神话装备【穿云】会导致释放【野性狂暴】损失生命的问题。\n修复珍藏装备列表不能使用左键切换对比的问题。\n修复【永恒灵魂】掉落显示绿光的问题。\n修复市场订单初次显示可能错位的问题。\n修复战斗自动配置初次显示可能错位的问题。": {
+  "cn": "【正式版】1.0.8版本更新内容\n\n【重要】\n离线奖励部分进行了重做，增加了各种资源的奖励。\n支持者包对离线收益的提升会在获得时生效。\n离线收益的奖励随着崇拜者等级会逐渐提升。\n\n【优化】\n现在可以按住标题拖动界面。\n探索满级时不再显示升级按钮。\n战斗中也增加自动的配置。\n异化技能改变时天赋界面实时同步变化。\n为洗礼增加了通用的动画效果。\n\n【修复】\n修复神话装备【穿云】会导致释放【野性狂暴】损失生命的问题。\n修复珍藏装备列表不能使用左键切换对比的问题。\n修复【永恒灵魂】掉落显示绿光的问题。\n修复市场订单初次显示可能错位的问题。\n修复战斗自动配置初次显示可能错位的问题。",
+  "en": "[Full Release] Version 1.0.8 Update\n\n[Important]\nOffline rewards have been reworked, with additional resource rewards added.\nThe Supporter Pack's offline income bonus now takes effect when obtained.\nOffline reward amounts gradually increase with Worshiper level.\n\n[Improvements]\nWindows can now be dragged by holding the title.\nThe level-up button is no longer shown when Exploration is at max level.\nAdded auto configuration in combat as well.\nThe Talent UI updates in real time when Mutated Skills change.\nAdded a shared animation effect for Baptism.\n\n[Fixes]\nFixed an issue where the Mythic equipment [Cloudpiercer] could cause [Wild Frenzy] to cost Health.\nFixed an issue where the Vault equipment list could not switch comparisons with left-click.\nFixed an issue where [Eternal Soul] drops displayed a green glow.\nFixed an issue where Market Orders could be misaligned on first display.\nFixed an issue where combat auto configuration could be misaligned on first display.",
+  "tc": "【正式版】1.0.8版本更新內容\n\n【重要】\n離線獎勵部分進行了重做，增加了各種資源的獎勵。\n支持者包對離線收益的提升會在獲得時生效。\n離線收益的獎勵隨著崇拜者等級會逐漸提升。\n\n【優化】\n現在可以按住標題拖動介面。\n探索滿級時不再顯示升級按鈕。\n戰鬥中也增加自動的配置。\n異化技能改變時天賦介面即時同步變化。\n為洗禮增加了通用的動畫效果。\n\n【修復】\n修復神話裝備【穿雲】會導致釋放【野性狂暴】損失生命的問題。\n修復珍藏裝備列表不能使用左鍵切換對比的問題。\n修復【永恆靈魂】掉落顯示綠光的問題。\n修復市場訂單初次顯示可能錯位的問題。\n修復戰鬥自動配置初次顯示可能錯位的問題。"
+ },
+ "每离线1个小时，可以获得": {
+  "cn": "每离线1个小时，可以获得",
+  "en": "Every 1 hour offline, you can obtain",
+  "tc": "每離線1個小時，可以獲得"
+ },
+ "离线奖励金币提升20%,离线奖励血液提升20%,离线奖励圣骨提升20%": {
+  "cn": "离线奖励金币提升20%,离线奖励血液提升20%,离线奖励圣骨提升20%",
+  "en": "Offline reward Gold increased by 20%,Offline reward Blood increased by 20%,Offline reward Bone increased by 20%",
+  "tc": "離線獎勵金幣提升20%,離線獎勵血液提升20%,離線獎勵聖骨提升20%"
  }
 }

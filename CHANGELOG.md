@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.5 — 2026-08-22
+
+Sincronização com o patch 1.0.8 do jogo.
+
+- Traduzidas as **3 strings novas** do patch 1.0.8: o changelog interno da
+  atualização (recompensas offline refeitas, painéis arrastáveis pelo título,
+  Configuração Automática também em combate, correções diversas) e a nova
+  descrição de bônus de recompensa offline por recurso (Ouro, Sangue e Osso
+  separados, em vez do bônus genérico anterior)
+
 ## 1.4.4 — 2026-08-20
 
 Sincronização com o patch 1.0.7 do jogo.
